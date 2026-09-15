@@ -1,3 +1,5 @@
+/* ==================== Base (shared by all screens) ==================== */
+
 :root {
     --ink: #1c1c1a;
     --paper: #faf9f6;
@@ -112,7 +114,6 @@ section.info {
 
 .info-grid {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
     gap: 48px;
 }
 
@@ -148,13 +149,52 @@ footer {
     text-align: center;
 }
 
-@media (max-width: 720px) {
+/* ==================== Desktop browser (721px and up) ==================== */
+
+@media (min-width: 721px) {
     .info-grid {
-        grid-template-columns: 1fr;
-        gap: 36px;
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+/* ==================== Mobile browser (720px and down) ==================== */
+
+@media (max-width: 720px) {
+    header {
+        padding: 20px 6vw;
+    }
+
+    .brand {
+        font-size: 13px;
+    }
+
+    nav a {
+        font-size: 13px;
     }
 
     .hero-content {
         padding-bottom: 12vh;
+        max-width: 100%;
+    }
+
+    .hero-content p {
+        font-size: 0.95rem;
+        max-width: 100%;
+    }
+
+    section.info {
+        padding: 64px 6vw 72px;
+    }
+
+    .info-grid {
+        grid-template-columns: 1fr;
+        gap: 36px;
+        text-align: center;
+    }
+
+    .info-grid img {
+        width: 88px;
+        height: 88px;
+        margin: 0 auto 16px;
     }
 }
