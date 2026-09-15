@@ -123,10 +123,10 @@ section.info {
 }
 
 .info-grid img {
-    width: 120px;
-    height: 120px;
+    width: 144px;
+    height: 144px;
     object-fit: cover;
-    border-radius: 50%;
+    border-radius: 14px;
     background: #fff;
     border: 1px solid var(--line);
     padding: 16px;
@@ -159,6 +159,14 @@ footer {
 @media (min-width: 721px) {
     .info-grid {
         grid-template-columns: repeat(3, 1fr);
+    }
+
+    .info-grid > div:nth-child(1) {
+        transform: translateX(-24px);
+    }
+
+    .info-grid > div:nth-child(3) {
+        transform: translateX(24px);
     }
 }
 
@@ -198,8 +206,8 @@ footer {
     }
 
     .info-grid img {
-        width: 52px;
-        height: 52px;
+        width: 64px;
+        height: 64px;
         padding: 8px;
         margin: 0 auto 10px;
     }
