@@ -187,15 +187,24 @@ footer {
     }
 
     .info-grid {
-        grid-template-columns: 1fr;
-        gap: 28px;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 12px;
         text-align: center;
     }
 
     .info-grid img {
-        width: 72px;
-        height: 72px;
-        padding: 12px;
-        margin: 0 auto 14px;
+        width: 52px;
+        height: 52px;
+        padding: 8px;
+        margin: 0 auto 10px;
+    }
+
+    .info-grid div h2 {
+        font-size: 0.82rem;
+    }
+
+    .info-grid div p {
+        font-size: 0.72rem;
+        line-height: 1.4;
     }
 }
