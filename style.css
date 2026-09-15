@@ -27,6 +27,10 @@ a {
     color: inherit;
 }
 
+.filter-defs {
+    position: absolute;
+}
+
 header {
     position: absolute;
     top: 0;
