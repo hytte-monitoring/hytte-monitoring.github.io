@@ -4,13 +4,191 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Hytte Monitoring</title>
+    <style>
+        :root {
+            --ink: #1c1c1a;
+            --paper: #faf9f6;
+            --muted: #6b6b64;
+            --line: rgba(28, 28, 26, 0.12);
+        }
+
+        * {
+            box-sizing: border-box;
+        }
+
+        html, body {
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Helvetica Neue", Arial, sans-serif;
+            color: var(--ink);
+            background: var(--paper);
+            -webkit-font-smoothing: antialiased;
+        }
+
+        a {
+            color: inherit;
+        }
+
+        header {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 28px 6vw;
+            z-index: 2;
+        }
+
+        .brand {
+            font-size: 15px;
+            font-weight: 600;
+            letter-spacing: 0.04em;
+            color: #fff;
+            text-transform: uppercase;
+        }
+
+        nav a {
+            color: #fff;
+            text-decoration: none;
+            font-size: 14px;
+            opacity: 0.85;
+        }
+
+        nav a:hover {
+            opacity: 1;
+        }
+
+        .hero {
+            position: relative;
+            height: 100vh;
+            min-height: 560px;
+            display: flex;
+            align-items: flex-end;
+            background: #10120f;
+        }
+
+        .hero img {
+            position: absolute;
+            inset: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .hero::after {
+            content: "";
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(to top, rgba(10, 10, 8, 0.78) 0%, rgba(10, 10, 8, 0.25) 45%, rgba(10, 10, 8, 0.15) 100%);
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 1;
+            color: #fff;
+            padding: 0 6vw 9vh;
+            max-width: 680px;
+        }
+
+        .hero-content h1 {
+            margin: 0 0 18px;
+            font-size: clamp(2rem, 5vw, 3.4rem);
+            line-height: 1.15;
+            font-weight: 500;
+            letter-spacing: -0.01em;
+        }
+
+        .hero-content p {
+            margin: 0;
+            font-size: 1.05rem;
+            line-height: 1.6;
+            color: rgba(255, 255, 255, 0.82);
+            max-width: 480px;
+        }
+
+        section.info {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 90px 6vw 100px;
+        }
+
+        .info-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 48px;
+        }
+
+        .info-grid div h2 {
+            font-size: 1rem;
+            font-weight: 600;
+            margin: 0 0 8px;
+        }
+
+        .info-grid div p {
+            font-size: 0.92rem;
+            line-height: 1.55;
+            color: var(--muted);
+            margin: 0;
+        }
+
+        footer {
+            border-top: 1px solid var(--line);
+            padding: 24px 6vw;
+            font-size: 0.82rem;
+            color: var(--muted);
+            text-align: center;
+        }
+
+        @media (max-width: 720px) {
+            .info-grid {
+                grid-template-columns: 1fr;
+                gap: 36px;
+            }
+
+            .hero-content {
+                padding-bottom: 12vh;
+            }
+        }
+    </style>
 </head>
 
 <body>
-    <h1>Hytte Monitoring</h1>
+    <div class="hero">
+        <img src="img/hytt.jpeg" alt="Red cabin by a fjord in Norway">
+        <header>
+            <span class="brand">Hytte</span>
+            <nav><a href="#">Contact</a></nav>
+        </header>
+        <div class="hero-content">
+            <h1>Peace of mind, even when you're away.</h1>
+            <p>Monitor temperature, power and security at your cabin from anywhere, so it's ready whenever you are.</p>
+        </div>
+    </div>
 
-    <p>Remote Cabin Monitoring System</p>
+    <section class="info">
+        <div class="info-grid">
+            <div>
+                <h2>Temperature</h2>
+                <p>Know the moment things get too cold, before pipes do.</p>
+            </div>
+            <div>
+                <h2>Power</h2>
+                <p>Get notified if the power goes out, day or night.</p>
+            </div>
+            <div>
+                <h2>Security</h2>
+                <p>Keep an eye on doors and windows while you're away.</p>
+            </div>
+        </div>
+    </section>
 
-    <p>Our group project website is working.</p>
+    <footer>
+        &copy; 2026 Hytte Monitoring
+    </footer>
 </body>
 </html>
