@@ -188,13 +188,14 @@ footer {
 
     .info-grid {
         grid-template-columns: 1fr;
-        gap: 36px;
+        gap: 28px;
         text-align: center;
     }
 
     .info-grid img {
-        width: 88px;
-        height: 88px;
-        margin: 0 auto 16px;
+        width: 72px;
+        height: 72px;
+        padding: 12px;
+        margin: 0 auto 14px;
     }
 }
