@@ -88,23 +88,23 @@ nav a:hover {
     z-index: 1;
     color: #fff;
     padding: 0 6vw 9vh;
-    max-width: 680px;
+    max-width: 900px;
 }
 
 .hero-content h1 {
     margin: 0 0 18px;
-    font-size: clamp(2rem, 5vw, 3.4rem);
-    line-height: 1.15;
+    font-size: clamp(2rem, 6vw, 5.6rem);
+    line-height: 1.1;
     font-weight: 500;
     letter-spacing: -0.01em;
 }
 
 .hero-content p {
     margin: 0;
-    font-size: 1.05rem;
+    font-size: clamp(1.05rem, 1.6vw, 1.35rem);
     line-height: 1.6;
     color: rgba(255, 255, 255, 0.82);
-    max-width: 480px;
+    max-width: 560px;
 }
 
 section.info {
