@@ -4,43 +4,43 @@
             <root>
                 <mxCell id="0"/>
                 <mxCell id="1" parent="0"/>
-                <mxCell id="ll-smoke" parent="1" style="shape=umlLifeline;perimeter=lifelinePerimeter;whiteSpace=wrap;html=1;container=1;dropTarget=0;collapsible=0;recursiveResize=0;outlineConnect=0;portConstraint=eastwest;newEdgeStyle={&quot;curved&quot;:0,&quot;rounded&quot;:0};size=40;" value="Smoke Sensor" vertex="1">
+                <mxCell id="ll-smoke" parent="1" style="shape=umlLifeline;perimeter=lifelinePerimeter;whiteSpace=wrap;html=1;container=1;dropTarget=0;collapsible=0;recursiveResize=0;outlineConnect=0;portConstraint=eastwest;newEdgeStyle={&quot;curved&quot;:0,&quot;rounded&quot;:0};size=40;fillColor=#F5F5F5;strokeColor=#333333;fontColor=#000000;" value="Smoke Sensor" vertex="1">
                     <mxGeometry x="60" y="80" width="120" height="2930" as="geometry"/>
                 </mxCell>
-                <mxCell id="act-smoke" parent="ll-smoke" style="html=1;perimeter=orthogonalPerimeter;outlineConnect=0;targetShapes=umlLifeline;portConstraint=eastwest;newEdgeStyle={&quot;curved&quot;:0,&quot;rounded&quot;:0};" value="" vertex="1">
+                <mxCell id="act-smoke" parent="ll-smoke" style="html=1;perimeter=orthogonalPerimeter;outlineConnect=0;targetShapes=umlLifeline;portConstraint=eastwest;newEdgeStyle={&quot;curved&quot;:0,&quot;rounded&quot;:0};fillColor=#F5F5F5;strokeColor=#333333;" value="" vertex="1">
                     <mxGeometry x="55" y="80" width="10" height="40" as="geometry"/>
                 </mxCell>
-                <mxCell id="ll-system" parent="1" style="shape=umlLifeline;perimeter=lifelinePerimeter;whiteSpace=wrap;html=1;container=1;dropTarget=0;collapsible=0;recursiveResize=0;outlineConnect=0;portConstraint=eastwest;newEdgeStyle={&quot;curved&quot;:0,&quot;rounded&quot;:0};size=40;" value="Monitoring System" vertex="1">
+                <mxCell id="ll-system" parent="1" style="shape=umlLifeline;perimeter=lifelinePerimeter;whiteSpace=wrap;html=1;container=1;dropTarget=0;collapsible=0;recursiveResize=0;outlineConnect=0;portConstraint=eastwest;newEdgeStyle={&quot;curved&quot;:0,&quot;rounded&quot;:0};size=40;fillColor=#DAE8FC;strokeColor=#333333;fontColor=#000000;" value="Monitoring System" vertex="1">
                     <mxGeometry x="335" y="80" width="120" height="2930" as="geometry"/>
                 </mxCell>
-                <mxCell id="act-system" parent="ll-system" style="html=1;perimeter=orthogonalPerimeter;outlineConnect=0;targetShapes=umlLifeline;portConstraint=eastwest;newEdgeStyle={&quot;curved&quot;:0,&quot;rounded&quot;:0};" value="" vertex="1">
+                <mxCell id="act-system" parent="ll-system" style="html=1;perimeter=orthogonalPerimeter;outlineConnect=0;targetShapes=umlLifeline;portConstraint=eastwest;newEdgeStyle={&quot;curved&quot;:0,&quot;rounded&quot;:0};fillColor=#DAE8FC;strokeColor=#333333;" value="" vertex="1">
                     <mxGeometry x="55" y="80" width="10" height="300" as="geometry"/>
                 </mxCell>
-                <mxCell id="act-system-evaluate" parent="ll-system" style="html=1;perimeter=orthogonalPerimeter;outlineConnect=0;targetShapes=umlLifeline;portConstraint=eastwest;newEdgeStyle={&quot;curved&quot;:0,&quot;rounded&quot;:0};" value="" vertex="1">
+                <mxCell id="act-system-evaluate" parent="ll-system" style="html=1;perimeter=orthogonalPerimeter;outlineConnect=0;targetShapes=umlLifeline;portConstraint=eastwest;newEdgeStyle={&quot;curved&quot;:0,&quot;rounded&quot;:0};fillColor=#DAE8FC;strokeColor=#333333;" value="" vertex="1">
                     <mxGeometry x="60" y="135" width="10" height="40" as="geometry"/>
                 </mxCell>
-                <mxCell id="act-system-create" parent="ll-system" style="html=1;perimeter=orthogonalPerimeter;outlineConnect=0;targetShapes=umlLifeline;portConstraint=eastwest;newEdgeStyle={&quot;curved&quot;:0,&quot;rounded&quot;:0};" value="" vertex="1">
+                <mxCell id="act-system-create" parent="ll-system" style="html=1;perimeter=orthogonalPerimeter;outlineConnect=0;targetShapes=umlLifeline;portConstraint=eastwest;newEdgeStyle={&quot;curved&quot;:0,&quot;rounded&quot;:0};fillColor=#DAE8FC;strokeColor=#333333;" value="" vertex="1">
                     <mxGeometry x="60" y="225" width="10" height="40" as="geometry"/>
                 </mxCell>
-                <mxCell id="act-system-register" parent="ll-system" style="html=1;perimeter=orthogonalPerimeter;outlineConnect=0;targetShapes=umlLifeline;portConstraint=eastwest;newEdgeStyle={&quot;curved&quot;:0,&quot;rounded&quot;:0};" value="" vertex="1">
+                <mxCell id="act-system-register" parent="ll-system" style="html=1;perimeter=orthogonalPerimeter;outlineConnect=0;targetShapes=umlLifeline;portConstraint=eastwest;newEdgeStyle={&quot;curved&quot;:0,&quot;rounded&quot;:0};fillColor=#DAE8FC;strokeColor=#333333;" value="" vertex="1">
                     <mxGeometry x="60" y="345" width="10" height="30" as="geometry"/>
                 </mxCell>
-                <mxCell id="ll-owner" parent="1" style="shape=umlLifeline;perimeter=lifelinePerimeter;whiteSpace=wrap;html=1;container=1;dropTarget=0;collapsible=0;recursiveResize=0;outlineConnect=0;portConstraint=eastwest;newEdgeStyle={&quot;curved&quot;:0,&quot;rounded&quot;:0};size=40;" value="Hytte Owner/User" vertex="1">
+                <mxCell id="ll-owner" parent="1" style="shape=umlLifeline;perimeter=lifelinePerimeter;whiteSpace=wrap;html=1;container=1;dropTarget=0;collapsible=0;recursiveResize=0;outlineConnect=0;portConstraint=eastwest;newEdgeStyle={&quot;curved&quot;:0,&quot;rounded&quot;:0};size=40;fillColor=#D5E8D4;strokeColor=#333333;fontColor=#000000;" value="Hytte Owner/User" vertex="1">
                     <mxGeometry x="618" y="80" width="120" height="2930" as="geometry"/>
                 </mxCell>
-                <mxCell id="ll-comm" parent="1" style="shape=umlLifeline;perimeter=lifelinePerimeter;whiteSpace=wrap;html=1;container=1;dropTarget=0;collapsible=0;recursiveResize=0;outlineConnect=0;portConstraint=eastwest;newEdgeStyle={&quot;curved&quot;:0,&quot;rounded&quot;:0};size=40;" value="Communication Service" vertex="1">
+                <mxCell id="ll-comm" parent="1" style="shape=umlLifeline;perimeter=lifelinePerimeter;whiteSpace=wrap;html=1;container=1;dropTarget=0;collapsible=0;recursiveResize=0;outlineConnect=0;portConstraint=eastwest;newEdgeStyle={&quot;curved&quot;:0,&quot;rounded&quot;:0};size=40;fillColor=#E1D5E7;strokeColor=#333333;fontColor=#000000;" value="Communication Service" vertex="1">
                     <mxGeometry x="900" y="80" width="120" height="2930" as="geometry"/>
                 </mxCell>
-                <mxCell id="ll-contact" parent="1" style="shape=umlLifeline;perimeter=lifelinePerimeter;whiteSpace=wrap;html=1;container=1;dropTarget=0;collapsible=0;recursiveResize=0;outlineConnect=0;portConstraint=eastwest;newEdgeStyle={&quot;curved&quot;:0,&quot;rounded&quot;:0};size=40;" value="Family/Emergency Contact" vertex="1">
+                <mxCell id="ll-contact" parent="1" style="shape=umlLifeline;perimeter=lifelinePerimeter;whiteSpace=wrap;html=1;container=1;dropTarget=0;collapsible=0;recursiveResize=0;outlineConnect=0;portConstraint=eastwest;newEdgeStyle={&quot;curved&quot;:0,&quot;rounded&quot;:0};size=40;fillColor=#FFF2CC;strokeColor=#333333;fontColor=#000000;" value="Family/Emergency Contact" vertex="1">
                     <mxGeometry x="1180" y="80" width="120" height="2930" as="geometry"/>
                 </mxCell>
-                <mxCell id="ll-emergency" parent="1" style="shape=umlLifeline;perimeter=lifelinePerimeter;whiteSpace=wrap;html=1;container=1;dropTarget=0;collapsible=0;recursiveResize=0;outlineConnect=0;portConstraint=eastwest;newEdgeStyle={&quot;curved&quot;:0,&quot;rounded&quot;:0};size=40;" value="Emergency Service" vertex="1">
+                <mxCell id="ll-emergency" parent="1" style="shape=umlLifeline;perimeter=lifelinePerimeter;whiteSpace=wrap;html=1;container=1;dropTarget=0;collapsible=0;recursiveResize=0;outlineConnect=0;portConstraint=eastwest;newEdgeStyle={&quot;curved&quot;:0,&quot;rounded&quot;:0};size=40;fillColor=#F8CECC;strokeColor=#333333;fontColor=#000000;" value="Emergency Service" vertex="1">
                     <mxGeometry x="1460" y="80" width="120" height="2930" as="geometry"/>
                 </mxCell>
-                <mxCell id="msg-smoke-detected" edge="1" parent="1" source="act-smoke" target="act-system" style="html=1;verticalAlign=bottom;labelBackgroundColor=none;endArrow=open;endFill=0;curved=0;rounded=0;exitX=1;exitY=0.25;entryX=0;entryY=0.0333;" value="Smoke Detected">
+                <mxCell id="msg-smoke-detected" edge="1" parent="1" source="act-smoke" target="act-system" style="html=1;verticalAlign=bottom;labelBackgroundColor=none;endArrow=open;endFill=0;curved=0;rounded=0;exitX=1;exitY=0.25;entryX=0;entryY=0.0333;strokeColor=#000000;fontColor=#000000;" value="Smoke Detected">
                     <mxGeometry relative="1" as="geometry"/>
                 </mxCell>
-                <mxCell id="msg-evaluate" edge="1" parent="1" source="act-system" target="act-system-evaluate" style="html=1;align=left;verticalAlign=middle;spacingLeft=4;endArrow=block;curved=0;rounded=0;exitX=1;exitY=0.1333;entryX=1;entryY=0.125;" value="Evaluate event and severity">
+                <mxCell id="msg-evaluate" edge="1" parent="1" source="act-system" target="act-system-evaluate" style="html=1;align=left;verticalAlign=middle;spacingLeft=4;endArrow=block;curved=0;rounded=0;exitX=1;exitY=0.1333;entryX=1;entryY=0.125;strokeColor=#000000;fontColor=#000000;" value="Evaluate event and severity">
                     <mxGeometry relative="1" as="geometry">
                         <Array as="points">
                             <mxPoint x="440" y="200"/>
@@ -48,7 +48,7 @@
                         </Array>
                     </mxGeometry>
                 </mxCell>
-                <mxCell id="msg-create-incident" edge="1" parent="1" source="act-system" target="act-system-create" style="html=1;align=left;verticalAlign=middle;spacingLeft=4;endArrow=block;curved=0;rounded=0;exitX=1;exitY=0.4333;entryX=1;entryY=0.125;" value="Create Critical Incident">
+                <mxCell id="msg-create-incident" edge="1" parent="1" source="act-system" target="act-system-create" style="html=1;align=left;verticalAlign=middle;spacingLeft=4;endArrow=block;curved=0;rounded=0;exitX=1;exitY=0.4333;entryX=1;entryY=0.125;strokeColor=#000000;fontColor=#000000;" value="Create Critical Incident">
                     <mxGeometry relative="1" as="geometry">
                         <Array as="points">
                             <mxPoint x="440" y="290"/>
@@ -56,7 +56,7 @@
                         </Array>
                     </mxGeometry>
                 </mxCell>
-                <mxCell id="msg-register-history" edge="1" parent="1" source="act-system" target="act-system-register" style="html=1;align=left;verticalAlign=middle;spacingLeft=4;labelBackgroundColor=default;endArrow=block;curved=0;rounded=0;exitX=1;exitY=0.8333;entryX=1;entryY=0.1667;" value="Register Incident in Incident/Event History">
+                <mxCell id="msg-register-history" edge="1" parent="1" source="act-system" target="act-system-register" style="html=1;align=left;verticalAlign=middle;spacingLeft=4;labelBackgroundColor=default;endArrow=block;curved=0;rounded=0;exitX=1;exitY=0.8333;entryX=1;entryY=0.1667;strokeColor=#000000;fontColor=#000000;" value="Register Incident in Incident/Event History">
                     <mxGeometry relative="1" as="geometry">
                         <Array as="points">
                             <mxPoint x="440" y="410"/>
@@ -64,55 +64,55 @@
                         </Array>
                     </mxGeometry>
                 </mxCell>
-                <mxCell id="note-history-record" parent="1" style="shape=note;whiteSpace=wrap;html=1;size=14;align=left;spacingLeft=4;" value="Same Incident record is updated later as the Incident escalates, resolves, and closes." vertex="1">
+                <mxCell id="note-history-record" parent="1" style="shape=note;whiteSpace=wrap;html=1;size=14;align=left;spacingLeft=4;fillColor=#F7F7F7;strokeColor=#666666;fontColor=#000000;" value="Same Incident record is updated later as the Incident escalates, resolves, and closes." vertex="1">
                     <mxGeometry x="460" y="480" width="190" height="60" as="geometry"/>
                 </mxCell>
-                <mxCell id="note-history-link" edge="1" parent="1" source="note-history-record" target="act-system-register" style="html=1;endArrow=none;dashed=1;curved=0;rounded=0;exitX=0;exitY=0;entryX=1;entryY=1;" value="">
+                <mxCell id="note-history-link" edge="1" parent="1" source="note-history-record" target="act-system-register" style="html=1;endArrow=none;dashed=1;curved=0;rounded=0;exitX=0;exitY=0;entryX=1;entryY=1;strokeColor=#000000;fontColor=#000000;" value="">
                     <mxGeometry relative="1" as="geometry"/>
                 </mxCell>
-                <mxCell id="act-system-notify" parent="ll-system" style="html=1;perimeter=orthogonalPerimeter;outlineConnect=0;targetShapes=umlLifeline;portConstraint=eastwest;newEdgeStyle={&quot;curved&quot;:0,&quot;rounded&quot;:0};" value="" vertex="1">
+                <mxCell id="act-system-notify" parent="ll-system" style="html=1;perimeter=orthogonalPerimeter;outlineConnect=0;targetShapes=umlLifeline;portConstraint=eastwest;newEdgeStyle={&quot;curved&quot;:0,&quot;rounded&quot;:0};fillColor=#DAE8FC;strokeColor=#333333;" value="" vertex="1">
                     <mxGeometry x="55" y="480" width="10" height="40" as="geometry"/>
                 </mxCell>
-                <mxCell id="act-comm" parent="ll-comm" style="html=1;perimeter=orthogonalPerimeter;outlineConnect=0;targetShapes=umlLifeline;portConstraint=eastwest;newEdgeStyle={&quot;curved&quot;:0,&quot;rounded&quot;:0};" value="" vertex="1">
+                <mxCell id="act-comm" parent="ll-comm" style="html=1;perimeter=orthogonalPerimeter;outlineConnect=0;targetShapes=umlLifeline;portConstraint=eastwest;newEdgeStyle={&quot;curved&quot;:0,&quot;rounded&quot;:0};fillColor=#E1D5E7;strokeColor=#333333;" value="" vertex="1">
                     <mxGeometry x="55" y="485" width="10" height="40" as="geometry"/>
                 </mxCell>
-                <mxCell id="act-owner" parent="ll-owner" style="html=1;perimeter=orthogonalPerimeter;outlineConnect=0;targetShapes=umlLifeline;portConstraint=eastwest;newEdgeStyle={&quot;curved&quot;:0,&quot;rounded&quot;:0};" value="" vertex="1">
+                <mxCell id="act-owner" parent="ll-owner" style="html=1;perimeter=orthogonalPerimeter;outlineConnect=0;targetShapes=umlLifeline;portConstraint=eastwest;newEdgeStyle={&quot;curved&quot;:0,&quot;rounded&quot;:0};fillColor=#D5E8D4;strokeColor=#333333;" value="" vertex="1">
                     <mxGeometry x="55" y="510" width="10" height="30" as="geometry"/>
                 </mxCell>
-                <mxCell id="msg-send-critical" edge="1" parent="1" source="act-system-notify" target="act-comm" style="html=1;verticalAlign=bottom;labelBackgroundColor=default;endArrow=open;endFill=0;curved=0;rounded=0;exitX=1;exitY=0.25;entryX=0;entryY=0.125;" value="Send Critical Notification">
+                <mxCell id="msg-send-critical" edge="1" parent="1" source="act-system-notify" target="act-comm" style="html=1;verticalAlign=bottom;labelBackgroundColor=default;endArrow=open;endFill=0;curved=0;rounded=0;exitX=1;exitY=0.25;entryX=0;entryY=0.125;strokeColor=#000000;fontColor=#000000;" value="Send Critical Notification">
                     <mxGeometry relative="1" as="geometry"/>
                 </mxCell>
-                <mxCell id="msg-deliver-critical" edge="1" parent="1" source="act-comm" target="act-owner" style="html=1;verticalAlign=bottom;labelBackgroundColor=default;endArrow=open;endFill=0;curved=0;rounded=0;exitX=0;exitY=0.75;entryX=1;entryY=0.1667;" value="Deliver Critical Notification">
+                <mxCell id="msg-deliver-critical" edge="1" parent="1" source="act-comm" target="act-owner" style="html=1;verticalAlign=bottom;labelBackgroundColor=default;endArrow=open;endFill=0;curved=0;rounded=0;exitX=0;exitY=0.75;entryX=1;entryY=0.1667;strokeColor=#000000;fontColor=#000000;" value="Deliver Critical Notification">
                     <mxGeometry relative="1" as="geometry"/>
                 </mxCell>
-                <mxCell id="note-immediate" parent="1" style="shape=note;whiteSpace=wrap;html=1;size=14;align=left;spacingLeft=4;" value="Critical notification is sent immediately (no waiting time)." vertex="1">
+                <mxCell id="note-immediate" parent="1" style="shape=note;whiteSpace=wrap;html=1;size=14;align=left;spacingLeft=4;fillColor=#FBE9E9;strokeColor=#666666;fontColor=#000000;" value="Critical notification is sent immediately (no waiting time)." vertex="1">
                     <mxGeometry x="1050" y="530" width="160" height="50" as="geometry"/>
                 </mxCell>
-                <mxCell id="note-immediate-link" edge="1" parent="1" source="note-immediate" target="act-comm" style="html=1;endArrow=none;dashed=1;curved=0;rounded=0;exitX=0;exitY=1;entryX=1;entryY=0.25;" value="">
+                <mxCell id="note-immediate-link" edge="1" parent="1" source="note-immediate" target="act-comm" style="html=1;endArrow=none;dashed=1;curved=0;rounded=0;exitX=0;exitY=1;entryX=1;entryY=0.25;strokeColor=#000000;fontColor=#000000;" value="">
                     <mxGeometry relative="1" as="geometry"/>
                 </mxCell>
-                <mxCell id="frame-alt-response" parent="1" style="shape=umlFrame;whiteSpace=wrap;html=1;pointerEvents=0;recursiveResize=0;container=0;collapsible=0;width=60;height=30;fillColor=none;" value="alt" vertex="1">
+                <mxCell id="frame-alt-response" parent="1" style="shape=umlFrame;whiteSpace=wrap;html=1;pointerEvents=0;recursiveResize=0;container=0;collapsible=0;width=60;height=30;fillColor=none;strokeColor=#333333;fontColor=#000000;" value="alt" vertex="1">
                     <mxGeometry x="300" y="640" width="520" height="970" as="geometry"/>
                 </mxCell>
-                <mxCell id="guard-resolved" parent="1" style="text;html=1;align=left;verticalAlign=middle;whiteSpace=wrap;" value="[Resolved]" vertex="1">
+                <mxCell id="guard-resolved" parent="1" style="text;html=1;align=left;verticalAlign=middle;whiteSpace=wrap;fontColor=#000000;" value="[Resolved]" vertex="1">
                     <mxGeometry x="305" y="676" width="85" height="20" as="geometry"/>
                 </mxCell>
-                <mxCell id="act-owner-resolved" parent="ll-owner" style="html=1;perimeter=orthogonalPerimeter;outlineConnect=0;targetShapes=umlLifeline;portConstraint=eastwest;newEdgeStyle={&quot;curved&quot;:0,&quot;rounded&quot;:0};" value="" vertex="1">
+                <mxCell id="act-owner-resolved" parent="ll-owner" style="html=1;perimeter=orthogonalPerimeter;outlineConnect=0;targetShapes=umlLifeline;portConstraint=eastwest;newEdgeStyle={&quot;curved&quot;:0,&quot;rounded&quot;:0};fillColor=#D5E8D4;strokeColor=#333333;" value="" vertex="1">
                     <mxGeometry x="55" y="610" width="10" height="30" as="geometry"/>
                 </mxCell>
-                <mxCell id="act-system-resolved" parent="ll-system" style="html=1;perimeter=orthogonalPerimeter;outlineConnect=0;targetShapes=umlLifeline;portConstraint=eastwest;newEdgeStyle={&quot;curved&quot;:0,&quot;rounded&quot;:0};" value="" vertex="1">
+                <mxCell id="act-system-resolved" parent="ll-system" style="html=1;perimeter=orthogonalPerimeter;outlineConnect=0;targetShapes=umlLifeline;portConstraint=eastwest;newEdgeStyle={&quot;curved&quot;:0,&quot;rounded&quot;:0};fillColor=#DAE8FC;strokeColor=#333333;" value="" vertex="1">
                     <mxGeometry x="55" y="615" width="10" height="135" as="geometry"/>
                 </mxCell>
-                <mxCell id="act-system-close" parent="ll-system" style="html=1;perimeter=orthogonalPerimeter;outlineConnect=0;targetShapes=umlLifeline;portConstraint=eastwest;newEdgeStyle={&quot;curved&quot;:0,&quot;rounded&quot;:0};" value="" vertex="1">
+                <mxCell id="act-system-close" parent="ll-system" style="html=1;perimeter=orthogonalPerimeter;outlineConnect=0;targetShapes=umlLifeline;portConstraint=eastwest;newEdgeStyle={&quot;curved&quot;:0,&quot;rounded&quot;:0};fillColor=#DAE8FC;strokeColor=#333333;" value="" vertex="1">
                     <mxGeometry x="60" y="655" width="10" height="25" as="geometry"/>
                 </mxCell>
-                <mxCell id="act-system-history-update" parent="ll-system" style="html=1;perimeter=orthogonalPerimeter;outlineConnect=0;targetShapes=umlLifeline;portConstraint=eastwest;newEdgeStyle={&quot;curved&quot;:0,&quot;rounded&quot;:0};" value="" vertex="1">
+                <mxCell id="act-system-history-update" parent="ll-system" style="html=1;perimeter=orthogonalPerimeter;outlineConnect=0;targetShapes=umlLifeline;portConstraint=eastwest;newEdgeStyle={&quot;curved&quot;:0,&quot;rounded&quot;:0};fillColor=#DAE8FC;strokeColor=#333333;" value="" vertex="1">
                     <mxGeometry x="60" y="710" width="10" height="25" as="geometry"/>
                 </mxCell>
-                <mxCell id="msg-report-resolved" edge="1" parent="1" source="act-owner-resolved" target="act-system-resolved" style="html=1;verticalAlign=bottom;labelBackgroundColor=default;endArrow=open;endFill=0;curved=0;rounded=0;exitX=0;exitY=0.3333;entryX=1;entryY=0.037;" value="Report Resolved">
+                <mxCell id="msg-report-resolved" edge="1" parent="1" source="act-owner-resolved" target="act-system-resolved" style="html=1;verticalAlign=bottom;labelBackgroundColor=default;endArrow=open;endFill=0;curved=0;rounded=0;exitX=0;exitY=0.3333;entryX=1;entryY=0.037;strokeColor=#000000;fontColor=#000000;" value="Report Resolved">
                     <mxGeometry relative="1" as="geometry"/>
                 </mxCell>
-                <mxCell id="msg-update-resolved" edge="1" parent="1" source="act-system-resolved" target="act-system-close" style="html=1;align=left;verticalAlign=middle;spacingLeft=4;labelBackgroundColor=default;endArrow=block;curved=0;rounded=0;exitX=1;exitY=0.1852;entryX=1;entryY=0.2;" value="Update Incident as Resolved/Closed">
+                <mxCell id="msg-update-resolved" edge="1" parent="1" source="act-system-resolved" target="act-system-close" style="html=1;align=left;verticalAlign=middle;spacingLeft=4;labelBackgroundColor=default;endArrow=block;curved=0;rounded=0;exitX=1;exitY=0.1852;entryX=1;entryY=0.2;strokeColor=#000000;fontColor=#000000;" value="Update Incident as Resolved/Closed">
                     <mxGeometry relative="1" as="geometry">
                         <Array as="points">
                             <mxPoint x="440" y="720"/>
@@ -120,7 +120,7 @@
                         </Array>
                     </mxGeometry>
                 </mxCell>
-                <mxCell id="msg-update-history" edge="1" parent="1" source="act-system-resolved" target="act-system-history-update" style="html=1;align=left;verticalAlign=middle;spacingLeft=4;labelBackgroundColor=default;endArrow=block;curved=0;rounded=0;exitX=1;exitY=0.5926;entryX=1;entryY=0.2;" value="Update existing Incident/Event History record">
+                <mxCell id="msg-update-history" edge="1" parent="1" source="act-system-resolved" target="act-system-history-update" style="html=1;align=left;verticalAlign=middle;spacingLeft=4;labelBackgroundColor=default;endArrow=block;curved=0;rounded=0;exitX=1;exitY=0.5926;entryX=1;entryY=0.2;strokeColor=#000000;fontColor=#000000;" value="Update existing Incident/Event History record">
                     <mxGeometry relative="1" as="geometry">
                         <Array as="points">
                             <mxPoint x="440" y="775"/>
@@ -128,28 +128,28 @@
                         </Array>
                     </mxGeometry>
                 </mxCell>
-                <mxCell id="alt-response-divider" edge="1" parent="1" style="html=1;endArrow=none;dashed=1;curved=0;rounded=0;" value="">
+                <mxCell id="alt-response-divider" edge="1" parent="1" style="html=1;endArrow=none;dashed=1;curved=0;rounded=0;strokeColor=#000000;fontColor=#000000;" value="">
                     <mxGeometry relative="1" as="geometry">
                         <mxPoint x="300" y="850" as="sourcePoint"/>
                         <mxPoint x="820" y="850" as="targetPoint"/>
                     </mxGeometry>
                 </mxCell>
-                <mxCell id="guard-not-resolved" parent="1" style="text;html=1;align=left;verticalAlign=middle;whiteSpace=wrap;" value="[Not Resolved]" vertex="1">
+                <mxCell id="guard-not-resolved" parent="1" style="text;html=1;align=left;verticalAlign=middle;whiteSpace=wrap;fontColor=#000000;" value="[Not Resolved]" vertex="1">
                     <mxGeometry x="305" y="856" width="85" height="20" as="geometry"/>
                 </mxCell>
-                <mxCell id="act-owner-not-resolved" parent="ll-owner" style="html=1;perimeter=orthogonalPerimeter;outlineConnect=0;targetShapes=umlLifeline;portConstraint=eastwest;newEdgeStyle={&quot;curved&quot;:0,&quot;rounded&quot;:0};" value="" vertex="1">
+                <mxCell id="act-owner-not-resolved" parent="ll-owner" style="html=1;perimeter=orthogonalPerimeter;outlineConnect=0;targetShapes=umlLifeline;portConstraint=eastwest;newEdgeStyle={&quot;curved&quot;:0,&quot;rounded&quot;:0};fillColor=#D5E8D4;strokeColor=#333333;" value="" vertex="1">
                     <mxGeometry x="55" y="805" width="10" height="30" as="geometry"/>
                 </mxCell>
-                <mxCell id="act-system-not-resolved" parent="ll-system" style="html=1;perimeter=orthogonalPerimeter;outlineConnect=0;targetShapes=umlLifeline;portConstraint=eastwest;newEdgeStyle={&quot;curved&quot;:0,&quot;rounded&quot;:0};" value="" vertex="1">
+                <mxCell id="act-system-not-resolved" parent="ll-system" style="html=1;perimeter=orthogonalPerimeter;outlineConnect=0;targetShapes=umlLifeline;portConstraint=eastwest;newEdgeStyle={&quot;curved&quot;:0,&quot;rounded&quot;:0};fillColor=#DAE8FC;strokeColor=#333333;" value="" vertex="1">
                     <mxGeometry x="55" y="810" width="10" height="70" as="geometry"/>
                 </mxCell>
-                <mxCell id="act-system-keep-active" parent="ll-system" style="html=1;perimeter=orthogonalPerimeter;outlineConnect=0;targetShapes=umlLifeline;portConstraint=eastwest;newEdgeStyle={&quot;curved&quot;:0,&quot;rounded&quot;:0};" value="" vertex="1">
+                <mxCell id="act-system-keep-active" parent="ll-system" style="html=1;perimeter=orthogonalPerimeter;outlineConnect=0;targetShapes=umlLifeline;portConstraint=eastwest;newEdgeStyle={&quot;curved&quot;:0,&quot;rounded&quot;:0};fillColor=#DAE8FC;strokeColor=#333333;" value="" vertex="1">
                     <mxGeometry x="60" y="850" width="10" height="25" as="geometry"/>
                 </mxCell>
-                <mxCell id="msg-report-not-resolved" edge="1" parent="1" source="act-owner-not-resolved" target="act-system-not-resolved" style="html=1;verticalAlign=bottom;labelBackgroundColor=default;endArrow=open;endFill=0;curved=0;rounded=0;exitX=0;exitY=0.3333;entryX=1;entryY=0.0714;" value="Report Not Resolved">
+                <mxCell id="msg-report-not-resolved" edge="1" parent="1" source="act-owner-not-resolved" target="act-system-not-resolved" style="html=1;verticalAlign=bottom;labelBackgroundColor=default;endArrow=open;endFill=0;curved=0;rounded=0;exitX=0;exitY=0.3333;entryX=1;entryY=0.0714;strokeColor=#000000;fontColor=#000000;" value="Report Not Resolved">
                     <mxGeometry relative="1" as="geometry"/>
                 </mxCell>
-                <mxCell id="msg-keep-active" edge="1" parent="1" source="act-system-not-resolved" target="act-system-keep-active" style="html=1;align=left;verticalAlign=middle;spacingLeft=4;labelBackgroundColor=default;endArrow=block;curved=0;rounded=0;exitX=1;exitY=0.3571;entryX=1;entryY=0.2;" value="Keep same Incident Active">
+                <mxCell id="msg-keep-active" edge="1" parent="1" source="act-system-not-resolved" target="act-system-keep-active" style="html=1;align=left;verticalAlign=middle;spacingLeft=4;labelBackgroundColor=default;endArrow=block;curved=0;rounded=0;exitX=1;exitY=0.3571;entryX=1;entryY=0.2;strokeColor=#000000;fontColor=#000000;" value="Keep same Incident Active">
                     <mxGeometry relative="1" as="geometry">
                         <Array as="points">
                             <mxPoint x="440" y="915"/>
@@ -157,52 +157,52 @@
                         </Array>
                     </mxGeometry>
                 </mxCell>
-                <mxCell id="act-system-offer" parent="ll-system" style="html=1;perimeter=orthogonalPerimeter;outlineConnect=0;targetShapes=umlLifeline;portConstraint=eastwest;newEdgeStyle={&quot;curved&quot;:0,&quot;rounded&quot;:0};" value="" vertex="1">
+                <mxCell id="act-system-offer" parent="ll-system" style="html=1;perimeter=orthogonalPerimeter;outlineConnect=0;targetShapes=umlLifeline;portConstraint=eastwest;newEdgeStyle={&quot;curved&quot;:0,&quot;rounded&quot;:0};fillColor=#DAE8FC;strokeColor=#333333;" value="" vertex="1">
                     <mxGeometry x="55" y="905" width="10" height="30" as="geometry"/>
                 </mxCell>
-                <mxCell id="act-owner-offer" parent="ll-owner" style="html=1;perimeter=orthogonalPerimeter;outlineConnect=0;targetShapes=umlLifeline;portConstraint=eastwest;newEdgeStyle={&quot;curved&quot;:0,&quot;rounded&quot;:0};" value="" vertex="1">
+                <mxCell id="act-owner-offer" parent="ll-owner" style="html=1;perimeter=orthogonalPerimeter;outlineConnect=0;targetShapes=umlLifeline;portConstraint=eastwest;newEdgeStyle={&quot;curved&quot;:0,&quot;rounded&quot;:0};fillColor=#D5E8D4;strokeColor=#333333;" value="" vertex="1">
                     <mxGeometry x="55" y="905" width="10" height="30" as="geometry"/>
                 </mxCell>
-                <mxCell id="msg-offer-next-steps" edge="1" parent="1" source="act-system-offer" target="act-owner-offer" style="html=1;verticalAlign=bottom;labelBackgroundColor=default;endArrow=open;endFill=0;curved=0;rounded=0;exitX=1;exitY=0.1667;entryX=0;entryY=0.1667;" value="Offer Suggested Next Steps">
+                <mxCell id="msg-offer-next-steps" edge="1" parent="1" source="act-system-offer" target="act-owner-offer" style="html=1;verticalAlign=bottom;labelBackgroundColor=default;endArrow=open;endFill=0;curved=0;rounded=0;exitX=1;exitY=0.1667;entryX=0;entryY=0.1667;strokeColor=#000000;fontColor=#000000;" value="Offer Suggested Next Steps">
                     <mxGeometry relative="1" as="geometry"/>
                 </mxCell>
-                <mxCell id="frame-alt-next-steps" parent="1" style="shape=umlFrame;whiteSpace=wrap;html=1;pointerEvents=0;recursiveResize=0;container=0;collapsible=0;width=60;height=30;fillColor=none;" value="alt" vertex="1">
+                <mxCell id="frame-alt-next-steps" parent="1" style="shape=umlFrame;whiteSpace=wrap;html=1;pointerEvents=0;recursiveResize=0;container=0;collapsible=0;width=60;height=30;fillColor=none;strokeColor=#333333;fontColor=#000000;" value="alt" vertex="1">
                     <mxGeometry x="320" y="1030" width="480" height="565" as="geometry"/>
                 </mxCell>
-                <mxCell id="guard-wants-next-steps" parent="1" style="text;html=1;align=left;verticalAlign=middle;whiteSpace=wrap;" value="[Wants Suggested Next Steps]" vertex="1">
+                <mxCell id="guard-wants-next-steps" parent="1" style="text;html=1;align=left;verticalAlign=middle;whiteSpace=wrap;fontColor=#000000;" value="[Wants Suggested Next Steps]" vertex="1">
                     <mxGeometry x="410" y="1062" width="240" height="20" as="geometry"/>
                 </mxCell>
-                <mxCell id="act-system-show" parent="ll-system" style="html=1;perimeter=orthogonalPerimeter;outlineConnect=0;targetShapes=umlLifeline;portConstraint=eastwest;newEdgeStyle={&quot;curved&quot;:0,&quot;rounded&quot;:0};" value="" vertex="1">
+                <mxCell id="act-system-show" parent="ll-system" style="html=1;perimeter=orthogonalPerimeter;outlineConnect=0;targetShapes=umlLifeline;portConstraint=eastwest;newEdgeStyle={&quot;curved&quot;:0,&quot;rounded&quot;:0};fillColor=#DAE8FC;strokeColor=#333333;" value="" vertex="1">
                     <mxGeometry x="55" y="1015" width="10" height="30" as="geometry"/>
                 </mxCell>
-                <mxCell id="act-owner-show" parent="ll-owner" style="html=1;perimeter=orthogonalPerimeter;outlineConnect=0;targetShapes=umlLifeline;portConstraint=eastwest;newEdgeStyle={&quot;curved&quot;:0,&quot;rounded&quot;:0};" value="" vertex="1">
+                <mxCell id="act-owner-show" parent="ll-owner" style="html=1;perimeter=orthogonalPerimeter;outlineConnect=0;targetShapes=umlLifeline;portConstraint=eastwest;newEdgeStyle={&quot;curved&quot;:0,&quot;rounded&quot;:0};fillColor=#D5E8D4;strokeColor=#333333;" value="" vertex="1">
                     <mxGeometry x="55" y="1015" width="10" height="100" as="geometry"/>
                 </mxCell>
-                <mxCell id="act-system-status" parent="ll-system" style="html=1;perimeter=orthogonalPerimeter;outlineConnect=0;targetShapes=umlLifeline;portConstraint=eastwest;newEdgeStyle={&quot;curved&quot;:0,&quot;rounded&quot;:0};" value="" vertex="1">
+                <mxCell id="act-system-status" parent="ll-system" style="html=1;perimeter=orthogonalPerimeter;outlineConnect=0;targetShapes=umlLifeline;portConstraint=eastwest;newEdgeStyle={&quot;curved&quot;:0,&quot;rounded&quot;:0};fillColor=#DAE8FC;strokeColor=#333333;" value="" vertex="1">
                     <mxGeometry x="55" y="1095" width="10" height="20" as="geometry"/>
                 </mxCell>
-                <mxCell id="msg-show-next-steps" edge="1" parent="1" source="act-system-show" target="act-owner-show" style="html=1;verticalAlign=bottom;labelBackgroundColor=default;endArrow=open;endFill=0;curved=0;rounded=0;exitX=1;exitY=0.1667;entryX=0;entryY=0.05;" value="Show Suggested Next Steps">
+                <mxCell id="msg-show-next-steps" edge="1" parent="1" source="act-system-show" target="act-owner-show" style="html=1;verticalAlign=bottom;labelBackgroundColor=default;endArrow=open;endFill=0;curved=0;rounded=0;exitX=1;exitY=0.1667;entryX=0;entryY=0.05;strokeColor=#000000;fontColor=#000000;" value="Show Suggested Next Steps">
                     <mxGeometry relative="1" as="geometry"/>
                 </mxCell>
-                <mxCell id="msg-report-status" edge="1" parent="1" source="act-owner-show" target="act-system-status" style="html=1;verticalAlign=bottom;labelBackgroundColor=default;endArrow=open;endFill=0;curved=0;rounded=0;exitX=0;exitY=0.85;entryX=1;entryY=0.25;" value="Report Resolution Status">
+                <mxCell id="msg-report-status" edge="1" parent="1" source="act-owner-show" target="act-system-status" style="html=1;verticalAlign=bottom;labelBackgroundColor=default;endArrow=open;endFill=0;curved=0;rounded=0;exitX=0;exitY=0.85;entryX=1;entryY=0.25;strokeColor=#000000;fontColor=#000000;" value="Report Resolution Status">
                     <mxGeometry relative="1" as="geometry"/>
                 </mxCell>
-                <mxCell id="alt-next-steps-divider" edge="1" parent="1" style="html=1;endArrow=none;dashed=1;curved=0;rounded=0;" value="">
+                <mxCell id="alt-next-steps-divider" edge="1" parent="1" style="html=1;endArrow=none;dashed=1;curved=0;rounded=0;strokeColor=#000000;fontColor=#000000;" value="">
                     <mxGeometry relative="1" as="geometry">
                         <mxPoint x="320" y="1495" as="sourcePoint"/>
                         <mxPoint x="800" y="1495" as="targetPoint"/>
                     </mxGeometry>
                 </mxCell>
-                <mxCell id="guard-no-next-steps" parent="1" style="text;html=1;align=left;verticalAlign=middle;whiteSpace=wrap;" value="[Does Not Want Suggested Next Steps]" vertex="1">
+                <mxCell id="guard-no-next-steps" parent="1" style="text;html=1;align=left;verticalAlign=middle;whiteSpace=wrap;fontColor=#000000;" value="[Does Not Want Suggested Next Steps]" vertex="1">
                     <mxGeometry x="410" y="1500" width="240" height="20" as="geometry"/>
                 </mxCell>
-                <mxCell id="act-system-no-next-steps" parent="ll-system" style="html=1;perimeter=orthogonalPerimeter;outlineConnect=0;targetShapes=umlLifeline;portConstraint=eastwest;newEdgeStyle={&quot;curved&quot;:0,&quot;rounded&quot;:0};" value="" vertex="1">
+                <mxCell id="act-system-no-next-steps" parent="ll-system" style="html=1;perimeter=orthogonalPerimeter;outlineConnect=0;targetShapes=umlLifeline;portConstraint=eastwest;newEdgeStyle={&quot;curved&quot;:0,&quot;rounded&quot;:0};fillColor=#DAE8FC;strokeColor=#333333;" value="" vertex="1">
                     <mxGeometry x="55" y="1445" width="10" height="55" as="geometry"/>
                 </mxCell>
-                <mxCell id="act-system-keep-active-2" parent="ll-system" style="html=1;perimeter=orthogonalPerimeter;outlineConnect=0;targetShapes=umlLifeline;portConstraint=eastwest;newEdgeStyle={&quot;curved&quot;:0,&quot;rounded&quot;:0};" value="" vertex="1">
+                <mxCell id="act-system-keep-active-2" parent="ll-system" style="html=1;perimeter=orthogonalPerimeter;outlineConnect=0;targetShapes=umlLifeline;portConstraint=eastwest;newEdgeStyle={&quot;curved&quot;:0,&quot;rounded&quot;:0};fillColor=#DAE8FC;strokeColor=#333333;" value="" vertex="1">
                     <mxGeometry x="60" y="1470" width="10" height="25" as="geometry"/>
                 </mxCell>
-                <mxCell id="msg-keep-active-2" edge="1" parent="1" source="act-system-no-next-steps" target="act-system-keep-active-2" style="html=1;align=left;verticalAlign=middle;spacingLeft=4;labelBackgroundColor=default;endArrow=block;curved=0;rounded=0;exitX=1;exitY=0.1818;entryX=1;entryY=0.2;" value="Keep same Incident Active">
+                <mxCell id="msg-keep-active-2" edge="1" parent="1" source="act-system-no-next-steps" target="act-system-keep-active-2" style="html=1;align=left;verticalAlign=middle;spacingLeft=4;labelBackgroundColor=default;endArrow=block;curved=0;rounded=0;exitX=1;exitY=0.1818;entryX=1;entryY=0.2;strokeColor=#000000;fontColor=#000000;" value="Keep same Incident Active">
                     <mxGeometry relative="1" as="geometry">
                         <Array as="points">
                             <mxPoint x="440" y="1535"/>
@@ -210,22 +210,22 @@
                         </Array>
                     </mxGeometry>
                 </mxCell>
-                <mxCell id="frame-alt-after-next-steps" parent="1" style="shape=umlFrame;whiteSpace=wrap;html=1;pointerEvents=0;recursiveResize=0;container=0;collapsible=0;width=50;height=30;fillColor=none;" value="alt" vertex="1">
+                <mxCell id="frame-alt-after-next-steps" parent="1" style="shape=umlFrame;whiteSpace=wrap;html=1;pointerEvents=0;recursiveResize=0;container=0;collapsible=0;width=50;height=30;fillColor=none;strokeColor=#333333;fontColor=#000000;" value="alt" vertex="1">
                     <mxGeometry x="340" y="1210" width="440" height="270" as="geometry"/>
                 </mxCell>
-                <mxCell id="guard-resolved-2" parent="1" style="text;html=1;align=left;verticalAlign=middle;whiteSpace=wrap;" value="[Resolved]" vertex="1">
+                <mxCell id="guard-resolved-2" parent="1" style="text;html=1;align=left;verticalAlign=middle;whiteSpace=wrap;fontColor=#000000;" value="[Resolved]" vertex="1">
                     <mxGeometry x="410" y="1242" width="200" height="20" as="geometry"/>
                 </mxCell>
-                <mxCell id="act-system-resolved-2" parent="ll-system" style="html=1;perimeter=orthogonalPerimeter;outlineConnect=0;targetShapes=umlLifeline;portConstraint=eastwest;newEdgeStyle={&quot;curved&quot;:0,&quot;rounded&quot;:0};" value="" vertex="1">
+                <mxCell id="act-system-resolved-2" parent="ll-system" style="html=1;perimeter=orthogonalPerimeter;outlineConnect=0;targetShapes=umlLifeline;portConstraint=eastwest;newEdgeStyle={&quot;curved&quot;:0,&quot;rounded&quot;:0};fillColor=#DAE8FC;strokeColor=#333333;" value="" vertex="1">
                     <mxGeometry x="55" y="1185" width="10" height="110" as="geometry"/>
                 </mxCell>
-                <mxCell id="act-system-close-2" parent="ll-system" style="html=1;perimeter=orthogonalPerimeter;outlineConnect=0;targetShapes=umlLifeline;portConstraint=eastwest;newEdgeStyle={&quot;curved&quot;:0,&quot;rounded&quot;:0};" value="" vertex="1">
+                <mxCell id="act-system-close-2" parent="ll-system" style="html=1;perimeter=orthogonalPerimeter;outlineConnect=0;targetShapes=umlLifeline;portConstraint=eastwest;newEdgeStyle={&quot;curved&quot;:0,&quot;rounded&quot;:0};fillColor=#DAE8FC;strokeColor=#333333;" value="" vertex="1">
                     <mxGeometry x="60" y="1210" width="10" height="25" as="geometry"/>
                 </mxCell>
-                <mxCell id="act-system-history-update-2" parent="ll-system" style="html=1;perimeter=orthogonalPerimeter;outlineConnect=0;targetShapes=umlLifeline;portConstraint=eastwest;newEdgeStyle={&quot;curved&quot;:0,&quot;rounded&quot;:0};" value="" vertex="1">
+                <mxCell id="act-system-history-update-2" parent="ll-system" style="html=1;perimeter=orthogonalPerimeter;outlineConnect=0;targetShapes=umlLifeline;portConstraint=eastwest;newEdgeStyle={&quot;curved&quot;:0,&quot;rounded&quot;:0};fillColor=#DAE8FC;strokeColor=#333333;" value="" vertex="1">
                     <mxGeometry x="60" y="1265" width="10" height="25" as="geometry"/>
                 </mxCell>
-                <mxCell id="msg-update-resolved-2" edge="1" parent="1" source="act-system-resolved-2" target="act-system-close-2" style="html=1;align=left;verticalAlign=middle;spacingLeft=4;labelBackgroundColor=default;endArrow=block;curved=0;rounded=0;exitX=1;exitY=0.0909;entryX=1;entryY=0.2;" value="Update Incident as Resolved/Closed">
+                <mxCell id="msg-update-resolved-2" edge="1" parent="1" source="act-system-resolved-2" target="act-system-close-2" style="html=1;align=left;verticalAlign=middle;spacingLeft=4;labelBackgroundColor=default;endArrow=block;curved=0;rounded=0;exitX=1;exitY=0.0909;entryX=1;entryY=0.2;strokeColor=#000000;fontColor=#000000;" value="Update Incident as Resolved/Closed">
                     <mxGeometry relative="1" as="geometry">
                         <Array as="points">
                             <mxPoint x="440" y="1275"/>
@@ -233,7 +233,7 @@
                         </Array>
                     </mxGeometry>
                 </mxCell>
-                <mxCell id="msg-update-history-2" edge="1" parent="1" source="act-system-resolved-2" target="act-system-history-update-2" style="html=1;align=left;verticalAlign=middle;spacingLeft=4;labelBackgroundColor=default;endArrow=block;curved=0;rounded=0;exitX=1;exitY=0.5909;entryX=1;entryY=0.2;" value="Update existing Incident/Event History record">
+                <mxCell id="msg-update-history-2" edge="1" parent="1" source="act-system-resolved-2" target="act-system-history-update-2" style="html=1;align=left;verticalAlign=middle;spacingLeft=4;labelBackgroundColor=default;endArrow=block;curved=0;rounded=0;exitX=1;exitY=0.5909;entryX=1;entryY=0.2;strokeColor=#000000;fontColor=#000000;" value="Update existing Incident/Event History record">
                     <mxGeometry relative="1" as="geometry">
                         <Array as="points">
                             <mxPoint x="440" y="1330"/>
@@ -241,22 +241,22 @@
                         </Array>
                     </mxGeometry>
                 </mxCell>
-                <mxCell id="alt-after-next-steps-divider" edge="1" parent="1" style="html=1;endArrow=none;dashed=1;curved=0;rounded=0;" value="">
+                <mxCell id="alt-after-next-steps-divider" edge="1" parent="1" style="html=1;endArrow=none;dashed=1;curved=0;rounded=0;strokeColor=#000000;fontColor=#000000;" value="">
                     <mxGeometry relative="1" as="geometry">
                         <mxPoint x="340" y="1385" as="sourcePoint"/>
                         <mxPoint x="780" y="1385" as="targetPoint"/>
                     </mxGeometry>
                 </mxCell>
-                <mxCell id="guard-still-not-resolved" parent="1" style="text;html=1;align=left;verticalAlign=middle;whiteSpace=wrap;" value="[Still Not Resolved]" vertex="1">
+                <mxCell id="guard-still-not-resolved" parent="1" style="text;html=1;align=left;verticalAlign=middle;whiteSpace=wrap;fontColor=#000000;" value="[Still Not Resolved]" vertex="1">
                     <mxGeometry x="410" y="1390" width="200" height="20" as="geometry"/>
                 </mxCell>
-                <mxCell id="act-system-still-not-resolved" parent="ll-system" style="html=1;perimeter=orthogonalPerimeter;outlineConnect=0;targetShapes=umlLifeline;portConstraint=eastwest;newEdgeStyle={&quot;curved&quot;:0,&quot;rounded&quot;:0};" value="" vertex="1">
+                <mxCell id="act-system-still-not-resolved" parent="ll-system" style="html=1;perimeter=orthogonalPerimeter;outlineConnect=0;targetShapes=umlLifeline;portConstraint=eastwest;newEdgeStyle={&quot;curved&quot;:0,&quot;rounded&quot;:0};fillColor=#DAE8FC;strokeColor=#333333;" value="" vertex="1">
                     <mxGeometry x="55" y="1335" width="10" height="55" as="geometry"/>
                 </mxCell>
-                <mxCell id="act-system-keep-active-3" parent="ll-system" style="html=1;perimeter=orthogonalPerimeter;outlineConnect=0;targetShapes=umlLifeline;portConstraint=eastwest;newEdgeStyle={&quot;curved&quot;:0,&quot;rounded&quot;:0};" value="" vertex="1">
+                <mxCell id="act-system-keep-active-3" parent="ll-system" style="html=1;perimeter=orthogonalPerimeter;outlineConnect=0;targetShapes=umlLifeline;portConstraint=eastwest;newEdgeStyle={&quot;curved&quot;:0,&quot;rounded&quot;:0};fillColor=#DAE8FC;strokeColor=#333333;" value="" vertex="1">
                     <mxGeometry x="60" y="1360" width="10" height="25" as="geometry"/>
                 </mxCell>
-                <mxCell id="msg-keep-active-3" edge="1" parent="1" source="act-system-still-not-resolved" target="act-system-keep-active-3" style="html=1;align=left;verticalAlign=middle;spacingLeft=4;labelBackgroundColor=default;endArrow=block;curved=0;rounded=0;exitX=1;exitY=0.1818;entryX=1;entryY=0.2;" value="Keep same Incident Active">
+                <mxCell id="msg-keep-active-3" edge="1" parent="1" source="act-system-still-not-resolved" target="act-system-keep-active-3" style="html=1;align=left;verticalAlign=middle;spacingLeft=4;labelBackgroundColor=default;endArrow=block;curved=0;rounded=0;exitX=1;exitY=0.1818;entryX=1;entryY=0.2;strokeColor=#000000;fontColor=#000000;" value="Keep same Incident Active">
                     <mxGeometry relative="1" as="geometry">
                         <Array as="points">
                             <mxPoint x="440" y="1425"/>
@@ -264,19 +264,19 @@
                         </Array>
                     </mxGeometry>
                 </mxCell>
-                <mxCell id="frame-opt-escalation" parent="1" style="shape=umlFrame;whiteSpace=wrap;html=1;pointerEvents=0;recursiveResize=0;container=0;collapsible=0;width=60;height=30;fillColor=none;" value="opt" vertex="1">
+                <mxCell id="frame-opt-escalation" parent="1" style="shape=umlFrame;whiteSpace=wrap;html=1;pointerEvents=0;recursiveResize=0;container=0;collapsible=0;width=60;height=30;fillColor=none;strokeColor=#333333;fontColor=#000000;" value="opt" vertex="1">
                     <mxGeometry x="290" y="1640" width="1340" height="1295" as="geometry"/>
                 </mxCell>
-                <mxCell id="guard-still-active" parent="1" style="text;html=1;align=left;verticalAlign=middle;whiteSpace=wrap;" value="[Same Incident still Active]" vertex="1">
+                <mxCell id="guard-still-active" parent="1" style="text;html=1;align=left;verticalAlign=middle;whiteSpace=wrap;fontColor=#000000;" value="[Same Incident still Active]" vertex="1">
                     <mxGeometry x="410" y="1672" width="200" height="20" as="geometry"/>
                 </mxCell>
-                <mxCell id="act-system-escalate" parent="ll-system" style="html=1;perimeter=orthogonalPerimeter;outlineConnect=0;targetShapes=umlLifeline;portConstraint=eastwest;newEdgeStyle={&quot;curved&quot;:0,&quot;rounded&quot;:0};" value="" vertex="1">
+                <mxCell id="act-system-escalate" parent="ll-system" style="html=1;perimeter=orthogonalPerimeter;outlineConnect=0;targetShapes=umlLifeline;portConstraint=eastwest;newEdgeStyle={&quot;curved&quot;:0,&quot;rounded&quot;:0};fillColor=#DAE8FC;strokeColor=#333333;" value="" vertex="1">
                     <mxGeometry x="55" y="1885" width="10" height="55" as="geometry"/>
                 </mxCell>
-                <mxCell id="act-system-wait" parent="ll-system" style="html=1;perimeter=orthogonalPerimeter;outlineConnect=0;targetShapes=umlLifeline;portConstraint=eastwest;newEdgeStyle={&quot;curved&quot;:0,&quot;rounded&quot;:0};" value="" vertex="1">
+                <mxCell id="act-system-wait" parent="ll-system" style="html=1;perimeter=orthogonalPerimeter;outlineConnect=0;targetShapes=umlLifeline;portConstraint=eastwest;newEdgeStyle={&quot;curved&quot;:0,&quot;rounded&quot;:0};fillColor=#DAE8FC;strokeColor=#333333;" value="" vertex="1">
                     <mxGeometry x="60" y="1910" width="10" height="25" as="geometry"/>
                 </mxCell>
-                <mxCell id="msg-wait" edge="1" parent="1" source="act-system-escalate" target="act-system-wait" style="html=1;align=left;verticalAlign=middle;spacingLeft=4;labelBackgroundColor=default;endArrow=block;curved=0;rounded=0;exitX=1;exitY=0.1818;entryX=1;entryY=0.2;" value="Wait system-determined waiting time">
+                <mxCell id="msg-wait" edge="1" parent="1" source="act-system-escalate" target="act-system-wait" style="html=1;align=left;verticalAlign=middle;spacingLeft=4;labelBackgroundColor=default;endArrow=block;curved=0;rounded=0;exitX=1;exitY=0.1818;entryX=1;entryY=0.2;strokeColor=#000000;fontColor=#000000;" value="Wait system-determined waiting time">
                     <mxGeometry relative="1" as="geometry">
                         <Array as="points">
                             <mxPoint x="440" y="1975"/>
@@ -284,52 +284,52 @@
                         </Array>
                     </mxGeometry>
                 </mxCell>
-                <mxCell id="note-waiting-time" parent="1" style="shape=note;whiteSpace=wrap;html=1;size=14;align=left;spacingLeft=4;" value="Waiting time is determined by the system based on Incident severity. It is not configurable by the user." vertex="1">
+                <mxCell id="note-waiting-time" parent="1" style="shape=note;whiteSpace=wrap;html=1;size=14;align=left;spacingLeft=4;fillColor=#F7F7F7;strokeColor=#666666;fontColor=#000000;" value="Waiting time is determined by the system based on Incident severity. It is not configurable by the user." vertex="1">
                     <mxGeometry x="700" y="1950" width="200" height="60" as="geometry"/>
                 </mxCell>
-                <mxCell id="note-waiting-time-link" edge="1" parent="1" source="note-waiting-time" target="act-system-wait" style="html=1;endArrow=none;dashed=1;curved=0;rounded=0;exitX=0;exitY=1;entryX=1;entryY=1;" value="">
+                <mxCell id="note-waiting-time-link" edge="1" parent="1" source="note-waiting-time" target="act-system-wait" style="html=1;endArrow=none;dashed=1;curved=0;rounded=0;exitX=0;exitY=1;entryX=1;entryY=1;strokeColor=#000000;fontColor=#000000;" value="">
                     <mxGeometry relative="1" as="geometry"/>
                 </mxCell>
-                <mxCell id="act-comm-escalate" parent="ll-comm" style="html=1;perimeter=orthogonalPerimeter;outlineConnect=0;targetShapes=umlLifeline;portConstraint=eastwest;newEdgeStyle={&quot;curved&quot;:0,&quot;rounded&quot;:0};" value="" vertex="1">
+                <mxCell id="act-comm-escalate" parent="ll-comm" style="html=1;perimeter=orthogonalPerimeter;outlineConnect=0;targetShapes=umlLifeline;portConstraint=eastwest;newEdgeStyle={&quot;curved&quot;:0,&quot;rounded&quot;:0};fillColor=#E1D5E7;strokeColor=#333333;" value="" vertex="1">
                     <mxGeometry x="55" y="2030" width="10" height="40" as="geometry"/>
                 </mxCell>
-                <mxCell id="act-contact-escalate" parent="ll-contact" style="html=1;perimeter=orthogonalPerimeter;outlineConnect=0;targetShapes=umlLifeline;portConstraint=eastwest;newEdgeStyle={&quot;curved&quot;:0,&quot;rounded&quot;:0};" value="" vertex="1">
+                <mxCell id="act-contact-escalate" parent="ll-contact" style="html=1;perimeter=orthogonalPerimeter;outlineConnect=0;targetShapes=umlLifeline;portConstraint=eastwest;newEdgeStyle={&quot;curved&quot;:0,&quot;rounded&quot;:0};fillColor=#FFF2CC;strokeColor=#333333;" value="" vertex="1">
                     <mxGeometry x="55" y="2050" width="10" height="30" as="geometry"/>
                 </mxCell>
-                <mxCell id="msg-send-escalation" edge="1" parent="1" source="act-system-send-escalation" target="act-comm-escalate" style="html=1;verticalAlign=bottom;labelBackgroundColor=default;endArrow=open;endFill=0;curved=0;rounded=0;exitX=1;exitY=0.4;entryX=0;entryY=0.125;" value="Send Critical Escalation">
+                <mxCell id="msg-send-escalation" edge="1" parent="1" source="act-system-send-escalation" target="act-comm-escalate" style="html=1;verticalAlign=bottom;labelBackgroundColor=default;endArrow=open;endFill=0;curved=0;rounded=0;exitX=1;exitY=0.4;entryX=0;entryY=0.125;strokeColor=#000000;fontColor=#000000;" value="Send Critical Escalation">
                     <mxGeometry relative="1" as="geometry"/>
                 </mxCell>
-                <mxCell id="msg-deliver-escalation" edge="1" parent="1" source="act-comm-escalate" target="act-contact-escalate" style="html=1;verticalAlign=bottom;labelBackgroundColor=default;endArrow=open;endFill=0;curved=0;rounded=0;exitX=1;exitY=0.625;entryX=0;entryY=0.1667;" value="Deliver Critical Escalation">
+                <mxCell id="msg-deliver-escalation" edge="1" parent="1" source="act-comm-escalate" target="act-contact-escalate" style="html=1;verticalAlign=bottom;labelBackgroundColor=default;endArrow=open;endFill=0;curved=0;rounded=0;exitX=1;exitY=0.625;entryX=0;entryY=0.1667;strokeColor=#000000;fontColor=#000000;" value="Deliver Critical Escalation">
                     <mxGeometry relative="1" as="geometry"/>
                 </mxCell>
-                <mxCell id="frame-alt-contact-response" parent="1" style="shape=umlFrame;whiteSpace=wrap;html=1;pointerEvents=0;recursiveResize=0;container=0;collapsible=0;width=60;height=30;fillColor=none;" value="alt" vertex="1">
+                <mxCell id="frame-alt-contact-response" parent="1" style="shape=umlFrame;whiteSpace=wrap;html=1;pointerEvents=0;recursiveResize=0;container=0;collapsible=0;width=60;height=30;fillColor=none;strokeColor=#333333;fontColor=#000000;" value="alt" vertex="1">
                     <mxGeometry x="320" y="2240" width="1270" height="500" as="geometry"/>
                 </mxCell>
-                <mxCell id="guard-contact-resolved" parent="1" style="text;html=1;align=left;verticalAlign=middle;whiteSpace=wrap;" value="[Responds / Incident Resolved]" vertex="1">
+                <mxCell id="guard-contact-resolved" parent="1" style="text;html=1;align=left;verticalAlign=middle;whiteSpace=wrap;fontColor=#000000;" value="[Responds / Incident Resolved]" vertex="1">
                     <mxGeometry x="410" y="2272" width="260" height="20" as="geometry"/>
                 </mxCell>
-                <mxCell id="act-contact-resolved" parent="ll-contact" style="html=1;perimeter=orthogonalPerimeter;outlineConnect=0;targetShapes=umlLifeline;portConstraint=eastwest;newEdgeStyle={&quot;curved&quot;:0,&quot;rounded&quot;:0};" value="" vertex="1">
+                <mxCell id="act-contact-resolved" parent="ll-contact" style="html=1;perimeter=orthogonalPerimeter;outlineConnect=0;targetShapes=umlLifeline;portConstraint=eastwest;newEdgeStyle={&quot;curved&quot;:0,&quot;rounded&quot;:0};fillColor=#FFF2CC;strokeColor=#333333;" value="" vertex="1">
                     <mxGeometry x="55" y="2215" width="10" height="25" as="geometry"/>
                 </mxCell>
-                <mxCell id="act-comm-forward" parent="ll-comm" style="html=1;perimeter=orthogonalPerimeter;outlineConnect=0;targetShapes=umlLifeline;portConstraint=eastwest;newEdgeStyle={&quot;curved&quot;:0,&quot;rounded&quot;:0};" value="" vertex="1">
+                <mxCell id="act-comm-forward" parent="ll-comm" style="html=1;perimeter=orthogonalPerimeter;outlineConnect=0;targetShapes=umlLifeline;portConstraint=eastwest;newEdgeStyle={&quot;curved&quot;:0,&quot;rounded&quot;:0};fillColor=#E1D5E7;strokeColor=#333333;" value="" vertex="1">
                     <mxGeometry x="55" y="2215" width="10" height="40" as="geometry"/>
                 </mxCell>
-                <mxCell id="act-system-resolved-3" parent="ll-system" style="html=1;perimeter=orthogonalPerimeter;outlineConnect=0;targetShapes=umlLifeline;portConstraint=eastwest;newEdgeStyle={&quot;curved&quot;:0,&quot;rounded&quot;:0};" value="" vertex="1">
+                <mxCell id="act-system-resolved-3" parent="ll-system" style="html=1;perimeter=orthogonalPerimeter;outlineConnect=0;targetShapes=umlLifeline;portConstraint=eastwest;newEdgeStyle={&quot;curved&quot;:0,&quot;rounded&quot;:0};fillColor=#DAE8FC;strokeColor=#333333;" value="" vertex="1">
                     <mxGeometry x="55" y="2240" width="10" height="125" as="geometry"/>
                 </mxCell>
-                <mxCell id="act-system-close-3" parent="ll-system" style="html=1;perimeter=orthogonalPerimeter;outlineConnect=0;targetShapes=umlLifeline;portConstraint=eastwest;newEdgeStyle={&quot;curved&quot;:0,&quot;rounded&quot;:0};" value="" vertex="1">
+                <mxCell id="act-system-close-3" parent="ll-system" style="html=1;perimeter=orthogonalPerimeter;outlineConnect=0;targetShapes=umlLifeline;portConstraint=eastwest;newEdgeStyle={&quot;curved&quot;:0,&quot;rounded&quot;:0};fillColor=#DAE8FC;strokeColor=#333333;" value="" vertex="1">
                     <mxGeometry x="60" y="2280" width="10" height="25" as="geometry"/>
                 </mxCell>
-                <mxCell id="act-system-history-update-3" parent="ll-system" style="html=1;perimeter=orthogonalPerimeter;outlineConnect=0;targetShapes=umlLifeline;portConstraint=eastwest;newEdgeStyle={&quot;curved&quot;:0,&quot;rounded&quot;:0};" value="" vertex="1">
+                <mxCell id="act-system-history-update-3" parent="ll-system" style="html=1;perimeter=orthogonalPerimeter;outlineConnect=0;targetShapes=umlLifeline;portConstraint=eastwest;newEdgeStyle={&quot;curved&quot;:0,&quot;rounded&quot;:0};fillColor=#DAE8FC;strokeColor=#333333;" value="" vertex="1">
                     <mxGeometry x="60" y="2335" width="10" height="25" as="geometry"/>
                 </mxCell>
-                <mxCell id="msg-contact-report-resolved" edge="1" parent="1" source="act-contact-resolved" target="act-comm-forward" style="html=1;verticalAlign=bottom;labelBackgroundColor=default;endArrow=open;endFill=0;curved=0;rounded=0;exitX=0;exitY=0.2;entryX=1;entryY=0.125;" value="Report Resolved">
+                <mxCell id="msg-contact-report-resolved" edge="1" parent="1" source="act-contact-resolved" target="act-comm-forward" style="html=1;verticalAlign=bottom;labelBackgroundColor=default;endArrow=open;endFill=0;curved=0;rounded=0;exitX=0;exitY=0.2;entryX=1;entryY=0.125;strokeColor=#000000;fontColor=#000000;" value="Report Resolved">
                     <mxGeometry relative="1" as="geometry"/>
                 </mxCell>
-                <mxCell id="msg-forward-resolution" edge="1" parent="1" source="act-comm-forward" target="act-system-resolved-3" style="html=1;verticalAlign=bottom;labelBackgroundColor=default;endArrow=open;endFill=0;curved=0;rounded=0;exitX=0;exitY=0.75;entryX=1;entryY=0.04;" value="Forward Resolution">
+                <mxCell id="msg-forward-resolution" edge="1" parent="1" source="act-comm-forward" target="act-system-resolved-3" style="html=1;verticalAlign=bottom;labelBackgroundColor=default;endArrow=open;endFill=0;curved=0;rounded=0;exitX=0;exitY=0.75;entryX=1;entryY=0.04;strokeColor=#000000;fontColor=#000000;" value="Forward Resolution">
                     <mxGeometry relative="1" as="geometry"/>
                 </mxCell>
-                <mxCell id="msg-update-resolved-3" edge="1" parent="1" source="act-system-resolved-3" target="act-system-close-3" style="html=1;align=left;verticalAlign=middle;spacingLeft=4;labelBackgroundColor=default;endArrow=block;curved=0;rounded=0;exitX=1;exitY=0.2;entryX=1;entryY=0.2;" value="Update Incident as Resolved/Closed">
+                <mxCell id="msg-update-resolved-3" edge="1" parent="1" source="act-system-resolved-3" target="act-system-close-3" style="html=1;align=left;verticalAlign=middle;spacingLeft=4;labelBackgroundColor=default;endArrow=block;curved=0;rounded=0;exitX=1;exitY=0.2;entryX=1;entryY=0.2;strokeColor=#000000;fontColor=#000000;" value="Update Incident as Resolved/Closed">
                     <mxGeometry relative="1" as="geometry">
                         <Array as="points">
                             <mxPoint x="440" y="2345"/>
@@ -337,7 +337,7 @@
                         </Array>
                     </mxGeometry>
                 </mxCell>
-                <mxCell id="msg-update-history-3" edge="1" parent="1" source="act-system-resolved-3" target="act-system-history-update-3" style="html=1;align=left;verticalAlign=middle;spacingLeft=4;labelBackgroundColor=default;endArrow=block;curved=0;rounded=0;exitX=1;exitY=0.64;entryX=1;entryY=0.2;" value="Update existing Incident/Event History record">
+                <mxCell id="msg-update-history-3" edge="1" parent="1" source="act-system-resolved-3" target="act-system-history-update-3" style="html=1;align=left;verticalAlign=middle;spacingLeft=4;labelBackgroundColor=default;endArrow=block;curved=0;rounded=0;exitX=1;exitY=0.64;entryX=1;entryY=0.2;strokeColor=#000000;fontColor=#000000;" value="Update existing Incident/Event History record">
                     <mxGeometry relative="1" as="geometry">
                         <Array as="points">
                             <mxPoint x="440" y="2400"/>
@@ -345,25 +345,25 @@
                         </Array>
                     </mxGeometry>
                 </mxCell>
-                <mxCell id="alt-contact-response-divider" edge="1" parent="1" style="html=1;endArrow=none;dashed=1;curved=0;rounded=0;" value="">
+                <mxCell id="alt-contact-response-divider" edge="1" parent="1" style="html=1;endArrow=none;dashed=1;curved=0;rounded=0;strokeColor=#000000;fontColor=#000000;" value="">
                     <mxGeometry relative="1" as="geometry">
                         <mxPoint x="320" y="2460" as="sourcePoint"/>
                         <mxPoint x="1590" y="2460" as="targetPoint"/>
                     </mxGeometry>
                 </mxCell>
-                <mxCell id="guard-contact-no-response" parent="1" style="text;html=1;align=left;verticalAlign=middle;whiteSpace=wrap;" value="[No Response / Still Unresolved]" vertex="1">
+                <mxCell id="guard-contact-no-response" parent="1" style="text;html=1;align=left;verticalAlign=middle;whiteSpace=wrap;fontColor=#000000;" value="[No Response / Still Unresolved]" vertex="1">
                     <mxGeometry x="410" y="2465" width="260" height="20" as="geometry"/>
                 </mxCell>
-                <mxCell id="act-system-contact-unresolved" parent="ll-system" style="html=1;perimeter=orthogonalPerimeter;outlineConnect=0;targetShapes=umlLifeline;portConstraint=eastwest;newEdgeStyle={&quot;curved&quot;:0,&quot;rounded&quot;:0};" value="" vertex="1">
+                <mxCell id="act-system-contact-unresolved" parent="ll-system" style="html=1;perimeter=orthogonalPerimeter;outlineConnect=0;targetShapes=umlLifeline;portConstraint=eastwest;newEdgeStyle={&quot;curved&quot;:0,&quot;rounded&quot;:0};fillColor=#DAE8FC;strokeColor=#333333;" value="" vertex="1">
                     <mxGeometry x="55" y="2410" width="10" height="110" as="geometry"/>
                 </mxCell>
-                <mxCell id="act-system-keep-active-4" parent="ll-system" style="html=1;perimeter=orthogonalPerimeter;outlineConnect=0;targetShapes=umlLifeline;portConstraint=eastwest;newEdgeStyle={&quot;curved&quot;:0,&quot;rounded&quot;:0};" value="" vertex="1">
+                <mxCell id="act-system-keep-active-4" parent="ll-system" style="html=1;perimeter=orthogonalPerimeter;outlineConnect=0;targetShapes=umlLifeline;portConstraint=eastwest;newEdgeStyle={&quot;curved&quot;:0,&quot;rounded&quot;:0};fillColor=#DAE8FC;strokeColor=#333333;" value="" vertex="1">
                     <mxGeometry x="60" y="2435" width="10" height="25" as="geometry"/>
                 </mxCell>
-                <mxCell id="act-system-wait-2" parent="ll-system" style="html=1;perimeter=orthogonalPerimeter;outlineConnect=0;targetShapes=umlLifeline;portConstraint=eastwest;newEdgeStyle={&quot;curved&quot;:0,&quot;rounded&quot;:0};" value="" vertex="1">
+                <mxCell id="act-system-wait-2" parent="ll-system" style="html=1;perimeter=orthogonalPerimeter;outlineConnect=0;targetShapes=umlLifeline;portConstraint=eastwest;newEdgeStyle={&quot;curved&quot;:0,&quot;rounded&quot;:0};fillColor=#DAE8FC;strokeColor=#333333;" value="" vertex="1">
                     <mxGeometry x="60" y="2490" width="10" height="25" as="geometry"/>
                 </mxCell>
-                <mxCell id="msg-keep-active-4" edge="1" parent="1" source="act-system-contact-unresolved" target="act-system-keep-active-4" style="html=1;align=left;verticalAlign=middle;spacingLeft=4;labelBackgroundColor=default;endArrow=block;curved=0;rounded=0;exitX=1;exitY=0.0909;entryX=1;entryY=0.2;" value="Keep same Incident Active">
+                <mxCell id="msg-keep-active-4" edge="1" parent="1" source="act-system-contact-unresolved" target="act-system-keep-active-4" style="html=1;align=left;verticalAlign=middle;spacingLeft=4;labelBackgroundColor=default;endArrow=block;curved=0;rounded=0;exitX=1;exitY=0.0909;entryX=1;entryY=0.2;strokeColor=#000000;fontColor=#000000;" value="Keep same Incident Active">
                     <mxGeometry relative="1" as="geometry">
                         <Array as="points">
                             <mxPoint x="440" y="2500"/>
@@ -371,7 +371,7 @@
                         </Array>
                     </mxGeometry>
                 </mxCell>
-                <mxCell id="msg-wait-2" edge="1" parent="1" source="act-system-contact-unresolved" target="act-system-wait-2" style="html=1;align=left;verticalAlign=middle;spacingLeft=4;labelBackgroundColor=default;endArrow=block;curved=0;rounded=0;exitX=1;exitY=0.5909;entryX=1;entryY=0.2;" value="Wait system-determined waiting time">
+                <mxCell id="msg-wait-2" edge="1" parent="1" source="act-system-contact-unresolved" target="act-system-wait-2" style="html=1;align=left;verticalAlign=middle;spacingLeft=4;labelBackgroundColor=default;endArrow=block;curved=0;rounded=0;exitX=1;exitY=0.5909;entryX=1;entryY=0.2;strokeColor=#000000;fontColor=#000000;" value="Wait system-determined waiting time">
                     <mxGeometry relative="1" as="geometry">
                         <Array as="points">
                             <mxPoint x="440" y="2555"/>
@@ -379,94 +379,94 @@
                         </Array>
                     </mxGeometry>
                 </mxCell>
-                <mxCell id="act-system-emergency-escalate" parent="ll-system" style="html=1;perimeter=orthogonalPerimeter;outlineConnect=0;targetShapes=umlLifeline;portConstraint=eastwest;newEdgeStyle={&quot;curved&quot;:0,&quot;rounded&quot;:0};" value="" vertex="1">
+                <mxCell id="act-system-emergency-escalate" parent="ll-system" style="html=1;perimeter=orthogonalPerimeter;outlineConnect=0;targetShapes=umlLifeline;portConstraint=eastwest;newEdgeStyle={&quot;curved&quot;:0,&quot;rounded&quot;:0};fillColor=#DAE8FC;strokeColor=#333333;" value="" vertex="1">
                     <mxGeometry x="55" y="2535" width="10" height="25" as="geometry"/>
                 </mxCell>
-                <mxCell id="act-comm-emergency-escalate" parent="ll-comm" style="html=1;perimeter=orthogonalPerimeter;outlineConnect=0;targetShapes=umlLifeline;portConstraint=eastwest;newEdgeStyle={&quot;curved&quot;:0,&quot;rounded&quot;:0};" value="" vertex="1">
+                <mxCell id="act-comm-emergency-escalate" parent="ll-comm" style="html=1;perimeter=orthogonalPerimeter;outlineConnect=0;targetShapes=umlLifeline;portConstraint=eastwest;newEdgeStyle={&quot;curved&quot;:0,&quot;rounded&quot;:0};fillColor=#E1D5E7;strokeColor=#333333;" value="" vertex="1">
                     <mxGeometry x="55" y="2540" width="10" height="40" as="geometry"/>
                 </mxCell>
-                <mxCell id="act-emergency-escalate" parent="ll-emergency" style="html=1;perimeter=orthogonalPerimeter;outlineConnect=0;targetShapes=umlLifeline;portConstraint=eastwest;newEdgeStyle={&quot;curved&quot;:0,&quot;rounded&quot;:0};" value="" vertex="1">
+                <mxCell id="act-emergency-escalate" parent="ll-emergency" style="html=1;perimeter=orthogonalPerimeter;outlineConnect=0;targetShapes=umlLifeline;portConstraint=eastwest;newEdgeStyle={&quot;curved&quot;:0,&quot;rounded&quot;:0};fillColor=#F8CECC;strokeColor=#333333;" value="" vertex="1">
                     <mxGeometry x="55" y="2560" width="10" height="30" as="geometry"/>
                 </mxCell>
-                <mxCell id="msg-send-emergency-escalation" edge="1" parent="1" source="act-system-emergency-escalate" target="act-comm-emergency-escalate" style="html=1;verticalAlign=bottom;labelBackgroundColor=default;endArrow=open;endFill=0;curved=0;rounded=0;exitX=1;exitY=0.4;entryX=0;entryY=0.125;" value="Send Emergency Service Escalation">
+                <mxCell id="msg-send-emergency-escalation" edge="1" parent="1" source="act-system-emergency-escalate" target="act-comm-emergency-escalate" style="html=1;verticalAlign=bottom;labelBackgroundColor=default;endArrow=open;endFill=0;curved=0;rounded=0;exitX=1;exitY=0.4;entryX=0;entryY=0.125;strokeColor=#000000;fontColor=#000000;" value="Send Emergency Service Escalation">
                     <mxGeometry relative="1" as="geometry"/>
                 </mxCell>
-                <mxCell id="msg-deliver-emergency-escalation" edge="1" parent="1" source="act-comm-emergency-escalate" target="act-emergency-escalate" style="html=1;verticalAlign=bottom;labelBackgroundColor=default;endArrow=open;endFill=0;curved=0;rounded=0;exitX=1;exitY=0.625;entryX=0;entryY=0.1667;" value="Deliver Emergency Service Escalation">
+                <mxCell id="msg-deliver-emergency-escalation" edge="1" parent="1" source="act-comm-emergency-escalate" target="act-emergency-escalate" style="html=1;verticalAlign=bottom;labelBackgroundColor=default;endArrow=open;endFill=0;curved=0;rounded=0;exitX=1;exitY=0.625;entryX=0;entryY=0.1667;strokeColor=#000000;fontColor=#000000;" value="Deliver Emergency Service Escalation">
                     <mxGeometry relative="1" as="geometry"/>
                 </mxCell>
-                <mxCell id="frame-alt-contact-configured" parent="1" style="shape=umlFrame;whiteSpace=wrap;html=1;pointerEvents=0;recursiveResize=0;container=0;collapsible=0;width=60;height=30;fillColor=none;" value="alt" vertex="1">
+                <mxCell id="frame-alt-contact-configured" parent="1" style="shape=umlFrame;whiteSpace=wrap;html=1;pointerEvents=0;recursiveResize=0;container=0;collapsible=0;width=60;height=30;fillColor=none;strokeColor=#333333;fontColor=#000000;" value="alt" vertex="1">
                     <mxGeometry x="310" y="2030" width="1300" height="880" as="geometry"/>
                 </mxCell>
-                <mxCell id="guard-contact-configured" parent="1" style="text;html=1;align=left;verticalAlign=middle;whiteSpace=wrap;" value="[Family/Emergency Contact configured]" vertex="1">
+                <mxCell id="guard-contact-configured" parent="1" style="text;html=1;align=left;verticalAlign=middle;whiteSpace=wrap;fontColor=#000000;" value="[Family/Emergency Contact configured]" vertex="1">
                     <mxGeometry x="410" y="2062" width="290" height="20" as="geometry"/>
                 </mxCell>
-                <mxCell id="act-system-send-escalation" parent="ll-system" style="html=1;perimeter=orthogonalPerimeter;outlineConnect=0;targetShapes=umlLifeline;portConstraint=eastwest;newEdgeStyle={&quot;curved&quot;:0,&quot;rounded&quot;:0};" value="" vertex="1">
+                <mxCell id="act-system-send-escalation" parent="ll-system" style="html=1;perimeter=orthogonalPerimeter;outlineConnect=0;targetShapes=umlLifeline;portConstraint=eastwest;newEdgeStyle={&quot;curved&quot;:0,&quot;rounded&quot;:0};fillColor=#DAE8FC;strokeColor=#333333;" value="" vertex="1">
                     <mxGeometry x="55" y="2025" width="10" height="25" as="geometry"/>
                 </mxCell>
-                <mxCell id="alt-contact-configured-divider" edge="1" parent="1" style="html=1;endArrow=none;dashed=1;curved=0;rounded=0;" value="">
+                <mxCell id="alt-contact-configured-divider" edge="1" parent="1" style="html=1;endArrow=none;dashed=1;curved=0;rounded=0;strokeColor=#000000;fontColor=#000000;" value="">
                     <mxGeometry relative="1" as="geometry">
                         <mxPoint x="310" y="2755" as="sourcePoint"/>
                         <mxPoint x="1610" y="2755" as="targetPoint"/>
                     </mxGeometry>
                 </mxCell>
-                <mxCell id="guard-no-contact-configured" parent="1" style="text;html=1;align=left;verticalAlign=middle;whiteSpace=wrap;" value="[No Family/Emergency Contact configured]" vertex="1">
+                <mxCell id="guard-no-contact-configured" parent="1" style="text;html=1;align=left;verticalAlign=middle;whiteSpace=wrap;fontColor=#000000;" value="[No Family/Emergency Contact configured]" vertex="1">
                     <mxGeometry x="410" y="2760" width="290" height="20" as="geometry"/>
                 </mxCell>
-                <mxCell id="act-system-emergency-escalate-2" parent="ll-system" style="html=1;perimeter=orthogonalPerimeter;outlineConnect=0;targetShapes=umlLifeline;portConstraint=eastwest;newEdgeStyle={&quot;curved&quot;:0,&quot;rounded&quot;:0};" value="" vertex="1">
+                <mxCell id="act-system-emergency-escalate-2" parent="ll-system" style="html=1;perimeter=orthogonalPerimeter;outlineConnect=0;targetShapes=umlLifeline;portConstraint=eastwest;newEdgeStyle={&quot;curved&quot;:0,&quot;rounded&quot;:0};fillColor=#DAE8FC;strokeColor=#333333;" value="" vertex="1">
                     <mxGeometry x="55" y="2705" width="10" height="25" as="geometry"/>
                 </mxCell>
-                <mxCell id="act-comm-emergency-escalate-2" parent="ll-comm" style="html=1;perimeter=orthogonalPerimeter;outlineConnect=0;targetShapes=umlLifeline;portConstraint=eastwest;newEdgeStyle={&quot;curved&quot;:0,&quot;rounded&quot;:0};" value="" vertex="1">
+                <mxCell id="act-comm-emergency-escalate-2" parent="ll-comm" style="html=1;perimeter=orthogonalPerimeter;outlineConnect=0;targetShapes=umlLifeline;portConstraint=eastwest;newEdgeStyle={&quot;curved&quot;:0,&quot;rounded&quot;:0};fillColor=#E1D5E7;strokeColor=#333333;" value="" vertex="1">
                     <mxGeometry x="55" y="2710" width="10" height="40" as="geometry"/>
                 </mxCell>
-                <mxCell id="act-emergency-escalate-2" parent="ll-emergency" style="html=1;perimeter=orthogonalPerimeter;outlineConnect=0;targetShapes=umlLifeline;portConstraint=eastwest;newEdgeStyle={&quot;curved&quot;:0,&quot;rounded&quot;:0};" value="" vertex="1">
+                <mxCell id="act-emergency-escalate-2" parent="ll-emergency" style="html=1;perimeter=orthogonalPerimeter;outlineConnect=0;targetShapes=umlLifeline;portConstraint=eastwest;newEdgeStyle={&quot;curved&quot;:0,&quot;rounded&quot;:0};fillColor=#F8CECC;strokeColor=#333333;" value="" vertex="1">
                     <mxGeometry x="55" y="2730" width="10" height="30" as="geometry"/>
                 </mxCell>
-                <mxCell id="msg-send-emergency-escalation-2" edge="1" parent="1" source="act-system-emergency-escalate-2" target="act-comm-emergency-escalate-2" style="html=1;verticalAlign=bottom;labelBackgroundColor=default;endArrow=open;endFill=0;curved=0;rounded=0;exitX=1;exitY=0.4;entryX=0;entryY=0.125;" value="Send Emergency Service Escalation">
+                <mxCell id="msg-send-emergency-escalation-2" edge="1" parent="1" source="act-system-emergency-escalate-2" target="act-comm-emergency-escalate-2" style="html=1;verticalAlign=bottom;labelBackgroundColor=default;endArrow=open;endFill=0;curved=0;rounded=0;exitX=1;exitY=0.4;entryX=0;entryY=0.125;strokeColor=#000000;fontColor=#000000;" value="Send Emergency Service Escalation">
                     <mxGeometry relative="1" as="geometry"/>
                 </mxCell>
-                <mxCell id="msg-deliver-emergency-escalation-2" edge="1" parent="1" source="act-comm-emergency-escalate-2" target="act-emergency-escalate-2" style="html=1;verticalAlign=bottom;labelBackgroundColor=default;endArrow=open;endFill=0;curved=0;rounded=0;exitX=1;exitY=0.625;entryX=0;entryY=0.1667;" value="Deliver Emergency Service Escalation">
+                <mxCell id="msg-deliver-emergency-escalation-2" edge="1" parent="1" source="act-comm-emergency-escalate-2" target="act-emergency-escalate-2" style="html=1;verticalAlign=bottom;labelBackgroundColor=default;endArrow=open;endFill=0;curved=0;rounded=0;exitX=1;exitY=0.625;entryX=0;entryY=0.1667;strokeColor=#000000;fontColor=#000000;" value="Deliver Emergency Service Escalation">
                     <mxGeometry relative="1" as="geometry"/>
                 </mxCell>
-                <mxCell id="note-skip-contact-stage" parent="1" style="shape=note;whiteSpace=wrap;html=1;size=14;align=left;spacingLeft=4;" value="Family/Emergency Contact stage is skipped." vertex="1">
+                <mxCell id="note-skip-contact-stage" parent="1" style="shape=note;whiteSpace=wrap;html=1;size=14;align=left;spacingLeft=4;fillColor=#F7F7F7;strokeColor=#666666;fontColor=#000000;" value="Family/Emergency Contact stage is skipped." vertex="1">
                     <mxGeometry x="1030" y="2840" width="190" height="35" as="geometry"/>
                 </mxCell>
-                <mxCell id="note-skip-contact-stage-link" edge="1" parent="1" source="note-skip-contact-stage" target="act-comm-emergency-escalate-2" style="html=1;endArrow=none;dashed=1;curved=0;rounded=0;exitX=0;exitY=0;entryX=1;entryY=1;" value="">
+                <mxCell id="note-skip-contact-stage-link" edge="1" parent="1" source="note-skip-contact-stage" target="act-comm-emergency-escalate-2" style="html=1;endArrow=none;dashed=1;curved=0;rounded=0;exitX=0;exitY=0;entryX=1;entryY=1;strokeColor=#000000;fontColor=#000000;" value="">
                     <mxGeometry relative="1" as="geometry"/>
                 </mxCell>
-                <mxCell id="frame-alt-escalation-mode" parent="1" style="shape=umlFrame;whiteSpace=wrap;html=1;pointerEvents=0;recursiveResize=0;container=0;collapsible=0;width=60;height=30;fillColor=none;" value="alt" vertex="1">
+                <mxCell id="frame-alt-escalation-mode" parent="1" style="shape=umlFrame;whiteSpace=wrap;html=1;pointerEvents=0;recursiveResize=0;container=0;collapsible=0;width=60;height=30;fillColor=none;strokeColor=#333333;fontColor=#000000;" value="alt" vertex="1">
                     <mxGeometry x="300" y="1700" width="1320" height="1220" as="geometry"/>
                 </mxCell>
-                <mxCell id="guard-immediate-danger" parent="1" style="text;html=1;align=left;verticalAlign=middle;whiteSpace=wrap;" value="[Immediate Critical Danger]" vertex="1">
+                <mxCell id="guard-immediate-danger" parent="1" style="text;html=1;align=left;verticalAlign=middle;whiteSpace=wrap;fontColor=#000000;" value="[Immediate Critical Danger]" vertex="1">
                     <mxGeometry x="410" y="1732" width="200" height="20" as="geometry"/>
                 </mxCell>
-                <mxCell id="act-system-immediate" parent="ll-system" style="html=1;perimeter=orthogonalPerimeter;outlineConnect=0;targetShapes=umlLifeline;portConstraint=eastwest;newEdgeStyle={&quot;curved&quot;:0,&quot;rounded&quot;:0};" value="" vertex="1">
+                <mxCell id="act-system-immediate" parent="ll-system" style="html=1;perimeter=orthogonalPerimeter;outlineConnect=0;targetShapes=umlLifeline;portConstraint=eastwest;newEdgeStyle={&quot;curved&quot;:0,&quot;rounded&quot;:0};fillColor=#DAE8FC;strokeColor=#333333;" value="" vertex="1">
                     <mxGeometry x="55" y="1680" width="10" height="25" as="geometry"/>
                 </mxCell>
-                <mxCell id="act-comm-immediate" parent="ll-comm" style="html=1;perimeter=orthogonalPerimeter;outlineConnect=0;targetShapes=umlLifeline;portConstraint=eastwest;newEdgeStyle={&quot;curved&quot;:0,&quot;rounded&quot;:0};" value="" vertex="1">
+                <mxCell id="act-comm-immediate" parent="ll-comm" style="html=1;perimeter=orthogonalPerimeter;outlineConnect=0;targetShapes=umlLifeline;portConstraint=eastwest;newEdgeStyle={&quot;curved&quot;:0,&quot;rounded&quot;:0};fillColor=#E1D5E7;strokeColor=#333333;" value="" vertex="1">
                     <mxGeometry x="55" y="1685" width="10" height="40" as="geometry"/>
                 </mxCell>
-                <mxCell id="act-emergency-immediate" parent="ll-emergency" style="html=1;perimeter=orthogonalPerimeter;outlineConnect=0;targetShapes=umlLifeline;portConstraint=eastwest;newEdgeStyle={&quot;curved&quot;:0,&quot;rounded&quot;:0};" value="" vertex="1">
+                <mxCell id="act-emergency-immediate" parent="ll-emergency" style="html=1;perimeter=orthogonalPerimeter;outlineConnect=0;targetShapes=umlLifeline;portConstraint=eastwest;newEdgeStyle={&quot;curved&quot;:0,&quot;rounded&quot;:0};fillColor=#F8CECC;strokeColor=#333333;" value="" vertex="1">
                     <mxGeometry x="55" y="1705" width="10" height="30" as="geometry"/>
                 </mxCell>
-                <mxCell id="msg-send-immediate-escalation" edge="1" parent="1" source="act-system-immediate" target="act-comm-immediate" style="html=1;verticalAlign=bottom;labelBackgroundColor=default;endArrow=open;endFill=0;curved=0;rounded=0;exitX=1;exitY=0.4;entryX=0;entryY=0.125;" value="Send Immediate Emergency Escalation">
+                <mxCell id="msg-send-immediate-escalation" edge="1" parent="1" source="act-system-immediate" target="act-comm-immediate" style="html=1;verticalAlign=bottom;labelBackgroundColor=default;endArrow=open;endFill=0;curved=0;rounded=0;exitX=1;exitY=0.4;entryX=0;entryY=0.125;strokeColor=#000000;fontColor=#000000;" value="Send Immediate Emergency Escalation">
                     <mxGeometry relative="1" as="geometry"/>
                 </mxCell>
-                <mxCell id="msg-deliver-immediate-escalation" edge="1" parent="1" source="act-comm-immediate" target="act-emergency-immediate" style="html=1;verticalAlign=bottom;labelBackgroundColor=default;endArrow=open;endFill=0;curved=0;rounded=0;exitX=1;exitY=0.625;entryX=0;entryY=0.1667;" value="Deliver Immediate Emergency Escalation">
+                <mxCell id="msg-deliver-immediate-escalation" edge="1" parent="1" source="act-comm-immediate" target="act-emergency-immediate" style="html=1;verticalAlign=bottom;labelBackgroundColor=default;endArrow=open;endFill=0;curved=0;rounded=0;exitX=1;exitY=0.625;entryX=0;entryY=0.1667;strokeColor=#000000;fontColor=#000000;" value="Deliver Immediate Emergency Escalation">
                     <mxGeometry relative="1" as="geometry"/>
                 </mxCell>
-                <mxCell id="note-immediate-danger" parent="1" style="shape=note;whiteSpace=wrap;html=1;size=14;align=left;spacingLeft=4;" value="Immediate critical danger may override normal waiting and escalation restrictions." vertex="1">
+                <mxCell id="note-immediate-danger" parent="1" style="shape=note;whiteSpace=wrap;html=1;size=14;align=left;spacingLeft=4;fillColor=#FBE9E9;strokeColor=#666666;fontColor=#000000;" value="Immediate critical danger may override normal waiting and escalation restrictions." vertex="1">
                     <mxGeometry x="690" y="1798" width="255" height="48" as="geometry"/>
                 </mxCell>
-                <mxCell id="note-immediate-danger-link" edge="1" parent="1" source="note-immediate-danger" target="act-comm-immediate" style="html=1;endArrow=none;dashed=1;curved=0;rounded=0;exitX=1;exitY=0;entryX=0;entryY=1;" value="">
+                <mxCell id="note-immediate-danger-link" edge="1" parent="1" source="note-immediate-danger" target="act-comm-immediate" style="html=1;endArrow=none;dashed=1;curved=0;rounded=0;exitX=1;exitY=0;entryX=0;entryY=1;strokeColor=#000000;fontColor=#000000;" value="">
                     <mxGeometry relative="1" as="geometry"/>
                 </mxCell>
-                <mxCell id="act-system-escalation-history-no-contact" parent="ll-system" style="html=1;perimeter=orthogonalPerimeter;outlineConnect=0;targetShapes=umlLifeline;portConstraint=eastwest;newEdgeStyle={&quot;curved&quot;:0,&quot;rounded&quot;:0};" value="" vertex="1">
+                <mxCell id="act-system-escalation-history-no-contact" parent="ll-system" style="html=1;perimeter=orthogonalPerimeter;outlineConnect=0;targetShapes=umlLifeline;portConstraint=eastwest;newEdgeStyle={&quot;curved&quot;:0,&quot;rounded&quot;:0};fillColor=#DAE8FC;strokeColor=#333333;" value="" vertex="1">
                     <mxGeometry x="55" y="2765" width="10" height="50" as="geometry"/>
                 </mxCell>
-                <mxCell id="act-system-escalation-history-update-no-contact" parent="ll-system" style="html=1;perimeter=orthogonalPerimeter;outlineConnect=0;targetShapes=umlLifeline;portConstraint=eastwest;newEdgeStyle={&quot;curved&quot;:0,&quot;rounded&quot;:0};" value="" vertex="1">
+                <mxCell id="act-system-escalation-history-update-no-contact" parent="ll-system" style="html=1;perimeter=orthogonalPerimeter;outlineConnect=0;targetShapes=umlLifeline;portConstraint=eastwest;newEdgeStyle={&quot;curved&quot;:0,&quot;rounded&quot;:0};fillColor=#DAE8FC;strokeColor=#333333;" value="" vertex="1">
                     <mxGeometry x="60" y="2790" width="10" height="20" as="geometry"/>
                 </mxCell>
-                <mxCell id="msg-escalation-history-no-contact" edge="1" parent="1" source="act-system-escalation-history-no-contact" target="act-system-escalation-history-update-no-contact" style="html=1;align=left;verticalAlign=middle;spacingLeft=4;labelBackgroundColor=default;endArrow=block;curved=0;rounded=0;exitX=1;exitY=0.2;entryX=1;entryY=0.25;" value="Update existing Incident/Event History record">
+                <mxCell id="msg-escalation-history-no-contact" edge="1" parent="1" source="act-system-escalation-history-no-contact" target="act-system-escalation-history-update-no-contact" style="html=1;align=left;verticalAlign=middle;spacingLeft=4;labelBackgroundColor=default;endArrow=block;curved=0;rounded=0;exitX=1;exitY=0.2;entryX=1;entryY=0.25;strokeColor=#000000;fontColor=#000000;" value="Update existing Incident/Event History record">
                     <mxGeometry relative="1" as="geometry">
                         <Array as="points">
                             <mxPoint x="440" y="2855"/>
@@ -474,13 +474,13 @@
                         </Array>
                     </mxGeometry>
                 </mxCell>
-                <mxCell id="act-system-escalation-history-emergency" parent="ll-system" style="html=1;perimeter=orthogonalPerimeter;outlineConnect=0;targetShapes=umlLifeline;portConstraint=eastwest;newEdgeStyle={&quot;curved&quot;:0,&quot;rounded&quot;:0};" value="" vertex="1">
+                <mxCell id="act-system-escalation-history-emergency" parent="ll-system" style="html=1;perimeter=orthogonalPerimeter;outlineConnect=0;targetShapes=umlLifeline;portConstraint=eastwest;newEdgeStyle={&quot;curved&quot;:0,&quot;rounded&quot;:0};fillColor=#DAE8FC;strokeColor=#333333;" value="" vertex="1">
                     <mxGeometry x="55" y="2590" width="10" height="50" as="geometry"/>
                 </mxCell>
-                <mxCell id="act-system-escalation-history-update-emergency" parent="ll-system" style="html=1;perimeter=orthogonalPerimeter;outlineConnect=0;targetShapes=umlLifeline;portConstraint=eastwest;newEdgeStyle={&quot;curved&quot;:0,&quot;rounded&quot;:0};" value="" vertex="1">
+                <mxCell id="act-system-escalation-history-update-emergency" parent="ll-system" style="html=1;perimeter=orthogonalPerimeter;outlineConnect=0;targetShapes=umlLifeline;portConstraint=eastwest;newEdgeStyle={&quot;curved&quot;:0,&quot;rounded&quot;:0};fillColor=#DAE8FC;strokeColor=#333333;" value="" vertex="1">
                     <mxGeometry x="60" y="2615" width="10" height="20" as="geometry"/>
                 </mxCell>
-                <mxCell id="msg-escalation-history-emergency" edge="1" parent="1" source="act-system-escalation-history-emergency" target="act-system-escalation-history-update-emergency" style="html=1;align=left;verticalAlign=middle;spacingLeft=4;labelBackgroundColor=default;endArrow=block;curved=0;rounded=0;exitX=1;exitY=0.2;entryX=1;entryY=0.25;" value="Update existing Incident/Event History record">
+                <mxCell id="msg-escalation-history-emergency" edge="1" parent="1" source="act-system-escalation-history-emergency" target="act-system-escalation-history-update-emergency" style="html=1;align=left;verticalAlign=middle;spacingLeft=4;labelBackgroundColor=default;endArrow=block;curved=0;rounded=0;exitX=1;exitY=0.2;entryX=1;entryY=0.25;strokeColor=#000000;fontColor=#000000;" value="Update existing Incident/Event History record">
                     <mxGeometry relative="1" as="geometry">
                         <Array as="points">
                             <mxPoint x="440" y="2680"/>
@@ -488,13 +488,13 @@
                         </Array>
                     </mxGeometry>
                 </mxCell>
-                <mxCell id="act-system-escalation-history-contact" parent="ll-system" style="html=1;perimeter=orthogonalPerimeter;outlineConnect=0;targetShapes=umlLifeline;portConstraint=eastwest;newEdgeStyle={&quot;curved&quot;:0,&quot;rounded&quot;:0};" value="" vertex="1">
+                <mxCell id="act-system-escalation-history-contact" parent="ll-system" style="html=1;perimeter=orthogonalPerimeter;outlineConnect=0;targetShapes=umlLifeline;portConstraint=eastwest;newEdgeStyle={&quot;curved&quot;:0,&quot;rounded&quot;:0};fillColor=#DAE8FC;strokeColor=#333333;" value="" vertex="1">
                     <mxGeometry x="55" y="2085" width="10" height="50" as="geometry"/>
                 </mxCell>
-                <mxCell id="act-system-escalation-history-update-contact" parent="ll-system" style="html=1;perimeter=orthogonalPerimeter;outlineConnect=0;targetShapes=umlLifeline;portConstraint=eastwest;newEdgeStyle={&quot;curved&quot;:0,&quot;rounded&quot;:0};" value="" vertex="1">
+                <mxCell id="act-system-escalation-history-update-contact" parent="ll-system" style="html=1;perimeter=orthogonalPerimeter;outlineConnect=0;targetShapes=umlLifeline;portConstraint=eastwest;newEdgeStyle={&quot;curved&quot;:0,&quot;rounded&quot;:0};fillColor=#DAE8FC;strokeColor=#333333;" value="" vertex="1">
                     <mxGeometry x="60" y="2110" width="10" height="20" as="geometry"/>
                 </mxCell>
-                <mxCell id="msg-escalation-history-contact" edge="1" parent="1" source="act-system-escalation-history-contact" target="act-system-escalation-history-update-contact" style="html=1;align=left;verticalAlign=middle;spacingLeft=4;labelBackgroundColor=default;endArrow=block;curved=0;rounded=0;exitX=1;exitY=0.2;entryX=1;entryY=0.25;" value="Update existing Incident/Event History record">
+                <mxCell id="msg-escalation-history-contact" edge="1" parent="1" source="act-system-escalation-history-contact" target="act-system-escalation-history-update-contact" style="html=1;align=left;verticalAlign=middle;spacingLeft=4;labelBackgroundColor=default;endArrow=block;curved=0;rounded=0;exitX=1;exitY=0.2;entryX=1;entryY=0.25;strokeColor=#000000;fontColor=#000000;" value="Update existing Incident/Event History record">
                     <mxGeometry relative="1" as="geometry">
                         <Array as="points">
                             <mxPoint x="440" y="2175"/>
@@ -502,19 +502,19 @@
                         </Array>
                     </mxGeometry>
                 </mxCell>
-                <mxCell id="act-system-ask" parent="ll-system" style="html=1;perimeter=orthogonalPerimeter;outlineConnect=0;targetShapes=umlLifeline;portConstraint=eastwest;newEdgeStyle={&quot;curved&quot;:0,&quot;rounded&quot;:0};" value="" vertex="1">
+                <mxCell id="act-system-ask" parent="ll-system" style="html=1;perimeter=orthogonalPerimeter;outlineConnect=0;targetShapes=umlLifeline;portConstraint=eastwest;newEdgeStyle={&quot;curved&quot;:0,&quot;rounded&quot;:0};fillColor=#DAE8FC;strokeColor=#333333;" value="" vertex="1">
                     <mxGeometry x="55" y="1045" width="10" height="20" as="geometry"/>
                 </mxCell>
-                <mxCell id="msg-ask-whether-resolved" edge="1" parent="1" source="act-system-ask" target="act-owner-show" style="html=1;verticalAlign=bottom;labelBackgroundColor=default;endArrow=open;endFill=0;curved=0;rounded=0;exitX=1;exitY=0.25;entryX=0;entryY=0.35;" value="Ask Whether Resolved">
+                <mxCell id="msg-ask-whether-resolved" edge="1" parent="1" source="act-system-ask" target="act-owner-show" style="html=1;verticalAlign=bottom;labelBackgroundColor=default;endArrow=open;endFill=0;curved=0;rounded=0;exitX=1;exitY=0.25;entryX=0;entryY=0.35;strokeColor=#000000;fontColor=#000000;" value="Ask Whether Resolved">
                     <mxGeometry relative="1" as="geometry"/>
                 </mxCell>
-                <mxCell id="act-system-escalation-history-immediate" parent="ll-system" style="html=1;perimeter=orthogonalPerimeter;outlineConnect=0;targetShapes=umlLifeline;portConstraint=eastwest;newEdgeStyle={&quot;curved&quot;:0,&quot;rounded&quot;:0};" value="" vertex="1">
+                <mxCell id="act-system-escalation-history-immediate" parent="ll-system" style="html=1;perimeter=orthogonalPerimeter;outlineConnect=0;targetShapes=umlLifeline;portConstraint=eastwest;newEdgeStyle={&quot;curved&quot;:0,&quot;rounded&quot;:0};fillColor=#DAE8FC;strokeColor=#333333;" value="" vertex="1">
                     <mxGeometry x="55" y="1770" width="10" height="50" as="geometry"/>
                 </mxCell>
-                <mxCell id="act-system-escalation-history-update-immediate" parent="ll-system" style="html=1;perimeter=orthogonalPerimeter;outlineConnect=0;targetShapes=umlLifeline;portConstraint=eastwest;newEdgeStyle={&quot;curved&quot;:0,&quot;rounded&quot;:0};" value="" vertex="1">
+                <mxCell id="act-system-escalation-history-update-immediate" parent="ll-system" style="html=1;perimeter=orthogonalPerimeter;outlineConnect=0;targetShapes=umlLifeline;portConstraint=eastwest;newEdgeStyle={&quot;curved&quot;:0,&quot;rounded&quot;:0};fillColor=#DAE8FC;strokeColor=#333333;" value="" vertex="1">
                     <mxGeometry x="60" y="1795" width="10" height="20" as="geometry"/>
                 </mxCell>
-                <mxCell id="msg-escalation-history-immediate" edge="1" parent="1" source="act-system-escalation-history-immediate" target="act-system-escalation-history-update-immediate" style="html=1;align=left;verticalAlign=middle;spacingLeft=4;labelBackgroundColor=default;endArrow=block;curved=0;rounded=0;exitX=1;exitY=0.2;entryX=1;entryY=0.25;" value="Update existing Incident/Event History record">
+                <mxCell id="msg-escalation-history-immediate" edge="1" parent="1" source="act-system-escalation-history-immediate" target="act-system-escalation-history-update-immediate" style="html=1;align=left;verticalAlign=middle;spacingLeft=4;labelBackgroundColor=default;endArrow=block;curved=0;rounded=0;exitX=1;exitY=0.2;entryX=1;entryY=0.25;strokeColor=#000000;fontColor=#000000;" value="Update existing Incident/Event History record">
                     <mxGeometry relative="1" as="geometry">
                         <Array as="points">
                             <mxPoint x="440" y="1860"/>
@@ -522,13 +522,13 @@
                         </Array>
                     </mxGeometry>
                 </mxCell>
-                <mxCell id="alt-escalation-mode-divider" edge="1" parent="1" style="html=1;endArrow=none;dashed=1;curved=0;rounded=0;" value="">
+                <mxCell id="alt-escalation-mode-divider" edge="1" parent="1" style="html=1;endArrow=none;dashed=1;curved=0;rounded=0;strokeColor=#000000;fontColor=#000000;" value="">
                     <mxGeometry relative="1" as="geometry">
                         <mxPoint x="300" y="1915" as="sourcePoint"/>
                         <mxPoint x="1620" y="1915" as="targetPoint"/>
                     </mxGeometry>
                 </mxCell>
-                <mxCell id="guard-normal-escalation" parent="1" style="text;html=1;align=left;verticalAlign=middle;whiteSpace=wrap;" value="[Normal Critical Escalation]" vertex="1">
+                <mxCell id="guard-normal-escalation" parent="1" style="text;html=1;align=left;verticalAlign=middle;whiteSpace=wrap;fontColor=#000000;" value="[Normal Critical Escalation]" vertex="1">
                     <mxGeometry x="410" y="1920" width="240" height="20" as="geometry"/>
                 </mxCell>
             </root>
