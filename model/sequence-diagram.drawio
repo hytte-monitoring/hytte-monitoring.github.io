@@ -23,7 +23,7 @@
                     <mxGeometry x="60" y="225" width="10" height="40" as="geometry"/>
                 </mxCell>
                 <mxCell id="act-system-register" parent="ll-system" style="html=1;perimeter=orthogonalPerimeter;outlineConnect=0;targetShapes=umlLifeline;portConstraint=eastwest;newEdgeStyle={&quot;curved&quot;:0,&quot;rounded&quot;:0};" value="" vertex="1">
-                    <mxGeometry x="60" y="315" width="10" height="40" as="geometry"/>
+                    <mxGeometry x="60" y="345" width="10" height="40" as="geometry"/>
                 </mxCell>
                 <mxCell id="ll-owner" parent="1" style="shape=umlLifeline;perimeter=lifelinePerimeter;whiteSpace=wrap;html=1;container=1;dropTarget=0;collapsible=0;recursiveResize=0;outlineConnect=0;portConstraint=eastwest;newEdgeStyle={&quot;curved&quot;:0,&quot;rounded&quot;:0};size=40;" value="Hytte Owner" vertex="1">
                     <mxGeometry x="618" y="80" width="120" height="600" as="geometry"/>
@@ -56,11 +56,11 @@
                         </Array>
                     </mxGeometry>
                 </mxCell>
-                <mxCell id="msg-register-history" edge="1" parent="1" source="act-system" target="act-system-register" style="html=1;align=left;verticalAlign=middle;spacingLeft=4;endArrow=block;curved=0;rounded=0;exitX=1;exitY=0.7333;entryX=1;entryY=0.125;" value="Register Incident in&lt;br&gt;Incident/Event History">
+                <mxCell id="msg-register-history" edge="1" parent="1" source="act-system" target="act-system-register" style="html=1;align=left;verticalAlign=middle;spacingLeft=4;labelBackgroundColor=default;endArrow=block;curved=0;rounded=0;exitX=1;exitY=0.8333;entryX=1;entryY=0.125;" value="Register Incident in Incident/Event History">
                     <mxGeometry relative="1" as="geometry">
                         <Array as="points">
-                            <mxPoint x="440" y="380"/>
-                            <mxPoint x="440" y="400"/>
+                            <mxPoint x="440" y="410"/>
+                            <mxPoint x="440" y="430"/>
                         </Array>
                     </mxGeometry>
                 </mxCell>
