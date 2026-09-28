@@ -97,6 +97,10 @@ changed by the user.
 When cold-weather protection is not active, Indoor Temperature and
 Power monitoring can be configured by the user.
 
+When the outside temperature becomes safe again, cold-weather
+protection is automatically deactivated by the system, and the user's
+previous Indoor Temperature and Power monitoring choices are restored.
+
 ### Optional Monitoring
 
 The user can normally enable or disable:
@@ -131,6 +135,9 @@ The system has two monitoring modes:
 
 - HOME
 - AWAY
+
+At startup, the user chooses whether the cabin starts in HOME or AWAY
+mode.
 
 ### HOME Mode
 
@@ -187,6 +194,12 @@ The user is notified when an Incident requires their attention.
 
 Critical Incidents must notify the user immediately.
 
+If the condition behind a Warning worsens to a Critical level, the
+system upgrades the SAME Incident from Warning to Critical.
+
+No new Incident is created. Critical notification and escalation rules
+then apply to that Incident.
+
 ---
 
 ## 8. Incident Handling
@@ -201,7 +214,8 @@ After receiving an Incident, the user can choose:
 If the user selects Resolved:
 
 1. The Incident is closed.
-2. The Incident is stored in Incident/Event History.
+2. The Incident's existing record in Incident/Event History is updated
+   to Closed.
 
 ### Not Resolved
 
@@ -210,11 +224,15 @@ If the user selects Not Resolved:
 1. The system asks whether the user wants Suggested Next Steps.
 2. If the user selects Yes, the system displays step-by-step guidance.
 3. The system asks again whether the Incident has been resolved.
-4. If the Incident is resolved, it is closed and stored in History.
+4. If the Incident is resolved, it is closed and its History record is
+   updated.
 5. If it is still unresolved, the Incident remains Active.
 
 If the user does not want Suggested Next Steps, the Incident remains
 Active.
+
+While an Incident remains Active after Not Resolved, escalation can
+continue after a system-determined waiting time (see Escalation).
 
 An Active Incident can later be marked as Resolved by the user.
 
@@ -223,6 +241,12 @@ An Active Incident can later be marked as Resolved by the user.
 ## 9. Incident/Event History
 
 All Warning and Critical Incidents are stored in Incident/Event History.
+
+An Incident is registered in Incident/Event History when it is created.
+
+The SAME history record is then updated as the Incident changes, for
+example when it is upgraded, escalated, resolved, and closed. No
+separate history record is created for each step.
 
 The history allows the user to view previous Incidents and their status.
 
@@ -282,6 +306,13 @@ If the user does not respond, the normal escalation path is:
 User
 → Family/Emergency Contact
 → Relevant Emergency Service
+
+If the Family/Emergency Contact does not respond within the
+system-determined waiting time, escalation can continue to the relevant
+Emergency Service.
+
+If no Family/Emergency Contacts are configured, a Critical Incident can
+continue directly from the user to the relevant Emergency Service.
 
 Human intervention is preferred before automatic Emergency Service
 contact when the situation allows it.
@@ -343,6 +374,10 @@ If both normal power and Internet connectivity fail:
 - Battery backup can keep the monitoring system operating.
 - Cellular/SIM communication can allow important notifications and
   communication to continue.
+
+When normal cabin electricity or Internet connectivity returns, the
+system automatically switches back from battery backup and/or
+Cellular/SIM communication to normal power and Internet.
 
 The current website only simulates this behavior.
 
