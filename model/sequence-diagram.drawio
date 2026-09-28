@@ -1,0 +1,59 @@
+<mxfile host="65bd71144e">
+    <diagram id="tox0Aw3FzKTglgOzmscp" name="Page-1">
+        <mxGraphModel dx="2058" dy="1150" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1654" pageHeight="1169" math="0" shadow="0">
+            <root>
+                <mxCell id="0"/>
+                <mxCell id="1" parent="0"/>
+                <mxCell id="ll-smoke" parent="1" style="shape=umlLifeline;perimeter=lifelinePerimeter;whiteSpace=wrap;html=1;container=1;dropTarget=0;collapsible=0;recursiveResize=0;outlineConnect=0;portConstraint=eastwest;newEdgeStyle={&quot;curved&quot;:0,&quot;rounded&quot;:0};size=40;" value="Smoke Sensor" vertex="1">
+                    <mxGeometry x="60" y="80" width="120" height="600" as="geometry"/>
+                </mxCell>
+                <mxCell id="act-smoke" parent="ll-smoke" style="html=1;points=[[0,0,0,0,5],[0,1,0,0,-5],[1,0,0,0,5],[1,1,0,0,-5]];perimeter=orthogonalPerimeter;outlineConnect=0;targetShapes=umlLifeline;portConstraint=eastwest;newEdgeStyle={&quot;curved&quot;:0,&quot;rounded&quot;:0};" value="" vertex="1">
+                    <mxGeometry x="55" y="80" width="10" height="40" as="geometry"/>
+                </mxCell>
+                <mxCell id="ll-system" parent="1" style="shape=umlLifeline;perimeter=lifelinePerimeter;whiteSpace=wrap;html=1;container=1;dropTarget=0;collapsible=0;recursiveResize=0;outlineConnect=0;portConstraint=eastwest;newEdgeStyle={&quot;curved&quot;:0,&quot;rounded&quot;:0};size=40;" value="Monitoring System" vertex="1">
+                    <mxGeometry x="335" y="80" width="120" height="600" as="geometry"/>
+                </mxCell>
+                <mxCell id="act-system" parent="ll-system" style="html=1;points=[[0,0,0,0,5],[0,1,0,0,-5],[1,0,0,0,5],[1,1,0,0,-5]];perimeter=orthogonalPerimeter;outlineConnect=0;targetShapes=umlLifeline;portConstraint=eastwest;newEdgeStyle={&quot;curved&quot;:0,&quot;rounded&quot;:0};" value="" vertex="1">
+                    <mxGeometry x="55" y="80" width="10" height="180" as="geometry"/>
+                </mxCell>
+                <mxCell id="act-system-evaluate" parent="ll-system" style="html=1;points=[[0,0,0,0,5],[0,1,0,0,-5],[1,0,0,0,5],[1,1,0,0,-5]];perimeter=orthogonalPerimeter;outlineConnect=0;targetShapes=umlLifeline;portConstraint=eastwest;newEdgeStyle={&quot;curved&quot;:0,&quot;rounded&quot;:0};" value="" vertex="1">
+                    <mxGeometry x="60" y="120" width="10" height="40" as="geometry"/>
+                </mxCell>
+                <mxCell id="act-system-create" parent="ll-system" style="html=1;points=[[0,0,0,0,5],[0,1,0,0,-5],[1,0,0,0,5],[1,1,0,0,-5]];perimeter=orthogonalPerimeter;outlineConnect=0;targetShapes=umlLifeline;portConstraint=eastwest;newEdgeStyle={&quot;curved&quot;:0,&quot;rounded&quot;:0};" value="" vertex="1">
+                    <mxGeometry x="60" y="190" width="10" height="40" as="geometry"/>
+                </mxCell>
+                <mxCell id="ll-owner" parent="1" style="shape=umlLifeline;perimeter=lifelinePerimeter;whiteSpace=wrap;html=1;container=1;dropTarget=0;collapsible=0;recursiveResize=0;outlineConnect=0;portConstraint=eastwest;newEdgeStyle={&quot;curved&quot;:0,&quot;rounded&quot;:0};size=40;" value="Hytte Owner" vertex="1">
+                    <mxGeometry x="618" y="80" width="120" height="600" as="geometry"/>
+                </mxCell>
+                <mxCell id="ll-comm" parent="1" style="shape=umlLifeline;perimeter=lifelinePerimeter;whiteSpace=wrap;html=1;container=1;dropTarget=0;collapsible=0;recursiveResize=0;outlineConnect=0;portConstraint=eastwest;newEdgeStyle={&quot;curved&quot;:0,&quot;rounded&quot;:0};size=40;" value="communication Service" vertex="1">
+                    <mxGeometry x="900" y="80" width="120" height="600" as="geometry"/>
+                </mxCell>
+                <mxCell id="ll-contact" parent="1" style="shape=umlLifeline;perimeter=lifelinePerimeter;whiteSpace=wrap;html=1;container=1;dropTarget=0;collapsible=0;recursiveResize=0;outlineConnect=0;portConstraint=eastwest;newEdgeStyle={&quot;curved&quot;:0,&quot;rounded&quot;:0};size=40;" value="Family/Emergency Contact" vertex="1">
+                    <mxGeometry x="1180" y="80" width="120" height="600" as="geometry"/>
+                </mxCell>
+                <mxCell id="ll-emergency" parent="1" style="shape=umlLifeline;perimeter=lifelinePerimeter;whiteSpace=wrap;html=1;container=1;dropTarget=0;collapsible=0;recursiveResize=0;outlineConnect=0;portConstraint=eastwest;newEdgeStyle={&quot;curved&quot;:0,&quot;rounded&quot;:0};size=40;" value="Emergency Service" vertex="1">
+                    <mxGeometry x="1460" y="80" width="120" height="600" as="geometry"/>
+                </mxCell>
+                <mxCell id="msg-smoke-detected" edge="1" parent="1" source="act-smoke" target="act-system" style="html=1;verticalAlign=bottom;labelBackgroundColor=none;endArrow=open;endFill=0;curved=0;rounded=0;exitX=1;exitY=0;exitDx=0;exitDy=5;entryX=0;entryY=0;entryDx=0;entryDy=5;" value="Smoke Detected">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="msg-evaluate" edge="1" parent="1" source="act-system" target="act-system-evaluate" style="html=1;align=left;spacingLeft=2;endArrow=block;curved=0;rounded=0;exitX=1;exitY=0;exitDx=0;exitDy=25;entryX=1;entryY=0;entryDx=0;entryDy=5;" value="Evaluate event and severity">
+                    <mxGeometry relative="1" as="geometry">
+                        <Array as="points">
+                            <mxPoint x="430" y="185"/>
+                            <mxPoint x="430" y="205"/>
+                        </Array>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="msg-create-incident" edge="1" parent="1" source="act-system" target="act-system-create" style="html=1;align=left;spacingLeft=2;endArrow=block;curved=0;rounded=0;exitX=1;exitY=0;exitDx=0;exitDy=95;entryX=1;entryY=0;entryDx=0;entryDy=5;" value="Create Critical Incident">
+                    <mxGeometry relative="1" as="geometry">
+                        <Array as="points">
+                            <mxPoint x="430" y="255"/>
+                            <mxPoint x="430" y="275"/>
+                        </Array>
+                    </mxGeometry>
+                </mxCell>
+            </root>
+        </mxGraphModel>
+    </diagram>
+</mxfile>
