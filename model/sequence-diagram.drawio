@@ -70,6 +70,27 @@
                 <mxCell id="note-history-link" edge="1" parent="1" source="note-history-record" target="act-system-register" style="html=1;endArrow=none;dashed=1;curved=0;rounded=0;exitX=0;exitY=0;entryX=1;entryY=1;" value="">
                     <mxGeometry relative="1" as="geometry"/>
                 </mxCell>
+                <mxCell id="act-system-notify" parent="ll-system" style="html=1;perimeter=orthogonalPerimeter;outlineConnect=0;targetShapes=umlLifeline;portConstraint=eastwest;newEdgeStyle={&quot;curved&quot;:0,&quot;rounded&quot;:0};" value="" vertex="1">
+                    <mxGeometry x="55" y="480" width="10" height="40" as="geometry"/>
+                </mxCell>
+                <mxCell id="act-comm" parent="ll-comm" style="html=1;perimeter=orthogonalPerimeter;outlineConnect=0;targetShapes=umlLifeline;portConstraint=eastwest;newEdgeStyle={&quot;curved&quot;:0,&quot;rounded&quot;:0};" value="" vertex="1">
+                    <mxGeometry x="55" y="485" width="10" height="40" as="geometry"/>
+                </mxCell>
+                <mxCell id="act-owner" parent="ll-owner" style="html=1;perimeter=orthogonalPerimeter;outlineConnect=0;targetShapes=umlLifeline;portConstraint=eastwest;newEdgeStyle={&quot;curved&quot;:0,&quot;rounded&quot;:0};" value="" vertex="1">
+                    <mxGeometry x="55" y="510" width="10" height="30" as="geometry"/>
+                </mxCell>
+                <mxCell id="msg-send-critical" edge="1" parent="1" source="act-system-notify" target="act-comm" style="html=1;verticalAlign=bottom;labelBackgroundColor=default;endArrow=block;curved=0;rounded=0;exitX=1;exitY=0.25;entryX=0;entryY=0.125;" value="Send Critical Notification">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="msg-deliver-critical" edge="1" parent="1" source="act-comm" target="act-owner" style="html=1;verticalAlign=bottom;labelBackgroundColor=default;endArrow=block;curved=0;rounded=0;exitX=0;exitY=0.75;entryX=1;entryY=0.1667;" value="Deliver Critical Notification">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="note-immediate" parent="1" style="shape=note;whiteSpace=wrap;html=1;size=14;align=left;spacingLeft=4;" value="Critical notification is sent immediately (no waiting time)." vertex="1">
+                    <mxGeometry x="1050" y="530" width="160" height="50" as="geometry"/>
+                </mxCell>
+                <mxCell id="note-immediate-link" edge="1" parent="1" source="note-immediate" target="act-comm" style="html=1;endArrow=none;dashed=1;curved=0;rounded=0;exitX=0;exitY=1;entryX=1;entryY=0.25;" value="">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
             </root>
         </mxGraphModel>
     </diagram>
