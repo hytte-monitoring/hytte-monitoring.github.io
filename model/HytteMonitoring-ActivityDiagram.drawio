@@ -1,0 +1,697 @@
+<mxfile host="Electron" pages="2">
+  <diagram id="core" name="1 - Continuous Monitoring and Incident Lifecycle">
+    <mxGraphModel dx="4450" dy="1213" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="2430" pageHeight="1800" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="p1u" parent="1" style="swimlane;horizontal=0;startSize=28;fillColor=#eaf2f8;strokeColor=#5b9bd5;fontStyle=1;" value="Hytte Owner/User" vertex="1">
+          <mxGeometry height="1800" width="675" x="-270" as="geometry" />
+        </mxCell>
+        <mxCell id="p1respond" parent="p1u" style="rhombus;whiteSpace=wrap;html=1;" value="User marks Resolved?" vertex="1">
+          <mxGeometry height="122" width="230" x="397" y="440" as="geometry" />
+        </mxCell>
+        <mxCell id="p1loop2" parent="p1u" style="rounded=1;whiteSpace=wrap;html=1;" value="Monitoring continues after resolution" vertex="1">
+          <mxGeometry height="81" width="310" x="40" y="1030" as="geometry" />
+        </mxCell>
+        <mxCell id="p1history" parent="p1u" style="rounded=1;whiteSpace=wrap;html=1;" value="Resolved: close and store in Incident/Event History" vertex="1">
+          <mxGeometry height="81" width="310" x="40" y="900" as="geometry" />
+        </mxCell>
+        <mxCell id="p1e28" edge="1" parent="p1u" source="p1respond" style="edgeStyle=orthogonalEdgeStyle;endArrow=block;endFill=1;" target="p1history" value="[resolved]">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="110" y="501" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="p1e31" edge="1" parent="p1u" source="p1history" style="edgeStyle=orthogonalEdgeStyle;endArrow=block;endFill=1;" target="p1loop2">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="p1e29" edge="1" parent="p1u" source="p1respond" style="edgeStyle=orthogonalEdgeStyle;endArrow=block;endFill=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;" target="VXTZOX0pOufUaQ6Pdq0Y-3" value="[not resolved]">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points" />
+            <mxPoint x="512" y="769.9999999999998" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="p1e30" edge="1" parent="p1u" source="VXTZOX0pOufUaQ6Pdq0Y-3" style="edgeStyle=orthogonalEdgeStyle;endArrow=block;endFill=1;" target="VXTZOX0pOufUaQ6Pdq0Y-8">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="490" y="647.47" />
+            </Array>
+            <mxPoint x="558" y="817" as="sourcePoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="VXTZOX0pOufUaQ6Pdq0Y-7" connectable="0" parent="p1e30" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" value="No" vertex="1">
+          <mxGeometry relative="1" x="-0.391" y="-1" as="geometry">
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="VXTZOX0pOufUaQ6Pdq0Y-5" edge="1" parent="p1u" source="VXTZOX0pOufUaQ6Pdq0Y-3" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" target="VXTZOX0pOufUaQ6Pdq0Y-4">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="231.53" y="810" />
+              <mxPoint x="231.53" y="810" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="VXTZOX0pOufUaQ6Pdq0Y-6" connectable="0" parent="VXTZOX0pOufUaQ6Pdq0Y-5" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" value="Yes" vertex="1">
+          <mxGeometry relative="1" x="0.0064" y="4" as="geometry">
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="VXTZOX0pOufUaQ6Pdq0Y-3" parent="p1u" style="rhombus;whiteSpace=wrap;html=1;shapeInside=1;" value="&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;Want Suggested Next Steps?&lt;/div&gt;" vertex="1">
+          <mxGeometry height="115" width="163" x="150" y="590" as="geometry" />
+        </mxCell>
+        <mxCell id="VXTZOX0pOufUaQ6Pdq0Y-10" edge="1" parent="p1u" source="VXTZOX0pOufUaQ6Pdq0Y-4" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="560" y="810.43" />
+            </Array>
+            <mxPoint x="560" y="539.9999999999998" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="VXTZOX0pOufUaQ6Pdq0Y-4" parent="p1u" style="rounded=1;whiteSpace=wrap;html=1;" value="Show Guidance" vertex="1">
+          <mxGeometry height="81" width="170" x="150" y="770" as="geometry" />
+        </mxCell>
+        <mxCell id="VXTZOX0pOufUaQ6Pdq0Y-9" edge="1" parent="p1u" source="VXTZOX0pOufUaQ6Pdq0Y-8" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" target="p1respond">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="550" y="650" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="VXTZOX0pOufUaQ6Pdq0Y-8" parent="p1u" style="rounded=1;whiteSpace=wrap;html=1;" value="Incident Stays Active" vertex="1">
+          <mxGeometry height="71" width="120" x="370" y="612" as="geometry" />
+        </mxCell>
+        <mxCell id="p1s" parent="1" style="swimlane;horizontal=0;startSize=28;fillColor=#f4f6f7;strokeColor=#7f8c8d;fontStyle=1;" value="Hytte Monitoring System" vertex="1">
+          <mxGeometry height="1800" width="1026" x="405" as="geometry" />
+        </mxCell>
+        <mxCell id="p1eval" parent="p1s" style="rounded=1;whiteSpace=wrap;html=1;" value="Evaluate conditions against system Critical thresholds and user-safe Warning levels" vertex="1">
+          <mxGeometry height="47" width="405" x="87.5" y="1500" as="geometry" />
+        </mxCell>
+        <mxCell id="p1away" parent="p1s" style="rounded=1;whiteSpace=wrap;html=1;" value="[AWAY] Door/Motion may create Warning" vertex="1">
+          <mxGeometry height="81" width="310" x="581" y="1337" as="geometry" />
+        </mxCell>
+        <mxCell id="p1join" parent="p1s" style="shape=umlFork;fillColor=#000000;strokeColor=#000000;" vertex="1">
+          <mxGeometry height="67" width="27" x="225" y="1303" as="geometry" />
+        </mxCell>
+        <mxCell id="p1e18" edge="1" parent="p1s" source="p1away" style="edgeStyle=orthogonalEdgeStyle;endArrow=block;endFill=1;" target="p1join">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="417" y="1378" />
+              <mxPoint x="417" y="1330" />
+            </Array>
+            <mxPoint x="165" y="1400" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="p1home" parent="p1s" style="rounded=1;whiteSpace=wrap;html=1;" value="[HOME] normal Door/Motion activity allowed" vertex="1">
+          <mxGeometry height="57" width="255" x="315" y="1190" as="geometry" />
+        </mxCell>
+        <mxCell id="p1mode" parent="p1s" style="rhombus;whiteSpace=wrap;html=1;" value="HOME or AWAY?" vertex="1">
+          <mxGeometry height="122" width="243" x="705" y="1130" as="geometry" />
+        </mxCell>
+        <mxCell id="p1e15" edge="1" parent="p1s" source="p1mode" style="edgeStyle=orthogonalEdgeStyle;endArrow=block;endFill=1;" target="p1away" value="[AWAY]">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="827" y="1250" />
+              <mxPoint x="827" y="1250" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="p1e14" edge="1" parent="p1s" source="p1mode" style="edgeStyle=orthogonalEdgeStyle;endArrow=block;endFill=1;exitX=0;exitY=0.5;exitDx=0;exitDy=0;" target="p1home" value="[HOME]">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="695" y="1191" />
+              <mxPoint x="695" y="1219" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="p1e17" edge="1" parent="p1s" source="p1home" style="edgeStyle=orthogonalEdgeStyle;endArrow=block;endFill=1;" target="p1join">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="442" y="1280" />
+              <mxPoint x="239" y="1280" />
+            </Array>
+            <mxPoint x="125" y="1350" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="p1e19" edge="1" parent="p1s" source="p1join" style="edgeStyle=orthogonalEdgeStyle;endArrow=block;endFill=1;" target="p1eval">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="239" y="1440" />
+              <mxPoint x="290" y="1440" />
+            </Array>
+            <mxPoint x="493" y="1400" as="sourcePoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="p1c" parent="1" style="swimlane;horizontal=0;startSize=28;fillColor=#fef5e7;strokeColor=#f5b041;fontStyle=1;" value="Communication Service" vertex="1">
+          <mxGeometry height="1800" width="397" x="1431" as="geometry" />
+        </mxCell>
+        <mxCell id="p1warn" parent="p1c" style="rounded=1;whiteSpace=wrap;html=1;" value="Create Warning Incident; notify User first" vertex="1">
+          <mxGeometry height="61" width="254" x="49" y="820" as="geometry" />
+        </mxCell>
+        <mxCell id="p1loop" parent="p1c" style="rounded=1;whiteSpace=wrap;html=1;" value="No incident: continue monitoring; HOME/AWAY may change" vertex="1">
+          <mxGeometry height="68" width="275" x="38.5" y="1560" as="geometry" />
+        </mxCell>
+        <mxCell id="p1f" parent="1" style="swimlane;horizontal=0;startSize=28;fillColor=#e8f8f5;strokeColor=#48c9b0;fontStyle=1;" value="Family/Emergency Contact" vertex="1">
+          <mxGeometry height="1800" width="324" x="1755" as="geometry" />
+        </mxCell>
+        <mxCell id="p1crit" parent="p1f" style="rounded=1;whiteSpace=wrap;html=1;" value="Create Critical Incident; notify User immediately" vertex="1">
+          <mxGeometry height="71" width="249" x="55" y="820" as="geometry" />
+        </mxCell>
+        <mxCell id="p1e" parent="1" style="swimlane;horizontal=0;startSize=28;fillColor=#fdedec;strokeColor=#ec7063;fontStyle=1;" value="Emergency Service" vertex="1">
+          <mxGeometry height="1800" width="351" x="2079" as="geometry" />
+        </mxCell>
+        <mxCell id="p1start" parent="1" style="ellipse;fillColor=#000000;strokeColor=#000000;" vertex="1">
+          <mxGeometry height="32" width="32" x="182" y="81" as="geometry" />
+        </mxCell>
+        <mxCell id="p1login" parent="1" style="rounded=1;whiteSpace=wrap;html=1;" value="Guest Login" vertex="1">
+          <mxGeometry height="68" width="230" x="88" y="142" as="geometry" />
+        </mxCell>
+        <mxCell id="p1config" parent="1" style="rounded=1;whiteSpace=wrap;html=1;" value="Configure monitoring, safe levels, contacts and HOME/AWAY" vertex="1">
+          <mxGeometry height="88" width="310" x="47" y="243" as="geometry" />
+        </mxCell>
+        <mxCell id="p1temp" parent="1" style="rounded=1;whiteSpace=wrap;html=1;" value="Monitor Outdoor Temperature" vertex="1">
+          <mxGeometry height="68" width="297" x="749" y="122" as="geometry" />
+        </mxCell>
+        <mxCell id="p1cold" parent="1" style="rhombus;whiteSpace=wrap;html=1;" value="Cold-weather threshold reached?" vertex="1">
+          <mxGeometry height="122" width="243" x="776" y="223" as="geometry" />
+        </mxCell>
+        <mxCell id="p1mandatory" parent="1" style="rounded=1;whiteSpace=wrap;html=1;" value="[active] Make Indoor Temperature and Power mandatory" vertex="1">
+          <mxGeometry height="81" width="338" x="526" y="392" as="geometry" />
+        </mxCell>
+        <mxCell id="p1optional" parent="1" style="rounded=1;whiteSpace=wrap;html=1;" value="[inactive] Allow user configuration of Indoor Temperature and Power" vertex="1">
+          <mxGeometry height="81" width="351" x="945" y="392" as="geometry" />
+        </mxCell>
+        <mxCell id="p1merge" parent="1" style="rhombus;whiteSpace=wrap;html=1;" value="Merge effective cold-weather configuration" vertex="1">
+          <mxGeometry height="122" width="243" x="776" y="526" as="geometry" />
+        </mxCell>
+        <mxCell id="p1apply" parent="1" style="rounded=1;whiteSpace=wrap;html=1;" value="Apply effective configuration&lt;br&gt;Smoke and Internet/Connection always mandatory" vertex="1">
+          <mxGeometry height="88" width="473" x="662" y="688" as="geometry" />
+        </mxCell>
+        <mxCell id="p1fork" parent="1" style="shape=umlFork;fillColor=#000000;strokeColor=#000000;" vertex="1">
+          <mxGeometry height="135" width="27" x="884" y="824" as="geometry" />
+        </mxCell>
+        <mxCell id="p1safety" parent="1" style="rounded=1;whiteSpace=wrap;html=1;" value="Continuously monitor Smoke, Temperature, Water Leak, Power and Internet/Connection" vertex="1">
+          <mxGeometry height="94" width="405" x="500" y="1013" as="geometry" />
+        </mxCell>
+        <mxCell id="p1security" parent="1" style="rounded=1;whiteSpace=wrap;html=1;" value="Continuously monitor Door and Motion" vertex="1">
+          <mxGeometry height="81" width="324" x="972" y="1013" as="geometry" />
+        </mxCell>
+        <mxCell id="p1incident" parent="1" style="rhombus;whiteSpace=wrap;html=1;" value="Incident required?" vertex="1">
+          <mxGeometry height="115" width="230" x="1148" y="1460" as="geometry" />
+        </mxCell>
+        <mxCell id="p1sev" parent="1" style="rhombus;whiteSpace=wrap;html=1;" value="Warning or Critical?" vertex="1">
+          <mxGeometry height="122" width="243" x="1458" y="1026" as="geometry" />
+        </mxCell>
+        <mxCell id="p1e1" edge="1" parent="1" source="p1start" style="edgeStyle=orthogonalEdgeStyle;endArrow=block;endFill=1;">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="198" y="140" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="p1e2" edge="1" parent="1" source="p1login" style="edgeStyle=orthogonalEdgeStyle;endArrow=block;endFill=1;" target="p1config">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="p1e3" edge="1" parent="1" source="p1config" style="edgeStyle=orthogonalEdgeStyle;endArrow=block;endFill=1;" target="p1temp">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="358" y="286" />
+              <mxPoint x="540" y="286" />
+              <mxPoint x="540" y="155" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="p1e4" edge="1" parent="1" source="p1temp" style="edgeStyle=orthogonalEdgeStyle;endArrow=block;endFill=1;" target="p1cold" value="[system threshold]">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="p1e5" edge="1" parent="1" source="p1cold" style="edgeStyle=orthogonalEdgeStyle;endArrow=block;endFill=1;" target="p1mandatory">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="695" y="284" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="VXTZOX0pOufUaQ6Pdq0Y-1" connectable="0" parent="p1e5" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" value="Yes" vertex="1">
+          <mxGeometry relative="1" x="0.0619" y="-1" as="geometry">
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="p1e6" edge="1" parent="1" source="p1cold" style="edgeStyle=orthogonalEdgeStyle;endArrow=block;endFill=1;" target="p1optional">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="1120" y="284" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="VXTZOX0pOufUaQ6Pdq0Y-2" connectable="0" parent="p1e6" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" value="No" vertex="1">
+          <mxGeometry relative="1" x="0.2195" y="-1" as="geometry">
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="p1e7" edge="1" parent="1" source="p1mandatory" style="edgeStyle=orthogonalEdgeStyle;endArrow=block;endFill=1;" target="p1merge">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="695" y="500" />
+              <mxPoint x="898" y="500" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="p1e8" edge="1" parent="1" source="p1optional" style="edgeStyle=orthogonalEdgeStyle;endArrow=block;endFill=1;" target="p1merge">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="1120" y="500" />
+              <mxPoint x="898" y="500" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="p1e9" edge="1" parent="1" source="p1merge" style="edgeStyle=orthogonalEdgeStyle;endArrow=block;endFill=1;" target="p1apply">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="897.51" y="680" />
+              <mxPoint x="897.51" y="680" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="p1e10" edge="1" parent="1" source="p1apply" style="edgeStyle=orthogonalEdgeStyle;endArrow=block;endFill=1;" target="p1fork">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="p1e11" edge="1" parent="1" source="p1fork" style="edgeStyle=orthogonalEdgeStyle;endArrow=block;endFill=1;" target="p1safety">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="898" y="986" />
+              <mxPoint x="702" y="986" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="p1e12" edge="1" parent="1" source="p1fork" style="edgeStyle=orthogonalEdgeStyle;endArrow=block;endFill=1;" target="p1security">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="898" y="986" />
+              <mxPoint x="1134" y="986" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="p1e13" edge="1" parent="1" source="p1security" style="edgeStyle=orthogonalEdgeStyle;endArrow=block;endFill=1;" target="p1mode">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="p1e16" edge="1" parent="1" source="p1safety" style="edgeStyle=orthogonalEdgeStyle;endArrow=block;endFill=1;" target="p1join">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="560" y="1330" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="p1e20" edge="1" parent="1" source="p1eval" style="edgeStyle=orthogonalEdgeStyle;endArrow=block;endFill=1;" target="p1incident">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="1010" y="1517" />
+              <mxPoint x="1010" y="1517" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="p1e21" edge="1" parent="1" source="p1incident" style="edgeStyle=orthogonalEdgeStyle;endArrow=block;endFill=1;" target="p1loop" value="[no]">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="1263" y="1594" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="p1e22" edge="1" parent="1" source="p1loop" style="edgeStyle=orthogonalEdgeStyle;endArrow=block;endFill=1;dashed=1;fillColor=#fff2cc;strokeColor=#d6b656;" target="p1fork">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="1580" y="1410" />
+              <mxPoint x="1380" y="1410" />
+              <mxPoint x="1380" y="918" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="p1e23" edge="1" parent="1" source="p1incident" style="edgeStyle=orthogonalEdgeStyle;endArrow=block;endFill=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;" target="p1sev" value="[yes]">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="1411" y="1517" />
+              <mxPoint x="1411" y="1087" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="p1e24" edge="1" parent="1" source="p1sev" style="edgeStyle=orthogonalEdgeStyle;endArrow=block;endFill=1;" target="p1warn" value="[Warning]">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="1580" y="920" />
+              <mxPoint x="1580" y="920" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="p1e25" edge="1" parent="1" source="p1sev" style="edgeStyle=orthogonalEdgeStyle;endArrow=block;endFill=1;" target="p1crit" value="[Critical]">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="1580" y="1087" />
+              <mxPoint x="1924" y="1087" />
+              <mxPoint x="1924" y="891" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="p1e26" edge="1" parent="1" source="p1warn" style="edgeStyle=orthogonalEdgeStyle;endArrow=block;endFill=1;fillColor=#fff2cc;strokeColor=#d6b656;" target="p1respond">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="1607" y="660" />
+              <mxPoint x="310" y="660" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="p1e27" edge="1" parent="1" source="p1crit" style="edgeStyle=orthogonalEdgeStyle;endArrow=block;endFill=1;fillColor=#d5e8d4;strokeColor=#82b366;" target="p1respond">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="1920" y="660" />
+              <mxPoint x="331" y="660" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="p1e32" edge="1" parent="1" source="p1loop2" style="edgeStyle=orthogonalEdgeStyle;endArrow=block;endFill=1;dashed=1;fillColor=#dae8fc;strokeColor=#6c8ebf;" target="p1fork">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="385" y="1013" />
+              <mxPoint x="385" y="918" />
+              <mxPoint x="871" y="918" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+  <diagram id="escalation" name="2 - Escalation and Communication Reliability">
+    <mxGraphModel dx="2357" dy="1415" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="2160" pageHeight="1550" math="0" shadow="0">
+      <root>
+        <mxCell id="s0" />
+        <mxCell id="s1" parent="s0" />
+        <mxCell id="slUser" parent="s1" style="swimlane;horizontal=0;startSize=28;fillColor=#eaf2f8;strokeColor=#5b9bd5;fontStyle=1;" value="Hytte Owner/User" vertex="1">
+          <mxGeometry height="1550" width="405" as="geometry" />
+        </mxCell>
+        <mxCell id="sStart" parent="slUser" style="ellipse;fillColor=#000000;strokeColor=#000000;" value="" vertex="1">
+          <mxGeometry height="32" width="32" x="182" y="112.5" as="geometry" />
+        </mxCell>
+        <mxCell id="jDB4PE_w-NfWpsdhU1wF-0" parent="slUser" style="rhombus;whiteSpace=wrap;html=1;shapeInside=1;" value="" vertex="1">
+          <mxGeometry height="59" width="60" x="182" y="1100" as="geometry" />
+        </mxCell>
+        <mxCell id="se27" edge="1" parent="slUser" source="sNormal" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;endArrow=block;endFill=1;fillColor=#fff2cc;strokeColor=#d6b656;" target="jDB4PE_w-NfWpsdhU1wF-0">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="1370" y="1480" />
+              <mxPoint x="220" y="1480" />
+            </Array>
+            <mxPoint x="220.00000000000023" y="1145" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="slSystem" parent="s1" style="swimlane;horizontal=0;startSize=28;fillColor=#f4f6f7;strokeColor=#7f8c8d;fontStyle=1;" value="Hytte Monitoring System" vertex="1">
+          <mxGeometry height="1550" width="795" x="405" as="geometry" />
+        </mxCell>
+        <mxCell id="sInternet" parent="slSystem" style="rhombus;whiteSpace=wrap;html=1;" value="Internet available?" vertex="1">
+          <mxGeometry height="115" width="216" x="65" y="700" as="geometry" />
+        </mxCell>
+        <mxCell id="sCritUser" parent="slSystem" style="rounded=1;whiteSpace=wrap;html=1;" value="Critical: notify user immediately" vertex="1">
+          <mxGeometry height="68" width="284" x="474.5" y="260" as="geometry" />
+        </mxCell>
+        <mxCell id="sPowerD" parent="slSystem" style="rhombus;whiteSpace=wrap;html=1;" value="Normal power?" vertex="1">
+          <mxGeometry height="115" width="216" x="65" y="526" as="geometry" />
+        </mxCell>
+        <mxCell id="se17" edge="1" parent="slSystem" source="sPowerD" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;endArrow=block;endFill=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;" value="[yes]">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="175" y="641" />
+            </Array>
+            <mxPoint x="175" y="700" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="sBattery" parent="slSystem" style="rounded=1;whiteSpace=wrap;html=1;" value="Switch to battery backup" vertex="1">
+          <mxGeometry height="44" width="183" x="355" y="561.5" as="geometry" />
+        </mxCell>
+        <mxCell id="se16" edge="1" parent="slSystem" source="sPowerD" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;endArrow=block;endFill=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;" target="sBattery" value="[no]">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="295" y="584" />
+              <mxPoint x="295" y="584" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="se18" edge="1" parent="slSystem" source="sBattery" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;endArrow=block;endFill=1;" target="sInternet">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="447" y="680" />
+              <mxPoint x="205" y="680" />
+            </Array>
+            <mxPoint x="364.9999999999998" y="590.0000000000002" as="sourcePoint" />
+            <mxPoint x="173" y="684.5000000000002" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="sCritResp" parent="slSystem" style="rhombus;whiteSpace=wrap;html=1;" value="User responds?" vertex="1">
+          <mxGeometry height="115" width="216" x="565" y="370" as="geometry" />
+        </mxCell>
+        <mxCell id="se10" edge="1" parent="slSystem" source="sCritUser" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;endArrow=block;endFill=1;" target="sCritResp" value="">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="sWait" parent="slSystem" style="rounded=1;whiteSpace=wrap;html=1;" value="Wait severity-dependent response time&lt;br&gt;(system-determined)" vertex="1">
+          <mxGeometry height="81" width="405" x="115" y="1360" as="geometry" />
+        </mxCell>
+        <mxCell id="sDanger" parent="slSystem" style="rhombus;whiteSpace=wrap;html=1;" value="Immediate critical danger?" vertex="1">
+          <mxGeometry height="122" width="243" x="485" y="1080" as="geometry" />
+        </mxCell>
+        <mxCell id="sJoin" parent="slSystem" style="shape=umlFork;fillColor=#000000;strokeColor=#000000;" value="" vertex="1">
+          <mxGeometry height="70" width="27" x="159.5" y="920" as="geometry" />
+        </mxCell>
+        <mxCell id="se20" edge="1" parent="slSystem" source="sInternet" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;endArrow=block;endFill=1;" target="sJoin" value="[yes]">
+          <mxGeometry relative="1" x="0.2" as="geometry">
+            <mxPoint as="offset" />
+            <Array as="points" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="sFork" parent="slSystem" style="shape=umlFork;fillColor=#000000;strokeColor=#000000;" value="" vertex="1">
+          <mxGeometry height="114" width="27" x="165" y="216" as="geometry" />
+        </mxCell>
+        <mxCell id="slComm" parent="s1" style="swimlane;horizontal=0;startSize=28;fillColor=#fef5e7;strokeColor=#f5b041;fontStyle=1;" value="Communication Service" vertex="1">
+          <mxGeometry height="1550" width="351" x="1202" as="geometry" />
+        </mxCell>
+        <mxCell id="sNormal" parent="slComm" style="rounded=1;whiteSpace=wrap;html=1;" value="If situation allows, wait for human intervention before Emergency Service" vertex="1">
+          <mxGeometry height="101" width="310" x="33" y="1330" as="geometry" />
+        </mxCell>
+        <mxCell id="sComm" parent="slComm" style="rounded=1;whiteSpace=wrap;html=1;" value="Route important notification through available channel" vertex="1">
+          <mxGeometry height="77" width="229" x="48" y="870" as="geometry" />
+        </mxCell>
+        <mxCell id="slFamily" parent="s1" style="swimlane;horizontal=0;startSize=28;fillColor=#e8f8f5;strokeColor=#48c9b0;fontStyle=1;" value="Family/Emergency Contact" vertex="1">
+          <mxGeometry height="1550" width="314" x="1552" as="geometry" />
+        </mxCell>
+        <mxCell id="sWarnFam" parent="slFamily" style="rounded=1;whiteSpace=wrap;html=1;" value="Receive Warning notification" vertex="1">
+          <mxGeometry height="51" width="194" x="78" y="641" as="geometry" />
+        </mxCell>
+        <mxCell id="slEmergency" parent="s1" style="swimlane;horizontal=0;startSize=28;fillColor=#fdedec;strokeColor=#ec7063;fontStyle=1;" value="Emergency Service" vertex="1">
+          <mxGeometry height="1550" width="310" x="1850" as="geometry" />
+        </mxCell>
+        <mxCell id="sIncident" parent="s1" style="rounded=1;whiteSpace=wrap;html=1;" value="Active Warning or Critical Incident requires escalation" vertex="1">
+          <mxGeometry height="81" width="405" x="520" y="88" as="geometry" />
+        </mxCell>
+        <mxCell id="sPower" parent="s1" style="rounded=1;whiteSpace=wrap;html=1;" value="Check power and Internet/Connection status" vertex="1">
+          <mxGeometry height="74" width="297" x="493" y="425" as="geometry" />
+        </mxCell>
+        <mxCell id="sCell" parent="s1" style="rounded=1;whiteSpace=wrap;html=1;" value="Use Cellular/SIM fallback for important notifications" vertex="1">
+          <mxGeometry height="88" width="284" x="837" y="729" as="geometry" />
+        </mxCell>
+        <mxCell id="sType" parent="s1" style="rhombus;whiteSpace=wrap;html=1;" value="Warning or Critical?" vertex="1">
+          <mxGeometry height="122" width="216" x="94" y="216" as="geometry" />
+        </mxCell>
+        <mxCell id="sWarnUser" parent="s1" style="rounded=1;whiteSpace=wrap;html=1;" value="Notify user first" vertex="1">
+          <mxGeometry height="68" width="256" x="74" y="398" as="geometry" />
+        </mxCell>
+        <mxCell id="sWarnResp" parent="s1" style="rhombus;whiteSpace=wrap;html=1;" value="User responds?" vertex="1">
+          <mxGeometry height="115" width="216" x="94" y="526" as="geometry" />
+        </mxCell>
+        <mxCell id="sWarnEnd" parent="s1" style="rounded=1;whiteSpace=wrap;html=1;" value="Warning remains active if unresolved;&lt;br&gt;never direct to official Emergency Service" vertex="1">
+          <mxGeometry height="59" width="212" x="160" y="920" as="geometry" />
+        </mxCell>
+        <mxCell id="sCritFam" parent="s1" style="rounded=1;whiteSpace=wrap;html=1;" value="Receive Critical notification" vertex="1">
+          <mxGeometry height="59" width="199" x="1630" y="900" as="geometry" />
+        </mxCell>
+        <mxCell id="sEmergency" parent="s1" style="rounded=1;whiteSpace=wrap;html=1;" value="Contact relevant Emergency Service&lt;br&gt;(safety override may bypass normal waiting/preferences)" vertex="1">
+          <mxGeometry height="108" width="243" x="1877" y="1080" as="geometry" />
+        </mxCell>
+        <mxCell id="se1" edge="1" parent="s1" source="sStart" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;endArrow=block;endFill=1;" target="sIncident">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="360" y="128.5" />
+              <mxPoint x="360" y="128.5" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="se2" edge="1" parent="s1" source="sIncident" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;endArrow=block;endFill=1;" target="sFork">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="se3" edge="1" parent="s1" source="sFork" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;endArrow=block;endFill=1;" target="sType">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="440" y="277" />
+              <mxPoint x="440" y="277" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="se4" edge="1" parent="s1" source="sFork" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;endArrow=block;endFill=1;" target="sPower">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="584" y="400" />
+              <mxPoint x="584" y="400" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="se5" edge="1" parent="s1" source="sType" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;endArrow=block;endFill=1;" target="sWarnUser" value="[Warning]">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="se6" edge="1" parent="s1" source="sType" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;endArrow=block;endFill=1;entryX=0;entryY=0.5;entryDx=0;entryDy=0;exitX=0.704;exitY=0.777;exitDx=0;exitDy=0;exitPerimeter=0;fillColor=#dae8fc;strokeColor=#6c8ebf;" target="sCritUser" value="[Critical]">
+          <mxGeometry relative="1" x="-0.58" y="7" as="geometry">
+            <mxPoint as="offset" />
+            <Array as="points">
+              <mxPoint x="246" y="367" />
+              <mxPoint x="830" y="367" />
+            </Array>
+            <mxPoint x="805" y="366" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="se7" edge="1" parent="s1" source="sWarnUser" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;endArrow=block;endFill=1;fillColor=#dae8fc;strokeColor=#6c8ebf;" target="sWarnResp">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="se8" edge="1" parent="s1" source="sWarnResp" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;endArrow=block;endFill=1;fillColor=#dae8fc;strokeColor=#6c8ebf;" target="sWarnFam" value="[no response]">
+          <mxGeometry relative="1" x="-0.7221" y="1" as="geometry">
+            <mxPoint as="offset" />
+            <Array as="points">
+              <mxPoint x="310" y="671" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="se9" edge="1" parent="s1" source="sWarnFam" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;endArrow=block;endFill=1;fillColor=#d5e8d4;strokeColor=#82b366;" target="sWarnEnd">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="1650" y="860" />
+              <mxPoint x="460" y="860" />
+              <mxPoint x="460" y="934" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="se11" edge="1" parent="s1" source="sCritResp" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;endArrow=block;endFill=1;" target="sCritFam" value="[no response]">
+          <mxGeometry relative="1" x="-0.8495" as="geometry">
+            <mxPoint as="offset" />
+            <Array as="points">
+              <mxPoint x="1600" y="427" />
+              <mxPoint x="1600" y="929" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="se12" edge="1" parent="s1" source="sCritFam" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;endArrow=block;endFill=1;fillColor=#d5e8d4;strokeColor=#82b366;" target="sDanger">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="1701" y="1060" />
+              <mxPoint x="1012" y="1060" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="se13" edge="1" parent="s1" source="sDanger" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;endArrow=block;endFill=1;" target="sEmergency" value="[yes]">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="1500" y="1141" />
+              <mxPoint x="1500" y="1141" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="se14" edge="1" parent="s1" source="sDanger" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;endArrow=block;endFill=1;" target="sNormal" value="[no]">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="1012" y="1380" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="se15" edge="1" parent="s1" source="sPower" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;endArrow=block;endFill=1;" target="sPowerD">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="578" y="520" />
+              <mxPoint x="578" y="520" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="se19" edge="1" parent="s1" source="sInternet" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;endArrow=block;endFill=1;" target="sCell" value="[no]">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="790" y="758" />
+              <mxPoint x="790" y="758" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="se21" edge="1" parent="s1" source="sCell" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;endArrow=block;endFill=1;strokeWidth=1;strokeColor=default;" target="sJoin">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="970" y="940" />
+            </Array>
+            <mxPoint x="983" y="830" as="sourcePoint" />
+            <mxPoint x="650" y="930" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="se22" edge="1" parent="s1" source="sJoin" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;endArrow=block;endFill=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;" target="sComm">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="578" y="1020" />
+              <mxPoint x="1040" y="1020" />
+              <mxPoint x="1040" y="910" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="se29" edge="1" parent="s1" source="sComm" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;endArrow=block;endFill=1;fillColor=#fff2cc;strokeColor=#d6b656;" target="sWait">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="1377" y="1040" />
+              <mxPoint x="723" y="1040" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="se23" edge="1" parent="s1" source="sType" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;endArrow=block;endFill=1;dashed=1;fillColor=#dae8fc;strokeColor=#6c8ebf;" target="sWait" value="critical response time may be shorter">
+          <mxGeometry relative="1" x="-0.8922" y="50" as="geometry">
+            <mxPoint y="-1" as="offset" />
+            <Array as="points">
+              <mxPoint x="50" y="277" />
+              <mxPoint x="50" y="1401" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="se24" edge="1" parent="s1" source="sWarnResp" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;endArrow=block;endFill=1;fillColor=#dae8fc;strokeColor=#6c8ebf;" target="jDB4PE_w-NfWpsdhU1wF-0" value="[handled]">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="90" y="583.5" />
+              <mxPoint x="90" y="1130" />
+            </Array>
+            <mxPoint x="196" y="1126.0588235294117" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="se25" edge="1" parent="s1" source="sCritResp" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;endArrow=block;endFill=1;strokeColor=light-dark(#000000,#E5E5FF);" target="jDB4PE_w-NfWpsdhU1wF-0" value="[handled]">
+          <mxGeometry relative="1" x="-0.8748" as="geometry">
+            <mxPoint as="offset" />
+            <Array as="points">
+              <mxPoint x="1078" y="583" />
+              <mxPoint x="1130" y="583" />
+              <mxPoint x="1130" y="873" />
+              <mxPoint x="500" y="873" />
+              <mxPoint x="500" y="1130" />
+            </Array>
+            <mxPoint x="234" y="1120.0588235294117" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="se26" edge="1" parent="s1" source="sWarnEnd" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;endArrow=block;endFill=1;" target="jDB4PE_w-NfWpsdhU1wF-0">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="214.9411764705883" y="1107" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="se28" edge="1" parent="s1" source="sEmergency" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;endArrow=block;endFill=1;fillColor=#f8cecc;strokeColor=#b85450;" target="jDB4PE_w-NfWpsdhU1wF-0">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="1998.5" y="1510" />
+              <mxPoint x="212" y="1510" />
+            </Array>
+            <mxPoint x="200.00000000000023" y="1145" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
