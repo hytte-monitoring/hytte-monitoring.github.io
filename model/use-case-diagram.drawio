@@ -1,0 +1,85 @@
+<mxfile host="app.diagrams.net" modified="2026-10-05T00:00:00.000Z" agent="GitHub Copilot" version="24.7.17" type="device">
+  <diagram id="hytte-use-cases" name="Use Case Diagram">
+    <mxGraphModel dx="1600" dy="1230" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1600" pageHeight="1230" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="boundary" value="Hytte Monitoring System&#xa;Conceptual system; website is a static mock-up" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#344054;strokeWidth=2;fontColor=#172B4D;fontStyle=1;verticalAlign=top;spacingTop=14;" vertex="1" parent="1">
+          <mxGeometry x="300" y="70" width="1080" height="900" as="geometry" />
+        </mxCell>
+        <mxCell id="uc-login" value="Sign in with Guest Login" style="ellipse;whiteSpace=wrap;html=1;fillColor=#EAF4F4;strokeColor=#16827A;fontColor=#173B3A;fontSize=16;" vertex="1" parent="1">
+          <mxGeometry x="345" y="155" width="270" height="78" as="geometry" />
+        </mxCell>
+        <mxCell id="uc-configure-monitoring" value="Configure monitoring" style="ellipse;whiteSpace=wrap;html=1;fillColor=#EAF4F4;strokeColor=#16827A;fontColor=#173B3A;fontSize=16;" vertex="1" parent="1">
+          <mxGeometry x="345" y="300" width="270" height="78" as="geometry" />
+        </mxCell>
+        <mxCell id="uc-configure-levels" value="Configure allowed detection and&#xa;notification levels" style="ellipse;whiteSpace=wrap;html=1;fillColor=#EAF4F4;strokeColor=#16827A;fontColor=#173B3A;fontSize=16;" vertex="1" parent="1">
+          <mxGeometry x="345" y="435" width="270" height="82" as="geometry" />
+        </mxCell>
+        <mxCell id="uc-set-mode" value="Set HOME / AWAY mode" style="ellipse;whiteSpace=wrap;html=1;fillColor=#EAF4F4;strokeColor=#16827A;fontColor=#173B3A;fontSize=16;" vertex="1" parent="1">
+          <mxGeometry x="345" y="580" width="270" height="78" as="geometry" />
+        </mxCell>
+        <mxCell id="uc-dashboard" value="View monitoring dashboard" style="ellipse;whiteSpace=wrap;html=1;fillColor=#EAF4F4;strokeColor=#16827A;fontColor=#173B3A;fontSize=16;" vertex="1" parent="1">
+          <mxGeometry x="345" y="725" width="270" height="78" as="geometry" />
+        </mxCell>
+        <mxCell id="uc-handle-incidents" value="Manage active incidents&#xa;(view, resolve / not resolved)" style="ellipse;whiteSpace=wrap;html=1;fillColor=#EAF4F4;strokeColor=#16827A;fontColor=#173B3A;fontSize=16;" vertex="1" parent="1">
+          <mxGeometry x="345" y="870" width="270" height="84" as="geometry" />
+        </mxCell>
+        <mxCell id="uc-next-steps" value="Request Suggested Next Steps" style="ellipse;whiteSpace=wrap;html=1;fillColor=#F0F6FF;strokeColor=#4776A8;fontColor=#203B5C;fontSize=16;" vertex="1" parent="1">
+          <mxGeometry x="655" y="870" width="270" height="84" as="geometry" />
+        </mxCell>
+        <mxCell id="uc-history" value="View Incident / Event History" style="ellipse;whiteSpace=wrap;html=1;fillColor=#F0F6FF;strokeColor=#4776A8;fontColor=#203B5C;fontSize=16;" vertex="1" parent="1">
+          <mxGeometry x="655" y="725" width="270" height="78" as="geometry" />
+        </mxCell>
+        <mxCell id="uc-contacts" value="Configure Family / Emergency Contacts" style="ellipse;whiteSpace=wrap;html=1;fillColor=#EAF4F4;strokeColor=#16827A;fontColor=#173B3A;fontSize=16;" vertex="1" parent="1">
+          <mxGeometry x="655" y="580" width="270" height="78" as="geometry" />
+        </mxCell>
+        <mxCell id="uc-escalation-settings" value="Configure automatic emergency&#xa;escalation" style="ellipse;whiteSpace=wrap;html=1;fillColor=#EAF4F4;strokeColor=#16827A;fontColor=#173B3A;fontSize=16;" vertex="1" parent="1">
+          <mxGeometry x="655" y="435" width="270" height="82" as="geometry" />
+        </mxCell>
+        <mxCell id="uc-notify" value="Notify owner (immediately for Critical)" style="ellipse;whiteSpace=wrap;html=1;fillColor=#FFF5E8;strokeColor=#C77B24;fontColor=#513718;fontSize=16;" vertex="1" parent="1">
+          <mxGeometry x="965" y="580" width="270" height="78" as="geometry" />
+        </mxCell>
+        <mxCell id="uc-warning-escalation" value="Escalate Warning to contact&#xa;[owner does not respond]" style="ellipse;whiteSpace=wrap;html=1;fillColor=#FFF5E8;strokeColor=#C77B24;fontColor=#513718;fontSize=16;" vertex="1" parent="1">
+          <mxGeometry x="965" y="725" width="270" height="78" as="geometry" />
+        </mxCell>
+        <mxCell id="uc-critical-escalation" value="Escalate Critical Incident&#xa;[unresolved or immediate danger]" style="ellipse;whiteSpace=wrap;html=1;fillColor=#FFF5E8;strokeColor=#C77B24;fontColor=#513718;fontSize=16;" vertex="1" parent="1">
+          <mxGeometry x="965" y="870" width="270" height="84" as="geometry" />
+        </mxCell>
+        <mxCell id="actor-owner" value="Hytte Owner / User" style="shape=umlActor;verticalLabelPosition=bottom;verticalAlign=top;html=1;outlineConnect=0;fontColor=#172B4D;" vertex="1" parent="1">
+          <mxGeometry x="80" y="470" width="60" height="100" as="geometry" />
+        </mxCell>
+        <mxCell id="actor-family" value="Family / Emergency&#xa;Contact" style="shape=umlActor;verticalLabelPosition=bottom;verticalAlign=top;html=1;outlineConnect=0;fontColor=#172B4D;" vertex="1" parent="1">
+          <mxGeometry x="1510" y="510" width="75" height="100" as="geometry" />
+        </mxCell>
+        <mxCell id="actor-emergency" value="Emergency Service" style="shape=umlActor;verticalLabelPosition=bottom;verticalAlign=top;html=1;outlineConnect=0;fontColor=#172B4D;" vertex="1" parent="1">
+          <mxGeometry x="1510" y="820" width="75" height="100" as="geometry" />
+        </mxCell>
+        <mxCell id="actor-communication" value="Communication Service" style="shape=umlActor;verticalLabelPosition=bottom;verticalAlign=top;html=1;outlineConnect=0;fontColor=#172B4D;" vertex="1" parent="1">
+          <mxGeometry x="1510" y="180" width="75" height="100" as="geometry" />
+        </mxCell>
+        <mxCell id="edge-owner-login" edge="1" parent="1" source="actor-owner" target="uc-login" style="edgeStyle=none;rounded=0;html=1;endArrow=none;strokeColor=#475467;strokeWidth=2;" ><mxGeometry relative="1" as="geometry" /></mxCell>
+        <mxCell id="edge-owner-config" edge="1" parent="1" source="actor-owner" target="uc-configure-monitoring" style="edgeStyle=none;rounded=0;html=1;endArrow=none;strokeColor=#475467;strokeWidth=2;" ><mxGeometry relative="1" as="geometry" /></mxCell>
+        <mxCell id="edge-owner-levels" edge="1" parent="1" source="actor-owner" target="uc-configure-levels" style="edgeStyle=none;rounded=0;html=1;endArrow=none;strokeColor=#475467;strokeWidth=2;" ><mxGeometry relative="1" as="geometry" /></mxCell>
+        <mxCell id="edge-owner-mode" edge="1" parent="1" source="actor-owner" target="uc-set-mode" style="edgeStyle=none;rounded=0;html=1;endArrow=none;strokeColor=#475467;strokeWidth=2;" ><mxGeometry relative="1" as="geometry" /></mxCell>
+        <mxCell id="edge-owner-dashboard" edge="1" parent="1" source="actor-owner" target="uc-dashboard" style="edgeStyle=none;rounded=0;html=1;endArrow=none;strokeColor=#475467;strokeWidth=2;" ><mxGeometry relative="1" as="geometry" /></mxCell>
+        <mxCell id="edge-owner-incidents" edge="1" parent="1" source="actor-owner" target="uc-handle-incidents" style="edgeStyle=none;rounded=0;html=1;endArrow=none;strokeColor=#475467;strokeWidth=2;" ><mxGeometry relative="1" as="geometry" /></mxCell>
+        <mxCell id="edge-owner-next" edge="1" parent="1" source="actor-owner" target="uc-next-steps" style="edgeStyle=none;rounded=0;html=1;endArrow=none;strokeColor=#475467;strokeWidth=2;" ><mxGeometry relative="1" as="geometry" /></mxCell>
+        <mxCell id="edge-owner-history" edge="1" parent="1" source="actor-owner" target="uc-history" style="edgeStyle=none;rounded=0;html=1;endArrow=none;strokeColor=#475467;strokeWidth=2;" ><mxGeometry relative="1" as="geometry" /></mxCell>
+        <mxCell id="edge-owner-contacts" edge="1" parent="1" source="actor-owner" target="uc-contacts" style="edgeStyle=none;rounded=0;html=1;endArrow=none;strokeColor=#475467;strokeWidth=2;" ><mxGeometry relative="1" as="geometry" /></mxCell>
+        <mxCell id="edge-owner-escalation-settings" edge="1" parent="1" source="actor-owner" target="uc-escalation-settings" style="edgeStyle=none;rounded=0;html=1;endArrow=none;strokeColor=#475467;strokeWidth=2;" ><mxGeometry relative="1" as="geometry" /></mxCell>
+        <mxCell id="edge-owner-notify" edge="1" parent="1" source="actor-owner" target="uc-notify" style="edgeStyle=none;rounded=0;html=1;endArrow=none;strokeColor=#475467;strokeWidth=2;" ><mxGeometry relative="1" as="geometry" /></mxCell>
+        <mxCell id="edge-family-warning" edge="1" parent="1" source="actor-family" target="uc-warning-escalation" style="edgeStyle=none;rounded=0;html=1;endArrow=none;strokeColor=#475467;strokeWidth=2;" ><mxGeometry relative="1" as="geometry" /></mxCell>
+        <mxCell id="edge-family-critical" edge="1" parent="1" source="actor-family" target="uc-critical-escalation" style="edgeStyle=none;rounded=0;html=1;endArrow=none;strokeColor=#475467;strokeWidth=2;" ><mxGeometry relative="1" as="geometry" /></mxCell>
+        <mxCell id="edge-emergency-critical" edge="1" parent="1" source="actor-emergency" target="uc-critical-escalation" style="edgeStyle=none;rounded=0;html=1;endArrow=none;strokeColor=#475467;strokeWidth=2;" ><mxGeometry relative="1" as="geometry" /></mxCell>
+        <mxCell id="edge-comm-notify" edge="1" parent="1" source="actor-communication" target="uc-notify" style="edgeStyle=none;rounded=0;html=1;endArrow=none;strokeColor=#475467;strokeWidth=2;" ><mxGeometry relative="1" as="geometry" /></mxCell>
+        <mxCell id="edge-comm-warning" edge="1" parent="1" source="actor-communication" target="uc-warning-escalation" style="edgeStyle=none;rounded=0;html=1;endArrow=none;strokeColor=#475467;strokeWidth=2;" ><mxGeometry relative="1" as="geometry" /></mxCell>
+        <mxCell id="edge-comm-critical" edge="1" parent="1" source="actor-communication" target="uc-critical-escalation" style="edgeStyle=none;rounded=0;html=1;endArrow=none;strokeColor=#475467;strokeWidth=2;" ><mxGeometry relative="1" as="geometry" /></mxCell>
+        <mxCell id="edge-next-extend" value="&lt;&lt;extend&gt;&gt; [Not Resolved; user requests guidance]" edge="1" parent="1" source="uc-next-steps" target="uc-handle-incidents" style="edgeStyle=none;rounded=0;html=1;dashed=1;endArrow=open;endFill=0;strokeColor=#4776A8;strokeWidth=2;fontColor=#203B5C;labelBackgroundColor=#FFFFFF;" ><mxGeometry relative="1" as="geometry" /></mxCell>
+        <mxCell id="note-safety" value="&lt;b&gt;Automatic system behavior&lt;/b&gt;&lt;br&gt;The system continuously monitors Smoke, Indoor / Outdoor Temperature, Water Leak, Door, Motion, Power and Internet / Connection. Outdoor temperature activates or deactivates cold-weather protection; Indoor Temperature and Power are mandatory while it is active, then prior user choices are restored. When attention is required, the system creates one Incident and updates that same history record if it escalates, resolves or closes. A Warning upgraded to Critical remains the same Incident.&lt;br&gt;&lt;br&gt;&lt;b&gt;Safety and escalation rules&lt;/b&gt;&lt;br&gt;Smoke and Internet / Connection are always mandatory. Critical thresholds and notifications override normal settings. The owner is notified first; if there is no response, the system-set severity wait determines escalation. Warnings may go to configured contacts but never Emergency Services. Critical Incidents may escalate from contact to Emergency Services, directly if no contact is configured, or immediately when danger overrides normal waits. HOME / AWAY mainly affects Door and Motion.&lt;br&gt;&lt;br&gt;&lt;b&gt;Scope&lt;/b&gt;&lt;br&gt;No CO sensor, camera or external Weather Service. Physical sensors, backend, battery backup, Cellular / SIM, calls, SMS and emergency integrations are conceptual only." style="shape=note;whiteSpace=wrap;html=1;size=14;align=left;spacing=10;fillColor=#FFF8E8;strokeColor=#C77B24;fontColor=#513718;" vertex="1" parent="1">
+          <mxGeometry x="300" y="980" width="1080" height="250" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
