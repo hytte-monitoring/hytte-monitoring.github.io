@@ -1,692 +1,613 @@
-<?xml version='1.0' encoding='utf-8'?>
-<mxfile host="app.diagrams.net" type="device" version="24.7.17" authority="model/Ground_truth.md" authoritySHA256="1f13f1641735fc55ace499436bd266b40c048a815cb522aa6524e9f4b91b6e34" referenceSHA256="1b7786abb6e8a49483be8ee6c942f47ee9588b968c8acf86e9111a59f9ddf67f" specificationRevision="v2" alignmentBasis="Established Ground Truth obligations; unspecified policy is represented abstractly">
-  <diagram id="system-operation-aligned" name="1 - System Operation" authority="model/Ground_truth.md">
-    <mxGraphModel dx="2360" dy="2220" grid="1" gridSize="10" page="1" pageScale="1" pageWidth="2360" pageHeight="2220" math="0" shadow="0" background="#ffffff">
-      <root>
-        <mxCell id="0" />
-        <mxCell id="1" parent="0" />
-        <mxCell id="title" value="Hytte Monitoring · System Operation" style="text;html=0;whiteSpace=wrap;overflow=hidden;align=left;verticalAlign=top;fontFamily=Arial;fontSize=38;fontColor=#132d49;fontStyle=1;spacing=0;" vertex="1" parent="1">
-          <mxGeometry x="60" y="28" width="2240" height="55" as="geometry" />
-        </mxCell>
-        <mxCell id="subtitle" value="Ground Truth revision · four concurrent regions · conceptual behavior, simulated in the website" style="text;html=0;whiteSpace=wrap;overflow=hidden;align=left;verticalAlign=top;fontFamily=Arial;fontSize=23;fontColor=#51677e;fontStyle=0;spacing=0;" vertex="1" parent="1">
-          <mxGeometry x="60" y="92" width="2240" height="40" as="geometry" />
-        </mxCell>
-        <mxCell id="op" value="" style="rounded=1;absoluteArcSize=1;arcSize=20;html=0;fillColor=#f8fafc;strokeColor=#577896;strokeWidth=2;" vertex="1" parent="1" umlKind="composite" umlLabel="Operating" umlBody="condition requiring attention / create an Incident with Warning or Critical severity&#10;Warning condition worsens / upgrade the SAME Incident through the Incident Lifecycle" groundTruthSections="7, 14, 15, 18">
-          <mxGeometry x="60" y="172" width="2240" height="1358" as="geometry" />
-        </mxCell>
-        <mxCell id="op_name" value="Operating" style="text;html=0;whiteSpace=wrap;overflow=hidden;align=center;verticalAlign=top;fontFamily=Arial;fontSize=23;fontColor=#132d49;fontStyle=1;spacing=0;" vertex="1" parent="op">
-          <mxGeometry x="14" y="13" width="2212" height="32" as="geometry" />
-        </mxCell>
-        <mxCell id="op_compartment" value="" style="line;strokeColor=#577896;strokeWidth=1;dashed=0;dashPattern=8 6;" vertex="1" parent="op">
-          <mxGeometry x="1" y="52" width="2238" height="0" as="geometry" />
-        </mxCell>
-        <mxCell id="op_body" value="condition requiring attention / create an Incident with Warning or Critical severity&#10;Warning condition worsens / upgrade the SAME Incident through the Incident Lifecycle" style="text;html=0;whiteSpace=wrap;overflow=hidden;align=center;verticalAlign=top;fontFamily=Arial;fontSize=22;fontColor=#334155;fontStyle=0;spacing=0;" vertex="1" parent="op">
-          <mxGeometry x="18" y="65" width="2204" height="1284" as="geometry" />
-        </mxCell>
-        <mxCell id="s0" value="" style="ellipse;fillColor=#132d49;strokeColor=#132d49;strokeWidth=1;" vertex="1" parent="1" umlKind="initial">
-          <mxGeometry x="1171" y="138" width="18" height="18" as="geometry" />
-        </mxCell>
-        <mxCell id="S01" value="" style="edgeStyle=none;noEdgeStyle=1;rounded=0;html=0;strokeColor=#334155;strokeWidth=2;endArrow=block;endFill=1;endSize=8;exitX=0.5;exitY=1;exitDx=0;exitDy=0;exitPerimeter=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;entryPerimeter=0;" edge="1" parent="1" source="s0" target="op" umlLabel="" groundTruthSections="4, 6, 14">
-          <mxGeometry relative="1" as="geometry" />
-        </mxCell>
-        <mxCell id="mode" value="" style="group;connectable=0;" vertex="1" parent="op" umlKind="region">
-          <mxGeometry x="0" y="150" width="2240" height="302" as="geometry" />
-        </mxCell>
-        <mxCell id="mode_title" value="MONITORING MODE  [GT 6]" style="text;html=0;whiteSpace=wrap;overflow=hidden;align=left;verticalAlign=top;fontFamily=Arial;fontSize=20;fontColor=#51677e;fontStyle=1;spacing=0;" vertex="1" parent="mode">
-          <mxGeometry x="22" y="14" width="2196" height="30" as="geometry" />
-        </mxCell>
-        <mxCell id="cold" value="" style="group;connectable=0;" vertex="1" parent="op" umlKind="region">
-          <mxGeometry x="0" y="452" width="2240" height="302" as="geometry" />
-        </mxCell>
-        <mxCell id="cold_title" value="COLD-WEATHER PROTECTION  [GT 3-4, 15]" style="text;html=0;whiteSpace=wrap;overflow=hidden;align=left;verticalAlign=top;fontFamily=Arial;fontSize=20;fontColor=#51677e;fontStyle=1;spacing=0;" vertex="1" parent="cold">
-          <mxGeometry x="22" y="14" width="2196" height="30" as="geometry" />
-        </mxCell>
-        <mxCell id="power" value="" style="group;connectable=0;" vertex="1" parent="op" umlKind="region">
-          <mxGeometry x="0" y="754" width="2240" height="302" as="geometry" />
-        </mxCell>
-        <mxCell id="power_title" value="POWER SOURCE  [GT 14, ADR-002]" style="text;html=0;whiteSpace=wrap;overflow=hidden;align=left;verticalAlign=top;fontFamily=Arial;fontSize=20;fontColor=#51677e;fontStyle=1;spacing=0;" vertex="1" parent="power">
-          <mxGeometry x="22" y="14" width="2196" height="30" as="geometry" />
-        </mxCell>
-        <mxCell id="comm" value="" style="group;connectable=0;" vertex="1" parent="op" umlKind="region">
-          <mxGeometry x="0" y="1056" width="2240" height="302" as="geometry" />
-        </mxCell>
-        <mxCell id="comm_title" value="COMMUNICATION CHANNEL  [GT 14, ADR-002]" style="text;html=0;whiteSpace=wrap;overflow=hidden;align=left;verticalAlign=top;fontFamily=Arial;fontSize=20;fontColor=#51677e;fontStyle=1;spacing=0;" vertex="1" parent="comm">
-          <mxGeometry x="22" y="14" width="2196" height="30" as="geometry" />
-        </mxCell>
-        <mxCell id="mode_boundary" value="" style="line;strokeColor=#687d91;strokeWidth=2;dashed=1;dashPattern=8 6;" vertex="1" parent="op">
-          <mxGeometry x="1" y="150" width="2238" height="0" as="geometry" />
-        </mxCell>
-        <mxCell id="cold_boundary" value="" style="line;strokeColor=#687d91;strokeWidth=2;dashed=1;dashPattern=8 6;" vertex="1" parent="op">
-          <mxGeometry x="1" y="452" width="2238" height="0" as="geometry" />
-        </mxCell>
-        <mxCell id="power_boundary" value="" style="line;strokeColor=#687d91;strokeWidth=2;dashed=1;dashPattern=8 6;" vertex="1" parent="op">
-          <mxGeometry x="1" y="754" width="2238" height="0" as="geometry" />
-        </mxCell>
-        <mxCell id="comm_boundary" value="" style="line;strokeColor=#687d91;strokeWidth=2;dashed=1;dashPattern=8 6;" vertex="1" parent="op">
-          <mxGeometry x="1" y="1056" width="2238" height="0" as="geometry" />
-        </mxCell>
-        <mxCell id="mi" value="" style="ellipse;fillColor=#132d49;strokeColor=#132d49;strokeWidth=1;" vertex="1" parent="mode" umlKind="initial">
-          <mxGeometry x="44" y="148" width="18" height="18" as="geometry" />
-        </mxCell>
-        <mxCell id="select" value="" style="rounded=1;absoluteArcSize=1;arcSize=20;html=0;fillColor=#eff6ff;strokeColor=#577896;strokeWidth=2;" vertex="1" parent="mode" umlKind="state" umlLabel="Awaiting mode selection" umlBody="entry / ask the owner to choose&#10;HOME or AWAY" groundTruthSections="6">
-          <mxGeometry x="122" y="96" width="475" height="132" as="geometry" />
-        </mxCell>
-        <mxCell id="select_name" value="Awaiting mode selection" style="text;html=0;whiteSpace=wrap;overflow=hidden;align=center;verticalAlign=top;fontFamily=Arial;fontSize=23;fontColor=#132d49;fontStyle=1;spacing=0;" vertex="1" parent="select">
-          <mxGeometry x="14" y="13" width="447" height="32" as="geometry" />
-        </mxCell>
-        <mxCell id="select_compartment" value="" style="line;strokeColor=#577896;strokeWidth=1;dashed=0;dashPattern=8 6;" vertex="1" parent="select">
-          <mxGeometry x="1" y="52" width="473" height="0" as="geometry" />
-        </mxCell>
-        <mxCell id="select_body" value="entry / ask the owner to choose&#10;HOME or AWAY" style="text;html=0;whiteSpace=wrap;overflow=hidden;align=center;verticalAlign=top;fontFamily=Arial;fontSize=21;fontColor=#334155;fontStyle=0;spacing=0;" vertex="1" parent="select">
-          <mxGeometry x="18" y="65" width="439" height="58" as="geometry" />
-        </mxCell>
-        <mxCell id="home" value="" style="rounded=1;absoluteArcSize=1;arcSize=20;html=0;fillColor=#eff6ff;strokeColor=#577896;strokeWidth=2;" vertex="1" parent="mode" umlKind="state" umlLabel="HOME" umlBody="Normal Door/Motion activity&#10;does not create security Warnings." groundTruthSections="6">
-          <mxGeometry x="840" y="68" width="480" height="144" as="geometry" />
-        </mxCell>
-        <mxCell id="home_name" value="HOME" style="text;html=0;whiteSpace=wrap;overflow=hidden;align=center;verticalAlign=top;fontFamily=Arial;fontSize=23;fontColor=#132d49;fontStyle=1;spacing=0;" vertex="1" parent="home">
-          <mxGeometry x="14" y="13" width="452" height="32" as="geometry" />
-        </mxCell>
-        <mxCell id="home_compartment" value="" style="line;strokeColor=#577896;strokeWidth=1;dashed=0;dashPattern=8 6;" vertex="1" parent="home">
-          <mxGeometry x="1" y="52" width="478" height="0" as="geometry" />
-        </mxCell>
-        <mxCell id="home_body" value="Normal Door/Motion activity&#10;does not create security Warnings." style="text;html=0;whiteSpace=wrap;overflow=hidden;align=center;verticalAlign=top;fontFamily=Arial;fontSize=21;fontColor=#334155;fontStyle=0;spacing=0;" vertex="1" parent="home">
-          <mxGeometry x="18" y="65" width="444" height="70" as="geometry" />
-        </mxCell>
-        <mxCell id="away" value="" style="rounded=1;absoluteArcSize=1;arcSize=20;html=0;fillColor=#eff6ff;strokeColor=#577896;strokeWidth=2;" vertex="1" parent="mode" umlKind="state" umlLabel="AWAY" umlBody="Enabled Door/Motion monitoring&#10;can generate security Warnings." groundTruthSections="4, 6">
-          <mxGeometry x="1652" y="68" width="528" height="144" as="geometry" />
-        </mxCell>
-        <mxCell id="away_name" value="AWAY" style="text;html=0;whiteSpace=wrap;overflow=hidden;align=center;verticalAlign=top;fontFamily=Arial;fontSize=23;fontColor=#132d49;fontStyle=1;spacing=0;" vertex="1" parent="away">
-          <mxGeometry x="14" y="13" width="500" height="32" as="geometry" />
-        </mxCell>
-        <mxCell id="away_compartment" value="" style="line;strokeColor=#577896;strokeWidth=1;dashed=0;dashPattern=8 6;" vertex="1" parent="away">
-          <mxGeometry x="1" y="52" width="526" height="0" as="geometry" />
-        </mxCell>
-        <mxCell id="away_body" value="Enabled Door/Motion monitoring&#10;can generate security Warnings." style="text;html=0;whiteSpace=wrap;overflow=hidden;align=center;verticalAlign=top;fontFamily=Arial;fontSize=21;fontColor=#334155;fontStyle=0;spacing=0;" vertex="1" parent="away">
-          <mxGeometry x="18" y="65" width="492" height="70" as="geometry" />
-        </mxCell>
-        <mxCell id="S02" value="" style="edgeStyle=none;noEdgeStyle=1;rounded=0;html=0;strokeColor=#334155;strokeWidth=2;endArrow=block;endFill=1;endSize=8;exitX=1;exitY=0.5;exitDx=0;exitDy=0;exitPerimeter=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;entryPerimeter=0;" edge="1" parent="1" source="mi" target="select" umlLabel="" groundTruthSections="">
-          <mxGeometry relative="1" as="geometry" />
-        </mxCell>
-        <mxCell id="S03" value="" style="edgeStyle=none;noEdgeStyle=1;rounded=0;html=0;strokeColor=#334155;strokeWidth=2;endArrow=block;endFill=1;endSize=8;exitX=1;exitY=0.5;exitDx=0;exitDy=0;exitPerimeter=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;entryPerimeter=0;" edge="1" parent="1" source="select" target="home" umlLabel="owner selects HOME" groundTruthSections="6">
-          <mxGeometry relative="1" as="geometry">
-            <Array as="points">
-              <mxPoint x="790" y="484" />
-              <mxPoint x="790" y="462" />
-            </Array>
-          </mxGeometry>
-        </mxCell>
-        <mxCell id="S03_label" value="owner selects HOME" style="text;html=0;whiteSpace=wrap;overflow=hidden;align=left;verticalAlign=top;fontFamily=Arial;fontSize=20;fontColor=#334155;fontStyle=0;spacing=0;fillColor=#ffffff;" vertex="1" parent="1">
-          <mxGeometry x="662" y="432" width="240" height="28" as="geometry" />
-        </mxCell>
-        <mxCell id="S04" value="" style="edgeStyle=none;noEdgeStyle=1;rounded=0;html=0;strokeColor=#334155;strokeWidth=2;endArrow=block;endFill=1;endSize=8;exitX=0.5;exitY=1;exitDx=0;exitDy=0;exitPerimeter=0;entryX=0.5;entryY=1;entryDx=0;entryDy=0;entryPerimeter=0;" edge="1" parent="1" source="select" target="away" umlLabel="owner selects AWAY" groundTruthSections="6">
-          <mxGeometry relative="1" as="geometry">
-            <Array as="points">
-              <mxPoint x="419.5" y="590" />
-              <mxPoint x="1976" y="590" />
-            </Array>
-          </mxGeometry>
-        </mxCell>
-        <mxCell id="S04_label" value="owner selects AWAY" style="text;html=0;whiteSpace=wrap;overflow=hidden;align=left;verticalAlign=top;fontFamily=Arial;fontSize=20;fontColor=#334155;fontStyle=0;spacing=0;fillColor=#ffffff;" vertex="1" parent="1">
-          <mxGeometry x="965" y="558" width="270" height="29" as="geometry" />
-        </mxCell>
-        <mxCell id="S05" value="" style="edgeStyle=none;noEdgeStyle=1;rounded=0;html=0;strokeColor=#334155;strokeWidth=2;endArrow=block;endFill=1;endSize=8;exitX=1;exitY=0.5;exitDx=0;exitDy=0;exitPerimeter=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;entryPerimeter=0;" edge="1" parent="1" source="home" target="away" umlLabel="owner selects AWAY" groundTruthSections="6">
-          <mxGeometry relative="1" as="geometry" />
-        </mxCell>
-        <mxCell id="S05_label" value="owner selects AWAY" style="text;html=0;whiteSpace=wrap;overflow=hidden;align=left;verticalAlign=top;fontFamily=Arial;fontSize=20;fontColor=#334155;fontStyle=0;spacing=0;fillColor=#ffffff;" vertex="1" parent="1">
-          <mxGeometry x="1410" y="423" width="274" height="30" as="geometry" />
-        </mxCell>
-        <mxCell id="S06" value="" style="edgeStyle=none;noEdgeStyle=1;rounded=0;html=0;strokeColor=#334155;strokeWidth=2;endArrow=block;endFill=1;endSize=8;exitX=0.5;exitY=0;exitDx=0;exitDy=0;exitPerimeter=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;entryPerimeter=0;" edge="1" parent="1" source="away" target="home" umlLabel="owner selects HOME" groundTruthSections="6">
-          <mxGeometry relative="1" as="geometry">
-            <Array as="points">
-              <mxPoint x="1976" y="367" />
-              <mxPoint x="1140" y="367" />
-            </Array>
-          </mxGeometry>
-        </mxCell>
-        <mxCell id="S06_label" value="owner selects HOME" style="text;html=0;whiteSpace=wrap;overflow=hidden;align=left;verticalAlign=top;fontFamily=Arial;fontSize=20;fontColor=#334155;fontStyle=0;spacing=0;fillColor=#ffffff;" vertex="1" parent="1">
-          <mxGeometry x="1415" y="337" width="275" height="29" as="geometry" />
-        </mxCell>
-        <mxCell id="ci" value="" style="ellipse;fillColor=#132d49;strokeColor=#132d49;strokeWidth=1;" vertex="1" parent="cold" umlKind="initial">
-          <mxGeometry x="44" y="145" width="18" height="18" as="geometry" />
-        </mxCell>
-        <mxCell id="cc" value="" style="rhombus;fillColor=#ffffff;strokeColor=#334155;strokeWidth=2;" vertex="1" parent="cold" umlKind="choice">
-          <mxGeometry x="130" y="141" width="26" height="26" as="geometry" />
-        </mxCell>
-        <mxCell id="coldOff" value="" style="rounded=1;absoluteArcSize=1;arcSize=20;html=0;fillColor=#eff6ff;strokeColor=#577896;strokeWidth=2;" vertex="1" parent="cold" umlKind="state" umlLabel="Protection inactive" umlBody="Indoor Temperature and Power&#10;follow the owner configuration." groundTruthSections="4">
-          <mxGeometry x="280" y="103" width="530" height="138" as="geometry" />
-        </mxCell>
-        <mxCell id="coldOff_name" value="Protection inactive" style="text;html=0;whiteSpace=wrap;overflow=hidden;align=center;verticalAlign=top;fontFamily=Arial;fontSize=23;fontColor=#132d49;fontStyle=1;spacing=0;" vertex="1" parent="coldOff">
-          <mxGeometry x="14" y="13" width="502" height="32" as="geometry" />
-        </mxCell>
-        <mxCell id="coldOff_compartment" value="" style="line;strokeColor=#577896;strokeWidth=1;dashed=0;dashPattern=8 6;" vertex="1" parent="coldOff">
-          <mxGeometry x="1" y="52" width="528" height="0" as="geometry" />
-        </mxCell>
-        <mxCell id="coldOff_body" value="Indoor Temperature and Power&#10;follow the owner configuration." style="text;html=0;whiteSpace=wrap;overflow=hidden;align=center;verticalAlign=top;fontFamily=Arial;fontSize=21;fontColor=#334155;fontStyle=0;spacing=0;" vertex="1" parent="coldOff">
-          <mxGeometry x="18" y="65" width="494" height="64" as="geometry" />
-        </mxCell>
-        <mxCell id="coldOn" value="" style="rounded=1;absoluteArcSize=1;arcSize=20;html=0;fillColor=#eff6ff;strokeColor=#577896;strokeWidth=2;" vertex="1" parent="cold" umlKind="state" umlLabel="Protection active" umlBody="entry / preserve previous Indoor Temperature and Power choices;&#10;require both monitoring functions&#10;exit / restore those previous choices" groundTruthSections="4">
-          <mxGeometry x="1300" y="103" width="860" height="153" as="geometry" />
-        </mxCell>
-        <mxCell id="coldOn_name" value="Protection active" style="text;html=0;whiteSpace=wrap;overflow=hidden;align=center;verticalAlign=top;fontFamily=Arial;fontSize=23;fontColor=#132d49;fontStyle=1;spacing=0;" vertex="1" parent="coldOn">
-          <mxGeometry x="14" y="13" width="832" height="32" as="geometry" />
-        </mxCell>
-        <mxCell id="coldOn_compartment" value="" style="line;strokeColor=#577896;strokeWidth=1;dashed=0;dashPattern=8 6;" vertex="1" parent="coldOn">
-          <mxGeometry x="1" y="52" width="858" height="0" as="geometry" />
-        </mxCell>
-        <mxCell id="coldOn_body" value="entry / preserve previous Indoor Temperature and Power choices;&#10;require both monitoring functions&#10;exit / restore those previous choices" style="text;html=0;whiteSpace=wrap;overflow=hidden;align=center;verticalAlign=top;fontFamily=Arial;fontSize=20;fontColor=#334155;fontStyle=0;spacing=0;" vertex="1" parent="coldOn">
-          <mxGeometry x="18" y="65" width="824" height="79" as="geometry" />
-        </mxCell>
-        <mxCell id="S07" value="" style="edgeStyle=none;noEdgeStyle=1;rounded=0;html=0;strokeColor=#334155;strokeWidth=2;endArrow=block;endFill=1;endSize=8;exitX=1;exitY=0.5;exitDx=0;exitDy=0;exitPerimeter=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;entryPerimeter=0;" edge="1" parent="1" source="ci" target="cc" umlLabel="" groundTruthSections="">
-          <mxGeometry relative="1" as="geometry" />
-        </mxCell>
-        <mxCell id="S08" value="" style="edgeStyle=none;noEdgeStyle=1;rounded=0;html=0;strokeColor=#334155;strokeWidth=2;endArrow=block;endFill=1;endSize=8;exitX=1;exitY=0.5;exitDx=0;exitDy=0;exitPerimeter=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;entryPerimeter=0;" edge="1" parent="1" source="cc" target="coldOff" umlLabel="[not coldRequired]" groundTruthSections="4">
-          <mxGeometry relative="1" as="geometry" />
-        </mxCell>
-        <mxCell id="S08_label" value="[not coldRequired]" style="text;html=0;whiteSpace=wrap;overflow=hidden;align=left;verticalAlign=top;fontFamily=Arial;fontSize=20;fontColor=#334155;fontStyle=0;spacing=0;fillColor=#ffffff;" vertex="1" parent="1">
-          <mxGeometry x="206" y="750" width="244" height="28" as="geometry" />
-        </mxCell>
-        <mxCell id="S09" value="" style="edgeStyle=none;noEdgeStyle=1;rounded=0;html=0;strokeColor=#334155;strokeWidth=2;endArrow=block;endFill=1;endSize=8;exitX=0.5;exitY=0;exitDx=0;exitDy=0;exitPerimeter=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;entryPerimeter=0;" edge="1" parent="1" source="cc" target="coldOn" umlLabel="[coldRequired]" groundTruthSections="4">
-          <mxGeometry relative="1" as="geometry">
-            <Array as="points">
-              <mxPoint x="203" y="692" />
-              <mxPoint x="1790" y="692" />
-            </Array>
-          </mxGeometry>
-        </mxCell>
-        <mxCell id="S09_label" value="[coldRequired]" style="text;html=0;whiteSpace=wrap;overflow=hidden;align=left;verticalAlign=top;fontFamily=Arial;fontSize=20;fontColor=#334155;fontStyle=0;spacing=0;fillColor=#ffffff;" vertex="1" parent="1">
-          <mxGeometry x="898" y="662" width="220" height="28" as="geometry" />
-        </mxCell>
-        <mxCell id="S10" value="" style="edgeStyle=none;noEdgeStyle=1;rounded=0;html=0;strokeColor=#334155;strokeWidth=2;endArrow=block;endFill=1;endSize=8;exitX=1;exitY=0.5;exitDx=0;exitDy=0;exitPerimeter=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;entryPerimeter=0;" edge="1" parent="1" source="coldOff" target="coldOn" umlLabel="when(coldRequired)" groundTruthSections="4">
-          <mxGeometry relative="1" as="geometry" />
-        </mxCell>
-        <mxCell id="S10_label" value="when(coldRequired)" style="text;html=0;whiteSpace=wrap;overflow=hidden;align=left;verticalAlign=top;fontFamily=Arial;fontSize=20;fontColor=#334155;fontStyle=0;spacing=0;fillColor=#ffffff;" vertex="1" parent="1">
-          <mxGeometry x="976" y="761" width="300" height="28" as="geometry" />
-        </mxCell>
-        <mxCell id="S11" value="" style="edgeStyle=none;noEdgeStyle=1;rounded=0;html=0;strokeColor=#334155;strokeWidth=2;endArrow=block;endFill=1;endSize=8;exitX=0.5;exitY=1;exitDx=0;exitDy=0;exitPerimeter=0;entryX=0.5;entryY=1;entryDx=0;entryDy=0;entryPerimeter=0;" edge="1" parent="1" source="coldOn" target="coldOff" umlLabel="when(not coldRequired)" groundTruthSections="4">
-          <mxGeometry relative="1" as="geometry">
-            <Array as="points">
-              <mxPoint x="1790" y="902" />
-              <mxPoint x="605" y="902" />
-            </Array>
-          </mxGeometry>
-        </mxCell>
-        <mxCell id="S11_label" value="when(not coldRequired)" style="text;html=0;whiteSpace=wrap;overflow=hidden;align=left;verticalAlign=top;fontFamily=Arial;fontSize=20;fontColor=#334155;fontStyle=0;spacing=0;fillColor=#ffffff;" vertex="1" parent="1">
-          <mxGeometry x="962" y="873" width="350" height="28" as="geometry" />
-        </mxCell>
-        <mxCell id="pi" value="" style="ellipse;fillColor=#132d49;strokeColor=#132d49;strokeWidth=1;" vertex="1" parent="power" umlKind="initial">
-          <mxGeometry x="44" y="145" width="18" height="18" as="geometry" />
-        </mxCell>
-        <mxCell id="pc" value="" style="rhombus;fillColor=#ffffff;strokeColor=#334155;strokeWidth=2;" vertex="1" parent="power" umlKind="choice">
-          <mxGeometry x="130" y="141" width="26" height="26" as="geometry" />
-        </mxCell>
-        <mxCell id="mains" value="" style="rounded=1;absoluteArcSize=1;arcSize=20;html=0;fillColor=#eff6ff;strokeColor=#577896;strokeWidth=2;" vertex="1" parent="power" umlKind="state" umlLabel="Cabin electricity" umlBody="entry / use normal cabin electricity" groundTruthSections="14">
-          <mxGeometry x="280" y="103" width="530" height="125" as="geometry" />
-        </mxCell>
-        <mxCell id="mains_name" value="Cabin electricity" style="text;html=0;whiteSpace=wrap;overflow=hidden;align=center;verticalAlign=top;fontFamily=Arial;fontSize=23;fontColor=#132d49;fontStyle=1;spacing=0;" vertex="1" parent="mains">
-          <mxGeometry x="14" y="13" width="502" height="32" as="geometry" />
-        </mxCell>
-        <mxCell id="mains_compartment" value="" style="line;strokeColor=#577896;strokeWidth=1;dashed=0;dashPattern=8 6;" vertex="1" parent="mains">
-          <mxGeometry x="1" y="52" width="528" height="0" as="geometry" />
-        </mxCell>
-        <mxCell id="mains_body" value="entry / use normal cabin electricity" style="text;html=0;whiteSpace=wrap;overflow=hidden;align=center;verticalAlign=top;fontFamily=Arial;fontSize=21;fontColor=#334155;fontStyle=0;spacing=0;" vertex="1" parent="mains">
-          <mxGeometry x="18" y="65" width="494" height="51" as="geometry" />
-        </mxCell>
-        <mxCell id="battery" value="" style="rounded=1;absoluteArcSize=1;arcSize=20;html=0;fillColor=#eff6ff;strokeColor=#577896;strokeWidth=2;" vertex="1" parent="power" umlKind="state" umlLabel="Battery backup" umlBody="entry / use battery backup" groundTruthSections="14">
-          <mxGeometry x="1380" y="103" width="700" height="125" as="geometry" />
-        </mxCell>
-        <mxCell id="battery_name" value="Battery backup" style="text;html=0;whiteSpace=wrap;overflow=hidden;align=center;verticalAlign=top;fontFamily=Arial;fontSize=23;fontColor=#132d49;fontStyle=1;spacing=0;" vertex="1" parent="battery">
-          <mxGeometry x="14" y="13" width="672" height="32" as="geometry" />
-        </mxCell>
-        <mxCell id="battery_compartment" value="" style="line;strokeColor=#577896;strokeWidth=1;dashed=0;dashPattern=8 6;" vertex="1" parent="battery">
-          <mxGeometry x="1" y="52" width="698" height="0" as="geometry" />
-        </mxCell>
-        <mxCell id="battery_body" value="entry / use battery backup" style="text;html=0;whiteSpace=wrap;overflow=hidden;align=center;verticalAlign=top;fontFamily=Arial;fontSize=21;fontColor=#334155;fontStyle=0;spacing=0;" vertex="1" parent="battery">
-          <mxGeometry x="18" y="65" width="664" height="51" as="geometry" />
-        </mxCell>
-        <mxCell id="S12" value="" style="edgeStyle=none;noEdgeStyle=1;rounded=0;html=0;strokeColor=#334155;strokeWidth=2;endArrow=block;endFill=1;endSize=8;exitX=1;exitY=0.5;exitDx=0;exitDy=0;exitPerimeter=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;entryPerimeter=0;" edge="1" parent="1" source="pi" target="pc" umlLabel="" groundTruthSections="">
-          <mxGeometry relative="1" as="geometry" />
-        </mxCell>
-        <mxCell id="S13" value="" style="edgeStyle=none;noEdgeStyle=1;rounded=0;html=0;strokeColor=#334155;strokeWidth=2;endArrow=block;endFill=1;endSize=8;exitX=1;exitY=0.5;exitDx=0;exitDy=0;exitPerimeter=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;entryPerimeter=0;" edge="1" parent="1" source="pc" target="mains" umlLabel="[powerOK]" groundTruthSections="14">
-          <mxGeometry relative="1" as="geometry" />
-        </mxCell>
-        <mxCell id="S13_label" value="[powerOK]" style="text;html=0;whiteSpace=wrap;overflow=hidden;align=left;verticalAlign=top;fontFamily=Arial;fontSize=20;fontColor=#334155;fontStyle=0;spacing=0;fillColor=#ffffff;" vertex="1" parent="1">
-          <mxGeometry x="212" y="1052" width="150" height="28" as="geometry" />
-        </mxCell>
-        <mxCell id="S14" value="" style="edgeStyle=none;noEdgeStyle=1;rounded=0;html=0;strokeColor=#334155;strokeWidth=2;endArrow=block;endFill=1;endSize=8;exitX=0.5;exitY=0;exitDx=0;exitDy=0;exitPerimeter=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;entryPerimeter=0;" edge="1" parent="1" source="pc" target="battery" umlLabel="[not powerOK]" groundTruthSections="14">
-          <mxGeometry relative="1" as="geometry">
-            <Array as="points">
-              <mxPoint x="203" y="994" />
-              <mxPoint x="1790" y="994" />
-            </Array>
-          </mxGeometry>
-        </mxCell>
-        <mxCell id="S14_label" value="[not powerOK]" style="text;html=0;whiteSpace=wrap;overflow=hidden;align=left;verticalAlign=top;fontFamily=Arial;fontSize=20;fontColor=#334155;fontStyle=0;spacing=0;fillColor=#ffffff;" vertex="1" parent="1">
-          <mxGeometry x="940" y="964" width="200" height="28" as="geometry" />
-        </mxCell>
-        <mxCell id="S15" value="" style="edgeStyle=none;noEdgeStyle=1;rounded=0;html=0;strokeColor=#334155;strokeWidth=2;endArrow=block;endFill=1;endSize=8;exitX=1;exitY=0.5;exitDx=0;exitDy=0;exitPerimeter=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;entryPerimeter=0;" edge="1" parent="1" source="mains" target="battery" umlLabel="when(not powerOK)" groundTruthSections="14">
-          <mxGeometry relative="1" as="geometry" />
-        </mxCell>
-        <mxCell id="S15_label" value="when(not powerOK)" style="text;html=0;whiteSpace=wrap;overflow=hidden;align=left;verticalAlign=top;fontFamily=Arial;fontSize=20;fontColor=#334155;fontStyle=0;spacing=0;fillColor=#ffffff;" vertex="1" parent="1">
-          <mxGeometry x="995" y="1058" width="270" height="28" as="geometry" />
-        </mxCell>
-        <mxCell id="S16" value="" style="edgeStyle=none;noEdgeStyle=1;rounded=0;html=0;strokeColor=#334155;strokeWidth=2;endArrow=block;endFill=1;endSize=8;exitX=0.5;exitY=1;exitDx=0;exitDy=0;exitPerimeter=0;entryX=0.5;entryY=1;entryDx=0;entryDy=0;entryPerimeter=0;" edge="1" parent="1" source="battery" target="mains" umlLabel="when(powerOK)" groundTruthSections="14">
-          <mxGeometry relative="1" as="geometry">
-            <Array as="points">
-              <mxPoint x="1790" y="1206" />
-              <mxPoint x="605" y="1206" />
-            </Array>
-          </mxGeometry>
-        </mxCell>
-        <mxCell id="S16_label" value="when(powerOK)" style="text;html=0;whiteSpace=wrap;overflow=hidden;align=left;verticalAlign=top;fontFamily=Arial;fontSize=20;fontColor=#334155;fontStyle=0;spacing=0;fillColor=#ffffff;" vertex="1" parent="1">
-          <mxGeometry x="1009" y="1177" width="245" height="28" as="geometry" />
-        </mxCell>
-        <mxCell id="ni" value="" style="ellipse;fillColor=#132d49;strokeColor=#132d49;strokeWidth=1;" vertex="1" parent="comm" umlKind="initial">
-          <mxGeometry x="44" y="145" width="18" height="18" as="geometry" />
-        </mxCell>
-        <mxCell id="nc" value="" style="rhombus;fillColor=#ffffff;strokeColor=#334155;strokeWidth=2;" vertex="1" parent="comm" umlKind="choice">
-          <mxGeometry x="130" y="141" width="26" height="26" as="geometry" />
-        </mxCell>
-        <mxCell id="internet" value="" style="rounded=1;absoluteArcSize=1;arcSize=20;html=0;fillColor=#eff6ff;strokeColor=#577896;strokeWidth=2;" vertex="1" parent="comm" umlKind="state" umlLabel="Normal Internet" umlBody="entry / use normal Internet communication" groundTruthSections="14">
-          <mxGeometry x="280" y="103" width="530" height="125" as="geometry" />
-        </mxCell>
-        <mxCell id="internet_name" value="Normal Internet" style="text;html=0;whiteSpace=wrap;overflow=hidden;align=center;verticalAlign=top;fontFamily=Arial;fontSize=23;fontColor=#132d49;fontStyle=1;spacing=0;" vertex="1" parent="internet">
-          <mxGeometry x="14" y="13" width="502" height="32" as="geometry" />
-        </mxCell>
-        <mxCell id="internet_compartment" value="" style="line;strokeColor=#577896;strokeWidth=1;dashed=0;dashPattern=8 6;" vertex="1" parent="internet">
-          <mxGeometry x="1" y="52" width="528" height="0" as="geometry" />
-        </mxCell>
-        <mxCell id="internet_body" value="entry / use normal Internet communication" style="text;html=0;whiteSpace=wrap;overflow=hidden;align=center;verticalAlign=top;fontFamily=Arial;fontSize=21;fontColor=#334155;fontStyle=0;spacing=0;" vertex="1" parent="internet">
-          <mxGeometry x="18" y="65" width="494" height="51" as="geometry" />
-        </mxCell>
-        <mxCell id="cellular" value="" style="rounded=1;absoluteArcSize=1;arcSize=20;html=0;fillColor=#eff6ff;strokeColor=#577896;strokeWidth=2;" vertex="1" parent="comm" umlKind="state" umlLabel="Cellular/SIM communication" umlBody="entry / use Cellular/SIM fallback" groundTruthSections="14">
-          <mxGeometry x="1380" y="103" width="700" height="125" as="geometry" />
-        </mxCell>
-        <mxCell id="cellular_name" value="Cellular/SIM communication" style="text;html=0;whiteSpace=wrap;overflow=hidden;align=center;verticalAlign=top;fontFamily=Arial;fontSize=23;fontColor=#132d49;fontStyle=1;spacing=0;" vertex="1" parent="cellular">
-          <mxGeometry x="14" y="13" width="672" height="32" as="geometry" />
-        </mxCell>
-        <mxCell id="cellular_compartment" value="" style="line;strokeColor=#577896;strokeWidth=1;dashed=0;dashPattern=8 6;" vertex="1" parent="cellular">
-          <mxGeometry x="1" y="52" width="698" height="0" as="geometry" />
-        </mxCell>
-        <mxCell id="cellular_body" value="entry / use Cellular/SIM fallback" style="text;html=0;whiteSpace=wrap;overflow=hidden;align=center;verticalAlign=top;fontFamily=Arial;fontSize=21;fontColor=#334155;fontStyle=0;spacing=0;" vertex="1" parent="cellular">
-          <mxGeometry x="18" y="65" width="664" height="51" as="geometry" />
-        </mxCell>
-        <mxCell id="S17" value="" style="edgeStyle=none;noEdgeStyle=1;rounded=0;html=0;strokeColor=#334155;strokeWidth=2;endArrow=block;endFill=1;endSize=8;exitX=1;exitY=0.5;exitDx=0;exitDy=0;exitPerimeter=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;entryPerimeter=0;" edge="1" parent="1" source="ni" target="nc" umlLabel="" groundTruthSections="">
-          <mxGeometry relative="1" as="geometry" />
-        </mxCell>
-        <mxCell id="S18" value="" style="edgeStyle=none;noEdgeStyle=1;rounded=0;html=0;strokeColor=#334155;strokeWidth=2;endArrow=block;endFill=1;endSize=8;exitX=1;exitY=0.5;exitDx=0;exitDy=0;exitPerimeter=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;entryPerimeter=0;" edge="1" parent="1" source="nc" target="internet" umlLabel="[internetOK]" groundTruthSections="14">
-          <mxGeometry relative="1" as="geometry" />
-        </mxCell>
-        <mxCell id="S18_label" value="[internetOK]" style="text;html=0;whiteSpace=wrap;overflow=hidden;align=left;verticalAlign=top;fontFamily=Arial;fontSize=20;fontColor=#334155;fontStyle=0;spacing=0;fillColor=#ffffff;" vertex="1" parent="1">
-          <mxGeometry x="208" y="1354" width="175" height="28" as="geometry" />
-        </mxCell>
-        <mxCell id="S19" value="" style="edgeStyle=none;noEdgeStyle=1;rounded=0;html=0;strokeColor=#334155;strokeWidth=2;endArrow=block;endFill=1;endSize=8;exitX=0.5;exitY=0;exitDx=0;exitDy=0;exitPerimeter=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;entryPerimeter=0;" edge="1" parent="1" source="nc" target="cellular" umlLabel="[not internetOK]" groundTruthSections="14">
-          <mxGeometry relative="1" as="geometry">
-            <Array as="points">
-              <mxPoint x="203" y="1296" />
-              <mxPoint x="1790" y="1296" />
-            </Array>
-          </mxGeometry>
-        </mxCell>
-        <mxCell id="S19_label" value="[not internetOK]" style="text;html=0;whiteSpace=wrap;overflow=hidden;align=left;verticalAlign=top;fontFamily=Arial;fontSize=20;fontColor=#334155;fontStyle=0;spacing=0;fillColor=#ffffff;" vertex="1" parent="1">
-          <mxGeometry x="934" y="1266" width="232" height="28" as="geometry" />
-        </mxCell>
-        <mxCell id="S20" value="" style="edgeStyle=none;noEdgeStyle=1;rounded=0;html=0;strokeColor=#334155;strokeWidth=2;endArrow=block;endFill=1;endSize=8;exitX=1;exitY=0.5;exitDx=0;exitDy=0;exitPerimeter=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;entryPerimeter=0;" edge="1" parent="1" source="internet" target="cellular" umlLabel="when(not internetOK)" groundTruthSections="14">
-          <mxGeometry relative="1" as="geometry" />
-        </mxCell>
-        <mxCell id="S20_label" value="when(not internetOK)" style="text;html=0;whiteSpace=wrap;overflow=hidden;align=left;verticalAlign=top;fontFamily=Arial;fontSize=20;fontColor=#334155;fontStyle=0;spacing=0;fillColor=#ffffff;" vertex="1" parent="1">
-          <mxGeometry x="980" y="1360" width="315" height="28" as="geometry" />
-        </mxCell>
-        <mxCell id="S21" value="" style="edgeStyle=none;noEdgeStyle=1;rounded=0;html=0;strokeColor=#334155;strokeWidth=2;endArrow=block;endFill=1;endSize=8;exitX=0.5;exitY=1;exitDx=0;exitDy=0;exitPerimeter=0;entryX=0.5;entryY=1;entryDx=0;entryDy=0;entryPerimeter=0;" edge="1" parent="1" source="cellular" target="internet" umlLabel="when(internetOK)" groundTruthSections="14">
-          <mxGeometry relative="1" as="geometry">
-            <Array as="points">
-              <mxPoint x="1790" y="1508" />
-              <mxPoint x="605" y="1508" />
-            </Array>
-          </mxGeometry>
-        </mxCell>
-        <mxCell id="S21_label" value="when(internetOK)" style="text;html=0;whiteSpace=wrap;overflow=hidden;align=left;verticalAlign=top;fontFamily=Arial;fontSize=20;fontColor=#334155;fontStyle=0;spacing=0;fillColor=#ffffff;" vertex="1" parent="1">
-          <mxGeometry x="1002" y="1479" width="270" height="28" as="geometry" />
-        </mxCell>
-        <mxCell id="monitoring_rules" value="" style="rounded=1;absoluteArcSize=1;arcSize=14;fillColor=#ffffff;strokeColor=#cbd5e1;strokeWidth=1;" vertex="1" parent="1" groundTruthSections="3, 4, 6, 15, 18" umlKind="note">
-          <mxGeometry x="60" y="1570" width="1100" height="256" as="geometry" />
-        </mxCell>
-        <mxCell id="monitoring_rules_head" value="Monitoring constraints  [GT 3-6, 15; ADR-001]" style="text;html=0;whiteSpace=wrap;overflow=hidden;align=left;verticalAlign=top;fontFamily=Arial;fontSize=22;fontColor=#132d49;fontStyle=1;spacing=0;" vertex="1" parent="monitoring_rules">
-          <mxGeometry x="16" y="12" width="1068" height="29" as="geometry" />
-        </mxCell>
-        <mxCell id="monitoring_rules_text" value="Smoke and Internet/Connection are always mandatory.&#10;The local Outdoor Temperature Sensor remains monitored for cold protection.&#10;Indoor Temperature and Power are mandatory while protection is active;&#10;otherwise they follow owner choices. Water Leak, Door and Motion are optional.&#10;HOME/AWAY changes security behavior; it does not suspend enabled safety,&#10;environmental or system monitoring." style="text;html=0;whiteSpace=wrap;overflow=hidden;align=left;verticalAlign=top;fontFamily=Arial;fontSize=21;fontColor=#334155;fontStyle=0;spacing=0;" vertex="1" parent="monitoring_rules">
-          <mxGeometry x="16" y="51" width="1068" height="196" as="geometry" />
-        </mxCell>
-        <mxCell id="safety_rules" value="" style="rounded=1;absoluteArcSize=1;arcSize=14;fillColor=#ffffff;strokeColor=#cbd5e1;strokeWidth=1;" vertex="1" parent="1" groundTruthSections="4, 5, 7, 15" umlKind="note">
-          <mxGeometry x="1200" y="1570" width="1100" height="256" as="geometry" />
-        </mxCell>
-        <mxCell id="safety_rules_head" value="Configuration and detection priority  [GT 4-5, 7, 15]" style="text;html=0;whiteSpace=wrap;overflow=hidden;align=left;verticalAlign=top;fontFamily=Arial;fontSize=22;fontColor=#132d49;fontStyle=1;spacing=0;" vertex="1" parent="safety_rules">
-          <mxGeometry x="16" y="12" width="1068" height="29" as="geometry" />
-        </mxCell>
-        <mxCell id="safety_rules_text" value="Owner-configurable detection/notification levels stay within allowed safe ranges.&#10;The system controls Critical thresholds; users cannot disable or weaken them.&#10;Critical notifications are immediate despite normal notification preferences.&#10;Smoke and Internet/Connection cannot be disabled; Indoor Temperature and&#10;Power cannot be disabled during cold protection. The cold threshold is&#10;system-controlled and cannot be changed by the owner." style="text;html=0;whiteSpace=wrap;overflow=hidden;align=left;verticalAlign=top;fontFamily=Arial;fontSize=21;fontColor=#334155;fontStyle=0;spacing=0;" vertex="1" parent="safety_rules">
-          <mxGeometry x="16" y="51" width="1068" height="196" as="geometry" />
-        </mxCell>
-        <mxCell id="parameters" value="" style="rounded=1;absoluteArcSize=1;arcSize=14;fillColor=#ffffff;strokeColor=#cbd5e1;strokeWidth=1;" vertex="1" parent="1" groundTruthSections="3, 4, 14, 16" umlKind="note">
-          <mxGeometry x="60" y="1850" width="1100" height="244" as="geometry" />
-        </mxCell>
-        <mxCell id="parameters_head" value="Guards and recovery  [GT 3-4, 14, 16]" style="text;html=0;whiteSpace=wrap;overflow=hidden;align=left;verticalAlign=top;fontFamily=Arial;fontSize=22;fontColor=#132d49;fontStyle=1;spacing=0;" vertex="1" parent="parameters">
-          <mxGeometry x="16" y="12" width="1068" height="29" as="geometry" />
-        </mxCell>
-        <mxCell id="parameters_text" value="coldRequired: the cabin Outdoor Temperature Sensor and system threshold&#10;require protection; false means conditions are safe to restore prior choices.&#10;powerOK / internetOK: availability of normal cabin electricity / Internet.&#10;Power and communication regions act independently, including simultaneous&#10;outages. Restoration automatically returns the affected region to normal.&#10;No external Weather Service is involved." style="text;html=0;whiteSpace=wrap;overflow=hidden;align=left;verticalAlign=top;fontFamily=Arial;fontSize=21;fontColor=#334155;fontStyle=0;spacing=0;" vertex="1" parent="parameters">
-          <mxGeometry x="16" y="51" width="1068" height="184" as="geometry" />
-        </mxCell>
-        <mxCell id="scope" value="" style="rounded=1;absoluteArcSize=1;arcSize=14;fillColor=#ffffff;strokeColor=#cbd5e1;strokeWidth=1;" vertex="1" parent="1" groundTruthSections="1, 2, 7, 8, 9, 14, 15, 16, 17, 18, 19" umlKind="note">
-          <mxGeometry x="1200" y="1850" width="1100" height="244" as="geometry" />
-        </mxCell>
-        <mxCell id="scope_head" value="Lifecycle boundary and notation  [GT 1-2, 7-9, 14-19]" style="text;html=0;whiteSpace=wrap;overflow=hidden;align=left;verticalAlign=top;fontFamily=Arial;fontSize=22;fontColor=#132d49;fontStyle=1;spacing=0;" vertex="1" parent="scope">
-          <mxGeometry x="16" y="12" width="1068" height="29" as="geometry" />
-        </mxCell>
-        <mxCell id="scope_text" value="Dashed boundaries separate concurrent UML regions. Each has an initial node.&#10;Awaiting HOME/AWAY does not pause mandatory monitoring or fallback.&#10;Incident creation starts the separate Incident Lifecycle; monitoring continues.&#10;No system shutdown behavior is specified. Login, dashboard/history viewing&#10;and actor interactions are outside this operational-state view. All external&#10;effects are conceptual and simulated; no extra failure policy is introduced." style="text;html=0;whiteSpace=wrap;overflow=hidden;align=left;verticalAlign=top;fontFamily=Arial;fontSize=21;fontColor=#334155;fontStyle=0;spacing=0;" vertex="1" parent="scope">
-          <mxGeometry x="16" y="51" width="1068" height="184" as="geometry" />
-        </mxCell>
-        <mxCell id="authority" value="Authority: model/Ground_truth.md only. State/action labels are conceptual UML specification, not implementation code." style="text;html=0;whiteSpace=wrap;overflow=hidden;align=left;verticalAlign=top;fontFamily=Arial;fontSize=20;fontColor=#51677e;fontStyle=0;spacing=0;" vertex="1" parent="1">
-          <mxGeometry x="60" y="2124" width="2240" height="40" as="geometry" />
-        </mxCell>
-      </root>
-    </mxGraphModel>
-  </diagram>
-  <diagram id="incident-lifecycle-aligned" name="2 - Incident Lifecycle" authority="model/Ground_truth.md">
-    <mxGraphModel dx="2520" dy="2520" grid="1" gridSize="10" page="1" pageScale="1" pageWidth="2520" pageHeight="2520" math="0" shadow="0" background="#ffffff">
-      <root>
-        <mxCell id="0" />
-        <mxCell id="1" parent="0" />
-        <mxCell id="title" value="Hytte Monitoring · Incident Lifecycle" style="text;html=0;whiteSpace=wrap;overflow=hidden;align=left;verticalAlign=top;fontFamily=Arial;fontSize=38;fontColor=#132d49;fontStyle=1;spacing=0;" vertex="1" parent="1">
-          <mxGeometry x="60" y="28" width="2400" height="55" as="geometry" />
-        </mxCell>
-        <mxCell id="subtitle" value="One Incident · three concurrent regions · established behavior is explicit; unspecified policy remains abstract" style="text;html=0;whiteSpace=wrap;overflow=hidden;align=left;verticalAlign=top;fontFamily=Arial;fontSize=23;fontColor=#51677e;fontStyle=0;spacing=0;" vertex="1" parent="1">
-          <mxGeometry x="60" y="92" width="2400" height="42" as="geometry" />
-        </mxCell>
-        <mxCell id="active" value="" style="rounded=1;absoluteArcSize=1;arcSize=20;html=0;fillColor=#f8fafc;strokeColor=#577896;strokeWidth=2;" vertex="1" parent="1" umlKind="composite" umlLabel="Active Incident" umlBody="entry / register this Incident in Incident/Event History&#10;{Incident changes update the SAME History record; no separate record per step}" groundTruthSections="7, 8, 9">
-          <mxGeometry x="60" y="176" width="2400" height="1280" as="geometry" />
-        </mxCell>
-        <mxCell id="active_name" value="Active Incident" style="text;html=0;whiteSpace=wrap;overflow=hidden;align=center;verticalAlign=top;fontFamily=Arial;fontSize=23;fontColor=#132d49;fontStyle=1;spacing=0;" vertex="1" parent="active">
-          <mxGeometry x="14" y="13" width="2372" height="32" as="geometry" />
-        </mxCell>
-        <mxCell id="active_compartment" value="" style="line;strokeColor=#577896;strokeWidth=1;dashed=0;dashPattern=8 6;" vertex="1" parent="active">
-          <mxGeometry x="1" y="52" width="2398" height="0" as="geometry" />
-        </mxCell>
-        <mxCell id="active_body" value="entry / register this Incident in Incident/Event History&#10;{Incident changes update the SAME History record; no separate record per step}" style="text;html=0;whiteSpace=wrap;overflow=hidden;align=center;verticalAlign=top;fontFamily=Arial;fontSize=22;fontColor=#334155;fontStyle=0;spacing=0;" vertex="1" parent="active">
-          <mxGeometry x="18" y="65" width="2364" height="1206" as="geometry" />
-        </mxCell>
-        <mxCell id="i0" value="" style="ellipse;fillColor=#132d49;strokeColor=#132d49;strokeWidth=1;" vertex="1" parent="1" umlKind="initial">
-          <mxGeometry x="1251" y="138" width="18" height="18" as="geometry" />
-        </mxCell>
-        <mxCell id="I01" value="" style="edgeStyle=none;noEdgeStyle=1;rounded=0;html=0;strokeColor=#334155;strokeWidth=2;endArrow=block;endFill=1;endSize=8;exitX=0.5;exitY=1;exitDx=0;exitDy=0;exitPerimeter=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;entryPerimeter=0;" edge="1" parent="1" source="i0" target="active" umlLabel="" groundTruthSections="7, 9">
-          <mxGeometry relative="1" as="geometry" />
-        </mxCell>
-        <mxCell id="severity" value="" style="group;connectable=0;" vertex="1" parent="active" umlKind="region">
-          <mxGeometry x="0" y="160" width="570" height="1120" as="geometry" />
-        </mxCell>
-        <mxCell id="severity_title" value="SEVERITY  [GT 7]" style="text;html=0;whiteSpace=wrap;overflow=hidden;align=left;verticalAlign=top;fontFamily=Arial;fontSize=20;fontColor=#51677e;fontStyle=1;spacing=0;" vertex="1" parent="severity">
-          <mxGeometry x="22" y="14" width="526" height="30" as="geometry" />
-        </mxCell>
-        <mxCell id="handling" value="" style="group;connectable=0;" vertex="1" parent="active" umlKind="region">
-          <mxGeometry x="570" y="160" width="720" height="1120" as="geometry" />
-        </mxCell>
-        <mxCell id="handling_title" value="OWNER HANDLING  [GT 8]" style="text;html=0;whiteSpace=wrap;overflow=hidden;align=left;verticalAlign=top;fontFamily=Arial;fontSize=20;fontColor=#51677e;fontStyle=1;spacing=0;" vertex="1" parent="handling">
-          <mxGeometry x="22" y="14" width="676" height="30" as="geometry" />
-        </mxCell>
-        <mxCell id="escalation" value="" style="group;connectable=0;" vertex="1" parent="active" umlKind="region">
-          <mxGeometry x="1290" y="160" width="1110" height="1120" as="geometry" />
-        </mxCell>
-        <mxCell id="escalation_title" value="ESCALATION - ABSTRACT POLICY VIEW  [GT 8, 10-12]" style="text;html=0;whiteSpace=wrap;overflow=hidden;align=left;verticalAlign=top;fontFamily=Arial;fontSize=20;fontColor=#51677e;fontStyle=1;spacing=0;" vertex="1" parent="escalation">
-          <mxGeometry x="22" y="14" width="1066" height="30" as="geometry" />
-        </mxCell>
-        <mxCell id="header_boundary" value="" style="line;strokeColor=#687d91;strokeWidth=2;dashed=1;dashPattern=8 6;" vertex="1" parent="active">
-          <mxGeometry x="1" y="160" width="2398" height="0" as="geometry" />
-        </mxCell>
-        <mxCell id="severity_boundary" value="" style="line;strokeColor=#687d91;strokeWidth=2;dashed=1;dashPattern=8 6;direction=north;" vertex="1" parent="active">
-          <mxGeometry x="570" y="160" width="0" height="1118" as="geometry" />
-        </mxCell>
-        <mxCell id="handling_boundary" value="" style="line;strokeColor=#687d91;strokeWidth=2;dashed=1;dashPattern=8 6;direction=north;" vertex="1" parent="active">
-          <mxGeometry x="1290" y="160" width="0" height="1118" as="geometry" />
-        </mxCell>
-        <mxCell id="vi" value="" style="ellipse;fillColor=#132d49;strokeColor=#132d49;strokeWidth=1;" vertex="1" parent="severity" umlKind="initial">
-          <mxGeometry x="235" y="71" width="18" height="18" as="geometry" />
-        </mxCell>
-        <mxCell id="vc" value="" style="rhombus;fillColor=#ffffff;strokeColor=#334155;strokeWidth=2;" vertex="1" parent="severity" umlKind="choice">
-          <mxGeometry x="231" y="130" width="26" height="26" as="geometry" />
-        </mxCell>
-        <mxCell id="warning" value="" style="rounded=1;absoluteArcSize=1;arcSize=20;html=0;fillColor=#fff8e7;strokeColor=#ae944f;strokeWidth=2;" vertex="1" parent="severity" umlKind="state" umlLabel="Warning" umlBody="entry / notify Hytte Owner/User" groundTruthSections="7, 11">
-          <mxGeometry x="60" y="263" width="450" height="130" as="geometry" />
-        </mxCell>
-        <mxCell id="warning_name" value="Warning" style="text;html=0;whiteSpace=wrap;overflow=hidden;align=center;verticalAlign=top;fontFamily=Arial;fontSize=23;fontColor=#132d49;fontStyle=1;spacing=0;" vertex="1" parent="warning">
-          <mxGeometry x="14" y="13" width="422" height="32" as="geometry" />
-        </mxCell>
-        <mxCell id="warning_compartment" value="" style="line;strokeColor=#ae944f;strokeWidth=1;dashed=0;dashPattern=8 6;" vertex="1" parent="warning">
-          <mxGeometry x="1" y="52" width="448" height="0" as="geometry" />
-        </mxCell>
-        <mxCell id="warning_body" value="entry / notify Hytte Owner/User" style="text;html=0;whiteSpace=wrap;overflow=hidden;align=center;verticalAlign=top;fontFamily=Arial;fontSize=21;fontColor=#334155;fontStyle=0;spacing=0;" vertex="1" parent="warning">
-          <mxGeometry x="18" y="65" width="414" height="56" as="geometry" />
-        </mxCell>
-        <mxCell id="critical" value="" style="rounded=1;absoluteArcSize=1;arcSize=20;html=0;fillColor=#fff1f1;strokeColor=#c67d7d;strokeWidth=2;" vertex="1" parent="severity" umlKind="state" umlLabel="Critical" umlBody="entry / immediately notify Hytte Owner/User&#10;despite normal notification preferences;&#10;apply Critical escalation rules" groundTruthSections="5, 7, 12, 15">
-          <mxGeometry x="60" y="765" width="450" height="219" as="geometry" />
-        </mxCell>
-        <mxCell id="critical_name" value="Critical" style="text;html=0;whiteSpace=wrap;overflow=hidden;align=center;verticalAlign=top;fontFamily=Arial;fontSize=23;fontColor=#132d49;fontStyle=1;spacing=0;" vertex="1" parent="critical">
-          <mxGeometry x="14" y="13" width="422" height="32" as="geometry" />
-        </mxCell>
-        <mxCell id="critical_compartment" value="" style="line;strokeColor=#c67d7d;strokeWidth=1;dashed=0;dashPattern=8 6;" vertex="1" parent="critical">
-          <mxGeometry x="1" y="52" width="448" height="0" as="geometry" />
-        </mxCell>
-        <mxCell id="critical_body" value="entry / immediately notify Hytte Owner/User&#10;despite normal notification preferences;&#10;apply Critical escalation rules" style="text;html=0;whiteSpace=wrap;overflow=hidden;align=center;verticalAlign=top;fontFamily=Arial;fontSize=20;fontColor=#334155;fontStyle=0;spacing=0;" vertex="1" parent="critical">
-          <mxGeometry x="18" y="65" width="414" height="145" as="geometry" />
-        </mxCell>
-        <mxCell id="I02" value="" style="edgeStyle=none;noEdgeStyle=1;rounded=0;html=0;strokeColor=#334155;strokeWidth=2;endArrow=block;endFill=1;endSize=8;exitX=0.5;exitY=1;exitDx=0;exitDy=0;exitPerimeter=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;entryPerimeter=0;" edge="1" parent="1" source="vi" target="vc" umlLabel="" groundTruthSections="">
-          <mxGeometry relative="1" as="geometry" />
-        </mxCell>
-        <mxCell id="I03" value="" style="edgeStyle=none;noEdgeStyle=1;rounded=0;html=0;strokeColor=#334155;strokeWidth=2;endArrow=block;endFill=1;endSize=8;exitX=0.5;exitY=1;exitDx=0;exitDy=0;exitPerimeter=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;entryPerimeter=0;" edge="1" parent="1" source="vc" target="warning" umlLabel="[initial severity = Warning]" groundTruthSections="7">
-          <mxGeometry relative="1" as="geometry" />
-        </mxCell>
-        <mxCell id="I03_label" value="[initial severity = Warning]" style="text;html=0;whiteSpace=wrap;overflow=hidden;align=left;verticalAlign=top;fontFamily=Arial;fontSize=20;fontColor=#334155;fontStyle=0;spacing=0;fillColor=#ffffff;" vertex="1" parent="1">
-          <mxGeometry x="99" y="538" width="372" height="30" as="geometry" />
-        </mxCell>
-        <mxCell id="I04" value="" style="edgeStyle=none;noEdgeStyle=1;rounded=0;html=0;strokeColor=#334155;strokeWidth=2;endArrow=block;endFill=1;endSize=8;exitX=1;exitY=0.5;exitDx=0;exitDy=0;exitPerimeter=0;entryX=1;entryY=0.3;entryDx=0;entryDy=0;entryPerimeter=0;" edge="1" parent="1" source="vc" target="critical" umlLabel="[initial severity = Critical]" groundTruthSections="7">
-          <mxGeometry relative="1" as="geometry">
-            <Array as="points">
-              <mxPoint x="605" y="479" />
-              <mxPoint x="605" y="1166.7" />
-            </Array>
-          </mxGeometry>
-        </mxCell>
-        <mxCell id="I04_label" value="[initial severity = Critical]" style="text;html=0;whiteSpace=wrap;overflow=hidden;align=left;verticalAlign=top;fontFamily=Arial;fontSize=20;fontColor=#334155;fontStyle=0;spacing=0;fillColor=#ffffff;" vertex="1" parent="1">
-          <mxGeometry x="335" y="440" width="275" height="30" as="geometry" />
-        </mxCell>
-        <mxCell id="I05" value="" style="edgeStyle=none;noEdgeStyle=1;rounded=0;html=0;strokeColor=#334155;strokeWidth=2;endArrow=block;endFill=1;endSize=8;exitX=0.5;exitY=1;exitDx=0;exitDy=0;exitPerimeter=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;entryPerimeter=0;" edge="1" parent="1" source="warning" target="critical" umlLabel="condition worsens to Critical&#10;/ upgrade the SAME Incident;&#10;update its existing History record" groundTruthSections="7, 9">
-          <mxGeometry relative="1" as="geometry" />
-        </mxCell>
-        <mxCell id="I05_label" value="condition worsens to Critical&#10;/ upgrade the SAME Incident;&#10;update its existing History record" style="text;html=0;whiteSpace=wrap;overflow=hidden;align=left;verticalAlign=top;fontFamily=Arial;fontSize=20;fontColor=#334155;fontStyle=0;spacing=0;fillColor=#ffffff;" vertex="1" parent="1">
-          <mxGeometry x="138" y="836" width="416" height="91" as="geometry" />
-        </mxCell>
-        <mxCell id="hi" value="" style="ellipse;fillColor=#132d49;strokeColor=#132d49;strokeWidth=1;" vertex="1" parent="handling" umlKind="initial">
-          <mxGeometry x="347" y="71" width="18" height="18" as="geometry" />
-        </mxCell>
-        <mxCell id="decision" value="" style="rounded=1;absoluteArcSize=1;arcSize=20;html=0;fillColor=#eff6ff;strokeColor=#577896;strokeWidth=2;" vertex="1" parent="handling" umlKind="state" umlLabel="Awaiting owner decision" umlBody="Owner may resolve any Active Incident." groundTruthSections="8">
-          <mxGeometry x="180" y="180" width="485" height="128" as="geometry" />
-        </mxCell>
-        <mxCell id="decision_name" value="Awaiting owner decision" style="text;html=0;whiteSpace=wrap;overflow=hidden;align=center;verticalAlign=top;fontFamily=Arial;fontSize=23;fontColor=#132d49;fontStyle=1;spacing=0;" vertex="1" parent="decision">
-          <mxGeometry x="14" y="13" width="457" height="32" as="geometry" />
-        </mxCell>
-        <mxCell id="decision_compartment" value="" style="line;strokeColor=#577896;strokeWidth=1;dashed=0;dashPattern=8 6;" vertex="1" parent="decision">
-          <mxGeometry x="1" y="52" width="483" height="0" as="geometry" />
-        </mxCell>
-        <mxCell id="decision_body" value="Owner may resolve any Active Incident." style="text;html=0;whiteSpace=wrap;overflow=hidden;align=center;verticalAlign=top;fontFamily=Arial;fontSize=20;fontColor=#334155;fontStyle=0;spacing=0;" vertex="1" parent="decision">
-          <mxGeometry x="18" y="65" width="449" height="54" as="geometry" />
-        </mxCell>
-        <mxCell id="offer" value="" style="rounded=1;absoluteArcSize=1;arcSize=20;html=0;fillColor=#eff6ff;strokeColor=#577896;strokeWidth=2;" vertex="1" parent="handling" umlKind="state" umlLabel="Guidance offered" umlBody="entry / ask whether the owner wants&#10;Suggested Next Steps" groundTruthSections="8">
-          <mxGeometry x="180" y="490" width="485" height="143" as="geometry" />
-        </mxCell>
-        <mxCell id="offer_name" value="Guidance offered" style="text;html=0;whiteSpace=wrap;overflow=hidden;align=center;verticalAlign=top;fontFamily=Arial;fontSize=23;fontColor=#132d49;fontStyle=1;spacing=0;" vertex="1" parent="offer">
-          <mxGeometry x="14" y="13" width="457" height="32" as="geometry" />
-        </mxCell>
-        <mxCell id="offer_compartment" value="" style="line;strokeColor=#577896;strokeWidth=1;dashed=0;dashPattern=8 6;" vertex="1" parent="offer">
-          <mxGeometry x="1" y="52" width="483" height="0" as="geometry" />
-        </mxCell>
-        <mxCell id="offer_body" value="entry / ask whether the owner wants&#10;Suggested Next Steps" style="text;html=0;whiteSpace=wrap;overflow=hidden;align=center;verticalAlign=top;fontFamily=Arial;fontSize=21;fontColor=#334155;fontStyle=0;spacing=0;" vertex="1" parent="offer">
-          <mxGeometry x="18" y="65" width="449" height="69" as="geometry" />
-        </mxCell>
-        <mxCell id="guide" value="" style="rounded=1;absoluteArcSize=1;arcSize=20;html=0;fillColor=#eff6ff;strokeColor=#577896;strokeWidth=2;" vertex="1" parent="handling" umlKind="state" umlLabel="Guidance displayed" umlBody="entry / display step-by-step guidance;&#10;ask again whether the Incident is resolved" groundTruthSections="8">
-          <mxGeometry x="180" y="836" width="485" height="177" as="geometry" />
-        </mxCell>
-        <mxCell id="guide_name" value="Guidance displayed" style="text;html=0;whiteSpace=wrap;overflow=hidden;align=center;verticalAlign=top;fontFamily=Arial;fontSize=23;fontColor=#132d49;fontStyle=1;spacing=0;" vertex="1" parent="guide">
-          <mxGeometry x="14" y="13" width="457" height="32" as="geometry" />
-        </mxCell>
-        <mxCell id="guide_compartment" value="" style="line;strokeColor=#577896;strokeWidth=1;dashed=0;dashPattern=8 6;" vertex="1" parent="guide">
-          <mxGeometry x="1" y="52" width="483" height="0" as="geometry" />
-        </mxCell>
-        <mxCell id="guide_body" value="entry / display step-by-step guidance;&#10;ask again whether the Incident is resolved" style="text;html=0;whiteSpace=wrap;overflow=hidden;align=center;verticalAlign=top;fontFamily=Arial;fontSize=21;fontColor=#334155;fontStyle=0;spacing=0;" vertex="1" parent="guide">
-          <mxGeometry x="18" y="65" width="449" height="103" as="geometry" />
-        </mxCell>
-        <mxCell id="I06" value="" style="edgeStyle=none;noEdgeStyle=1;rounded=0;html=0;strokeColor=#334155;strokeWidth=2;endArrow=block;endFill=1;endSize=8;exitX=0.5;exitY=1;exitDx=0;exitDy=0;exitPerimeter=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;entryPerimeter=0;" edge="1" parent="1" source="hi" target="decision" umlLabel="" groundTruthSections="">
-          <mxGeometry relative="1" as="geometry">
-            <Array as="points">
-              <mxPoint x="986" y="486" />
-              <mxPoint x="1052.5" y="486" />
-            </Array>
-          </mxGeometry>
-        </mxCell>
-        <mxCell id="I07" value="" style="edgeStyle=none;noEdgeStyle=1;rounded=0;html=0;strokeColor=#334155;strokeWidth=2;endArrow=block;endFill=1;endSize=8;exitX=0.5;exitY=1;exitDx=0;exitDy=0;exitPerimeter=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;entryPerimeter=0;" edge="1" parent="1" source="decision" target="offer" umlLabel="owner selects Not Resolved" groundTruthSections="8">
-          <mxGeometry relative="1" as="geometry" />
-        </mxCell>
-        <mxCell id="I07_label" value="owner selects Not Resolved" style="text;html=0;whiteSpace=wrap;overflow=hidden;align=left;verticalAlign=top;fontFamily=Arial;fontSize=20;fontColor=#334155;fontStyle=0;spacing=0;fillColor=#ffffff;" vertex="1" parent="1">
-          <mxGeometry x="837" y="732" width="403" height="35" as="geometry" />
-        </mxCell>
-        <mxCell id="I08" value="" style="edgeStyle=none;noEdgeStyle=1;rounded=0;html=0;strokeColor=#334155;strokeWidth=2;endArrow=block;endFill=1;endSize=8;exitX=0.5;exitY=1;exitDx=0;exitDy=0;exitPerimeter=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;entryPerimeter=0;" edge="1" parent="1" source="offer" target="guide" umlLabel="owner selects Yes" groundTruthSections="8">
-          <mxGeometry relative="1" as="geometry" />
-        </mxCell>
-        <mxCell id="I08_label" value="owner selects Yes" style="text;html=0;whiteSpace=wrap;overflow=hidden;align=left;verticalAlign=top;fontFamily=Arial;fontSize=20;fontColor=#334155;fontStyle=0;spacing=0;fillColor=#ffffff;" vertex="1" parent="1">
-          <mxGeometry x="884" y="1060" width="305" height="33" as="geometry" />
-        </mxCell>
-        <mxCell id="I09" value="" style="edgeStyle=none;noEdgeStyle=1;rounded=0;html=0;strokeColor=#334155;strokeWidth=2;endArrow=block;endFill=1;endSize=8;exitX=0;exitY=0.5;exitDx=0;exitDy=0;exitPerimeter=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;entryPerimeter=0;" edge="1" parent="1" source="offer" target="decision" umlLabel="owner selects No" groundTruthSections="8">
-          <mxGeometry relative="1" as="geometry">
-            <Array as="points">
-              <mxPoint x="716" y="897.5" />
-              <mxPoint x="716" y="580" />
-            </Array>
-          </mxGeometry>
-        </mxCell>
-        <mxCell id="I09_label" value="owner selects No" style="text;html=0;whiteSpace=wrap;overflow=hidden;align=left;verticalAlign=top;fontFamily=Arial;fontSize=20;fontColor=#334155;fontStyle=0;spacing=0;fillColor=#ffffff;" vertex="1" parent="1">
-          <mxGeometry x="645" y="662" width="154" height="62" as="geometry" />
-        </mxCell>
-        <mxCell id="I10" value="" style="edgeStyle=none;noEdgeStyle=1;rounded=0;html=0;strokeColor=#334155;strokeWidth=2;endArrow=block;endFill=1;endSize=8;exitX=1;exitY=0.5;exitDx=0;exitDy=0;exitPerimeter=0;entryX=1;entryY=0.5;entryDx=0;entryDy=0;entryPerimeter=0;" edge="1" parent="1" source="guide" target="decision" umlLabel="owner selects&#10;Not Resolved" groundTruthSections="8">
-          <mxGeometry relative="1" as="geometry">
-            <Array as="points">
-              <mxPoint x="1320" y="1260.5" />
-              <mxPoint x="1320" y="580" />
-            </Array>
-          </mxGeometry>
-        </mxCell>
-        <mxCell id="I10_label" value="owner selects&#10;Not Resolved" style="text;html=0;whiteSpace=wrap;overflow=hidden;align=left;verticalAlign=top;fontFamily=Arial;fontSize=20;fontColor=#334155;fontStyle=0;spacing=0;fillColor=#ffffff;" vertex="1" parent="1">
-          <mxGeometry x="1214" y="1034" width="110" height="101" as="geometry" />
-        </mxCell>
-        <mxCell id="ei" value="" style="ellipse;fillColor=#132d49;strokeColor=#132d49;strokeWidth=1;" vertex="1" parent="escalation" umlKind="initial">
-          <mxGeometry x="540" y="71" width="18" height="18" as="geometry" />
-        </mxCell>
-        <mxCell id="pending" value="" style="rounded=1;absoluteArcSize=1;arcSize=20;html=0;fillColor=#fff8e7;strokeColor=#ae944f;strokeWidth=2;" vertex="1" parent="escalation" umlKind="state" umlLabel="Escalation pending" umlBody="familyEscalationDue [contactsConfigured]&#10;/ notify configured Family/Emergency Contacts;&#10;update the SAME Incident/Event History record&#10;&#10;Internal transition: the Incident remains Active.&#10;Abstract eligibility follows Ground Truth; see constraints below." groundTruthSections="8, 9, 10, 11, 12, 13">
-          <mxGeometry x="86" y="227" width="930" height="292" as="geometry" />
-        </mxCell>
-        <mxCell id="pending_name" value="Escalation pending" style="text;html=0;whiteSpace=wrap;overflow=hidden;align=center;verticalAlign=top;fontFamily=Arial;fontSize=23;fontColor=#132d49;fontStyle=1;spacing=0;" vertex="1" parent="pending">
-          <mxGeometry x="14" y="13" width="902" height="32" as="geometry" />
-        </mxCell>
-        <mxCell id="pending_compartment" value="" style="line;strokeColor=#ae944f;strokeWidth=1;dashed=0;dashPattern=8 6;" vertex="1" parent="pending">
-          <mxGeometry x="1" y="52" width="928" height="0" as="geometry" />
-        </mxCell>
-        <mxCell id="pending_body" value="familyEscalationDue [contactsConfigured]&#10;/ notify configured Family/Emergency Contacts;&#10;update the SAME Incident/Event History record&#10;&#10;Internal transition: the Incident remains Active.&#10;Abstract eligibility follows Ground Truth; see constraints below." style="text;html=0;whiteSpace=wrap;overflow=hidden;align=center;verticalAlign=top;fontFamily=Arial;fontSize=22;fontColor=#334155;fontStyle=0;spacing=0;" vertex="1" parent="pending">
-          <mxGeometry x="18" y="65" width="894" height="218" as="geometry" />
-        </mxCell>
-        <mxCell id="emergency" value="" style="rounded=1;absoluteArcSize=1;arcSize=20;html=0;fillColor=#fff1f1;strokeColor=#c67d7d;strokeWidth=2;" vertex="1" parent="escalation" umlKind="state" umlLabel="Emergency Service contacted" umlBody="entry / contact the relevant Emergency Service;&#10;update the SAME Incident/Event History record" groundTruthSections="9, 10, 12, 13">
-          <mxGeometry x="196" y="877" width="710" height="153" as="geometry" />
-        </mxCell>
-        <mxCell id="emergency_name" value="Emergency Service contacted" style="text;html=0;whiteSpace=wrap;overflow=hidden;align=center;verticalAlign=top;fontFamily=Arial;fontSize=23;fontColor=#132d49;fontStyle=1;spacing=0;" vertex="1" parent="emergency">
-          <mxGeometry x="14" y="13" width="682" height="32" as="geometry" />
-        </mxCell>
-        <mxCell id="emergency_compartment" value="" style="line;strokeColor=#c67d7d;strokeWidth=1;dashed=0;dashPattern=8 6;" vertex="1" parent="emergency">
-          <mxGeometry x="1" y="52" width="708" height="0" as="geometry" />
-        </mxCell>
-        <mxCell id="emergency_body" value="entry / contact the relevant Emergency Service;&#10;update the SAME Incident/Event History record" style="text;html=0;whiteSpace=wrap;overflow=hidden;align=center;verticalAlign=top;fontFamily=Arial;fontSize=21;fontColor=#334155;fontStyle=0;spacing=0;" vertex="1" parent="emergency">
-          <mxGeometry x="18" y="65" width="674" height="79" as="geometry" />
-        </mxCell>
-        <mxCell id="I11" value="" style="edgeStyle=none;noEdgeStyle=1;rounded=0;html=0;strokeColor=#334155;strokeWidth=2;endArrow=block;endFill=1;endSize=8;exitX=0.5;exitY=1;exitDx=0;exitDy=0;exitPerimeter=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;entryPerimeter=0;" edge="1" parent="1" source="ei" target="pending" umlLabel="" groundTruthSections="10">
-          <mxGeometry relative="1" as="geometry" />
-        </mxCell>
-        <mxCell id="I12" value="" style="edgeStyle=none;noEdgeStyle=1;rounded=0;html=0;strokeColor=#334155;strokeWidth=2;endArrow=block;endFill=1;endSize=8;exitX=0.5;exitY=1;exitDx=0;exitDy=0;exitPerimeter=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;entryPerimeter=0;" edge="1" parent="1" source="pending" target="emergency" umlLabel="normalCriticalEscalationDue&#10;[EMERGENCY_OK]" groundTruthSections="10, 12">
-          <mxGeometry relative="1" as="geometry" />
-        </mxCell>
-        <mxCell id="I12_label" value="normalCriticalEscalationDue&#10;[EMERGENCY_OK]" style="text;html=0;whiteSpace=wrap;overflow=hidden;align=left;verticalAlign=top;fontFamily=Arial;fontSize=20;fontColor=#334155;fontStyle=0;spacing=0;fillColor=#ffffff;" vertex="1" parent="1">
-          <mxGeometry x="1624" y="1028" width="590" height="67" as="geometry" />
-        </mxCell>
-        <mxCell id="I13" value="" style="edgeStyle=none;noEdgeStyle=1;rounded=0;html=0;strokeColor=#334155;strokeWidth=2;endArrow=block;endFill=1;endSize=8;exitX=1;exitY=0.4;exitDx=0;exitDy=0;exitPerimeter=0;entryX=1;entryY=0.5;entryDx=0;entryDy=0;entryPerimeter=0;" edge="1" parent="1" source="pending" target="emergency" umlLabel="criticalSafetyOverride&#10;[DANGER]" groundTruthSections="12, 15, 18">
-          <mxGeometry relative="1" as="geometry">
-            <Array as="points">
-              <mxPoint x="2410" y="679.8" />
-              <mxPoint x="2410" y="1289.5" />
-            </Array>
-          </mxGeometry>
-        </mxCell>
-        <mxCell id="I13_label" value="criticalSafetyOverride&#10;[DANGER]" style="text;html=0;whiteSpace=wrap;overflow=hidden;align=left;verticalAlign=top;fontFamily=Arial;fontSize=20;fontColor=#334155;fontStyle=0;spacing=0;fillColor=#ffffff;" vertex="1" parent="1">
-          <mxGeometry x="2170" y="1097" width="235" height="66" as="geometry" />
-        </mxCell>
-        <mxCell id="closed" value="" style="rounded=1;absoluteArcSize=1;arcSize=20;html=0;fillColor=#ecfdf5;strokeColor=#6d9f86;strokeWidth=2;" vertex="1" parent="1" umlKind="state" umlLabel="Resolved / Closed" umlBody="entry / close the SAME Incident;&#10;update its existing History record to Closed" groundTruthSections="8, 9">
-          <mxGeometry x="775" y="1558" width="970" height="137" as="geometry" />
-        </mxCell>
-        <mxCell id="closed_name" value="Resolved / Closed" style="text;html=0;whiteSpace=wrap;overflow=hidden;align=center;verticalAlign=top;fontFamily=Arial;fontSize=23;fontColor=#132d49;fontStyle=1;spacing=0;" vertex="1" parent="closed">
-          <mxGeometry x="14" y="13" width="942" height="32" as="geometry" />
-        </mxCell>
-        <mxCell id="closed_compartment" value="" style="line;strokeColor=#6d9f86;strokeWidth=1;dashed=0;dashPattern=8 6;" vertex="1" parent="closed">
-          <mxGeometry x="1" y="52" width="968" height="0" as="geometry" />
-        </mxCell>
-        <mxCell id="closed_body" value="entry / close the SAME Incident;&#10;update its existing History record to Closed" style="text;html=0;whiteSpace=wrap;overflow=hidden;align=center;verticalAlign=top;fontFamily=Arial;fontSize=22;fontColor=#334155;fontStyle=0;spacing=0;" vertex="1" parent="closed">
-          <mxGeometry x="18" y="65" width="934" height="63" as="geometry" />
-        </mxCell>
-        <mxCell id="I15" value="" style="edgeStyle=none;noEdgeStyle=1;rounded=0;html=0;strokeColor=#334155;strokeWidth=2;endArrow=block;endFill=1;endSize=8;exitX=0.5;exitY=1;exitDx=0;exitDy=0;exitPerimeter=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;entryPerimeter=0;" edge="1" parent="1" source="active" target="closed" umlLabel="Hytte Owner/User selects Resolved" groundTruthSections="8">
-          <mxGeometry relative="1" as="geometry" />
-        </mxCell>
-        <mxCell id="I15_label" value="Hytte Owner/User selects Resolved" style="text;html=0;whiteSpace=wrap;overflow=hidden;align=left;verticalAlign=top;fontFamily=Arial;fontSize=20;fontColor=#334155;fontStyle=0;spacing=0;fillColor=#ffffff;" vertex="1" parent="1">
-          <mxGeometry x="1310" y="1493" width="590" height="31" as="geometry" />
-        </mxCell>
-        <mxCell id="family_policy" value="" style="rounded=1;absoluteArcSize=1;arcSize=14;fillColor=#ffffff;strokeColor=#cbd5e1;strokeWidth=1;" vertex="1" parent="1" groundTruthSections="8, 10, 11, 12, 13" umlKind="note">
-          <mxGeometry x="60" y="1732" width="1170" height="310" as="geometry" />
-        </mxCell>
-        <mxCell id="family_policy_head" value="Family escalation and system-controlled waiting  [GT 8, 10-13]" style="text;html=0;whiteSpace=wrap;overflow=hidden;align=left;verticalAlign=top;fontFamily=Arial;fontSize=22;fontColor=#132d49;fontStyle=1;spacing=0;" vertex="1" parent="family_policy">
-          <mxGeometry x="16" y="12" width="1138" height="29" as="geometry" />
-        </mxCell>
-        <mxCell id="family_policy_text" value="familyEscalationDue denotes a permitted family-notification step under the&#10;system-controlled escalation policy. Owner non-response permits escalation;&#10;after Not Resolved, an Active Incident can continue escalating after a system wait.&#10;Only configured Family/Emergency Contacts receive this notification.&#10;Waiting depends on severity and is not user-configurable; Critical waits may&#10;be shorter than Warning waits. No duration, clock origin or reset rule is set here.&#10;Warnings may reach contacts but never automatically contact official services.&#10;Due events abstract the established conditions; they add no scheduling or retries." style="text;html=0;whiteSpace=wrap;overflow=hidden;align=left;verticalAlign=top;fontFamily=Arial;fontSize=21;fontColor=#334155;fontStyle=0;spacing=0;" vertex="1" parent="family_policy">
-          <mxGeometry x="16" y="51" width="1138" height="250" as="geometry" />
-        </mxCell>
-        <mxCell id="emergency_policy" value="" style="rounded=1;absoluteArcSize=1;arcSize=14;fillColor=#ffffff;strokeColor=#cbd5e1;strokeWidth=1;" vertex="1" parent="1" groundTruthSections="10, 11, 12, 15, 18" umlKind="note">
-          <mxGeometry x="1260" y="1732" width="1200" height="310" as="geometry" />
-        </mxCell>
-        <mxCell id="emergency_policy_head" value="Normal Critical escalation and permitted safety override  [GT 10-12, 15]" style="text;html=0;whiteSpace=wrap;overflow=hidden;align=left;verticalAlign=top;fontFamily=Arial;fontSize=22;fontColor=#132d49;fontStyle=1;spacing=0;" vertex="1" parent="emergency_policy">
-          <mxGeometry x="16" y="12" width="1168" height="29" as="geometry" />
-        </mxCell>
-        <mxCell id="emergency_policy_text" value="EMERGENCY_OK = Critical AND normal automatic escalation permitted&#10;by owner configuration AND emergency assistance required; the Incident is Active.&#10;normalCriticalEscalationDue follows the applicable system wait and preferred&#10;order: owner, configured contacts, relevant Emergency Service. Contact&#10;non-response within the system wait permits onward escalation. With no contacts,&#10;that stage can be skipped. Human intervention is preferred when the situation allows.&#10;DANGER = Critical AND immediate critical danger. criticalSafetyOverride denotes&#10;the permitted bypass of normal waiting and restrictions. No assessment schedule&#10;is prescribed, and danger does not prohibit otherwise permitted notifications." style="text;html=0;whiteSpace=wrap;overflow=hidden;align=left;verticalAlign=top;fontFamily=Arial;fontSize=21;fontColor=#334155;fontStyle=0;spacing=0;" vertex="1" parent="emergency_policy">
-          <mxGeometry x="16" y="51" width="1168" height="250" as="geometry" />
-        </mxCell>
-        <mxCell id="open_policies" value="" style="rounded=1;absoluteArcSize=1;arcSize=14;fillColor=#ffffff;strokeColor=#cbd5e1;strokeWidth=1;" vertex="1" parent="1" groundTruthSections="7, 8, 10, 11, 12, 13, 19" umlKind="note">
-          <mxGeometry x="60" y="2068" width="1170" height="302" as="geometry" />
-        </mxCell>
-        <mxCell id="open_policies_head" value="Ground Truth policy boundaries - intentionally abstract" style="text;html=0;whiteSpace=wrap;overflow=hidden;align=left;verticalAlign=top;fontFamily=Arial;fontSize=22;fontColor=#132d49;fontStyle=1;spacing=0;" vertex="1" parent="open_policies">
-          <mxGeometry x="16" y="12" width="1138" height="29" as="geometry" />
-        </mxCell>
-        <mxCell id="open_policies_text" value="Promotion establishes Critical behavior, not a remaining escalation stage/deadline.&#10;Unresolved or repeated responses establish no timer origin or reset rule.&#10;Contact replies establish no specified response effect or closure authority.&#10;No stage retention/restart, follow-up reset, retry, or contact-resolution rule is added.&#10;The owner-resolution path is required; absent contact-response paths are not&#10;a prohibition, a grant of authority, or a definition that replies are ignored.&#10;These are limits of policy completeness, not missing established requirements.&#10;This diagram is an abstract behavioral contract, not an exhaustive event handler." style="text;html=0;whiteSpace=wrap;overflow=hidden;align=left;verticalAlign=top;fontFamily=Arial;fontSize=21;fontColor=#334155;fontStyle=0;spacing=0;" vertex="1" parent="open_policies">
-          <mxGeometry x="16" y="51" width="1138" height="242" as="geometry" />
-        </mxCell>
-        <mxCell id="lifecycle_rules" value="" style="rounded=1;absoluteArcSize=1;arcSize=14;fillColor=#ffffff;strokeColor=#cbd5e1;strokeWidth=1;" vertex="1" parent="1" groundTruthSections="1, 2, 7, 8, 9, 14, 16, 17" umlKind="note">
-          <mxGeometry x="1260" y="2068" width="1200" height="302" as="geometry" />
-        </mxCell>
-        <mxCell id="lifecycle_rules_head" value="Identity, concurrent handling and scope  [GT 1-2, 7-9, 14, 16-17]" style="text;html=0;whiteSpace=wrap;overflow=hidden;align=left;verticalAlign=top;fontFamily=Arial;fontSize=22;fontColor=#132d49;fontStyle=1;spacing=0;" vertex="1" parent="lifecycle_rules">
-          <mxGeometry x="16" y="12" width="1168" height="29" as="geometry" />
-        </mxCell>
-        <mxCell id="lifecycle_rules_text" value="Scope: one Incident created for a condition requiring attention. Initial severity&#10;comes from detection; Warning-to-Critical promotion creates no new Incident.&#10;Creation, upgrade, escalation and closure use the SAME History record.&#10;Owner handling and escalation are concurrent views of this Active Incident;&#10;after Not Resolved, escalation can continue after a system-determined wait.&#10;Owner selection of Resolved closes it from any Active substate, including after&#10;guidance or service contact. History remains viewable; monitoring continues.&#10;Actions are conceptual/simulated. UI navigation, configuration screens and&#10;communication infrastructure belong outside this Incident Lifecycle view." style="text;html=0;whiteSpace=wrap;overflow=hidden;align=left;verticalAlign=top;fontFamily=Arial;fontSize=21;fontColor=#334155;fontStyle=0;spacing=0;" vertex="1" parent="lifecycle_rules">
-          <mxGeometry x="16" y="51" width="1168" height="242" as="geometry" />
-        </mxCell>
-        <mxCell id="authority" value="Authority: model/Ground_truth.md only. Required behavior is modeled; unspecified policy remains abstract. Alignment does not imply an exhaustive specification." style="text;html=0;whiteSpace=wrap;overflow=hidden;align=left;verticalAlign=top;fontFamily=Arial;fontSize=20;fontColor=#51677e;fontStyle=0;spacing=0;" vertex="1" parent="1">
-          <mxGeometry x="60" y="2402" width="2400" height="58" as="geometry" />
-        </mxCell>
-      </root>
-    </mxGraphModel>
-  </diagram>
+<mxfile host="65bd71144e" authority="model/Ground_truth.md" authoritySHA256="1f13f1641735fc55ace499436bd266b40c048a815cb522aa6524e9f4b91b6e34" referenceSHA256="1b7786abb6e8a49483be8ee6c942f47ee9588b968c8acf86e9111a59f9ddf67f" specificationRevision="v2" alignmentBasis="Established Ground Truth obligations; unspecified policy is represented abstractly">
+    <diagram id="system-operation-aligned" name="1 - System Operation" authority="model/Ground_truth.md">
+        <mxGraphModel dx="2468" dy="1888" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="2360" pageHeight="1590" background="#ffffff" math="0" shadow="0">
+            <root>
+                <mxCell id="0"/>
+                <mxCell id="1" parent="0"/>
+                <mxCell id="title" parent="1" style="text;html=0;whiteSpace=wrap;overflow=hidden;align=left;verticalAlign=top;fontFamily=Arial;fontSize=38;fontColor=#000000;fontStyle=1;spacing=0;" value="Hytte Monitoring · System Operation" vertex="1">
+                    <mxGeometry height="55" width="2240" x="60" y="28" as="geometry"/>
+                </mxCell>
+                <mxCell id="subtitle" parent="1" style="text;html=0;whiteSpace=wrap;overflow=hidden;align=left;verticalAlign=top;fontFamily=Arial;fontSize=23;fontColor=#000000;fontStyle=0;spacing=0;" value="Ground Truth revision · four concurrent regions · conceptual behavior, simulated in the website" vertex="1">
+                    <mxGeometry height="40" width="2240" x="60" y="92" as="geometry"/>
+                </mxCell>
+                <mxCell id="op" groundTruthSections="7, 14, 15, 18" parent="1" style="rounded=1;absoluteArcSize=1;arcSize=20;html=0;fillColor=#ffffff;strokeColor=#000000;strokeWidth=2;" umlBody="condition requiring attention / create an Incident with Warning or Critical severity&#xa;Warning condition worsens / upgrade the SAME Incident through the Incident Lifecycle" umlKind="composite" umlLabel="Operating" value="" vertex="1">
+                    <mxGeometry height="1358" width="2240" x="60" y="172" as="geometry"/>
+                </mxCell>
+                <mxCell id="op_name" parent="op" style="text;html=0;whiteSpace=wrap;overflow=hidden;align=center;verticalAlign=top;fontFamily=Arial;fontSize=23;fontColor=#000000;fontStyle=1;spacing=0;" value="Operating" vertex="1">
+                    <mxGeometry height="32" width="2212" x="14" y="13" as="geometry"/>
+                </mxCell>
+                <mxCell id="op_compartment" parent="op" style="line;strokeColor=#000000;strokeWidth=1;dashed=0;dashPattern=8 6;" value="" vertex="1">
+                    <mxGeometry width="2238" x="1" y="52" as="geometry"/>
+                </mxCell>
+                <mxCell id="op_body" parent="op" style="text;html=0;whiteSpace=wrap;overflow=hidden;align=center;verticalAlign=top;fontFamily=Arial;fontSize=22;fontColor=#000000;fontStyle=0;spacing=0;" value="condition requiring attention / create an Incident with Warning or Critical severity&#xa;Warning condition worsens / upgrade the SAME Incident through the Incident Lifecycle" vertex="1">
+                    <mxGeometry height="1284" width="2204" x="18" y="65" as="geometry"/>
+                </mxCell>
+                <mxCell id="mode" parent="op" style="group;connectable=0;" umlKind="region" value="" vertex="1">
+                    <mxGeometry height="302" width="2240" y="150" as="geometry"/>
+                </mxCell>
+                <mxCell id="mode_title" parent="mode" style="text;html=0;whiteSpace=wrap;overflow=hidden;align=left;verticalAlign=top;fontFamily=Arial;fontSize=20;fontColor=#000000;fontStyle=1;spacing=0;" value="MONITORING MODE  [GT 6]" vertex="1">
+                    <mxGeometry height="30" width="2196" x="22" y="14" as="geometry"/>
+                </mxCell>
+                <mxCell id="mi" parent="mode" style="ellipse;fillColor=#000000;strokeColor=#000000;strokeWidth=1;" umlKind="initial" value="" vertex="1">
+                    <mxGeometry height="18" width="18" x="44" y="148" as="geometry"/>
+                </mxCell>
+                <mxCell id="select" groundTruthSections="6" parent="mode" style="rounded=1;absoluteArcSize=1;arcSize=20;html=0;fillColor=#ffffff;strokeColor=#000000;strokeWidth=2;" umlBody="entry / ask the owner to choose&#xa;HOME or AWAY" umlKind="state" umlLabel="Awaiting mode selection" value="" vertex="1">
+                    <mxGeometry height="132" width="475" x="122" y="96" as="geometry"/>
+                </mxCell>
+                <mxCell id="select_name" parent="select" style="text;html=0;whiteSpace=wrap;overflow=hidden;align=center;verticalAlign=top;fontFamily=Arial;fontSize=23;fontColor=#000000;fontStyle=1;spacing=0;" value="Awaiting mode selection" vertex="1">
+                    <mxGeometry height="32" width="447" x="14" y="13" as="geometry"/>
+                </mxCell>
+                <mxCell id="select_compartment" parent="select" style="line;strokeColor=#000000;strokeWidth=1;dashed=0;dashPattern=8 6;" value="" vertex="1">
+                    <mxGeometry width="473" x="1" y="52" as="geometry"/>
+                </mxCell>
+                <mxCell id="select_body" parent="select" style="text;html=0;whiteSpace=wrap;overflow=hidden;align=center;verticalAlign=top;fontFamily=Arial;fontSize=21;fontColor=#000000;fontStyle=0;spacing=0;" value="entry / ask the owner to choose&#xa;HOME or AWAY" vertex="1">
+                    <mxGeometry height="58" width="439" x="18" y="65" as="geometry"/>
+                </mxCell>
+                <mxCell id="home" groundTruthSections="6" parent="mode" style="rounded=1;absoluteArcSize=1;arcSize=20;html=0;fillColor=#ffffff;strokeColor=#000000;strokeWidth=2;" umlBody="Normal Door/Motion activity&#xa;does not create security Warnings." umlKind="state" umlLabel="HOME" value="" vertex="1">
+                    <mxGeometry height="144" width="480" x="840" y="68" as="geometry"/>
+                </mxCell>
+                <mxCell id="home_name" parent="home" style="text;html=0;whiteSpace=wrap;overflow=hidden;align=center;verticalAlign=top;fontFamily=Arial;fontSize=23;fontColor=#000000;fontStyle=1;spacing=0;" value="HOME" vertex="1">
+                    <mxGeometry height="32" width="452" x="14" y="13" as="geometry"/>
+                </mxCell>
+                <mxCell id="home_compartment" parent="home" style="line;strokeColor=#000000;strokeWidth=1;dashed=0;dashPattern=8 6;" value="" vertex="1">
+                    <mxGeometry width="478" x="1" y="52" as="geometry"/>
+                </mxCell>
+                <mxCell id="home_body" parent="home" style="text;html=0;whiteSpace=wrap;overflow=hidden;align=center;verticalAlign=top;fontFamily=Arial;fontSize=21;fontColor=#000000;fontStyle=0;spacing=0;" value="Normal Door/Motion activity&#xa;does not create security Warnings." vertex="1">
+                    <mxGeometry height="70" width="444" x="18" y="65" as="geometry"/>
+                </mxCell>
+                <mxCell id="away" groundTruthSections="4, 6" parent="mode" style="rounded=1;absoluteArcSize=1;arcSize=20;html=0;fillColor=#ffffff;strokeColor=#000000;strokeWidth=2;" umlBody="Enabled Door/Motion monitoring&#xa;can generate security Warnings." umlKind="state" umlLabel="AWAY" value="" vertex="1">
+                    <mxGeometry height="144" width="528" x="1652" y="68" as="geometry"/>
+                </mxCell>
+                <mxCell id="away_name" parent="away" style="text;html=0;whiteSpace=wrap;overflow=hidden;align=center;verticalAlign=top;fontFamily=Arial;fontSize=23;fontColor=#000000;fontStyle=1;spacing=0;" value="AWAY" vertex="1">
+                    <mxGeometry height="32" width="500" x="14" y="13" as="geometry"/>
+                </mxCell>
+                <mxCell id="away_compartment" parent="away" style="line;strokeColor=#000000;strokeWidth=1;dashed=0;dashPattern=8 6;" value="" vertex="1">
+                    <mxGeometry width="526" x="1" y="52" as="geometry"/>
+                </mxCell>
+                <mxCell id="away_body" parent="away" style="text;html=0;whiteSpace=wrap;overflow=hidden;align=center;verticalAlign=top;fontFamily=Arial;fontSize=21;fontColor=#000000;fontStyle=0;spacing=0;" value="Enabled Door/Motion monitoring&#xa;can generate security Warnings." vertex="1">
+                    <mxGeometry height="70" width="492" x="18" y="65" as="geometry"/>
+                </mxCell>
+                <mxCell id="cold" parent="op" style="group;connectable=0;" umlKind="region" value="" vertex="1">
+                    <mxGeometry height="302" width="2240" y="452" as="geometry"/>
+                </mxCell>
+                <mxCell id="cold_title" parent="cold" style="text;html=0;whiteSpace=wrap;overflow=hidden;align=left;verticalAlign=top;fontFamily=Arial;fontSize=20;fontColor=#000000;fontStyle=1;spacing=0;" value="COLD-WEATHER PROTECTION  [GT 3-4, 15]" vertex="1">
+                    <mxGeometry height="30" width="2196" x="22" y="14" as="geometry"/>
+                </mxCell>
+                <mxCell id="ci" parent="cold" style="ellipse;fillColor=#000000;strokeColor=#000000;strokeWidth=1;" umlKind="initial" value="" vertex="1">
+                    <mxGeometry height="18" width="18" x="44" y="145" as="geometry"/>
+                </mxCell>
+                <mxCell id="cc" parent="cold" style="rhombus;fillColor=#ffffff;strokeColor=#000000;strokeWidth=2;" umlKind="choice" value="" vertex="1">
+                    <mxGeometry height="26" width="26" x="130" y="141" as="geometry"/>
+                </mxCell>
+                <mxCell id="coldOff" groundTruthSections="4" parent="cold" style="rounded=1;absoluteArcSize=1;arcSize=20;html=0;fillColor=#ffffff;strokeColor=#000000;strokeWidth=2;" umlBody="Indoor Temperature and Power&#xa;follow the owner configuration." umlKind="state" umlLabel="Protection inactive" value="" vertex="1">
+                    <mxGeometry height="138" width="530" x="280" y="103" as="geometry"/>
+                </mxCell>
+                <mxCell id="coldOff_name" parent="coldOff" style="text;html=0;whiteSpace=wrap;overflow=hidden;align=center;verticalAlign=top;fontFamily=Arial;fontSize=23;fontColor=#000000;fontStyle=1;spacing=0;" value="Protection inactive" vertex="1">
+                    <mxGeometry height="32" width="502" x="14" y="13" as="geometry"/>
+                </mxCell>
+                <mxCell id="coldOff_compartment" parent="coldOff" style="line;strokeColor=#000000;strokeWidth=1;dashed=0;dashPattern=8 6;" value="" vertex="1">
+                    <mxGeometry width="528" x="1" y="52" as="geometry"/>
+                </mxCell>
+                <mxCell id="coldOff_body" parent="coldOff" style="text;html=0;whiteSpace=wrap;overflow=hidden;align=center;verticalAlign=top;fontFamily=Arial;fontSize=21;fontColor=#000000;fontStyle=0;spacing=0;" value="Indoor Temperature and Power&#xa;follow the owner configuration." vertex="1">
+                    <mxGeometry height="64" width="494" x="18" y="65" as="geometry"/>
+                </mxCell>
+                <mxCell id="coldOn" groundTruthSections="4" parent="cold" style="rounded=1;absoluteArcSize=1;arcSize=20;html=0;fillColor=#ffffff;strokeColor=#000000;strokeWidth=2;" umlBody="entry / preserve previous Indoor Temperature and Power choices;&#xa;require both monitoring functions&#xa;exit / restore those previous choices" umlKind="state" umlLabel="Protection active" value="" vertex="1">
+                    <mxGeometry height="153" width="860" x="1300" y="103" as="geometry"/>
+                </mxCell>
+                <mxCell id="coldOn_name" parent="coldOn" style="text;html=0;whiteSpace=wrap;overflow=hidden;align=center;verticalAlign=top;fontFamily=Arial;fontSize=23;fontColor=#000000;fontStyle=1;spacing=0;" value="Protection active" vertex="1">
+                    <mxGeometry height="32" width="832" x="14" y="13" as="geometry"/>
+                </mxCell>
+                <mxCell id="coldOn_compartment" parent="coldOn" style="line;strokeColor=#000000;strokeWidth=1;dashed=0;dashPattern=8 6;" value="" vertex="1">
+                    <mxGeometry width="858" x="1" y="52" as="geometry"/>
+                </mxCell>
+                <mxCell id="coldOn_body" parent="coldOn" style="text;html=0;whiteSpace=wrap;overflow=hidden;align=center;verticalAlign=top;fontFamily=Arial;fontSize=20;fontColor=#000000;fontStyle=0;spacing=0;" value="entry / preserve previous Indoor Temperature and Power choices;&#xa;require both monitoring functions&#xa;exit / restore those previous choices" vertex="1">
+                    <mxGeometry height="79" width="824" x="18" y="65" as="geometry"/>
+                </mxCell>
+                <mxCell id="power" parent="op" style="group;connectable=0;" umlKind="region" value="" vertex="1">
+                    <mxGeometry height="302" width="2240" y="754" as="geometry"/>
+                </mxCell>
+                <mxCell id="power_title" parent="power" style="text;html=0;whiteSpace=wrap;overflow=hidden;align=left;verticalAlign=top;fontFamily=Arial;fontSize=20;fontColor=#000000;fontStyle=1;spacing=0;" value="POWER SOURCE  [GT 14, ADR-002]" vertex="1">
+                    <mxGeometry height="30" width="2196" x="22" y="14" as="geometry"/>
+                </mxCell>
+                <mxCell id="pi" parent="power" style="ellipse;fillColor=#000000;strokeColor=#000000;strokeWidth=1;" umlKind="initial" value="" vertex="1">
+                    <mxGeometry height="18" width="18" x="44" y="145" as="geometry"/>
+                </mxCell>
+                <mxCell id="pc" parent="power" style="rhombus;fillColor=#ffffff;strokeColor=#000000;strokeWidth=2;" umlKind="choice" value="" vertex="1">
+                    <mxGeometry height="26" width="26" x="130" y="141" as="geometry"/>
+                </mxCell>
+                <mxCell id="mains" groundTruthSections="14" parent="power" style="rounded=1;absoluteArcSize=1;arcSize=20;html=0;fillColor=#ffffff;strokeColor=#000000;strokeWidth=2;" umlBody="entry / use normal cabin electricity" umlKind="state" umlLabel="Cabin electricity" value="" vertex="1">
+                    <mxGeometry height="125" width="530" x="280" y="103" as="geometry"/>
+                </mxCell>
+                <mxCell id="mains_name" parent="mains" style="text;html=0;whiteSpace=wrap;overflow=hidden;align=center;verticalAlign=top;fontFamily=Arial;fontSize=23;fontColor=#000000;fontStyle=1;spacing=0;" value="Cabin electricity" vertex="1">
+                    <mxGeometry height="32" width="502" x="14" y="13" as="geometry"/>
+                </mxCell>
+                <mxCell id="mains_compartment" parent="mains" style="line;strokeColor=#000000;strokeWidth=1;dashed=0;dashPattern=8 6;" value="" vertex="1">
+                    <mxGeometry width="528" x="1" y="52" as="geometry"/>
+                </mxCell>
+                <mxCell id="mains_body" parent="mains" style="text;html=0;whiteSpace=wrap;overflow=hidden;align=center;verticalAlign=top;fontFamily=Arial;fontSize=21;fontColor=#000000;fontStyle=0;spacing=0;" value="entry / use normal cabin electricity" vertex="1">
+                    <mxGeometry height="51" width="494" x="18" y="65" as="geometry"/>
+                </mxCell>
+                <mxCell id="battery" groundTruthSections="14" parent="power" style="rounded=1;absoluteArcSize=1;arcSize=20;html=0;fillColor=#ffffff;strokeColor=#000000;strokeWidth=2;" umlBody="entry / use battery backup" umlKind="state" umlLabel="Battery backup" value="" vertex="1">
+                    <mxGeometry height="125" width="700" x="1380" y="103" as="geometry"/>
+                </mxCell>
+                <mxCell id="battery_name" parent="battery" style="text;html=0;whiteSpace=wrap;overflow=hidden;align=center;verticalAlign=top;fontFamily=Arial;fontSize=23;fontColor=#000000;fontStyle=1;spacing=0;" value="Battery backup" vertex="1">
+                    <mxGeometry height="32" width="672" x="14" y="13" as="geometry"/>
+                </mxCell>
+                <mxCell id="battery_compartment" parent="battery" style="line;strokeColor=#000000;strokeWidth=1;dashed=0;dashPattern=8 6;" value="" vertex="1">
+                    <mxGeometry width="698" x="1" y="52" as="geometry"/>
+                </mxCell>
+                <mxCell id="battery_body" parent="battery" style="text;html=0;whiteSpace=wrap;overflow=hidden;align=center;verticalAlign=top;fontFamily=Arial;fontSize=21;fontColor=#000000;fontStyle=0;spacing=0;" value="entry / use battery backup" vertex="1">
+                    <mxGeometry height="51" width="664" x="18" y="65" as="geometry"/>
+                </mxCell>
+                <mxCell id="comm" parent="op" style="group;connectable=0;" umlKind="region" value="" vertex="1">
+                    <mxGeometry height="302" width="2240" y="1056" as="geometry"/>
+                </mxCell>
+                <mxCell id="comm_title" parent="comm" style="text;html=0;whiteSpace=wrap;overflow=hidden;align=left;verticalAlign=top;fontFamily=Arial;fontSize=20;fontColor=#000000;fontStyle=1;spacing=0;" value="COMMUNICATION CHANNEL  [GT 14, ADR-002]" vertex="1">
+                    <mxGeometry height="30" width="2196" x="22" y="14" as="geometry"/>
+                </mxCell>
+                <mxCell id="ni" parent="comm" style="ellipse;fillColor=#000000;strokeColor=#000000;strokeWidth=1;" umlKind="initial" value="" vertex="1">
+                    <mxGeometry height="18" width="18" x="44" y="145" as="geometry"/>
+                </mxCell>
+                <mxCell id="nc" parent="comm" style="rhombus;fillColor=#ffffff;strokeColor=#000000;strokeWidth=2;" umlKind="choice" value="" vertex="1">
+                    <mxGeometry height="26" width="26" x="130" y="141" as="geometry"/>
+                </mxCell>
+                <mxCell id="internet" groundTruthSections="14" parent="comm" style="rounded=1;absoluteArcSize=1;arcSize=20;html=0;fillColor=#ffffff;strokeColor=#000000;strokeWidth=2;" umlBody="entry / use normal Internet communication" umlKind="state" umlLabel="Normal Internet" value="" vertex="1">
+                    <mxGeometry height="125" width="530" x="280" y="103" as="geometry"/>
+                </mxCell>
+                <mxCell id="internet_name" parent="internet" style="text;html=0;whiteSpace=wrap;overflow=hidden;align=center;verticalAlign=top;fontFamily=Arial;fontSize=23;fontColor=#000000;fontStyle=1;spacing=0;" value="Normal Internet" vertex="1">
+                    <mxGeometry height="32" width="502" x="14" y="13" as="geometry"/>
+                </mxCell>
+                <mxCell id="internet_compartment" parent="internet" style="line;strokeColor=#000000;strokeWidth=1;dashed=0;dashPattern=8 6;" value="" vertex="1">
+                    <mxGeometry width="528" x="1" y="52" as="geometry"/>
+                </mxCell>
+                <mxCell id="internet_body" parent="internet" style="text;html=0;whiteSpace=wrap;overflow=hidden;align=center;verticalAlign=top;fontFamily=Arial;fontSize=21;fontColor=#000000;fontStyle=0;spacing=0;" value="entry / use normal Internet communication" vertex="1">
+                    <mxGeometry height="51" width="494" x="18" y="65" as="geometry"/>
+                </mxCell>
+                <mxCell id="cellular" groundTruthSections="14" parent="comm" style="rounded=1;absoluteArcSize=1;arcSize=20;html=0;fillColor=#ffffff;strokeColor=#000000;strokeWidth=2;" umlBody="entry / use Cellular/SIM fallback" umlKind="state" umlLabel="Cellular/SIM communication" value="" vertex="1">
+                    <mxGeometry height="125" width="700" x="1380" y="103" as="geometry"/>
+                </mxCell>
+                <mxCell id="cellular_name" parent="cellular" style="text;html=0;whiteSpace=wrap;overflow=hidden;align=center;verticalAlign=top;fontFamily=Arial;fontSize=23;fontColor=#000000;fontStyle=1;spacing=0;" value="Cellular/SIM communication" vertex="1">
+                    <mxGeometry height="32" width="672" x="14" y="13" as="geometry"/>
+                </mxCell>
+                <mxCell id="cellular_compartment" parent="cellular" style="line;strokeColor=#000000;strokeWidth=1;dashed=0;dashPattern=8 6;" value="" vertex="1">
+                    <mxGeometry width="698" x="1" y="52" as="geometry"/>
+                </mxCell>
+                <mxCell id="cellular_body" parent="cellular" style="text;html=0;whiteSpace=wrap;overflow=hidden;align=center;verticalAlign=top;fontFamily=Arial;fontSize=21;fontColor=#000000;fontStyle=0;spacing=0;" value="entry / use Cellular/SIM fallback" vertex="1">
+                    <mxGeometry height="51" width="664" x="18" y="65" as="geometry"/>
+                </mxCell>
+                <mxCell id="mode_boundary" parent="op" style="line;strokeColor=#000000;strokeWidth=2;dashed=1;dashPattern=8 6;" value="" vertex="1">
+                    <mxGeometry width="2238" x="1" y="150" as="geometry"/>
+                </mxCell>
+                <mxCell id="cold_boundary" parent="op" style="line;strokeColor=#000000;strokeWidth=2;dashed=1;dashPattern=8 6;" value="" vertex="1">
+                    <mxGeometry width="2238" x="1" y="452" as="geometry"/>
+                </mxCell>
+                <mxCell id="power_boundary" parent="op" style="line;strokeColor=#000000;strokeWidth=2;dashed=1;dashPattern=8 6;" value="" vertex="1">
+                    <mxGeometry width="2238" x="1" y="754" as="geometry"/>
+                </mxCell>
+                <mxCell id="comm_boundary" parent="op" style="line;strokeColor=#000000;strokeWidth=2;dashed=1;dashPattern=8 6;" value="" vertex="1">
+                    <mxGeometry width="2238" x="1" y="1056" as="geometry"/>
+                </mxCell>
+                <mxCell id="s0" parent="1" style="ellipse;fillColor=#000000;strokeColor=#000000;strokeWidth=1;" umlKind="initial" value="" vertex="1">
+                    <mxGeometry height="18" width="18" x="1171" y="138" as="geometry"/>
+                </mxCell>
+                <mxCell id="S01" edge="1" groundTruthSections="4, 6, 14" parent="1" source="s0" style="edgeStyle=none;noEdgeStyle=1;rounded=0;html=0;strokeColor=#000000;strokeWidth=2;endArrow=block;endFill=1;endSize=8;exitX=0.5;exitY=1;exitDx=0;exitDy=0;exitPerimeter=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;entryPerimeter=0;" target="op" umlLabel="" value="">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="S02" edge="1" groundTruthSections="" parent="1" source="mi" style="edgeStyle=none;noEdgeStyle=1;rounded=0;html=0;strokeColor=#000000;strokeWidth=2;endArrow=block;endFill=1;endSize=8;exitX=1;exitY=0.5;exitDx=0;exitDy=0;exitPerimeter=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;entryPerimeter=0;" target="select" umlLabel="" value="">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="S03" edge="1" groundTruthSections="6" parent="1" source="select" style="edgeStyle=none;noEdgeStyle=1;rounded=0;html=0;strokeColor=#000000;strokeWidth=2;endArrow=block;endFill=1;endSize=8;exitX=1;exitY=0.5;exitDx=0;exitDy=0;exitPerimeter=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;entryPerimeter=0;" target="home" umlLabel="owner selects HOME" value="">
+                    <mxGeometry relative="1" as="geometry">
+                        <Array as="points">
+                            <mxPoint x="790" y="484"/>
+                            <mxPoint x="790" y="462"/>
+                        </Array>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="S03_label" parent="1" style="text;html=0;whiteSpace=wrap;overflow=hidden;align=left;verticalAlign=top;fontFamily=Arial;fontSize=20;fontColor=#000000;fontStyle=0;spacing=0;fillColor=#ffffff;" value="owner selects HOME" vertex="1">
+                    <mxGeometry height="28" width="240" x="662" y="432" as="geometry"/>
+                </mxCell>
+                <mxCell id="S04" edge="1" groundTruthSections="6" parent="1" source="select" style="edgeStyle=none;noEdgeStyle=1;rounded=0;html=0;strokeColor=#000000;strokeWidth=2;endArrow=block;endFill=1;endSize=8;exitX=0.5;exitY=1;exitDx=0;exitDy=0;exitPerimeter=0;entryX=0.5;entryY=1;entryDx=0;entryDy=0;entryPerimeter=0;" target="away" umlLabel="owner selects AWAY" value="">
+                    <mxGeometry relative="1" as="geometry">
+                        <Array as="points">
+                            <mxPoint x="419.5" y="590"/>
+                            <mxPoint x="1976" y="590"/>
+                        </Array>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="S04_label" parent="1" style="text;html=0;whiteSpace=wrap;overflow=hidden;align=left;verticalAlign=top;fontFamily=Arial;fontSize=20;fontColor=#000000;fontStyle=0;spacing=0;fillColor=#ffffff;" value="owner selects AWAY" vertex="1">
+                    <mxGeometry height="29" width="270" x="965" y="558" as="geometry"/>
+                </mxCell>
+                <mxCell id="S05" edge="1" groundTruthSections="6" parent="1" source="home" style="edgeStyle=none;noEdgeStyle=1;rounded=0;html=0;strokeColor=#000000;strokeWidth=2;endArrow=block;endFill=1;endSize=8;exitX=1;exitY=0.5;exitDx=0;exitDy=0;exitPerimeter=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;entryPerimeter=0;" target="away" umlLabel="owner selects AWAY" value="">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="S05_label" parent="1" style="text;html=0;whiteSpace=wrap;overflow=hidden;align=left;verticalAlign=top;fontFamily=Arial;fontSize=20;fontColor=#000000;fontStyle=0;spacing=0;fillColor=#ffffff;" value="owner selects AWAY" vertex="1">
+                    <mxGeometry height="30" width="274" x="1410" y="423" as="geometry"/>
+                </mxCell>
+                <mxCell id="S06" edge="1" groundTruthSections="6" parent="1" source="away" style="edgeStyle=none;noEdgeStyle=1;rounded=0;html=0;strokeColor=#000000;strokeWidth=2;endArrow=block;endFill=1;endSize=8;exitX=0.5;exitY=0;exitDx=0;exitDy=0;exitPerimeter=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;entryPerimeter=0;" target="home" umlLabel="owner selects HOME" value="">
+                    <mxGeometry relative="1" as="geometry">
+                        <Array as="points">
+                            <mxPoint x="1976" y="367"/>
+                            <mxPoint x="1140" y="367"/>
+                        </Array>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="S06_label" parent="1" style="text;html=0;whiteSpace=wrap;overflow=hidden;align=left;verticalAlign=top;fontFamily=Arial;fontSize=20;fontColor=#000000;fontStyle=0;spacing=0;fillColor=#ffffff;" value="owner selects HOME" vertex="1">
+                    <mxGeometry height="29" width="275" x="1415" y="337" as="geometry"/>
+                </mxCell>
+                <mxCell id="S07" edge="1" groundTruthSections="" parent="1" source="ci" style="edgeStyle=none;noEdgeStyle=1;rounded=0;html=0;strokeColor=#000000;strokeWidth=2;endArrow=block;endFill=1;endSize=8;exitX=1;exitY=0.5;exitDx=0;exitDy=0;exitPerimeter=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;entryPerimeter=0;" target="cc" umlLabel="" value="">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="S08" edge="1" groundTruthSections="4" parent="1" source="cc" style="edgeStyle=none;noEdgeStyle=1;rounded=0;html=0;strokeColor=#000000;strokeWidth=2;endArrow=block;endFill=1;endSize=8;exitX=1;exitY=0.5;exitDx=0;exitDy=0;exitPerimeter=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;entryPerimeter=0;" target="coldOff" umlLabel="[not coldRequired]" value="">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="S08_label" parent="1" style="text;html=0;whiteSpace=wrap;overflow=hidden;align=left;verticalAlign=top;fontFamily=Arial;fontSize=20;fontColor=#000000;fontStyle=0;spacing=0;fillColor=#ffffff;" value="[not coldRequired]" vertex="1">
+                    <mxGeometry height="28" width="244" x="206" y="750" as="geometry"/>
+                </mxCell>
+                <mxCell id="S09" edge="1" groundTruthSections="4" parent="1" source="cc" style="edgeStyle=none;noEdgeStyle=1;rounded=0;html=0;strokeColor=#000000;strokeWidth=2;endArrow=block;endFill=1;endSize=8;exitX=0.5;exitY=0;exitDx=0;exitDy=0;exitPerimeter=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;entryPerimeter=0;" target="coldOn" umlLabel="[coldRequired]" value="">
+                    <mxGeometry relative="1" as="geometry">
+                        <Array as="points">
+                            <mxPoint x="203" y="692"/>
+                            <mxPoint x="1790" y="692"/>
+                        </Array>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="S09_label" parent="1" style="text;html=0;whiteSpace=wrap;overflow=hidden;align=left;verticalAlign=top;fontFamily=Arial;fontSize=20;fontColor=#000000;fontStyle=0;spacing=0;fillColor=#ffffff;" value="[coldRequired]" vertex="1">
+                    <mxGeometry height="28" width="220" x="898" y="662" as="geometry"/>
+                </mxCell>
+                <mxCell id="S10" edge="1" groundTruthSections="4" parent="1" source="coldOff" style="edgeStyle=none;noEdgeStyle=1;rounded=0;html=0;strokeColor=#000000;strokeWidth=2;endArrow=block;endFill=1;endSize=8;exitX=1;exitY=0.5;exitDx=0;exitDy=0;exitPerimeter=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;entryPerimeter=0;" target="coldOn" umlLabel="when(coldRequired)" value="">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="S10_label" parent="1" style="text;html=0;whiteSpace=wrap;overflow=hidden;align=left;verticalAlign=top;fontFamily=Arial;fontSize=20;fontColor=#000000;fontStyle=0;spacing=0;fillColor=#ffffff;" value="when(coldRequired)" vertex="1">
+                    <mxGeometry height="28" width="300" x="976" y="761" as="geometry"/>
+                </mxCell>
+                <mxCell id="S11" edge="1" groundTruthSections="4" parent="1" source="coldOn" style="edgeStyle=none;noEdgeStyle=1;rounded=0;html=0;strokeColor=#000000;strokeWidth=2;endArrow=block;endFill=1;endSize=8;exitX=0.5;exitY=1;exitDx=0;exitDy=0;exitPerimeter=0;entryX=0.5;entryY=1;entryDx=0;entryDy=0;entryPerimeter=0;" target="coldOff" umlLabel="when(not coldRequired)" value="">
+                    <mxGeometry relative="1" as="geometry">
+                        <Array as="points">
+                            <mxPoint x="1790" y="902"/>
+                            <mxPoint x="605" y="902"/>
+                        </Array>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="S11_label" parent="1" style="text;html=0;whiteSpace=wrap;overflow=hidden;align=left;verticalAlign=top;fontFamily=Arial;fontSize=20;fontColor=#000000;fontStyle=0;spacing=0;fillColor=#ffffff;" value="when(not coldRequired)" vertex="1">
+                    <mxGeometry height="28" width="350" x="962" y="873" as="geometry"/>
+                </mxCell>
+                <mxCell id="S12" edge="1" groundTruthSections="" parent="1" source="pi" style="edgeStyle=none;noEdgeStyle=1;rounded=0;html=0;strokeColor=#000000;strokeWidth=2;endArrow=block;endFill=1;endSize=8;exitX=1;exitY=0.5;exitDx=0;exitDy=0;exitPerimeter=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;entryPerimeter=0;" target="pc" umlLabel="" value="">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="S13" edge="1" groundTruthSections="14" parent="1" source="pc" style="edgeStyle=none;noEdgeStyle=1;rounded=0;html=0;strokeColor=#000000;strokeWidth=2;endArrow=block;endFill=1;endSize=8;exitX=1;exitY=0.5;exitDx=0;exitDy=0;exitPerimeter=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;entryPerimeter=0;" target="mains" umlLabel="[powerOK]" value="">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="S13_label" parent="1" style="text;html=0;whiteSpace=wrap;overflow=hidden;align=left;verticalAlign=top;fontFamily=Arial;fontSize=20;fontColor=#000000;fontStyle=0;spacing=0;fillColor=#ffffff;" value="[powerOK]" vertex="1">
+                    <mxGeometry height="28" width="150" x="212" y="1052" as="geometry"/>
+                </mxCell>
+                <mxCell id="S14" edge="1" groundTruthSections="14" parent="1" source="pc" style="edgeStyle=none;noEdgeStyle=1;rounded=0;html=0;strokeColor=#000000;strokeWidth=2;endArrow=block;endFill=1;endSize=8;exitX=0.5;exitY=0;exitDx=0;exitDy=0;exitPerimeter=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;entryPerimeter=0;" target="battery" umlLabel="[not powerOK]" value="">
+                    <mxGeometry relative="1" as="geometry">
+                        <Array as="points">
+                            <mxPoint x="203" y="994"/>
+                            <mxPoint x="1790" y="994"/>
+                        </Array>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="S14_label" parent="1" style="text;html=0;whiteSpace=wrap;overflow=hidden;align=left;verticalAlign=top;fontFamily=Arial;fontSize=20;fontColor=#000000;fontStyle=0;spacing=0;fillColor=#ffffff;" value="[not powerOK]" vertex="1">
+                    <mxGeometry height="28" width="200" x="940" y="964" as="geometry"/>
+                </mxCell>
+                <mxCell id="S15" edge="1" groundTruthSections="14" parent="1" source="mains" style="edgeStyle=none;noEdgeStyle=1;rounded=0;html=0;strokeColor=#000000;strokeWidth=2;endArrow=block;endFill=1;endSize=8;exitX=1;exitY=0.5;exitDx=0;exitDy=0;exitPerimeter=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;entryPerimeter=0;" target="battery" umlLabel="when(not powerOK)" value="">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="S15_label" parent="1" style="text;html=0;whiteSpace=wrap;overflow=hidden;align=left;verticalAlign=top;fontFamily=Arial;fontSize=20;fontColor=#000000;fontStyle=0;spacing=0;fillColor=#ffffff;" value="when(not powerOK)" vertex="1">
+                    <mxGeometry height="28" width="270" x="995" y="1058" as="geometry"/>
+                </mxCell>
+                <mxCell id="S16" edge="1" groundTruthSections="14" parent="1" source="battery" style="edgeStyle=none;noEdgeStyle=1;rounded=0;html=0;strokeColor=#000000;strokeWidth=2;endArrow=block;endFill=1;endSize=8;exitX=0.5;exitY=1;exitDx=0;exitDy=0;exitPerimeter=0;entryX=0.5;entryY=1;entryDx=0;entryDy=0;entryPerimeter=0;" target="mains" umlLabel="when(powerOK)" value="">
+                    <mxGeometry relative="1" as="geometry">
+                        <Array as="points">
+                            <mxPoint x="1790" y="1206"/>
+                            <mxPoint x="605" y="1206"/>
+                        </Array>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="S16_label" parent="1" style="text;html=0;whiteSpace=wrap;overflow=hidden;align=left;verticalAlign=top;fontFamily=Arial;fontSize=20;fontColor=#000000;fontStyle=0;spacing=0;fillColor=#ffffff;" value="when(powerOK)" vertex="1">
+                    <mxGeometry height="28" width="245" x="1009" y="1177" as="geometry"/>
+                </mxCell>
+                <mxCell id="S17" edge="1" groundTruthSections="" parent="1" source="ni" style="edgeStyle=none;noEdgeStyle=1;rounded=0;html=0;strokeColor=#000000;strokeWidth=2;endArrow=block;endFill=1;endSize=8;exitX=1;exitY=0.5;exitDx=0;exitDy=0;exitPerimeter=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;entryPerimeter=0;" target="nc" umlLabel="" value="">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="S18" edge="1" groundTruthSections="14" parent="1" source="nc" style="edgeStyle=none;noEdgeStyle=1;rounded=0;html=0;strokeColor=#000000;strokeWidth=2;endArrow=block;endFill=1;endSize=8;exitX=1;exitY=0.5;exitDx=0;exitDy=0;exitPerimeter=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;entryPerimeter=0;" target="internet" umlLabel="[internetOK]" value="">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="S18_label" parent="1" style="text;html=0;whiteSpace=wrap;overflow=hidden;align=left;verticalAlign=top;fontFamily=Arial;fontSize=20;fontColor=#000000;fontStyle=0;spacing=0;fillColor=#ffffff;" value="[internetOK]" vertex="1">
+                    <mxGeometry height="28" width="175" x="208" y="1354" as="geometry"/>
+                </mxCell>
+                <mxCell id="S19" edge="1" groundTruthSections="14" parent="1" source="nc" style="edgeStyle=none;noEdgeStyle=1;rounded=0;html=0;strokeColor=#000000;strokeWidth=2;endArrow=block;endFill=1;endSize=8;exitX=0.5;exitY=0;exitDx=0;exitDy=0;exitPerimeter=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;entryPerimeter=0;" target="cellular" umlLabel="[not internetOK]" value="">
+                    <mxGeometry relative="1" as="geometry">
+                        <Array as="points">
+                            <mxPoint x="203" y="1296"/>
+                            <mxPoint x="1790" y="1296"/>
+                        </Array>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="S19_label" parent="1" style="text;html=0;whiteSpace=wrap;overflow=hidden;align=left;verticalAlign=top;fontFamily=Arial;fontSize=20;fontColor=#000000;fontStyle=0;spacing=0;fillColor=#ffffff;" value="[not internetOK]" vertex="1">
+                    <mxGeometry height="28" width="232" x="934" y="1266" as="geometry"/>
+                </mxCell>
+                <mxCell id="S20" edge="1" groundTruthSections="14" parent="1" source="internet" style="edgeStyle=none;noEdgeStyle=1;rounded=0;html=0;strokeColor=#000000;strokeWidth=2;endArrow=block;endFill=1;endSize=8;exitX=1;exitY=0.5;exitDx=0;exitDy=0;exitPerimeter=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;entryPerimeter=0;" target="cellular" umlLabel="when(not internetOK)" value="">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="S20_label" parent="1" style="text;html=0;whiteSpace=wrap;overflow=hidden;align=left;verticalAlign=top;fontFamily=Arial;fontSize=20;fontColor=#000000;fontStyle=0;spacing=0;fillColor=#ffffff;" value="when(not internetOK)" vertex="1">
+                    <mxGeometry height="28" width="315" x="980" y="1360" as="geometry"/>
+                </mxCell>
+                <mxCell id="S21" edge="1" groundTruthSections="14" parent="1" source="cellular" style="edgeStyle=none;noEdgeStyle=1;rounded=0;html=0;strokeColor=#000000;strokeWidth=2;endArrow=block;endFill=1;endSize=8;exitX=0.5;exitY=1;exitDx=0;exitDy=0;exitPerimeter=0;entryX=0.5;entryY=1;entryDx=0;entryDy=0;entryPerimeter=0;" target="internet" umlLabel="when(internetOK)" value="">
+                    <mxGeometry relative="1" as="geometry">
+                        <Array as="points">
+                            <mxPoint x="1790" y="1508"/>
+                            <mxPoint x="605" y="1508"/>
+                        </Array>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="S21_label" parent="1" style="text;html=0;whiteSpace=wrap;overflow=hidden;align=left;verticalAlign=top;fontFamily=Arial;fontSize=20;fontColor=#000000;fontStyle=0;spacing=0;fillColor=#ffffff;" value="when(internetOK)" vertex="1">
+                    <mxGeometry height="28" width="270" x="1002" y="1479" as="geometry"/>
+                </mxCell>
+            </root>
+        </mxGraphModel>
+    </diagram>
+    <diagram id="incident-lifecycle-aligned" name="2 - Incident Lifecycle" authority="model/Ground_truth.md">
+        <mxGraphModel dx="2468" dy="1888" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="2520" pageHeight="1755" background="#ffffff" math="0" shadow="0">
+            <root>
+                <mxCell id="0"/>
+                <mxCell id="1" parent="0"/>
+                <mxCell id="title" parent="1" style="text;html=0;whiteSpace=wrap;overflow=hidden;align=left;verticalAlign=top;fontFamily=Arial;fontSize=38;fontColor=#000000;fontStyle=1;spacing=0;" value="Hytte Monitoring · Incident Lifecycle" vertex="1">
+                    <mxGeometry height="55" width="2400" x="60" y="28" as="geometry"/>
+                </mxCell>
+                <mxCell id="subtitle" parent="1" style="text;html=0;whiteSpace=wrap;overflow=hidden;align=left;verticalAlign=top;fontFamily=Arial;fontSize=23;fontColor=#000000;fontStyle=0;spacing=0;" value="One Incident · three concurrent regions · established behavior is explicit; unspecified policy remains abstract" vertex="1">
+                    <mxGeometry height="42" width="2400" x="60" y="92" as="geometry"/>
+                </mxCell>
+                <mxCell id="active" groundTruthSections="7, 8, 9" parent="1" style="rounded=1;absoluteArcSize=1;arcSize=20;html=0;fillColor=#ffffff;strokeColor=#000000;strokeWidth=2;" umlBody="entry / register this Incident in Incident/Event History&#xa;{Incident changes update the SAME History record; no separate record per step}" umlKind="composite" umlLabel="Active Incident" value="" vertex="1">
+                    <mxGeometry height="1280" width="2400" x="60" y="176" as="geometry"/>
+                </mxCell>
+                <mxCell id="active_name" parent="active" style="text;html=0;whiteSpace=wrap;overflow=hidden;align=center;verticalAlign=top;fontFamily=Arial;fontSize=23;fontColor=#000000;fontStyle=1;spacing=0;" value="Active Incident" vertex="1">
+                    <mxGeometry height="32" width="2372" x="14" y="13" as="geometry"/>
+                </mxCell>
+                <mxCell id="active_compartment" parent="active" style="line;strokeColor=#000000;strokeWidth=1;dashed=0;dashPattern=8 6;" value="" vertex="1">
+                    <mxGeometry width="2398" x="1" y="52" as="geometry"/>
+                </mxCell>
+                <mxCell id="active_body" parent="active" style="text;html=0;whiteSpace=wrap;overflow=hidden;align=center;verticalAlign=top;fontFamily=Arial;fontSize=22;fontColor=#000000;fontStyle=0;spacing=0;" value="entry / register this Incident in Incident/Event History&#xa;{Incident changes update the SAME History record; no separate record per step}" vertex="1">
+                    <mxGeometry height="1206" width="2364" x="18" y="65" as="geometry"/>
+                </mxCell>
+                <mxCell id="severity" parent="active" style="group;connectable=0;" umlKind="region" value="" vertex="1">
+                    <mxGeometry height="1120" width="570" y="160" as="geometry"/>
+                </mxCell>
+                <mxCell id="severity_title" parent="severity" style="text;html=0;whiteSpace=wrap;overflow=hidden;align=left;verticalAlign=top;fontFamily=Arial;fontSize=20;fontColor=#000000;fontStyle=1;spacing=0;" value="SEVERITY  [GT 7]" vertex="1">
+                    <mxGeometry height="30" width="526" x="22" y="14" as="geometry"/>
+                </mxCell>
+                <mxCell id="vi" parent="severity" style="ellipse;fillColor=#000000;strokeColor=#000000;strokeWidth=1;" umlKind="initial" value="" vertex="1">
+                    <mxGeometry height="18" width="18" x="235" y="71" as="geometry"/>
+                </mxCell>
+                <mxCell id="vc" parent="severity" style="rhombus;fillColor=#ffffff;strokeColor=#000000;strokeWidth=2;" umlKind="choice" value="" vertex="1">
+                    <mxGeometry height="26" width="26" x="231" y="130" as="geometry"/>
+                </mxCell>
+                <mxCell id="warning" groundTruthSections="7, 11" parent="severity" style="rounded=1;absoluteArcSize=1;arcSize=20;html=0;fillColor=#ffffff;strokeColor=#000000;strokeWidth=2;" umlBody="entry / notify Hytte Owner/User" umlKind="state" umlLabel="Warning" value="" vertex="1">
+                    <mxGeometry height="130" width="450" x="60" y="263" as="geometry"/>
+                </mxCell>
+                <mxCell id="warning_name" parent="warning" style="text;html=0;whiteSpace=wrap;overflow=hidden;align=center;verticalAlign=top;fontFamily=Arial;fontSize=23;fontColor=#000000;fontStyle=1;spacing=0;" value="Warning" vertex="1">
+                    <mxGeometry height="32" width="422" x="14" y="13" as="geometry"/>
+                </mxCell>
+                <mxCell id="warning_compartment" parent="warning" style="line;strokeColor=#000000;strokeWidth=1;dashed=0;dashPattern=8 6;" value="" vertex="1">
+                    <mxGeometry width="448" x="1" y="52" as="geometry"/>
+                </mxCell>
+                <mxCell id="warning_body" parent="warning" style="text;html=0;whiteSpace=wrap;overflow=hidden;align=center;verticalAlign=top;fontFamily=Arial;fontSize=21;fontColor=#000000;fontStyle=0;spacing=0;" value="entry / notify Hytte Owner/User" vertex="1">
+                    <mxGeometry height="56" width="414" x="18" y="65" as="geometry"/>
+                </mxCell>
+                <mxCell id="critical" groundTruthSections="5, 7, 12, 15" parent="severity" style="rounded=1;absoluteArcSize=1;arcSize=20;html=0;fillColor=#ffffff;strokeColor=#000000;strokeWidth=2;" umlBody="entry / immediately notify Hytte Owner/User&#xa;despite normal notification preferences;&#xa;apply Critical escalation rules" umlKind="state" umlLabel="Critical" value="" vertex="1">
+                    <mxGeometry height="219" width="450" x="60" y="765" as="geometry"/>
+                </mxCell>
+                <mxCell id="critical_name" parent="critical" style="text;html=0;whiteSpace=wrap;overflow=hidden;align=center;verticalAlign=top;fontFamily=Arial;fontSize=23;fontColor=#000000;fontStyle=1;spacing=0;" value="Critical" vertex="1">
+                    <mxGeometry height="32" width="422" x="14" y="13" as="geometry"/>
+                </mxCell>
+                <mxCell id="critical_compartment" parent="critical" style="line;strokeColor=#000000;strokeWidth=1;dashed=0;dashPattern=8 6;" value="" vertex="1">
+                    <mxGeometry width="448" x="1" y="52" as="geometry"/>
+                </mxCell>
+                <mxCell id="critical_body" parent="critical" style="text;html=0;whiteSpace=wrap;overflow=hidden;align=center;verticalAlign=top;fontFamily=Arial;fontSize=20;fontColor=#000000;fontStyle=0;spacing=0;" value="entry / immediately notify Hytte Owner/User&#xa;despite normal notification preferences;&#xa;apply Critical escalation rules" vertex="1">
+                    <mxGeometry height="145" width="414" x="18" y="65" as="geometry"/>
+                </mxCell>
+                <mxCell id="handling" parent="active" style="group;connectable=0;" umlKind="region" value="" vertex="1">
+                    <mxGeometry height="1120" width="720" x="570" y="160" as="geometry"/>
+                </mxCell>
+                <mxCell id="handling_title" parent="handling" style="text;html=0;whiteSpace=wrap;overflow=hidden;align=left;verticalAlign=top;fontFamily=Arial;fontSize=20;fontColor=#000000;fontStyle=1;spacing=0;" value="OWNER HANDLING  [GT 8]" vertex="1">
+                    <mxGeometry height="30" width="676" x="22" y="14" as="geometry"/>
+                </mxCell>
+                <mxCell id="hi" parent="handling" style="ellipse;fillColor=#000000;strokeColor=#000000;strokeWidth=1;" umlKind="initial" value="" vertex="1">
+                    <mxGeometry height="18" width="18" x="347" y="71" as="geometry"/>
+                </mxCell>
+                <mxCell id="decision" groundTruthSections="8" parent="handling" style="rounded=1;absoluteArcSize=1;arcSize=20;html=0;fillColor=#ffffff;strokeColor=#000000;strokeWidth=2;" umlBody="Owner may resolve any Active Incident." umlKind="state" umlLabel="Awaiting owner decision" value="" vertex="1">
+                    <mxGeometry height="128" width="485" x="180" y="180" as="geometry"/>
+                </mxCell>
+                <mxCell id="decision_name" parent="decision" style="text;html=0;whiteSpace=wrap;overflow=hidden;align=center;verticalAlign=top;fontFamily=Arial;fontSize=23;fontColor=#000000;fontStyle=1;spacing=0;" value="Awaiting owner decision" vertex="1">
+                    <mxGeometry height="32" width="457" x="14" y="13" as="geometry"/>
+                </mxCell>
+                <mxCell id="decision_compartment" parent="decision" style="line;strokeColor=#000000;strokeWidth=1;dashed=0;dashPattern=8 6;" value="" vertex="1">
+                    <mxGeometry width="483" x="1" y="52" as="geometry"/>
+                </mxCell>
+                <mxCell id="decision_body" parent="decision" style="text;html=0;whiteSpace=wrap;overflow=hidden;align=center;verticalAlign=top;fontFamily=Arial;fontSize=20;fontColor=#000000;fontStyle=0;spacing=0;" value="Owner may resolve any Active Incident." vertex="1">
+                    <mxGeometry height="54" width="449" x="18" y="65" as="geometry"/>
+                </mxCell>
+                <mxCell id="offer" groundTruthSections="8" parent="handling" style="rounded=1;absoluteArcSize=1;arcSize=20;html=0;fillColor=#ffffff;strokeColor=#000000;strokeWidth=2;" umlBody="entry / ask whether the owner wants&#xa;Suggested Next Steps" umlKind="state" umlLabel="Guidance offered" value="" vertex="1">
+                    <mxGeometry height="143" width="485" x="180" y="490" as="geometry"/>
+                </mxCell>
+                <mxCell id="offer_name" parent="offer" style="text;html=0;whiteSpace=wrap;overflow=hidden;align=center;verticalAlign=top;fontFamily=Arial;fontSize=23;fontColor=#000000;fontStyle=1;spacing=0;" value="Guidance offered" vertex="1">
+                    <mxGeometry height="32" width="457" x="14" y="13" as="geometry"/>
+                </mxCell>
+                <mxCell id="offer_compartment" parent="offer" style="line;strokeColor=#000000;strokeWidth=1;dashed=0;dashPattern=8 6;" value="" vertex="1">
+                    <mxGeometry width="483" x="1" y="52" as="geometry"/>
+                </mxCell>
+                <mxCell id="offer_body" parent="offer" style="text;html=0;whiteSpace=wrap;overflow=hidden;align=center;verticalAlign=top;fontFamily=Arial;fontSize=21;fontColor=#000000;fontStyle=0;spacing=0;" value="entry / ask whether the owner wants&#xa;Suggested Next Steps" vertex="1">
+                    <mxGeometry height="69" width="449" x="18" y="65" as="geometry"/>
+                </mxCell>
+                <mxCell id="guide" groundTruthSections="8" parent="handling" style="rounded=1;absoluteArcSize=1;arcSize=20;html=0;fillColor=#ffffff;strokeColor=#000000;strokeWidth=2;" umlBody="entry / display step-by-step guidance;&#xa;ask again whether the Incident is resolved" umlKind="state" umlLabel="Guidance displayed" value="" vertex="1">
+                    <mxGeometry height="177" width="485" x="180" y="836" as="geometry"/>
+                </mxCell>
+                <mxCell id="guide_name" parent="guide" style="text;html=0;whiteSpace=wrap;overflow=hidden;align=center;verticalAlign=top;fontFamily=Arial;fontSize=23;fontColor=#000000;fontStyle=1;spacing=0;" value="Guidance displayed" vertex="1">
+                    <mxGeometry height="32" width="457" x="14" y="13" as="geometry"/>
+                </mxCell>
+                <mxCell id="guide_compartment" parent="guide" style="line;strokeColor=#000000;strokeWidth=1;dashed=0;dashPattern=8 6;" value="" vertex="1">
+                    <mxGeometry width="483" x="1" y="52" as="geometry"/>
+                </mxCell>
+                <mxCell id="guide_body" parent="guide" style="text;html=0;whiteSpace=wrap;overflow=hidden;align=center;verticalAlign=top;fontFamily=Arial;fontSize=21;fontColor=#000000;fontStyle=0;spacing=0;" value="entry / display step-by-step guidance;&#xa;ask again whether the Incident is resolved" vertex="1">
+                    <mxGeometry height="103" width="449" x="18" y="65" as="geometry"/>
+                </mxCell>
+                <mxCell id="escalation" parent="active" style="group;connectable=0;" umlKind="region" value="" vertex="1">
+                    <mxGeometry height="1120" width="1110" x="1290" y="160" as="geometry"/>
+                </mxCell>
+                <mxCell id="escalation_title" parent="escalation" style="text;html=0;whiteSpace=wrap;overflow=hidden;align=left;verticalAlign=top;fontFamily=Arial;fontSize=20;fontColor=#000000;fontStyle=1;spacing=0;" value="ESCALATION - ABSTRACT POLICY VIEW  [GT 8, 10-12]" vertex="1">
+                    <mxGeometry height="30" width="1066" x="22" y="14" as="geometry"/>
+                </mxCell>
+                <mxCell id="ei" parent="escalation" style="ellipse;fillColor=#000000;strokeColor=#000000;strokeWidth=1;" umlKind="initial" value="" vertex="1">
+                    <mxGeometry height="18" width="18" x="540" y="71" as="geometry"/>
+                </mxCell>
+                <mxCell id="pending" groundTruthSections="8, 9, 10, 11, 12, 13" parent="escalation" style="rounded=1;absoluteArcSize=1;arcSize=20;html=0;fillColor=#ffffff;strokeColor=#000000;strokeWidth=2;" umlBody="familyEscalationDue [contactsConfigured]&#xa;/ notify configured Family/Emergency Contacts;&#xa;update the SAME Incident/Event History record&#xa;&#xa;Internal transition: the Incident remains Active.&#xa;Abstract eligibility follows Ground Truth; see constraints below." umlKind="state" umlLabel="Escalation pending" value="" vertex="1">
+                    <mxGeometry height="292" width="930" x="86" y="227" as="geometry"/>
+                </mxCell>
+                <mxCell id="pending_name" parent="pending" style="text;html=0;whiteSpace=wrap;overflow=hidden;align=center;verticalAlign=top;fontFamily=Arial;fontSize=23;fontColor=#000000;fontStyle=1;spacing=0;" value="Escalation pending" vertex="1">
+                    <mxGeometry height="32" width="902" x="14" y="13" as="geometry"/>
+                </mxCell>
+                <mxCell id="pending_compartment" parent="pending" style="line;strokeColor=#000000;strokeWidth=1;dashed=0;dashPattern=8 6;" value="" vertex="1">
+                    <mxGeometry width="928" x="1" y="52" as="geometry"/>
+                </mxCell>
+                <mxCell id="pending_body" parent="pending" style="text;html=0;whiteSpace=wrap;overflow=hidden;align=center;verticalAlign=top;fontFamily=Arial;fontSize=22;fontColor=#000000;fontStyle=0;spacing=0;" value="familyEscalationDue [contactsConfigured]&#xa;/ notify configured Family/Emergency Contacts;&#xa;update the SAME Incident/Event History record&#xa;&#xa;Internal transition: the Incident remains Active.&#xa;Abstract eligibility follows Ground Truth; see constraints below." vertex="1">
+                    <mxGeometry height="218" width="894" x="18" y="65" as="geometry"/>
+                </mxCell>
+                <mxCell id="emergency" groundTruthSections="9, 10, 12, 13" parent="escalation" style="rounded=1;absoluteArcSize=1;arcSize=20;html=0;fillColor=#ffffff;strokeColor=#000000;strokeWidth=2;" umlBody="entry / contact the relevant Emergency Service;&#xa;update the SAME Incident/Event History record" umlKind="state" umlLabel="Emergency Service contacted" value="" vertex="1">
+                    <mxGeometry height="153" width="710" x="196" y="877" as="geometry"/>
+                </mxCell>
+                <mxCell id="emergency_name" parent="emergency" style="text;html=0;whiteSpace=wrap;overflow=hidden;align=center;verticalAlign=top;fontFamily=Arial;fontSize=23;fontColor=#000000;fontStyle=1;spacing=0;" value="Emergency Service contacted" vertex="1">
+                    <mxGeometry height="32" width="682" x="14" y="13" as="geometry"/>
+                </mxCell>
+                <mxCell id="emergency_compartment" parent="emergency" style="line;strokeColor=#000000;strokeWidth=1;dashed=0;dashPattern=8 6;" value="" vertex="1">
+                    <mxGeometry width="708" x="1" y="52" as="geometry"/>
+                </mxCell>
+                <mxCell id="emergency_body" parent="emergency" style="text;html=0;whiteSpace=wrap;overflow=hidden;align=center;verticalAlign=top;fontFamily=Arial;fontSize=21;fontColor=#000000;fontStyle=0;spacing=0;" value="entry / contact the relevant Emergency Service;&#xa;update the SAME Incident/Event History record" vertex="1">
+                    <mxGeometry height="79" width="674" x="18" y="65" as="geometry"/>
+                </mxCell>
+                <mxCell id="header_boundary" parent="active" style="line;strokeColor=#000000;strokeWidth=2;dashed=1;dashPattern=8 6;" value="" vertex="1">
+                    <mxGeometry width="2398" x="1" y="160" as="geometry"/>
+                </mxCell>
+                <mxCell id="severity_boundary" parent="active" style="line;strokeColor=#000000;strokeWidth=2;dashed=1;dashPattern=8 6;direction=north;" value="" vertex="1">
+                    <mxGeometry height="1118" x="570" y="160" as="geometry"/>
+                </mxCell>
+                <mxCell id="handling_boundary" parent="active" style="line;strokeColor=#000000;strokeWidth=2;dashed=1;dashPattern=8 6;direction=north;" value="" vertex="1">
+                    <mxGeometry height="1118" x="1290" y="160" as="geometry"/>
+                </mxCell>
+                <mxCell id="i0" parent="1" style="ellipse;fillColor=#000000;strokeColor=#000000;strokeWidth=1;" umlKind="initial" value="" vertex="1">
+                    <mxGeometry height="18" width="18" x="1251" y="138" as="geometry"/>
+                </mxCell>
+                <mxCell id="I01" edge="1" groundTruthSections="7, 9" parent="1" source="i0" style="edgeStyle=none;noEdgeStyle=1;rounded=0;html=0;strokeColor=#000000;strokeWidth=2;endArrow=block;endFill=1;endSize=8;exitX=0.5;exitY=1;exitDx=0;exitDy=0;exitPerimeter=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;entryPerimeter=0;" target="active" umlLabel="" value="">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="I02" edge="1" groundTruthSections="" parent="1" source="vi" style="edgeStyle=none;noEdgeStyle=1;rounded=0;html=0;strokeColor=#000000;strokeWidth=2;endArrow=block;endFill=1;endSize=8;exitX=0.5;exitY=1;exitDx=0;exitDy=0;exitPerimeter=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;entryPerimeter=0;" target="vc" umlLabel="" value="">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="I03" edge="1" groundTruthSections="7" parent="1" source="vc" style="edgeStyle=none;noEdgeStyle=1;rounded=0;html=0;strokeColor=#000000;strokeWidth=2;endArrow=block;endFill=1;endSize=8;exitX=0.5;exitY=1;exitDx=0;exitDy=0;exitPerimeter=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;entryPerimeter=0;" target="warning" umlLabel="[initial severity = Warning]" value="">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="I03_label" parent="1" style="text;html=0;whiteSpace=wrap;overflow=hidden;align=left;verticalAlign=top;fontFamily=Arial;fontSize=20;fontColor=#000000;fontStyle=0;spacing=0;fillColor=#ffffff;" value="[initial severity = Warning]" vertex="1">
+                    <mxGeometry height="30" width="372" x="99" y="538" as="geometry"/>
+                </mxCell>
+                <mxCell id="I04" edge="1" groundTruthSections="7" parent="1" source="vc" style="edgeStyle=none;noEdgeStyle=1;rounded=0;html=0;strokeColor=#000000;strokeWidth=2;endArrow=block;endFill=1;endSize=8;exitX=1;exitY=0.5;exitDx=0;exitDy=0;exitPerimeter=0;entryX=1;entryY=0.3;entryDx=0;entryDy=0;entryPerimeter=0;" target="critical" umlLabel="[initial severity = Critical]" value="">
+                    <mxGeometry relative="1" as="geometry">
+                        <Array as="points">
+                            <mxPoint x="605" y="479"/>
+                            <mxPoint x="605" y="1166.7"/>
+                        </Array>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="I04_label" parent="1" style="text;html=0;whiteSpace=wrap;overflow=hidden;align=left;verticalAlign=top;fontFamily=Arial;fontSize=20;fontColor=#000000;fontStyle=0;spacing=0;fillColor=#ffffff;" value="[initial severity = Critical]" vertex="1">
+                    <mxGeometry height="30" width="275" x="335" y="440" as="geometry"/>
+                </mxCell>
+                <mxCell id="I05" edge="1" groundTruthSections="7, 9" parent="1" source="warning" style="edgeStyle=none;noEdgeStyle=1;rounded=0;html=0;strokeColor=#000000;strokeWidth=2;endArrow=block;endFill=1;endSize=8;exitX=0.5;exitY=1;exitDx=0;exitDy=0;exitPerimeter=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;entryPerimeter=0;" target="critical" umlLabel="condition worsens to Critical&#xa;/ upgrade the SAME Incident;&#xa;update its existing History record" value="">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="I05_label" parent="1" style="text;html=0;whiteSpace=wrap;overflow=hidden;align=left;verticalAlign=top;fontFamily=Arial;fontSize=20;fontColor=#000000;fontStyle=0;spacing=0;fillColor=#ffffff;" value="condition worsens to Critical&#xa;/ upgrade the SAME Incident;&#xa;update its existing History record" vertex="1">
+                    <mxGeometry height="91" width="416" x="138" y="836" as="geometry"/>
+                </mxCell>
+                <mxCell id="I06" edge="1" groundTruthSections="" parent="1" source="hi" style="edgeStyle=none;noEdgeStyle=1;rounded=0;html=0;strokeColor=#000000;strokeWidth=2;endArrow=block;endFill=1;endSize=8;exitX=0.5;exitY=1;exitDx=0;exitDy=0;exitPerimeter=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;entryPerimeter=0;" target="decision" umlLabel="" value="">
+                    <mxGeometry relative="1" as="geometry">
+                        <Array as="points">
+                            <mxPoint x="986" y="486"/>
+                            <mxPoint x="1052.5" y="486"/>
+                        </Array>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="I07" edge="1" groundTruthSections="8" parent="1" source="decision" style="edgeStyle=none;noEdgeStyle=1;rounded=0;html=0;strokeColor=#000000;strokeWidth=2;endArrow=block;endFill=1;endSize=8;exitX=0.5;exitY=1;exitDx=0;exitDy=0;exitPerimeter=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;entryPerimeter=0;" target="offer" umlLabel="owner selects Not Resolved" value="">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="I07_label" parent="1" style="text;html=0;whiteSpace=wrap;overflow=hidden;align=left;verticalAlign=top;fontFamily=Arial;fontSize=20;fontColor=#000000;fontStyle=0;spacing=0;fillColor=#ffffff;" value="owner selects Not Resolved" vertex="1">
+                    <mxGeometry height="35" width="403" x="837" y="732" as="geometry"/>
+                </mxCell>
+                <mxCell id="I08" edge="1" groundTruthSections="8" parent="1" source="offer" style="edgeStyle=none;noEdgeStyle=1;rounded=0;html=0;strokeColor=#000000;strokeWidth=2;endArrow=block;endFill=1;endSize=8;exitX=0.5;exitY=1;exitDx=0;exitDy=0;exitPerimeter=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;entryPerimeter=0;" target="guide" umlLabel="owner selects Yes" value="">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="I08_label" parent="1" style="text;html=0;whiteSpace=wrap;overflow=hidden;align=left;verticalAlign=top;fontFamily=Arial;fontSize=20;fontColor=#000000;fontStyle=0;spacing=0;fillColor=#ffffff;" value="owner selects Yes" vertex="1">
+                    <mxGeometry height="33" width="305" x="884" y="1060" as="geometry"/>
+                </mxCell>
+                <mxCell id="I09" edge="1" groundTruthSections="8" parent="1" source="offer" style="edgeStyle=none;noEdgeStyle=1;rounded=0;html=0;strokeColor=#000000;strokeWidth=2;endArrow=block;endFill=1;endSize=8;exitX=0;exitY=0.5;exitDx=0;exitDy=0;exitPerimeter=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;entryPerimeter=0;" target="decision" umlLabel="owner selects No" value="">
+                    <mxGeometry relative="1" as="geometry">
+                        <Array as="points">
+                            <mxPoint x="716" y="897.5"/>
+                            <mxPoint x="716" y="580"/>
+                        </Array>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="I09_label" parent="1" style="text;html=0;whiteSpace=wrap;overflow=hidden;align=left;verticalAlign=top;fontFamily=Arial;fontSize=20;fontColor=#000000;fontStyle=0;spacing=0;fillColor=#ffffff;" value="owner selects No" vertex="1">
+                    <mxGeometry height="62" width="154" x="645" y="662" as="geometry"/>
+                </mxCell>
+                <mxCell id="I10" edge="1" groundTruthSections="8" parent="1" source="guide" style="edgeStyle=none;noEdgeStyle=1;rounded=0;html=0;strokeColor=#000000;strokeWidth=2;endArrow=block;endFill=1;endSize=8;exitX=1;exitY=0.5;exitDx=0;exitDy=0;exitPerimeter=0;entryX=1;entryY=0.5;entryDx=0;entryDy=0;entryPerimeter=0;" target="decision" umlLabel="owner selects&#xa;Not Resolved" value="">
+                    <mxGeometry relative="1" as="geometry">
+                        <Array as="points">
+                            <mxPoint x="1320" y="1260.5"/>
+                            <mxPoint x="1320" y="580"/>
+                        </Array>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="I10_label" parent="1" style="text;html=0;whiteSpace=wrap;overflow=hidden;align=left;verticalAlign=top;fontFamily=Arial;fontSize=20;fontColor=#000000;fontStyle=0;spacing=0;fillColor=#ffffff;" value="owner selects&#xa;Not Resolved" vertex="1">
+                    <mxGeometry height="101" width="110" x="1214" y="1034" as="geometry"/>
+                </mxCell>
+                <mxCell id="I11" edge="1" groundTruthSections="10" parent="1" source="ei" style="edgeStyle=none;noEdgeStyle=1;rounded=0;html=0;strokeColor=#000000;strokeWidth=2;endArrow=block;endFill=1;endSize=8;exitX=0.5;exitY=1;exitDx=0;exitDy=0;exitPerimeter=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;entryPerimeter=0;" target="pending" umlLabel="" value="">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="I12" edge="1" groundTruthSections="10, 12" parent="1" source="pending" style="edgeStyle=none;noEdgeStyle=1;rounded=0;html=0;strokeColor=#000000;strokeWidth=2;endArrow=block;endFill=1;endSize=8;exitX=0.5;exitY=1;exitDx=0;exitDy=0;exitPerimeter=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;entryPerimeter=0;" target="emergency" umlLabel="normalCriticalEscalationDue&#xa;[EMERGENCY_OK]" value="">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="I12_label" parent="1" style="text;html=0;whiteSpace=wrap;overflow=hidden;align=left;verticalAlign=top;fontFamily=Arial;fontSize=20;fontColor=#000000;fontStyle=0;spacing=0;fillColor=#ffffff;" value="normalCriticalEscalationDue&#xa;[EMERGENCY_OK]" vertex="1">
+                    <mxGeometry height="67" width="590" x="1624" y="1028" as="geometry"/>
+                </mxCell>
+                <mxCell id="I13" edge="1" groundTruthSections="12, 15, 18" parent="1" source="pending" style="edgeStyle=none;noEdgeStyle=1;rounded=0;html=0;strokeColor=#000000;strokeWidth=2;endArrow=block;endFill=1;endSize=8;exitX=1;exitY=0.4;exitDx=0;exitDy=0;exitPerimeter=0;entryX=1;entryY=0.5;entryDx=0;entryDy=0;entryPerimeter=0;" target="emergency" umlLabel="criticalSafetyOverride&#xa;[DANGER]" value="">
+                    <mxGeometry relative="1" as="geometry">
+                        <Array as="points">
+                            <mxPoint x="2410" y="679.8"/>
+                            <mxPoint x="2410" y="1289.5"/>
+                        </Array>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="I13_label" parent="1" style="text;html=0;whiteSpace=wrap;overflow=hidden;align=left;verticalAlign=top;fontFamily=Arial;fontSize=20;fontColor=#000000;fontStyle=0;spacing=0;fillColor=#ffffff;" value="criticalSafetyOverride&#xa;[DANGER]" vertex="1">
+                    <mxGeometry height="66" width="235" x="2170" y="1097" as="geometry"/>
+                </mxCell>
+                <mxCell id="closed" groundTruthSections="8, 9" parent="1" style="rounded=1;absoluteArcSize=1;arcSize=20;html=0;fillColor=#ffffff;strokeColor=#000000;strokeWidth=2;" umlBody="entry / close the SAME Incident;&#xa;update its existing History record to Closed" umlKind="state" umlLabel="Resolved / Closed" value="" vertex="1">
+                    <mxGeometry height="137" width="970" x="775" y="1558" as="geometry"/>
+                </mxCell>
+                <mxCell id="closed_name" parent="closed" style="text;html=0;whiteSpace=wrap;overflow=hidden;align=center;verticalAlign=top;fontFamily=Arial;fontSize=23;fontColor=#000000;fontStyle=1;spacing=0;" value="Resolved / Closed" vertex="1">
+                    <mxGeometry height="32" width="942" x="14" y="13" as="geometry"/>
+                </mxCell>
+                <mxCell id="closed_compartment" parent="closed" style="line;strokeColor=#000000;strokeWidth=1;dashed=0;dashPattern=8 6;" value="" vertex="1">
+                    <mxGeometry width="968" x="1" y="52" as="geometry"/>
+                </mxCell>
+                <mxCell id="closed_body" parent="closed" style="text;html=0;whiteSpace=wrap;overflow=hidden;align=center;verticalAlign=top;fontFamily=Arial;fontSize=22;fontColor=#000000;fontStyle=0;spacing=0;" value="entry / close the SAME Incident;&#xa;update its existing History record to Closed" vertex="1">
+                    <mxGeometry height="63" width="934" x="18" y="65" as="geometry"/>
+                </mxCell>
+                <mxCell id="I15" edge="1" groundTruthSections="8" parent="1" source="active" style="edgeStyle=none;noEdgeStyle=1;rounded=0;html=0;strokeColor=#000000;strokeWidth=2;endArrow=block;endFill=1;endSize=8;exitX=0.5;exitY=1;exitDx=0;exitDy=0;exitPerimeter=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;entryPerimeter=0;" target="closed" umlLabel="Hytte Owner/User selects Resolved" value="">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="I15_label" parent="1" style="text;html=0;whiteSpace=wrap;overflow=hidden;align=left;verticalAlign=top;fontFamily=Arial;fontSize=20;fontColor=#000000;fontStyle=0;spacing=0;fillColor=#ffffff;" value="Hytte Owner/User selects Resolved" vertex="1">
+                    <mxGeometry height="31" width="590" x="1310" y="1493" as="geometry"/>
+                </mxCell>
+            </root>
+        </mxGraphModel>
+    </diagram>
 </mxfile>
