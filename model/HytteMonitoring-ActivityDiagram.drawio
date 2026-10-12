@@ -380,7 +380,7 @@
     </mxGraphModel>
   </diagram>
   <diagram id="escalation" name="2 - Escalation and Communication Reliability">
-    <mxGraphModel dx="2357" dy="1415" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="2160" pageHeight="1550" math="0" shadow="0">
+    <mxGraphModel dx="1414" dy="849" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="2160" pageHeight="1550" math="0" shadow="0">
       <root>
         <mxCell id="s0" />
         <mxCell id="s1" parent="s0" />
@@ -388,7 +388,7 @@
           <mxGeometry height="1550" width="405" as="geometry" />
         </mxCell>
         <mxCell id="sStart" parent="slUser" style="ellipse;fillColor=#000000;strokeColor=#000000;" value="" vertex="1">
-          <mxGeometry height="32" width="32" x="182" y="112.5" as="geometry" />
+          <mxGeometry height="32" width="32" x="290" y="112.5" as="geometry" />
         </mxCell>
         <mxCell id="jDB4PE_w-NfWpsdhU1wF-0" parent="slUser" style="rhombus;whiteSpace=wrap;html=1;shapeInside=1;" value="" vertex="1">
           <mxGeometry height="59" width="60" x="182" y="1100" as="geometry" />
@@ -406,38 +406,35 @@
           <mxGeometry height="1550" width="795" x="405" as="geometry" />
         </mxCell>
         <mxCell id="sInternet" parent="slSystem" style="rhombus;whiteSpace=wrap;html=1;" value="Internet available?" vertex="1">
-          <mxGeometry height="115" width="216" x="65" y="700" as="geometry" />
+          <mxGeometry height="115" width="216" x="55" y="550" as="geometry" />
         </mxCell>
         <mxCell id="sCritUser" parent="slSystem" style="rounded=1;whiteSpace=wrap;html=1;" value="Critical: notify user immediately" vertex="1">
           <mxGeometry height="68" width="284" x="474.5" y="260" as="geometry" />
         </mxCell>
         <mxCell id="sPowerD" parent="slSystem" style="rhombus;whiteSpace=wrap;html=1;" value="Normal power?" vertex="1">
-          <mxGeometry height="115" width="216" x="65" y="526" as="geometry" />
+          <mxGeometry height="115" width="216" x="55" y="400" as="geometry" />
         </mxCell>
-        <mxCell id="se17" edge="1" parent="slSystem" source="sPowerD" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;endArrow=block;endFill=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;" value="[yes]">
+        <mxCell id="se17" edge="1" parent="slSystem" source="sPowerD" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;endArrow=block;endFill=1;" target="sInternet" value="[yes]">
           <mxGeometry relative="1" as="geometry">
-            <Array as="points">
-              <mxPoint x="175" y="641" />
-            </Array>
+            <Array as="points" />
             <mxPoint x="175" y="700" as="targetPoint" />
           </mxGeometry>
         </mxCell>
         <mxCell id="sBattery" parent="slSystem" style="rounded=1;whiteSpace=wrap;html=1;" value="Switch to battery backup" vertex="1">
-          <mxGeometry height="44" width="183" x="355" y="561.5" as="geometry" />
+          <mxGeometry height="44" width="183" x="345" y="435.5" as="geometry" />
         </mxCell>
-        <mxCell id="se16" edge="1" parent="slSystem" source="sPowerD" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;endArrow=block;endFill=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;" target="sBattery" value="[no]">
+        <mxCell id="se16" edge="1" parent="slSystem" source="sPowerD" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;endArrow=block;endFill=1;" target="sBattery" value="[no]">
           <mxGeometry relative="1" as="geometry">
             <Array as="points">
-              <mxPoint x="295" y="584" />
-              <mxPoint x="295" y="584" />
+              <mxPoint x="325" y="457.5" />
+              <mxPoint x="325" y="457.5" />
             </Array>
           </mxGeometry>
         </mxCell>
         <mxCell id="se18" edge="1" parent="slSystem" source="sBattery" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;endArrow=block;endFill=1;" target="sInternet">
           <mxGeometry relative="1" as="geometry">
             <Array as="points">
-              <mxPoint x="447" y="680" />
-              <mxPoint x="205" y="680" />
+              <mxPoint x="447" y="607.5" />
             </Array>
             <mxPoint x="364.9999999999998" y="590.0000000000002" as="sourcePoint" />
             <mxPoint x="173" y="684.5000000000002" as="targetPoint" />
@@ -455,17 +452,42 @@
         <mxCell id="sDanger" parent="slSystem" style="rhombus;whiteSpace=wrap;html=1;" value="Immediate critical danger?" vertex="1">
           <mxGeometry height="122" width="243" x="485" y="1080" as="geometry" />
         </mxCell>
-        <mxCell id="sJoin" parent="slSystem" style="shape=umlFork;fillColor=#000000;strokeColor=#000000;" value="" vertex="1">
-          <mxGeometry height="70" width="27" x="159.5" y="920" as="geometry" />
-        </mxCell>
-        <mxCell id="se20" edge="1" parent="slSystem" source="sInternet" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;endArrow=block;endFill=1;" target="sJoin" value="[yes]">
+        <mxCell id="se20" edge="1" parent="slSystem" source="sInternet" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;endArrow=block;endFill=1;" target="JZwkptu1udnDmYboRYtO-0" value="[yes]">
           <mxGeometry relative="1" x="0.2" as="geometry">
             <mxPoint as="offset" />
             <Array as="points" />
+            <mxPoint x="163" y="775" as="targetPoint" />
           </mxGeometry>
         </mxCell>
-        <mxCell id="sFork" parent="slSystem" style="shape=umlFork;fillColor=#000000;strokeColor=#000000;" value="" vertex="1">
-          <mxGeometry height="114" width="27" x="165" y="216" as="geometry" />
+        <mxCell id="sPower" parent="slSystem" style="rounded=1;whiteSpace=wrap;html=1;" value="Check power and Internet/Connection status" vertex="1">
+          <mxGeometry height="74" width="297" x="95" y="240" as="geometry" />
+        </mxCell>
+        <mxCell id="se15" edge="1" parent="slSystem" source="sPower" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;endArrow=block;endFill=1;" target="sPowerD">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="sCell" parent="slSystem" style="rounded=1;whiteSpace=wrap;html=1;" value="Use Cellular/SIM fallback for important notifications" vertex="1">
+          <mxGeometry height="88" width="284" x="315" y="726" as="geometry" />
+        </mxCell>
+        <mxCell id="se19" edge="1" parent="slSystem" source="sInternet" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;endArrow=block;endFill=1;" target="sCell" value="[no]">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="163" y="680" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="se21" edge="1" parent="slSystem" source="sCell" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;endArrow=block;endFill=1;strokeWidth=1;strokeColor=default;" target="JZwkptu1udnDmYboRYtO-0">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="565" y="770" />
+            </Array>
+            <mxPoint x="578" y="830" as="sourcePoint" />
+            <mxPoint x="176.5" y="820" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="JZwkptu1udnDmYboRYtO-0" parent="slSystem" style="rhombus;whiteSpace=wrap;html=1;shapeInside=1;" value="" vertex="1">
+          <mxGeometry height="80" width="80" x="123" y="730" as="geometry" />
         </mxCell>
         <mxCell id="slComm" parent="s1" style="swimlane;horizontal=0;startSize=28;fillColor=#fef5e7;strokeColor=#f5b041;fontStyle=1;" value="Communication Service" vertex="1">
           <mxGeometry height="1550" width="351" x="1202" as="geometry" />
@@ -487,12 +509,6 @@
         </mxCell>
         <mxCell id="sIncident" parent="s1" style="rounded=1;whiteSpace=wrap;html=1;" value="Active Warning or Critical Incident requires escalation" vertex="1">
           <mxGeometry height="81" width="405" x="520" y="88" as="geometry" />
-        </mxCell>
-        <mxCell id="sPower" parent="s1" style="rounded=1;whiteSpace=wrap;html=1;" value="Check power and Internet/Connection status" vertex="1">
-          <mxGeometry height="74" width="297" x="493" y="425" as="geometry" />
-        </mxCell>
-        <mxCell id="sCell" parent="s1" style="rounded=1;whiteSpace=wrap;html=1;" value="Use Cellular/SIM fallback for important notifications" vertex="1">
-          <mxGeometry height="88" width="284" x="837" y="729" as="geometry" />
         </mxCell>
         <mxCell id="sType" parent="s1" style="rhombus;whiteSpace=wrap;html=1;" value="Warning or Critical?" vertex="1">
           <mxGeometry height="122" width="216" x="94" y="216" as="geometry" />
@@ -520,23 +536,9 @@
             </Array>
           </mxGeometry>
         </mxCell>
-        <mxCell id="se2" edge="1" parent="s1" source="sIncident" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;endArrow=block;endFill=1;" target="sFork">
-          <mxGeometry relative="1" as="geometry" />
-        </mxCell>
-        <mxCell id="se3" edge="1" parent="s1" source="sFork" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;endArrow=block;endFill=1;" target="sType">
+        <mxCell id="se2" edge="1" parent="s1" source="sIncident" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;endArrow=block;endFill=1;" target="sPower">
           <mxGeometry relative="1" as="geometry">
-            <Array as="points">
-              <mxPoint x="440" y="277" />
-              <mxPoint x="440" y="277" />
-            </Array>
-          </mxGeometry>
-        </mxCell>
-        <mxCell id="se4" edge="1" parent="s1" source="sFork" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;endArrow=block;endFill=1;" target="sPower">
-          <mxGeometry relative="1" as="geometry">
-            <Array as="points">
-              <mxPoint x="584" y="400" />
-              <mxPoint x="584" y="400" />
-            </Array>
+            <mxPoint x="583.5" y="216" as="targetPoint" />
           </mxGeometry>
         </mxCell>
         <mxCell id="se5" edge="1" parent="s1" source="sType" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;endArrow=block;endFill=1;" target="sWarnUser" value="[Warning]">
@@ -604,44 +606,18 @@
             </Array>
           </mxGeometry>
         </mxCell>
-        <mxCell id="se15" edge="1" parent="s1" source="sPower" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;endArrow=block;endFill=1;" target="sPowerD">
+        <mxCell id="se22" edge="1" parent="s1" source="JZwkptu1udnDmYboRYtO-0" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;endArrow=block;endFill=1;" target="sComm">
           <mxGeometry relative="1" as="geometry">
             <Array as="points">
-              <mxPoint x="578" y="520" />
-              <mxPoint x="578" y="520" />
+              <mxPoint x="568" y="910" />
             </Array>
-          </mxGeometry>
-        </mxCell>
-        <mxCell id="se19" edge="1" parent="s1" source="sInternet" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;endArrow=block;endFill=1;" target="sCell" value="[no]">
-          <mxGeometry relative="1" as="geometry">
-            <Array as="points">
-              <mxPoint x="790" y="758" />
-              <mxPoint x="790" y="758" />
-            </Array>
-          </mxGeometry>
-        </mxCell>
-        <mxCell id="se21" edge="1" parent="s1" source="sCell" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;endArrow=block;endFill=1;strokeWidth=1;strokeColor=default;" target="sJoin">
-          <mxGeometry relative="1" as="geometry">
-            <Array as="points">
-              <mxPoint x="970" y="940" />
-            </Array>
-            <mxPoint x="983" y="830" as="sourcePoint" />
-            <mxPoint x="650" y="930" as="targetPoint" />
-          </mxGeometry>
-        </mxCell>
-        <mxCell id="se22" edge="1" parent="s1" source="sJoin" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;endArrow=block;endFill=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;" target="sComm">
-          <mxGeometry relative="1" as="geometry">
-            <Array as="points">
-              <mxPoint x="578" y="1020" />
-              <mxPoint x="1040" y="1020" />
-              <mxPoint x="1040" y="910" />
-            </Array>
+            <mxPoint x="568" y="845" as="sourcePoint" />
           </mxGeometry>
         </mxCell>
         <mxCell id="se29" edge="1" parent="s1" source="sComm" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;endArrow=block;endFill=1;fillColor=#fff2cc;strokeColor=#d6b656;" target="sWait">
           <mxGeometry relative="1" as="geometry">
             <Array as="points">
-              <mxPoint x="1377" y="1040" />
+              <mxPoint x="1364.5" y="1040" />
               <mxPoint x="723" y="1040" />
             </Array>
           </mxGeometry>
@@ -669,9 +645,9 @@
             <mxPoint as="offset" />
             <Array as="points">
               <mxPoint x="1078" y="583" />
-              <mxPoint x="1130" y="583" />
-              <mxPoint x="1130" y="873" />
-              <mxPoint x="500" y="873" />
+              <mxPoint x="1080" y="583" />
+              <mxPoint x="1080" y="990" />
+              <mxPoint x="500" y="990" />
               <mxPoint x="500" y="1130" />
             </Array>
             <mxPoint x="234" y="1120.0588235294117" as="targetPoint" />
@@ -689,6 +665,15 @@
               <mxPoint x="212" y="1510" />
             </Array>
             <mxPoint x="200.00000000000023" y="1145" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="JZwkptu1udnDmYboRYtO-1" edge="1" parent="s1" source="sComm" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;fillColor=#f0a30a;strokeColor=#BD7000;" target="sType">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="1364.5" y="50" />
+              <mxPoint x="202" y="50" />
+            </Array>
+            <mxPoint x="260" y="750" as="targetPoint" />
           </mxGeometry>
         </mxCell>
       </root>
