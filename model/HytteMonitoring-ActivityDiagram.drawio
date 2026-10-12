@@ -1,6 +1,6 @@
 <mxfile host="Electron" pages="2">
   <diagram id="core" name="1 - Continuous Monitoring and Incident Lifecycle">
-    <mxGraphModel dx="4450" dy="1213" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="2430" pageHeight="1800" math="0" shadow="0">
+    <mxGraphModel dx="4094" dy="999" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="2430" pageHeight="1800" math="0" shadow="0">
       <root>
         <mxCell id="0" />
         <mxCell id="1" parent="0" />
@@ -42,7 +42,7 @@
             <mxPoint x="558" y="817" as="sourcePoint" />
           </mxGeometry>
         </mxCell>
-        <mxCell id="VXTZOX0pOufUaQ6Pdq0Y-7" connectable="0" parent="p1e30" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" value="No" vertex="1">
+        <mxCell id="VXTZOX0pOufUaQ6Pdq0Y-7" connectable="0" parent="p1e30" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" value="[no]" vertex="1">
           <mxGeometry relative="1" x="-0.391" y="-1" as="geometry">
             <mxPoint as="offset" />
           </mxGeometry>
@@ -55,7 +55,7 @@
             </Array>
           </mxGeometry>
         </mxCell>
-        <mxCell id="VXTZOX0pOufUaQ6Pdq0Y-6" connectable="0" parent="VXTZOX0pOufUaQ6Pdq0Y-5" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" value="Yes" vertex="1">
+        <mxCell id="VXTZOX0pOufUaQ6Pdq0Y-6" connectable="0" parent="VXTZOX0pOufUaQ6Pdq0Y-5" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" value="[Yes]" vertex="1">
           <mxGeometry relative="1" x="0.0064" y="4" as="geometry">
             <mxPoint as="offset" />
           </mxGeometry>
@@ -232,7 +232,7 @@
             </Array>
           </mxGeometry>
         </mxCell>
-        <mxCell id="VXTZOX0pOufUaQ6Pdq0Y-1" connectable="0" parent="p1e5" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" value="Yes" vertex="1">
+        <mxCell id="VXTZOX0pOufUaQ6Pdq0Y-1" connectable="0" parent="p1e5" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" value="[Yes]" vertex="1">
           <mxGeometry relative="1" x="0.0619" y="-1" as="geometry">
             <mxPoint as="offset" />
           </mxGeometry>
@@ -244,7 +244,7 @@
             </Array>
           </mxGeometry>
         </mxCell>
-        <mxCell id="VXTZOX0pOufUaQ6Pdq0Y-2" connectable="0" parent="p1e6" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" value="No" vertex="1">
+        <mxCell id="VXTZOX0pOufUaQ6Pdq0Y-2" connectable="0" parent="p1e6" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" value="[No]" vertex="1">
           <mxGeometry relative="1" x="0.2195" y="-1" as="geometry">
             <mxPoint as="offset" />
           </mxGeometry>
