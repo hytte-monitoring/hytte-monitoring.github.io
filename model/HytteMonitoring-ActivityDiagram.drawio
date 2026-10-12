@@ -446,9 +446,6 @@
         <mxCell id="se10" edge="1" parent="slSystem" source="sCritUser" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;endArrow=block;endFill=1;" target="sCritResp" value="">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
-        <mxCell id="sWait" parent="slSystem" style="rounded=1;whiteSpace=wrap;html=1;" value="Wait severity-dependent response time&lt;br&gt;(system-determined)" vertex="1">
-          <mxGeometry height="81" width="405" x="115" y="1360" as="geometry" />
-        </mxCell>
         <mxCell id="sDanger" parent="slSystem" style="rhombus;whiteSpace=wrap;html=1;" value="Immediate critical danger?" vertex="1">
           <mxGeometry height="122" width="243" x="485" y="1080" as="geometry" />
         </mxCell>
@@ -488,6 +485,9 @@
         </mxCell>
         <mxCell id="JZwkptu1udnDmYboRYtO-0" parent="slSystem" style="rhombus;whiteSpace=wrap;html=1;shapeInside=1;" value="" vertex="1">
           <mxGeometry height="80" width="80" x="123" y="730" as="geometry" />
+        </mxCell>
+        <mxCell id="JZwkptu1udnDmYboRYtO-7" parent="slSystem" style="rhombus;whiteSpace=wrap;html=1;shapeInside=1;" value="&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;Wait severity-dependent response time&lt;br&gt;(system-determined)&lt;/div&gt;" vertex="1">
+          <mxGeometry height="101" width="243" x="145" y="1209" as="geometry" />
         </mxCell>
         <mxCell id="slComm" parent="s1" style="swimlane;horizontal=0;startSize=28;fillColor=#fef5e7;strokeColor=#f5b041;fontStyle=1;" value="Communication Service" vertex="1">
           <mxGeometry height="1550" width="351" x="1202" as="geometry" />
@@ -614,21 +614,23 @@
             <mxPoint x="568" y="845" as="sourcePoint" />
           </mxGeometry>
         </mxCell>
-        <mxCell id="se29" edge="1" parent="s1" source="sComm" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;endArrow=block;endFill=1;fillColor=#fff2cc;strokeColor=#d6b656;" target="sWait">
+        <mxCell id="se29" edge="1" parent="s1" source="sComm" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;endArrow=block;endFill=1;fillColor=#fff2cc;strokeColor=#d6b656;" target="JZwkptu1udnDmYboRYtO-7">
           <mxGeometry relative="1" as="geometry">
             <Array as="points">
               <mxPoint x="1364.5" y="1040" />
-              <mxPoint x="723" y="1040" />
+              <mxPoint x="671.5" y="1040" />
             </Array>
+            <mxPoint x="667" y="1220" as="targetPoint" />
           </mxGeometry>
         </mxCell>
-        <mxCell id="se23" edge="1" parent="s1" source="sType" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;endArrow=block;endFill=1;dashed=1;fillColor=#dae8fc;strokeColor=#6c8ebf;" target="sWait" value="critical response time may be shorter">
+        <mxCell id="se23" edge="1" parent="s1" source="sType" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;endArrow=block;endFill=1;dashed=1;fillColor=#dae8fc;strokeColor=#6c8ebf;" target="JZwkptu1udnDmYboRYtO-7" value="critical response time may be shorter">
           <mxGeometry relative="1" x="-0.8922" y="50" as="geometry">
             <mxPoint y="-1" as="offset" />
             <Array as="points">
               <mxPoint x="50" y="277" />
-              <mxPoint x="50" y="1401" />
+              <mxPoint x="50" y="1260" />
             </Array>
+            <mxPoint x="637" y="1301" as="targetPoint" />
           </mxGeometry>
         </mxCell>
         <mxCell id="se24" edge="1" parent="s1" source="sWarnResp" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;endArrow=block;endFill=1;fillColor=#dae8fc;strokeColor=#6c8ebf;" target="jDB4PE_w-NfWpsdhU1wF-0" value="[handled]">
@@ -674,6 +676,20 @@
               <mxPoint x="202" y="50" />
             </Array>
             <mxPoint x="260" y="750" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="JZwkptu1udnDmYboRYtO-4" edge="1" parent="s1" source="JZwkptu1udnDmYboRYtO-7" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" target="sEmergency">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="1980" y="1259.5" />
+            </Array>
+            <mxPoint x="794" y="1270.5" as="sourcePoint" />
+            <mxPoint x="1150" y="1260" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="JZwkptu1udnDmYboRYtO-5" connectable="0" parent="JZwkptu1udnDmYboRYtO-4" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" value="If No Response within&amp;nbsp;&amp;nbsp;&lt;div&gt;critical response time&lt;/div&gt;" vertex="1">
+          <mxGeometry relative="1" x="0.0793" y="-2" as="geometry">
+            <mxPoint x="-569" y="-2" as="offset" />
           </mxGeometry>
         </mxCell>
       </root>
