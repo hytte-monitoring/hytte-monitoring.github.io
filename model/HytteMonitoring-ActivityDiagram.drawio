@@ -1,6 +1,6 @@
 <mxfile host="Electron" pages="2">
   <diagram id="core" name="1 - Continuous Monitoring and Incident Lifecycle">
-    <mxGraphModel dx="4094" dy="999" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="2430" pageHeight="1800" math="0" shadow="0">
+    <mxGraphModel dx="4094" dy="999" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="2430" pageHeight="1800" background="light-dark(#ffffff, #121212)" math="0" shadow="0">
       <root>
         <mxCell id="0" />
         <mxCell id="1" parent="0" />
@@ -380,7 +380,7 @@
     </mxGraphModel>
   </diagram>
   <diagram id="escalation" name="2 - Escalation and Communication Reliability">
-    <mxGraphModel dx="1414" dy="849" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="2160" pageHeight="1550" math="0" shadow="0">
+    <mxGraphModel dx="1414" dy="849" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="2160" pageHeight="1550" background="light-dark(#ffffff, #121212)" math="0" shadow="0">
       <root>
         <mxCell id="s0" />
         <mxCell id="s1" parent="s0" />
