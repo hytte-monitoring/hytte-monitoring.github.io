@@ -472,39 +472,10 @@ necessary.
 
 ## 18. Architecture Decisions
 
-### ADR-001 – Safety-Critical Monitoring Cannot Be Disabled
+The architecture decisions are recorded as separate ADR files in `model/adr/`:
 
-Safety-critical monitoring cannot be disabled or weakened by normal
-user configuration.
-
-This includes:
-
-- Smoke monitoring being mandatory at all times.
-- Internet/Connection monitoring being mandatory at all times.
-- Indoor Temperature and Power becoming mandatory during cold-weather
-  conditions.
-- Critical thresholds being controlled by the system.
-- Critical notifications overriding normal notification preferences.
-- Immediate critical danger being able to override normal escalation
-  restrictions.
-
-The purpose is to prevent user configuration from making critical
-safety functions ineffective.
-
-### ADR-002 – Resilient Monitoring
-
-The conceptual monitoring system should remain operational during
-normal power or Internet failures.
-
-The system conceptually uses:
-
-- Battery backup during power failure.
-- Cellular/SIM communication during normal Internet failure.
-
-This allows monitoring and important communication to continue even
-when normal cabin infrastructure is unavailable.
-
-The static website only simulates this architecture.
+- [ADR-001 – Safety-Critical Monitoring Cannot Be Disabled](adr/ADR-001-safety-critical-monitoring-cannot-be-disabled.md)
+- [ADR-002 – Resilient Monitoring](adr/ADR-002-resilient-monitoring.md)
 
 ---
 
