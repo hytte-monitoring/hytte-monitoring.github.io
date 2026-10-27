@@ -1,0 +1,62 @@
+<mxfile host="app.diagrams.net" agent="umlverify" version="24.7.17">
+  <diagram name="Order" id="page">
+    <mxGraphModel dx="1400" dy="900" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1654" pageHeight="1169" math="0" shadow="0">
+      <root>
+        <mxCell id="page-0" />
+        <mxCell id="page-1" parent="page-0" />
+        <mxCell id="page-s2" value="Created" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="page-1">
+          <mxGeometry x="160" y="80" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="page-s3" value="Paid" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="page-1">
+          <mxGeometry x="420" y="80" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="page-s4" value="Shipped" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="page-1">
+          <mxGeometry x="680" y="80" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="page-s5" value="Delivered" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="page-1">
+          <mxGeometry x="940" y="80" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="page-s6" value="Cancelled" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="page-1">
+          <mxGeometry x="420" y="280" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="page-i7" value="" style="ellipse;html=1;shape=startState;fillColor=#000000;strokeColor=#000000;" vertex="1" parent="page-1">
+          <mxGeometry x="60" y="95" width="30" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="page-e8" value="" style="html=1;rounded=0;edgeStyle=orthogonalEdgeStyle;endArrow=open;endSize=12;exitX=1;exitY=0.5000;entryX=0;entryY=0.5000;" edge="1" parent="page-1" source="page-i7" target="page-s2">
+          <mxGeometry relative="1" as="geometry">
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="page-e9" value="pay [hasItems] / charge" style="html=1;rounded=0;edgeStyle=orthogonalEdgeStyle;endArrow=open;endSize=12;exitX=1;exitY=0.5000;entryX=0;entryY=0.5000;" edge="1" parent="page-1" source="page-s2" target="page-s3">
+          <mxGeometry relative="1" as="geometry">
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="page-e10" value="ship / dispatch" style="html=1;rounded=0;edgeStyle=orthogonalEdgeStyle;endArrow=open;endSize=12;exitX=1;exitY=0.5000;entryX=0;entryY=0.5000;" edge="1" parent="page-1" source="page-s3" target="page-s4">
+          <mxGeometry relative="1" as="geometry">
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="page-e11" value="deliver / notify" style="html=1;rounded=0;edgeStyle=orthogonalEdgeStyle;endArrow=open;endSize=12;exitX=1;exitY=0.5000;entryX=0;entryY=0.5000;" edge="1" parent="page-1" source="page-s4" target="page-s5">
+          <mxGeometry relative="1" as="geometry">
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="page-e12" value="cancel" style="html=1;rounded=0;edgeStyle=orthogonalEdgeStyle;endArrow=open;endSize=12;exitX=0.8333;exitY=1.0;entryX=0.0;entryY=0.3333;" edge="1" parent="page-1" source="page-s2" target="page-s6">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="260" y="300" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="page-e13" value="cancel / refund" style="html=1;rounded=0;edgeStyle=orthogonalEdgeStyle;endArrow=open;endSize=12;exitX=0.5000;exitY=1;entryX=0.5000;entryY=0;" edge="1" parent="page-1" source="page-s3" target="page-s6">
+          <mxGeometry relative="1" as="geometry">
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="page-f14" value="" style="ellipse;html=1;shape=endState;fillColor=#000000;strokeColor=#000000;" vertex="1" parent="page-1">
+          <mxGeometry x="1100" y="95" width="30" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="page-e15" value="" style="html=1;rounded=0;edgeStyle=orthogonalEdgeStyle;endArrow=open;endSize=12;exitX=1;exitY=0.5000;entryX=0;entryY=0.5000;" edge="1" parent="page-1" source="page-s5" target="page-f14">
+          <mxGeometry relative="1" as="geometry">
+          </mxGeometry>
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>

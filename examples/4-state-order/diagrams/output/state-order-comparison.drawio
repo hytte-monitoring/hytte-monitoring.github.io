@@ -1,0 +1,148 @@
+<mxfile host="app.diagrams.net" agent="umlverify" version="24.7.17">
+  <diagram name="1 - Design (human)" id="design">
+    <mxGraphModel dx="1400" dy="900" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1654" pageHeight="1169" math="0" shadow="0">
+      <root>
+        <mxCell id="design-0" />
+        <mxCell id="design-1" parent="design-0" />
+        <mxCell id="design-s2" value="Created" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="design-1">
+          <mxGeometry x="160" y="80" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="design-s3" value="Paid" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="design-1">
+          <mxGeometry x="420" y="80" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="design-s4" value="Shipped" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="design-1">
+          <mxGeometry x="680" y="80" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="design-s5" value="Delivered" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="design-1">
+          <mxGeometry x="940" y="80" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="design-s6" value="Cancelled" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="design-1">
+          <mxGeometry x="420" y="280" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="design-i7" value="" style="ellipse;html=1;shape=startState;fillColor=#000000;strokeColor=#000000;" vertex="1" parent="design-1">
+          <mxGeometry x="60" y="95" width="30" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="design-e8" value="" style="html=1;rounded=0;edgeStyle=orthogonalEdgeStyle;endArrow=open;endSize=12;exitX=1;exitY=0.5000;entryX=0;entryY=0.5000;" edge="1" parent="design-1" source="design-i7" target="design-s2">
+          <mxGeometry relative="1" as="geometry">
+          </mxGeometry>
+        </mxCell>
+        <UserObject id="design-e9" label="pay [hasItems] / charge" tooltip="CHANGED&#10;guard: hasItems (design) → none (implemented)">
+        <mxCell style="html=1;rounded=0;edgeStyle=orthogonalEdgeStyle;endArrow=open;endSize=12;exitX=1;exitY=0.5000;entryX=0;entryY=0.5000;strokeColor=#d79b00;strokeWidth=3;fontColor=#d79b00;" edge="1" parent="design-1" source="design-s2" target="design-s3">
+          <mxGeometry relative="1" as="geometry">
+          </mxGeometry>
+        </mxCell>
+        </UserObject>
+        <mxCell id="design-e10" value="ship / dispatch" style="html=1;rounded=0;edgeStyle=orthogonalEdgeStyle;endArrow=open;endSize=12;exitX=1;exitY=0.5000;entryX=0;entryY=0.5000;" edge="1" parent="design-1" source="design-s3" target="design-s4">
+          <mxGeometry relative="1" as="geometry">
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="design-e11" value="deliver / notify" style="html=1;rounded=0;edgeStyle=orthogonalEdgeStyle;endArrow=open;endSize=12;exitX=1;exitY=0.5000;entryX=0;entryY=0.5000;" edge="1" parent="design-1" source="design-s4" target="design-s5">
+          <mxGeometry relative="1" as="geometry">
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="design-e12" value="cancel" style="html=1;rounded=0;edgeStyle=orthogonalEdgeStyle;endArrow=open;endSize=12;exitX=0.8333;exitY=1.0;entryX=0.0;entryY=0.3333;" edge="1" parent="design-1" source="design-s2" target="design-s6">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="260" y="300" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <UserObject id="design-e13" label="cancel / refund" tooltip="MISSING&#10;In the design, but not in the implementation.">
+        <mxCell style="html=1;rounded=0;edgeStyle=orthogonalEdgeStyle;endArrow=open;endSize=12;exitX=0.5000;exitY=1;entryX=0.5000;entryY=0;strokeColor=#b85450;strokeWidth=3;fontColor=#b85450;" edge="1" parent="design-1" source="design-s3" target="design-s6">
+          <mxGeometry relative="1" as="geometry">
+          </mxGeometry>
+        </mxCell>
+        </UserObject>
+        <mxCell id="design-f14" value="" style="ellipse;html=1;shape=endState;fillColor=#000000;strokeColor=#000000;" vertex="1" parent="design-1">
+          <mxGeometry x="1100" y="95" width="30" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="design-e15" value="" style="html=1;rounded=0;edgeStyle=orthogonalEdgeStyle;endArrow=open;endSize=12;exitX=1;exitY=0.5000;entryX=0;entryY=0.5000;" edge="1" parent="design-1" source="design-s5" target="design-f14">
+          <mxGeometry relative="1" as="geometry">
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="design-legend" value="&lt;b&gt;DESIGN&lt;/b&gt;&lt;br&gt;&lt;font style=&quot;font-size:10px&quot;&gt;drawn by a person · diagrams/input/state-order.drawio&lt;/font&gt;" style="rounded=1;arcSize=6;whiteSpace=wrap;html=1;align=left;verticalAlign=top;spacingLeft=8;spacingTop=4;fillColor=#ffffff;strokeColor=#666666;" vertex="1" parent="design-1">
+          <mxGeometry x="1210.0" y="40" width="320" height="132" as="geometry" />
+        </mxCell>
+        <mxCell id="design-legend-0" value="Identical" style="rounded=0;whiteSpace=wrap;html=1;align=left;spacingLeft=6;fontSize=11;fillColor=#ffffff;strokeColor=#666666;" vertex="1" parent="design-legend">
+          <mxGeometry x="8" y="46" width="304" height="22" as="geometry" />
+        </mxCell>
+        <mxCell id="design-legend-1" value="Changed (1)" style="rounded=0;whiteSpace=wrap;html=1;align=left;spacingLeft=6;fontSize=11;fillColor=#ffe6cc;strokeColor=#d79b00;" vertex="1" parent="design-legend">
+          <mxGeometry x="8" y="72" width="304" height="22" as="geometry" />
+        </mxCell>
+        <mxCell id="design-legend-2" value="Missing from the implementation (1)" style="rounded=0;whiteSpace=wrap;html=1;align=left;spacingLeft=6;fontSize=11;fillColor=#f8cecc;strokeColor=#b85450;" vertex="1" parent="design-legend">
+          <mxGeometry x="8" y="98" width="304" height="22" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+  <diagram name="2 - Implemented (AI)" id="implemented">
+    <mxGraphModel dx="1400" dy="900" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1654" pageHeight="1169" math="0" shadow="0">
+      <root>
+        <mxCell id="implemented-0" />
+        <mxCell id="implemented-1" parent="implemented-0" />
+        <mxCell id="implemented-s2" value="Created" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="implemented-1">
+          <mxGeometry x="160" y="80" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="implemented-s3" value="Paid" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="implemented-1">
+          <mxGeometry x="420" y="80" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="implemented-s4" value="Shipped" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="implemented-1">
+          <mxGeometry x="680" y="80" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="implemented-s5" value="Delivered" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="implemented-1">
+          <mxGeometry x="940" y="80" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="implemented-s6" value="Cancelled" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="implemented-1">
+          <mxGeometry x="420" y="280" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="implemented-i7" value="" style="ellipse;html=1;shape=startState;fillColor=#000000;strokeColor=#000000;" vertex="1" parent="implemented-1">
+          <mxGeometry x="60" y="95" width="30" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="implemented-e8" value="" style="html=1;rounded=0;edgeStyle=orthogonalEdgeStyle;endArrow=open;endSize=12;exitX=1;exitY=0.5000;entryX=0;entryY=0.5000;" edge="1" parent="implemented-1" source="implemented-i7" target="implemented-s2">
+          <mxGeometry relative="1" as="geometry">
+          </mxGeometry>
+        </mxCell>
+        <UserObject id="implemented-e9" label="pay / charge" tooltip="CHANGED&#10;guard: hasItems (design) → none (implemented)">
+        <mxCell style="html=1;rounded=0;edgeStyle=orthogonalEdgeStyle;endArrow=open;endSize=12;exitX=1;exitY=0.5000;entryX=0;entryY=0.5000;strokeColor=#d79b00;strokeWidth=3;fontColor=#d79b00;" edge="1" parent="implemented-1" source="implemented-s2" target="implemented-s3">
+          <mxGeometry relative="1" as="geometry">
+          </mxGeometry>
+        </mxCell>
+        </UserObject>
+        <mxCell id="implemented-e10" value="ship / dispatch" style="html=1;rounded=0;edgeStyle=orthogonalEdgeStyle;endArrow=open;endSize=12;exitX=1;exitY=0.5000;entryX=0;entryY=0.5000;" edge="1" parent="implemented-1" source="implemented-s3" target="implemented-s4">
+          <mxGeometry relative="1" as="geometry">
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="implemented-e11" value="deliver / notify" style="html=1;rounded=0;edgeStyle=orthogonalEdgeStyle;endArrow=open;endSize=12;exitX=1;exitY=0.5000;entryX=0;entryY=0.5000;" edge="1" parent="implemented-1" source="implemented-s4" target="implemented-s5">
+          <mxGeometry relative="1" as="geometry">
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="implemented-e12" value="cancel" style="html=1;rounded=0;edgeStyle=orthogonalEdgeStyle;endArrow=open;endSize=12;exitX=0.8333;exitY=1.0;entryX=0.0;entryY=0.3333;" edge="1" parent="implemented-1" source="implemented-s2" target="implemented-s6">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="260" y="300" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="implemented-f13" value="" style="ellipse;html=1;shape=endState;fillColor=#000000;strokeColor=#000000;" vertex="1" parent="implemented-1">
+          <mxGeometry x="1100" y="95" width="30" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="implemented-e14" value="" style="html=1;rounded=0;edgeStyle=orthogonalEdgeStyle;endArrow=open;endSize=12;exitX=1;exitY=0.5000;entryX=0;entryY=0.5000;" edge="1" parent="implemented-1" source="implemented-s5" target="implemented-f13">
+          <mxGeometry relative="1" as="geometry">
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="implemented-legend" value="&lt;b&gt;IMPLEMENTED STATE MACHINE&lt;/b&gt;&lt;br&gt;&lt;font style=&quot;font-size:10px&quot;&gt;built by AI · extracted from impl/include&lt;/font&gt;" style="rounded=1;arcSize=6;whiteSpace=wrap;html=1;align=left;verticalAlign=top;spacingLeft=8;spacingTop=4;fillColor=#ffffff;strokeColor=#666666;" vertex="1" parent="implemented-1">
+          <mxGeometry x="1210.0" y="40" width="300" height="132" as="geometry" />
+        </mxCell>
+        <mxCell id="implemented-legend-0" value="Identical" style="rounded=0;whiteSpace=wrap;html=1;align=left;spacingLeft=6;fontSize=11;fillColor=#ffffff;strokeColor=#666666;" vertex="1" parent="implemented-legend">
+          <mxGeometry x="8" y="46" width="284" height="22" as="geometry" />
+        </mxCell>
+        <mxCell id="implemented-legend-1" value="Changed (1)" style="rounded=0;whiteSpace=wrap;html=1;align=left;spacingLeft=6;fontSize=11;fillColor=#ffe6cc;strokeColor=#d79b00;" vertex="1" parent="implemented-legend">
+          <mxGeometry x="8" y="72" width="284" height="22" as="geometry" />
+        </mxCell>
+        <mxCell id="implemented-legend-2" value="Extra, not in the design (0)" style="rounded=0;whiteSpace=wrap;html=1;align=left;spacingLeft=6;fontSize=11;fillColor=#d5e8d4;strokeColor=#82b366;" vertex="1" parent="implemented-legend">
+          <mxGeometry x="8" y="98" width="284" height="22" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
