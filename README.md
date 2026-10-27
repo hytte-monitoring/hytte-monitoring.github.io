@@ -14,3 +14,8 @@ Remote cabin monitoring mock-up developed using UML-based, specification-driven 
   - `reports/` — verifier reports and Figure of Merit data
 - `firmware/` — micro:bit code (domain classes plus input/output/serial drivers)
 - `website/dashboard/` — WebSerial dashboard and browser database
+
+## Credits
+The UML verifier (`tools/`, `requirements.txt`), `AGENTS.md` and the VS Code tasks in `.vscode/`
+are copied from [aiunderstand/ModelDrivenDesign_ex2](https://github.com/aiunderstand/ModelDrivenDesign_ex2)
+(commit `d439b1a`), the course template for assignment 2.
