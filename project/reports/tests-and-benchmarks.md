@@ -118,6 +118,32 @@ are measured in Phase 4.
 | Board code (`io::` symbols) | **4 124** → **5 336** after F15/F16 | input, output and serial drivers |
 | Static RAM (`.bss`) | 7 432 | of 128 KB RAM; the heap gets the rest (112 888) |
 
-**On-board latency** (button → model → LED redraw): the board measures it
+**On-board latency** (model update and LED redraw). The board measures it
 itself with `system_timer_current_time_us()` and sends it as a `latency`
-line. **Pending:** someone must press the buttons. See plan Phase 4.
+line. Recorded during the Gate 4 test, with the raw log in
+[`board-logs/2026-10-27-gate4-run1.jsonl`](board-logs/2026-10-27-gate4-run1.jsonl):
+
+| Input | Measurements | Median |
+|-------|--------------|-------:|
+| Door, button A (in HOME: no Incident) | 255, 240 µs | ~248 µs |
+| Smoke, shake (a Critical Incident is created, the contact notified) | 303, 295, 331, 352 µs | ~317 µs |
+| Resolve, button B | 53, 51 µs | ~52 µs |
+
+All are well under 1 ms. The button debounce and the 250 ms blink cycle,
+not the model, decide how fast it feels.
+
+## Board test (Gate 4, run 1)
+
+| Step | Board output | Result |
+|------|--------------|--------|
+| Shake ×2 in HOME | Critical `I-10`, `I-11` | ✅ smoke is Critical in any mode (ADR-001) |
+| A+B ×2 | `AWAY`, `HOME` | ✅ |
+| A in HOME | `event door`, no Incident | ✅ Team Guide §6 |
+| Shake ×2 | Critical `I-12`, `I-13` | ✅ |
+| B ×2 | `I-13` Closed, then `I-12` Closed, same ids | ✅ newest active first; same record updated (§8, §9) |
+| A in HOME, A+B | no Incident, `AWAY` | ✅ |
+
+Ids started at `I-10`, because 9 Incidents were made before the capture:
+ids are never reused (D21). **Not covered in run 1:** a door in AWAY → a
+Warning (the blinking `!`).
+
