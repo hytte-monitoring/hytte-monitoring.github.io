@@ -37,7 +37,7 @@ target_link_libraries(scenario_smoke_escalation PRIVATE hytte)
 
 # Unit tests (Phase 3). Run: ctest --test-dir build
 enable_testing()
-foreach(name test_incident test_cabin_and_sensor)
+foreach(name test_incident test_cabin_and_sensor test_system_operation)
     add_executable(${name} tests/${name}.cpp)
     target_link_libraries(${name} PRIVATE hytte)
     add_test(NAME ${name} COMMAND ${name})

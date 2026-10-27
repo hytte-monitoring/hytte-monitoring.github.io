@@ -28,6 +28,7 @@ public:
     void resolve();
 
     void handle(Event event);
+    State state() const;
 
 private:
     friend struct TestAccess;   // lets the unit tests read private state; not a UML element

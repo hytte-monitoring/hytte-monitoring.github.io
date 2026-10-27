@@ -11,17 +11,17 @@
 
 ## Overview
 
-**Alignment: 83.8 %** — 88 of the 105 elements that appear in either diagram are identical in both.
+**Alignment: 76.3 %** — 90 of the 118 elements that appear in either diagram are identical in both.
 
 | | Classes | Attributes | Methods | Relations | **Total** |
 |---|--:|--:|--:|--:|--:|
-| In design | 18 | 31 | 23 | 17 | **89** |
-| In implemented design | 18 | 32 | 36 | 18 | **104** |
-| ✅ Identical | 18 | 31 | 23 | 16 | **88** |
+| In design | 18 | 31 | 25 | 17 | **91** |
+| In implemented design | 18 | 34 | 47 | 18 | **117** |
+| ✅ Identical | 18 | 31 | 25 | 16 | **90** |
 | ✏️ Changed | 0 | 0 | 0 | 0 | **0** |
 | ➖ Missing | 0 | 0 | 0 | 1 | **1** |
-| ➕ Extra | 0 | 1 | 13 | 2 | **16** |
-| **Alignment** | 100.0 % | 96.9 % | 63.9 % | 84.2 % | **83.8 %** |
+| ➕ Extra | 0 | 3 | 22 | 2 | **27** |
+| **Alignment** | 100.0 % | 91.2 % | 53.2 % | 84.2 % | **76.3 %** |
 
 ### What the numbers mean
 
@@ -49,11 +49,17 @@ _None._
 |---|---|
 | relation `Incident → EmergencyContact` | `Incident ..> EmergencyContact` |
 
-### ➕ Extra (16)
+### ➕ Extra (27)
 
 | Element | As found in the implementation |
 |---|---|
+| attribute `Cabin.state` | `-State state` |
 | attribute `Incident.state` | `-State state` |
+| attribute `MonitoringSystem.state` | `-State state` |
+| method `Cabin.activateColdProtection()` | `-activateColdProtection() void` |
+| method `Cabin.deactivateColdProtection()` | `-deactivateColdProtection() void` |
+| method `Cabin.handle()` | `+handle(Event) void` |
+| method `Cabin.reportSecurityWarning()` | `-reportSecurityWarning() void` |
 | method `ConnectionSensor.detectCondition()` | `+detectCondition() void` |
 | method `DoorSensor.detectCondition()` | `+detectCondition() void` |
 | method `Incident.contactEmergencyService()` | `-contactEmergencyService() void` |
@@ -62,6 +68,11 @@ _None._
 | method `Incident.notifyContacts()` | `-notifyContacts() void` |
 | method `Incident.notifyOwner()` | `-notifyOwner() void` |
 | method `IndoorTemperatureSensor.detectCondition()` | `+detectCondition() void` |
+| method `MonitoringSystem.handle()` | `+handle(Event) void` |
+| method `MonitoringSystem.useBatteryBackup()` | `-useBatteryBackup() void` |
+| method `MonitoringSystem.useCabinElectricity()` | `-useCabinElectricity() void` |
+| method `MonitoringSystem.useCellular()` | `-useCellular() void` |
+| method `MonitoringSystem.useInternet()` | `-useInternet() void` |
 | method `MotionSensor.detectCondition()` | `+detectCondition() void` |
 | method `OutdoorTemperatureSensor.detectCondition()` | `+detectCondition() void` |
 | method `PowerSensor.detectCondition()` | `+detectCondition() void` |

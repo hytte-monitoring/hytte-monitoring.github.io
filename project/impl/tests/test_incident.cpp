@@ -29,7 +29,7 @@ Incident incidentIn(State target)
 void startsInNew()
 {
     Incident incident("I-1", "2026-10-27T12:00");
-    CHECK(TestAccess::state(incident) == State::New);
+    CHECK(incident.state() == State::New);
     CHECK(TestAccess::status(incident) == IncidentStatus::Active);
 }
 
@@ -37,7 +37,7 @@ void newToWarning()
 {
     Incident incident = incidentIn(State::New);
     incident.handle(Event::warningDetected);
-    CHECK(TestAccess::state(incident) == State::Warning);
+    CHECK(incident.state() == State::Warning);
     CHECK(TestAccess::severity(incident) == Severity::WARNING);
 }
 
@@ -45,7 +45,7 @@ void newToCritical()
 {
     Incident incident = incidentIn(State::New);
     incident.handle(Event::criticalDetected);
-    CHECK(TestAccess::state(incident) == State::Critical);
+    CHECK(incident.state() == State::Critical);
 }
 
 // Team Guide §7: the SAME Incident is upgraded; no new Incident is created.
@@ -53,7 +53,7 @@ void warningUpgradesSameIncidentToCritical()
 {
     Incident incident = incidentIn(State::Warning);
     incident.handle(Event::conditionWorsens);
-    CHECK(TestAccess::state(incident) == State::Critical);
+    CHECK(incident.state() == State::Critical);
     CHECK(TestAccess::severity(incident) == Severity::CRITICAL);
     CHECK(TestAccess::id(incident) == "I-1");
     CHECK(TestAccess::status(incident) == IncidentStatus::Active);
@@ -66,7 +66,7 @@ void resolveClosesFromWarningAndCritical()
     {
         Incident incident = incidentIn(from);
         incident.handle(Event::ownerResolved);
-        CHECK(TestAccess::state(incident) == State::Closed);
+        CHECK(incident.state() == State::Closed);
         CHECK(TestAccess::status(incident) == IncidentStatus::Closed);
     }
 }
@@ -78,7 +78,7 @@ void escalationKeepsCritical()
     {
         Incident incident = incidentIn(State::Critical);
         incident.handle(event);
-        CHECK(TestAccess::state(incident) == State::Critical);
+        CHECK(incident.state() == State::Critical);
     }
 }
 
@@ -89,7 +89,7 @@ void warningIgnoresEmergencyEscalation()
     {
         Incident incident = incidentIn(State::Warning);
         incident.handle(event);
-        CHECK(TestAccess::state(incident) == State::Warning);
+        CHECK(incident.state() == State::Warning);
         CHECK(TestAccess::severity(incident) == Severity::WARNING);
     }
 }
@@ -99,17 +99,17 @@ void eventsWithoutTransitionAreIgnored()
 {
     Incident fresh = incidentIn(State::New);
     fresh.handle(Event::ownerResolved);
-    CHECK(TestAccess::state(fresh) == State::New);
+    CHECK(fresh.state() == State::New);
 
     Incident critical = incidentIn(State::Critical);
     critical.handle(Event::conditionWorsens);
-    CHECK(TestAccess::state(critical) == State::Critical);
+    CHECK(critical.state() == State::Critical);
 
     Incident closed = incidentIn(State::Warning);
     closed.handle(Event::ownerResolved);
     closed.handle(Event::criticalDetected);
     closed.handle(Event::conditionWorsens);
-    CHECK(TestAccess::state(closed) == State::Closed);
+    CHECK(closed.state() == State::Closed);
 }
 
 }  // namespace

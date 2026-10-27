@@ -22,7 +22,13 @@ classDiagram
         -string name
         -MonitoringMode mode
         -bool coldProtectionActive
+        -State state
         +changeMode() void
+        +handle(Event event) void
+        +state() State
+        -activateColdProtection() void
+        -deactivateColdProtection() void
+        -reportSecurityWarning() void
     }
 
     class ConnectionSensor {
@@ -65,6 +71,7 @@ classDiagram
         +upgradeToCritical() void
         +resolve() void
         +handle(Event event) void
+        +state() State
         -contactsConfigured() bool
         -notifyOwner() void
         -notifyContacts() void
@@ -94,9 +101,15 @@ classDiagram
     class MonitoringSystem {
         -bool onBatteryBackup
         -bool cellularFallback
+        -State state
         +evaluateEvent() void
         +createIncident() void
         +escalateIncident() void
+        +handle(Event event) void
+        -useBatteryBackup() void
+        -useCabinElectricity() void
+        -useCellular() void
+        -useInternet() void
     }
 
     class MotionSensor {

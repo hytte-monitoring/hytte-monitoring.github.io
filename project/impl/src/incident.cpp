@@ -36,6 +36,8 @@ void Incident::handle(Event event)
     // No transition for this event in this state: the event is ignored.
 }
 
+Incident::State Incident::state() const { return state_; }
+
 // The design gives Incident no link to the owner's contacts, so it cannot know.
 bool Incident::contactsConfigured() const { return false; }
 

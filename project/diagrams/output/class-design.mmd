@@ -16,6 +16,7 @@ classDiagram
         -MonitoringMode mode
         -bool coldProtectionActive
         +changeMode() void
+        +state() State
     }
 
     class MonitoringSystem {
@@ -81,6 +82,7 @@ classDiagram
         -string timestamp
         +upgradeToCritical() void
         +resolve() void
+        +state() State
     }
 
     class IncidentHistory {

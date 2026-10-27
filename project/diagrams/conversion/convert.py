@@ -2,8 +2,8 @@
 
     python3 project/diagrams/conversion/convert.py
 
-Reads class.mmd, state-incident.mmd and sequence-smoke_escalation.mmd and writes the
-matching .drawio files in diagrams/input/, drawn with the verifier's own writer so it
+Reads class.mmd, the state-*.mmd files and sequence-smoke_escalation.mmd and writes
+the matching .drawio files in diagrams/input/, drawn with the verifier's own writer so it
 can read them back. Class positions follow the team's model/class-diagram layout.
 """
 import sys
@@ -42,7 +42,23 @@ CLASS_LAYOUT = {
 }
 
 # (x, y, width, height)
-STATE_LAYOUT = {
+CABIN_LAYOUT = {
+    "Awaiting": (80, 200, 130, 50),
+    "Home": (380, 60, 130, 50),
+    "Away": (380, 340, 130, 50),
+    "AwaitingCold": (80, 560, 130, 50),
+    "HomeCold": (740, 60, 130, 50),
+    "AwayCold": (740, 340, 130, 50),
+}
+
+SYSTEM_LAYOUT = {
+    "ElectricityAndInternet": (80, 80, 190, 50),
+    "BatteryAndInternet": (520, 80, 190, 50),
+    "ElectricityAndCellular": (80, 360, 190, 50),
+    "BatteryAndCellular": (520, 360, 190, 50),
+}
+
+INCIDENT_LAYOUT = {
     "New": (120, 220, 120, 50),
     "Warning": (420, 80, 140, 50),
     "Critical": (420, 360, 140, 50),
@@ -56,15 +72,18 @@ def main():
         class_write.document(types, relations, {"classes": CLASS_LAYOUT, "edges": {}},
                              name="Hytte Monitoring - class diagram"))
 
-    machine = state_mmd.parse((HERE / "state-incident.mmd").read_text())
-    (INPUT / "state-incident.drawio").write_text(
-        state_write.document(machine, {"states": STATE_LAYOUT},
-                             name="Hytte Monitoring - Incident state machine"))
+    for subject, layout, title in [("incident", INCIDENT_LAYOUT, "Incident"),
+                                   ("cabin", CABIN_LAYOUT, "Cabin"),
+                                   ("monitoring_system", SYSTEM_LAYOUT, "MonitoringSystem")]:
+        machine = state_mmd.parse((HERE / f"state-{subject}.mmd").read_text())
+        (INPUT / f"state-{subject}.drawio").write_text(
+            state_write.document(machine, {"states": layout},
+                                 name=f"Hytte Monitoring - {title} state machine"))
 
     scenario = seq_mmd.parse((HERE / "sequence-smoke_escalation.mmd").read_text())
     (INPUT / "sequence-smoke_escalation.drawio").write_text(
         seq_write.document(scenario, name="Hytte Monitoring - smoke escalation"))
-    print("wrote class.drawio, state-incident.drawio and sequence-smoke_escalation.drawio in", INPUT)
+    print("wrote class, state and sequence diagrams in", INPUT)
 
 
 if __name__ == "__main__":
