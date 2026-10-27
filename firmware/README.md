@@ -61,6 +61,9 @@ firmware/build.sh --flash
   and CODAL into `firmware/.build/` (1.1 GB, git-ignored). That takes a few
   minutes.
 - **After that:** a build takes seconds.
+- **Every build** also copies the `.hex` to
+  `website/dashboard/hytte-monitoring.hex`, the file the dashboard offers
+  for download. Commit it together with the firmware change.
 - **C++11:** CODAL compiles with `-std=c++11`. The model needed one change
   for that: an out-of-class definition of each `transitions` table, used
   only before C++17.

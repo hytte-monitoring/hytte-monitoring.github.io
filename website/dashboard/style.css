@@ -82,6 +82,11 @@ button:disabled { opacity: 0.5; cursor: not-allowed; }
     background: var(--card);
 }
 
+.howto summary { cursor: pointer; font-weight: 600; }
+.howto ol { margin: 8px 0; padding-left: 20px; }
+.howto p { margin: 0; color: var(--muted); font-size: 0.9rem; }
+.actions .button { text-decoration: none; }
+
 .grid {
     display: grid;
     grid-template-columns: repeat(2, minmax(0, 1fr));
@@ -138,5 +143,10 @@ th { color: var(--muted); font-weight: 500; }
 .state.closed { color: var(--ok); }
 
 @media (max-width: 720px) {
-    .grid { grid-template-columns: 1fr; }
+    .howto summary { cursor: pointer; font-weight: 600; }
+.howto ol { margin: 8px 0; padding-left: 20px; }
+.howto p { margin: 0; color: var(--muted); font-size: 0.9rem; }
+.actions .button { text-decoration: none; }
+
+.grid { grid-template-columns: 1fr; }
 }

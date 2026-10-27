@@ -63,6 +63,8 @@ done
 (cd "$codal" && CXXFLAGS="-I$codal/source/hytte/include -I$codal/source" python3 build.py)
 cp "$codal/MICROBIT.hex" "$here/MICROBIT.hex"
 echo "Built $here/MICROBIT.hex"
+# The dashboard offers the same file for download, so anyone can flash their own board.
+cp "$here/MICROBIT.hex" "$(dirname "$here")/website/dashboard/hytte-monitoring.hex"
 if command -v arm-none-eabi-size >/dev/null 2>&1 && [ -f "$codal/build/MICROBIT" ]; then
     arm-none-eabi-size "$codal/build/MICROBIT"
 fi

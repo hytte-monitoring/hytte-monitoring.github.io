@@ -166,6 +166,9 @@ that they test the model, not the implementation's own guesses.
 - [x] Panels: LED mirror and mode, active Incidents, Incident/Event History, on-board
       latency, event log, database (export, import, sample data, clear): `index.html`, `app.js`.
 - [x] Linked from the landing page (DASHBOARD). Pages publishes `website/`, so it will be at `/dashboard/`.
+- [x] Works without our PC: the page offers the firmware `.hex` for download, with steps for
+      flashing your own micro:bit. Everything runs in the visitor's browser.
+- [ ] **Team:** merge to `main` so GitHub Pages publishes it (only `main` is deployed).
 - [ ] **Team:** install Chrome or Edge, open the page and test it with the board (the AI did not run it:
       no browser with WebSerial and no Node.js here).
 

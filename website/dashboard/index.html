@@ -16,6 +16,7 @@
         </div>
         <div class="actions">
             <span id="status" class="pill" data-state="off">Not connected</span>
+            <a class="button" href="hytte-monitoring.hex" download>Firmware .hex</a>
             <button id="connect" class="primary" type="button">Connect micro:bit</button>
         </div>
     </header>
@@ -23,6 +24,19 @@
         This browser has no WebSerial. Open the page in Chrome or Edge on a computer to connect the
         micro:bit. The stored history below works in every browser.
     </p>
+
+    <details class="notice howto">
+        <summary>Use your own micro:bit</summary>
+        <ol>
+            <li>Download the <a href="hytte-monitoring.hex" download>firmware (.hex)</a>.</li>
+            <li>Plug in a micro:bit v2 with USB. It appears as a drive called <b>MICROBIT</b>.
+                Drag the .hex file onto it, and wait until the yellow light stops blinking.</li>
+            <li>Open this page in <b>Chrome</b> or <b>Edge</b> on a computer.</li>
+            <li>Click <b>Connect micro:bit</b> and choose the micro:bit's port.</li>
+        </ol>
+        <p>Everything runs in your own browser, and the history is stored in your browser only.
+            Use Export and Import to move it.</p>
+    </details>
 
     <main class="grid">
         <section class="card board" aria-labelledby="board-title">

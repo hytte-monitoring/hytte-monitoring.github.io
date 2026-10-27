@@ -29,7 +29,7 @@ Status: hardware choices in §3 are a **proposal awaiting team approval**
 |--------|----------|------------|
 | Model implementation (C++20, host) | `project/impl/` | The verifier inputs in `project/diagrams/input/` (generated from `project/diagrams/conversion/`) |
 | micro:bit firmware | `firmware/` | `project/impl/include` and `src` **unchanged**, plus an I/O layer |
-| Dashboard and database | `website/dashboard/` | Serial protocol §5, database §6 |
+| Dashboard and database | `website/dashboard/` | Serial protocol §5, database §6. Runs in each visitor's browser, with no server; offers the firmware `.hex` for download |
 | Reports | `project/reports/` | Verifier reports, `fom.csv`, `deviations.md`, `tests-and-benchmarks.md`, `quality-review.md` |
 
 ## 3. Hardware (proposal)
