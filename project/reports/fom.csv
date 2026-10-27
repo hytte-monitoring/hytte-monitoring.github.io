@@ -1,0 +1,2 @@
+point,date,commit,label,class_pct,state_incident_pct,class_identical,class_changed,class_missing,class_extra,tests_passed
+1,2026-10-27,dbd4675,baseline: first AI implementation,73.6,100.0,81,0,8,21,
