@@ -1,0 +1,3 @@
+# Python bindings for libclang, used by fixture/clang_extract.py.
+# Installed into .venv by the VS Code task "Set up Python environment".
+libclang>=18
