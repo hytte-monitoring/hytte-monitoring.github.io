@@ -143,6 +143,7 @@ classDiagram
     }
 
     Cabin --> "*" Sensor : sensors
+    Cabin --> "1" MonitoringSystem : system
     Sensor <|-- ConnectionSensor
     Sensor <|-- DoorSensor
     HytteOwner --> "*" Cabin : cabins

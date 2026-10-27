@@ -20,6 +20,9 @@ public:
     enum class Event { powerLost, powerRestored, internetLost, internetRestored };
 
     MonitoringSystem(Cabin& cabin, IncidentHistory& history, std::vector<std::weak_ptr<EmergencyContact>> contacts);
+    // The Cabin points back to this object, so it must not be copied.
+    MonitoringSystem(const MonitoringSystem&) = delete;
+    MonitoringSystem& operator=(const MonitoringSystem&) = delete;
 
     void evaluateEvent();
     void createIncident();

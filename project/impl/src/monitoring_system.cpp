@@ -7,6 +7,7 @@ namespace hytte {
 MonitoringSystem::MonitoringSystem(Cabin& cabin, IncidentHistory& history, std::vector<std::weak_ptr<EmergencyContact>> contacts)
     : cabin_(&cabin), history_(&history), contacts_(std::move(contacts))
 {
+    cabin.system_ = this;   // Cabin --> "1" MonitoringSystem
 }
 
 // Mock-up: every evaluated event is treated as Critical smoke (sequence-smoke_escalation).

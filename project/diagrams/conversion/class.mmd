@@ -129,6 +129,7 @@ classDiagram
     HytteOwner --> "*" EmergencyContact : contacts
     HytteOwner --> "*" Incident : incidents
     Cabin --> "*" Sensor : sensors
+    Cabin --> "1" MonitoringSystem : system
     MonitoringSystem --> "1" Cabin : cabin
     MonitoringSystem --> "*" Sensor : sensors
     MonitoringSystem --> "*" Incident : incidents

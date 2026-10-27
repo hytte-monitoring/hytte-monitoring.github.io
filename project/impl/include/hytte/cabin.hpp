@@ -9,6 +9,8 @@
 
 namespace hytte {
 
+class MonitoringSystem;
+
 class Cabin
 {
 public:
@@ -24,13 +26,15 @@ public:
     State state() const;
 
 private:
-    friend struct TestAccess;   // lets the unit tests read private state; not a UML element
+    friend struct TestAccess;      // lets the unit tests read private state; not a UML element
+    friend class MonitoringSystem; // links itself to its Cabin on construction (finding F03)
 
     std::string cabinId_;
     std::string name_;
     MonitoringMode mode_ = MonitoringMode::HOME;
     bool coldProtectionActive_ = false;
     std::vector<std::weak_ptr<Sensor>> sensors_;
+    MonitoringSystem* system_ = nullptr;
     State state_ = State::Awaiting;   // the initial state
 
     void activateColdProtection();

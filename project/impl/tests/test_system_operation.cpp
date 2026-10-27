@@ -72,18 +72,13 @@ void doorAndMotionAreOnlyHandledInAway()
     CHECK(away.state() == Cabin::State::Away);
 }
 
-MonitoringSystem makeSystem(Cabin& cabin, hytte::IncidentHistory& history)
-{
-    return MonitoringSystem(cabin, history, {});
-}
-
 // ADR-002: battery backup on power failure, Cellular/SIM on Internet failure,
 // both at once, and back to normal when they return.
 void resilientMonitoringSwitchesAndRestores()
 {
     Cabin cabin("c1", "Hytte");
     hytte::IncidentHistory history;
-    MonitoringSystem system = makeSystem(cabin, history);
+    MonitoringSystem system(cabin, history, {});
     CHECK(TestAccess::state(system) == MonitoringSystem::State::ElectricityAndInternet);
 
     system.handle(MonitoringSystem::Event::powerLost);

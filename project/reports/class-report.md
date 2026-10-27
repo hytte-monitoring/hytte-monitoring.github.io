@@ -11,17 +11,17 @@
 
 ## Overview
 
-**Alignment: 76.3 %** — 90 of the 118 elements that appear in either diagram are identical in both.
+**Alignment: 76.5 %** — 91 of the 119 elements that appear in either diagram are identical in both.
 
 | | Classes | Attributes | Methods | Relations | **Total** |
 |---|--:|--:|--:|--:|--:|
-| In design | 18 | 31 | 25 | 17 | **91** |
-| In implemented design | 18 | 34 | 47 | 18 | **117** |
-| ✅ Identical | 18 | 31 | 25 | 16 | **90** |
+| In design | 18 | 31 | 25 | 18 | **92** |
+| In implemented design | 18 | 34 | 47 | 19 | **118** |
+| ✅ Identical | 18 | 31 | 25 | 17 | **91** |
 | ✏️ Changed | 0 | 0 | 0 | 0 | **0** |
 | ➖ Missing | 0 | 0 | 0 | 1 | **1** |
 | ➕ Extra | 0 | 3 | 22 | 2 | **27** |
-| **Alignment** | 100.0 % | 91.2 % | 53.2 % | 84.2 % | **76.3 %** |
+| **Alignment** | 100.0 % | 91.2 % | 53.2 % | 85.0 % | **76.5 %** |
 
 ### What the numbers mean
 

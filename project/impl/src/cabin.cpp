@@ -1,5 +1,7 @@
 #include "hytte/cabin.hpp"
 
+#include "hytte/monitoring_system.hpp"
+
 #include <utility>
 
 namespace hytte {
@@ -42,8 +44,13 @@ void Cabin::activateColdProtection() { coldProtectionActive_ = true; }
 // The owner's previous choices are restored (Team Guide §4).
 void Cabin::deactivateColdProtection() { coldProtectionActive_ = false; }
 
-// Mock-up: the model has no link from Cabin to MonitoringSystem or Incident,
-// so the Warning cannot be created from here (finding F03).
-void Cabin::reportSecurityWarning() {}
+// Door or motion in AWAY: the system creates an Incident (Team Guide §6, §7; finding F03).
+void Cabin::reportSecurityWarning()
+{
+    if (system_ != nullptr)
+    {
+        system_->createIncident();
+    }
+}
 
 }  // namespace hytte
