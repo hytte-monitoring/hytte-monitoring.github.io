@@ -172,6 +172,9 @@ that they test the model, not the implementation's own guesses.
       The Linux command was tested (download plus flash); Windows and macOS are untested.
 - [x] Separate **Install firmware** page (`website/install/`) with 4 plain steps, and a shared
       menu with icons (Home, Dashboard, Install firmware) on every page.
+- [x] Landing page rewritten as a **student project page**: what the site is for, how it works,
+      designed vs. built (and why), how it was built, with the FoM chart.
+- [ ] **Team:** add your names in the footer of `website/index.html` (marked `TEAM:`).
 - [ ] **Team:** merge to `main` so GitHub Pages publishes it (only `main` is deployed).
 - [x] Tested with the board in Mozilla's Firefox 159 (WebSerial since 151): it connected and worked
       (user, 2026-10-27). The IndexedDB file shows 1 session, 5 Incidents in 5 rows (updated in

@@ -1,4 +1,5 @@
-"""Plot the Figure of Merit over time: project/reports/fom.csv -> project/reports/fom.png.
+"""Plot the Figure of Merit over time: project/reports/fom.csv -> project/reports/fom.png,
+and the same image to website/img/fom.png for the project page.
 
     python3 project/reports/plot_fom.py
 
@@ -117,8 +118,10 @@ def main():
     figure.suptitle("Hytte Monitoring – Figure of Merit over 9 iterations", x=0.01, ha="left",
                     fontsize=14, color=TEXT, fontweight="bold")
     figure.tight_layout(rect=(0, 0, 1, 0.96))
-    figure.savefig(HERE / "fom.png", dpi=160, facecolor=SURFACE)
-    print("wrote", HERE / "fom.png")
+    # One copy for the reports, one for the project page of the website.
+    for target in (HERE / "fom.png", HERE.parents[1] / "website" / "img" / "fom.png"):
+        figure.savefig(target, dpi=160, facecolor=SURFACE)
+        print("wrote", target)
 
 
 if __name__ == "__main__":
