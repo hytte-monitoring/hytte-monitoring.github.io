@@ -14,7 +14,7 @@ public:
     void monitor();
     virtual void detectCondition() = 0;
 
-protected:
+private:
     std::string sensorID_;
     bool enabled_ = true;
 };

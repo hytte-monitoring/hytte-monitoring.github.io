@@ -28,19 +28,21 @@ same model as the `.mmd` sources (18 classes and 17 relations; 4 states and
 
 All 18 classes, every attribute, every method and every enumeration value
 are kept with the team's names. Class positions follow the team's layout.
-The changes below are notation only.
+The table lists every change. Changes that resolve an unclear point in the
+UML are **deviations**, logged with their source in
+[`project/reports/deviations.md`](../../reports/deviations.md). The rest are
+notation only.
 
 | Change | Original | Converted | Why |
 |--------|----------|-----------|-----|
 | Shapes | Rectangles with HTML text | UML class shapes (swimlane plus one row per member) | The only shape the verifier reads |
 | Type names | `String`, `Boolean`, `Float` | `string`, `bool`, `float` | The C++ types the verifier compares against |
-| `Incident.timestamp` | `DateTime` | `string` | C++ has no `DateTime` type, and the micro:bit has no clock |
+| `Incident.timestamp` | `DateTime` | `string` | Deviation D05 |
 | Return types | none drawn | `void` | The verifier treats a missing return type as `void` anyway; it is written out to make it explicit |
-| `Sensor` attributes | `- sensorID`, `- enabled` (private) | `#` (protected) | Subclasses inherit them |
-| `Sensor.detectCondition()` | plain | abstract (`*`) | `<<abstract>>` needs at least one abstract method in C++ |
-| Plain lines between classes | no arrowheads, no names | one-way association `-->` with a role name | In C++ every relation is a member of one class, so it needs a direction and a name |
+| `Sensor.detectCondition()` | plain | abstract (`*`) | Deviation D06 |
+| Plain lines between classes | no arrowheads, no names | one-way association `-->` with a role name | Deviations D01 and D02 |
 | Multiplicity `1..*` | `1..*` | `*` | The verifier only knows `1`, `0..1` and `*` |
-| Multiplicity not drawn | none on Owner–Contact, Owner–Incident, System–Cabin | `*`, `*`, `1` | Taken from Team Guide §2, §13 and the class roles |
+| Multiplicity not drawn | none on Owner–Contact, Owner–Incident, System–Cabin | `*`, `*`, `1` | Deviations D03 and D04 |
 
 Direction of each association (owner → owned or used):
 

@@ -28,8 +28,8 @@ classDiagram
 
     class Sensor {
         <<abstract>>
-        #string sensorID
-        #bool enabled
+        -string sensorID
+        -bool enabled
         +monitor() void
         +detectCondition() void*
     }
