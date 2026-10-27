@@ -1,6 +1,7 @@
 #pragma once
 
 #include <cstddef>
+#include <string>
 #include <memory>
 #include <vector>
 
@@ -15,6 +16,7 @@ public:
     void registerIncident(Severity severity);
     void updateIncident();
     std::vector<Incident> viewHistory() const;
+    Incident* findIncident(const std::string& incidentId);
 
 private:
     friend struct TestAccess;   // lets the unit tests read private state; not a UML element

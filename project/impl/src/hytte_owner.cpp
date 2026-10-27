@@ -4,7 +4,10 @@
 
 namespace hytte {
 
-HytteOwner::HytteOwner(std::string userID, std::string name) : userID_(std::move(userID)), name_(std::move(name)) {}
+HytteOwner::HytteOwner(std::string userID, std::string name, IncidentHistory& history)
+    : userID_(std::move(userID)), name_(std::move(name)), history_(&history)
+{
+}
 
 void HytteOwner::configureMonitoring() {}
 
@@ -19,6 +22,17 @@ void HytteOwner::changeMode()
     }
 }
 
-void HytteOwner::resolveIncident() {}
+// The owner selects Resolved: the Incident is closed and its history record is
+// updated (Team Guide §8, finding F15).
+void HytteOwner::resolveIncident(const std::string& incidentId)
+{
+    Incident* incident = history_->findIncident(incidentId);
+    if (incident == nullptr)
+    {
+        return;
+    }
+    incident->handle(Incident::Event::ownerResolved);
+    history_->updateIncident();
+}
 
 }  // namespace hytte

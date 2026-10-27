@@ -7,7 +7,7 @@ classDiagram
         -string name
         +configureMonitoring() void
         +changeMode() void
-        +resolveIncident() void
+        +resolveIncident(string incidentId) void
     }
 
     class Cabin {
@@ -83,6 +83,8 @@ classDiagram
         +upgradeToCritical() void
         +resolve() void
         +state() State
+        +getId() string
+        +getSeverity() Severity
     }
 
     class IncidentHistory {
@@ -90,6 +92,7 @@ classDiagram
         +registerIncident(Severity severity) void
         +updateIncident() void
         +viewHistory() vector~Incident~
+        +findIncident(string incidentId) Incident
     }
 
     class EmergencyContact {
@@ -128,6 +131,7 @@ classDiagram
     HytteOwner --> "*" Cabin : cabins
     HytteOwner --> "*" EmergencyContact : contacts
     HytteOwner --> "*" Incident : incidents
+    HytteOwner --> "1" IncidentHistory : history
     Cabin --> "*" Sensor : sensors
     Cabin --> "1" MonitoringSystem : system
     MonitoringSystem --> "1" Cabin : cabin

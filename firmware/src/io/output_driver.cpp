@@ -55,8 +55,19 @@ OutputDriver::OutputDriver(const hytte::Cabin& cabin, const hytte::IncidentHisto
 {
 }
 
+void OutputDriver::showResolved()
+{
+    static const MicroBitImage tick("0,0,0,0,0\n0,0,0,0,255\n0,0,0,255,0\n255,0,255,0,0\n0,255,0,0,0\n");
+    uBit.display.print(tick);
+    tickUntil_ = uBit.systemTime() + 800;
+}
+
 void OutputDriver::show(bool blinkOn)
 {
+    if (uBit.systemTime() < tickUntil_)
+    {
+        return;   // keep the tick on screen a little longer
+    }
     switch (activeIncidentState(history_))
     {
         case hytte::Incident::State::Critical:

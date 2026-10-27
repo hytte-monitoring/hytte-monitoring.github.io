@@ -44,6 +44,10 @@ void Incident::handle(Event event)
 
 Incident::State Incident::state() const { return state_; }
 
+std::string Incident::getId() const { return incidentId_; }
+
+Severity Incident::getSeverity() const { return severity_; }
+
 // The design gives Incident no link to the owner's contacts, so it cannot know.
 bool Incident::contactsConfigured() const { return false; }
 

@@ -72,18 +72,12 @@ classDiagram
         +resolve() void
         +handle(Event event) void
         +state() State
+        +getId() string
+        +getSeverity() Severity
         -contactsConfigured() bool
         -notifyOwner() void
         -notifyContacts() void
         -contactEmergencyService() void
-    }
-
-    class HytteOwner {
-        -string userID
-        -string name
-        +configureMonitoring() void
-        +changeMode() void
-        +resolveIncident() void
     }
 
     class IncidentHistory {
@@ -91,6 +85,15 @@ classDiagram
         +registerIncident(Severity severity) void
         +updateIncident() void
         +viewHistory() vector~Incident~
+        +findIncident(string incidentId) Incident
+    }
+
+    class HytteOwner {
+        -string userID
+        -string name
+        +configureMonitoring() void
+        +changeMode() void
+        +resolveIncident(string incidentId) void
     }
 
     class IndoorTemperatureSensor {
@@ -147,10 +150,11 @@ classDiagram
     Cabin --> "1" MonitoringSystem : system
     Sensor <|-- ConnectionSensor
     Sensor <|-- DoorSensor
+    IncidentHistory *-- "*" Incident : incidents
     HytteOwner --> "*" Cabin : cabins
     HytteOwner --> "*" EmergencyContact : contacts
     HytteOwner --> "*" Incident : incidents
-    IncidentHistory *-- "*" Incident : incidents
+    HytteOwner --> "1" IncidentHistory : history
     Sensor <|-- IndoorTemperatureSensor
     MonitoringSystem --> "1" Cabin : cabin
     MonitoringSystem --> "*" Sensor : sensors

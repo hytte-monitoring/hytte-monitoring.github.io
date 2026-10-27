@@ -5,6 +5,7 @@
 #include "MicroBit.h"
 #include "hytte/cabin.hpp"
 #include "hytte/emergency_contact.hpp"
+#include "hytte/hytte_owner.hpp"
 #include "hytte/incident_history.hpp"
 #include "hytte/monitoring_system.hpp"
 #include "io/input_driver.hpp"
@@ -18,6 +19,7 @@ namespace {
 hytte::Cabin* cabin;
 hytte::IncidentHistory* history;
 hytte::MonitoringSystem* monitoringSystem;
+hytte::HytteOwner* owner;
 io::OutputDriver* output;
 io::SerialLink* serial;
 io::InputDriver* input;
@@ -35,10 +37,11 @@ int main()
     history = new hytte::IncidentHistory();
     auto contact = std::make_shared<hytte::EmergencyContact>("e1", "Family member", "+47 000 00 000");
     monitoringSystem = new hytte::MonitoringSystem(*cabin, *history, {contact});
+    owner = new hytte::HytteOwner("u1", "Owner", *history);
 
     output = new io::OutputDriver(*cabin, *history);
     serial = new io::SerialLink(*history);
-    input = new io::InputDriver(*cabin, *monitoringSystem, *output, *serial);
+    input = new io::InputDriver(*cabin, *monitoringSystem, *owner, *history, *output, *serial);
 
     serial->sendHello();
     serial->sendMode(*cabin);

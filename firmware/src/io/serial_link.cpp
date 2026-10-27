@@ -53,17 +53,23 @@ void SerialLink::sendNote(const char* message)
     send(line);
 }
 
-void SerialLink::sendHistory()
+void SerialLink::sendIncidentChanges()
 {
-    std::vector<hytte::Incident> incidents = history_.viewHistory();
-    char line[400];
-    int n = snprintf(line, sizeof line, "{\"type\":\"history\",\"states\":[");
-    for (std::size_t i = 0; i < incidents.size() && n < static_cast<int>(sizeof line) - 16; ++i)
+    std::map<std::string, hytte::Incident::State> now;
+    for (const hytte::Incident& incident : history_.viewHistory())
     {
-        n += snprintf(line + n, sizeof line - n, "%s\"%s\"", i == 0 ? "" : ",", stateName(incidents[i].state()));
+        now[incident.getId()] = incident.state();
+        auto previous = sent_.find(incident.getId());
+        if (previous != sent_.end() && previous->second == incident.state())
+        {
+            continue;
+        }
+        char line[128];
+        snprintf(line, sizeof line, "{\"type\":\"incident\",\"id\":\"%s\",\"severity\":\"%s\",\"state\":\"%s\"}\n",
+                 incident.getId().c_str(), severityName(incident.getSeverity()), stateName(incident.state()));
+        send(line);
     }
-    snprintf(line + n, sizeof line - n, "]}\n");
-    send(line);
+    sent_ = now;   // Incidents dropped by the history limit (F13) are forgotten here too
 }
 
 const char* modeName(hytte::Cabin::State state)
@@ -76,6 +82,11 @@ const char* modeName(hytte::Cabin::State state)
         case hytte::Cabin::State::AwayCold: return "AWAY";
         default: return "NONE";
     }
+}
+
+const char* severityName(hytte::Severity severity)
+{
+    return severity == hytte::Severity::CRITICAL ? "CRITICAL" : "WARNING";
 }
 
 const char* stateName(hytte::Incident::State state)

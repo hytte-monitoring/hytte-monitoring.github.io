@@ -1,5 +1,7 @@
 #include "io/input_driver.hpp"
 
+#include <vector>
+
 #include "MicroBit.h"
 
 extern MicroBit uBit;
@@ -17,8 +19,9 @@ void onShake(MicroBitEvent) { driver->onSmoke(); }
 
 }  // namespace
 
-InputDriver::InputDriver(hytte::Cabin& cabin, hytte::MonitoringSystem& system, OutputDriver& output, SerialLink& serial)
-    : cabin_(cabin), system_(system), output_(output), serial_(serial)
+InputDriver::InputDriver(hytte::Cabin& cabin, hytte::MonitoringSystem& system, hytte::HytteOwner& owner,
+                         const hytte::IncidentHistory& history, OutputDriver& output, SerialLink& serial)
+    : cabin_(cabin), system_(system), owner_(owner), history_(history), output_(output), serial_(serial)
 {
 }
 
@@ -39,7 +42,7 @@ void InputDriver::onDoor()
     output_.show(true);
     unsigned long elapsed = system_timer_current_time_us() - start;
     serial_.sendEvent("door", cabin_);
-    serial_.sendHistory();
+    serial_.sendIncidentChanges();
     serial_.sendLatency("door", elapsed);
 }
 
@@ -50,7 +53,7 @@ void InputDriver::onSmoke()
     output_.show(true);
     unsigned long elapsed = system_timer_current_time_us() - start;
     serial_.sendEvent("smoke", cabin_);
-    serial_.sendHistory();
+    serial_.sendIncidentChanges();
     serial_.sendLatency("smoke", elapsed);
 }
 
@@ -64,6 +67,24 @@ void InputDriver::onModeChange()
     serial_.sendMode(cabin_);
 }
 
-void InputDriver::onResolve() { serial_.sendNote("resolve is not possible through the model yet (finding F15)"); }
+// The owner resolves the newest Incident that is still active (Team Guide §8, F15).
+void InputDriver::onResolve()
+{
+    std::vector<hytte::Incident> incidents = history_.viewHistory();
+    for (auto it = incidents.rbegin(); it != incidents.rend(); ++it)
+    {
+        if (it->state() == hytte::Incident::State::Warning || it->state() == hytte::Incident::State::Critical)
+        {
+            unsigned long start = system_timer_current_time_us();
+            owner_.resolveIncident(it->getId());
+            output_.showResolved();
+            unsigned long elapsed = system_timer_current_time_us() - start;
+            serial_.sendIncidentChanges();
+            serial_.sendLatency("resolve", elapsed);
+            return;
+        }
+    }
+    serial_.sendNote("no active Incident to resolve");
+}
 
 }  // namespace io

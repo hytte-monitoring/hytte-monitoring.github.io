@@ -7,6 +7,8 @@
 #include <string>
 #include <vector>
 
+#include "hytte/hytte_owner.hpp"
+
 using hytte::Cabin;
 using hytte::MonitoringMode;
 using hytte::MonitoringSystem;
@@ -120,12 +122,32 @@ void historyKeepsTheLatestIncidents()
     }
     std::vector<hytte::Incident> incidents = history.viewHistory();
     CHECK(incidents.size() == 20);
-    CHECK(TestAccess::id(incidents.front()) != TestAccess::id(incidents.back()));
-    std::string firstKept = TestAccess::id(incidents.front());
+    CHECK(incidents.front().getId() != incidents.back().getId());
+    std::string firstKept = incidents.front().getId();
     history.registerIncident(hytte::Severity::CRITICAL);
     CHECK(TestAccess::incidentCount(history) == 20);
-    CHECK(TestAccess::id(history.viewHistory().front()) != firstKept);
+    CHECK(history.viewHistory().front().getId() != firstKept);
     CHECK(history.viewHistory().back().state() == hytte::Incident::State::Critical);
+}
+
+// Team Guide §8 (F15): the owner resolves an Incident by its id; it is closed, and the
+// other Incidents are left alone. An unknown id does nothing.
+void ownerResolvesAnIncidentById()
+{
+    hytte::IncidentHistory history;
+    hytte::HytteOwner owner("u1", "Owner", history);
+    history.registerIncident(hytte::Severity::WARNING);
+    history.registerIncident(hytte::Severity::CRITICAL);
+    std::vector<hytte::Incident> before = history.viewHistory();
+
+    owner.resolveIncident(before[1].getId());
+    std::vector<hytte::Incident> after = history.viewHistory();
+    CHECK(after[1].state() == hytte::Incident::State::Closed);
+    CHECK(after[0].state() == hytte::Incident::State::Warning);
+
+    owner.resolveIncident("no-such-id");
+    CHECK(history.viewHistory()[0].state() == hytte::Incident::State::Warning);
+    CHECK(history.findIncident("no-such-id") == nullptr);
 }
 
 // ADR-002: battery backup on power failure, Cellular/SIM on Internet failure,
@@ -165,6 +187,7 @@ int main()
     doorInAwayRegistersAnIncident();
     smokeRegistersAnIncident();
     historyKeepsTheLatestIncidents();
+    ownerResolvesAnIncidentById();
     resilientMonitoringSwitchesAndRestores();
     return test::finish("test_system_operation");
 }

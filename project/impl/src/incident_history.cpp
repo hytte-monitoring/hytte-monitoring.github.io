@@ -47,4 +47,17 @@ std::vector<Incident> IncidentHistory::viewHistory() const
     return copies;
 }
 
+// The live Incident with this id, or nullptr if it is not on the board (any more, D25).
+Incident* IncidentHistory::findIncident(const std::string& incidentId)
+{
+    for (const std::unique_ptr<Incident>& incident : incidents_)
+    {
+        if (incident->getId() == incidentId)
+        {
+            return incident.get();
+        }
+    }
+    return nullptr;
+}
+
 }  // namespace hytte

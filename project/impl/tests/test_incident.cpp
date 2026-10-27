@@ -39,7 +39,7 @@ void newToWarning()
     Incident incident = incidentIn(State::New);
     incident.handle(Event::warningDetected);
     CHECK(incident.state() == State::Warning);
-    CHECK(TestAccess::severity(incident) == Severity::WARNING);
+    CHECK(incident.getSeverity() == Severity::WARNING);
 }
 
 void newToCritical()
@@ -47,7 +47,7 @@ void newToCritical()
     Incident incident("I-1", "2026-10-27T12:00", Severity::CRITICAL);
     incident.handle(Event::criticalDetected);
     CHECK(incident.state() == State::Critical);
-    CHECK(TestAccess::severity(incident) == Severity::CRITICAL);
+    CHECK(incident.getSeverity() == Severity::CRITICAL);
 }
 
 // Team Guide §7: the SAME Incident is upgraded; no new Incident is created.
@@ -56,8 +56,8 @@ void warningUpgradesSameIncidentToCritical()
     Incident incident = incidentIn(State::Warning);
     incident.handle(Event::conditionWorsens);
     CHECK(incident.state() == State::Critical);
-    CHECK(TestAccess::severity(incident) == Severity::CRITICAL);
-    CHECK(TestAccess::id(incident) == "I-1");
+    CHECK(incident.getSeverity() == Severity::CRITICAL);
+    CHECK(incident.getId() == "I-1");
     CHECK(TestAccess::status(incident) == IncidentStatus::Active);
 }
 
@@ -92,7 +92,7 @@ void warningIgnoresEmergencyEscalation()
         Incident incident = incidentIn(State::Warning);
         incident.handle(event);
         CHECK(incident.state() == State::Warning);
-        CHECK(TestAccess::severity(incident) == Severity::WARNING);
+        CHECK(incident.getSeverity() == Severity::WARNING);
     }
 }
 

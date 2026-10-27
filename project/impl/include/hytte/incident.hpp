@@ -29,6 +29,8 @@ public:
 
     void handle(Event event);
     State state() const;
+    std::string getId() const;
+    Severity getSeverity() const;
 
 private:
     friend struct TestAccess;   // lets the unit tests read private state; not a UML element
