@@ -165,19 +165,6 @@ kbd {
 }
 .two { margin-top: 18px; }
 
-.info-grid { display: grid; gap: 32px; }
-.info-grid img {
-    width: 120px;
-    height: 120px;
-    object-fit: cover;
-    border-radius: 14px;
-    background: #fff;
-    border: 1px solid var(--line);
-    padding: 14px;
-    margin-bottom: 14px;
-}
-.info-grid p { margin: 0; color: var(--muted); font-size: 0.95rem; }
-
 .table-wrap { overflow-x: auto; border: 1px solid var(--line); border-radius: 12px; background: var(--card); }
 table { width: 100%; border-collapse: collapse; font-size: 0.93rem; }
 th, td { text-align: left; vertical-align: top; padding: 10px 12px; border-bottom: 1px solid var(--line); }
@@ -231,7 +218,6 @@ footer {
         color: var(--accent);
         font-weight: 700;
     }
-    .info-grid { grid-template-columns: repeat(3, 1fr); }
 }
 
 @media (max-width: 720px) {
