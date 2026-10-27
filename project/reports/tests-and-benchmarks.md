@@ -16,7 +16,7 @@ cmake -S . -B build-release -DCMAKE_BUILD_TYPE=Release && cmake --build build-re
   MonitoringSystem each declare `friend struct TestAccess;` for this. The
   verifier ignores friend declarations.
 
-**Result: 3/3 suites, 67/67 checks passed** (FoM point 9; earlier points had 27, 51, 55 and 63). The tests now read id and severity through the model's getters (F16), not `TestAccess`.
+**Result: 3/3 suites, 70/70 checks passed** (FoM point 10; earlier points had 27, 51, 55, 63 and 67). The tests now read id and severity through the model's getters (F16), not `TestAccess`.
 
 | Suite | What it checks | Model source | Checks |
 |-------|----------------|--------------|-------:|
@@ -27,6 +27,7 @@ cmake -S . -B build-release -DCMAKE_BUILD_TYPE=Release && cmake --build build-re
 | | Escalation events keep a Critical Incident Critical | State machine | 3 |
 | | A Warning ignores Emergency Service escalation | State machine (no arrow), Team Guide §11 | 4 |
 | | Events with no arrow are ignored, including every event after `Closed` | State machine | 3 |
+| | The guard `contactsConfigured` is true only while a contact exists | State machine guard, Team Guide §10 (team decision on D09) | 3 |
 | `test_cabin_and_sensor` | Cabin starts HOME; `changeMode()` switches HOME ⇄ AWAY | Class diagram, Team Guide §6 (D07) | 3 |
 | | `monitor()` asks an enabled sensor to detect its condition | Class diagram, Team Guide §4 (D08) | 1 |
 | `test_system_operation` | Cabin starts in `Awaiting`; owner chooses AWAY, then HOME, and `mode` follows | `state-cabin`, Team Guide §6 (D16) | 5 |
@@ -243,7 +244,7 @@ about 10 Incidents stored, and 27 µs with none.
 
 - **Browser:** Mozilla's Firefox 159.0 (WebSerial since 151), in a separate
   profile. Ubuntu's snap Firefox and VS Code's preview cannot reach the
-  serial port (WORKFLOW Steps 31, 36).
+  serial port.
 - **Result, reported by the user:** the dashboard connected to the
   micro:bit and worked.
 - **Stored data:** read straight from Firefox's IndexedDB SQLite file in the

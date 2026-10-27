@@ -4,7 +4,8 @@ and the same image to website/img/fom.png for the project page.
     python3 project/reports/plot_fom.py
 
 Three panels on one x-axis (the FoM points), because the measures have different scales
-and a chart never gets two y-axes: verifier alignment in %, open deviations, and unit-test
+and a chart never gets two y-axes: verifier alignment in %, unclear points in the design
+(settled by the Team Guide vs. AI assumptions still open for the team), and unit-test
 checks passed. Colours are the first three slots of the reference palette of the dataviz
 method (blue, orange, aqua), in a fixed order.
 """
@@ -23,6 +24,7 @@ TEXT = "#0b0b0b"
 TEXT_SECONDARY = "#52514e"
 GRID = "#e6e5e1"
 BLUE, ORANGE, AQUA = "#2a78d6", "#eb6834", "#1baf7a"
+VIOLET = "#6250d6"   # slot 7 of the reference palette: open AI assumptions
 
 # Short names for the x-axis, one per point (the full labels are in fom.csv).
 SHORT = {
@@ -35,6 +37,7 @@ SHORT = {
     "7": "History owns",
     "8": "severity, limit",
     "9": "getters, resolve",
+    "10": "team review",
 }
 
 
@@ -75,7 +78,11 @@ def main():
     state_pct = [min(v for v in (number(p["state_incident_pct"]), number(p["state_cabin_pct"]),
                                  number(p["state_monitoring_system_pct"])) if v is not None)
                  for p in points]
-    deviations = [number(p["deviations"]) for p in points]
+    settled = [number(p["deviations_team_guide"]) for p in points]
+    # AI assumptions the team has reviewed and decided: the rest of all deviations.
+    decided = [number(p["deviations"]) - number(p["deviations_team_guide"]) - number(p["deviations_ai_open"])
+               for p in points]
+    ai_open = [number(p["deviations_ai_open"]) for p in points]
     tests = [number(p["tests_passed"].split("/")[0]) if p["tests_passed"] else None for p in points]
 
     figure, (top, middle, bottom) = plt.subplots(
@@ -99,11 +106,17 @@ def main():
         top.annotate(f"{y:.1f} %", (x, y), xytext=(0, -16), textcoords="offset points",
                      ha="center", color=TEXT_SECONDARY, fontsize=8)
 
-    style(middle, "Open deviations (unclear UML resolved by Team Guide or AI assumption)")
-    last_x, last_y = line(middle, xs, deviations, TEXT_SECONDARY, "Deviations")
-    middle.annotate(f"{last_y:.0f}", (last_x, last_y), xytext=(10, -4), textcoords="offset points",
-                    color=TEXT, fontsize=9)
-    middle.set_ylim(0, 30)
+    # An AI assumption is not a resolution: it stays open until the team confirms it (CLAUDE.md).
+    style(middle, "Unclear points in the design: settled by the Team Guide, AI assumptions decided by the team, or still open")
+    # The end values of the first two are close together, so one label goes below its line.
+    for ys, color, name, dy in ((settled, TEXT_SECONDARY, "Settled by the Team Guide", -12),
+                                (decided, AQUA, "AI assumption, decided by the team", 4),
+                                (ai_open, VIOLET, "AI assumption, open for the team", 4)):
+        last_x, last_y = line(middle, xs, ys, color, name)
+        middle.annotate(f"{last_y:.0f}", (last_x, last_y), xytext=(10, dy), textcoords="offset points",
+                        color=TEXT, fontsize=9)
+    middle.legend(loc="upper left", frameon=False, fontsize=9, labelcolor=TEXT, ncol=3, handlelength=3.2)
+    middle.set_ylim(0, 20)
 
     style(bottom, "Unit-test checks passed (all passing)")
     last_x, last_y = line(bottom, xs, tests, TEXT_SECONDARY, "Checks")
@@ -112,10 +125,10 @@ def main():
     bottom.set_ylim(0, 80)
     bottom.set_xticks(xs)
     bottom.set_xticklabels([f"{x}\n{SHORT[str(x)]}" for x in xs], fontsize=8, color=TEXT_SECONDARY)
-    bottom.set_xlim(0.6, 9.9)
+    bottom.set_xlim(0.6, xs[-1] + 0.9)
     bottom.set_xlabel("Figure of Merit point (one per iteration, 2026-10-27)", color=TEXT_SECONDARY, fontsize=9)
 
-    figure.suptitle("Hytte Monitoring – Figure of Merit over 9 iterations", x=0.01, ha="left",
+    figure.suptitle(f"Hytte Monitoring – Figure of Merit over {len(points)} iterations", x=0.01, ha="left",
                     fontsize=14, color=TEXT, fontweight="bold")
     figure.tight_layout(rect=(0, 0, 1, 0.96))
     # One copy for the reports, one for the project page of the website.
