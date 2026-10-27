@@ -16,6 +16,7 @@ Remote cabin monitoring mock-up developed using UML-based, specification-driven 
 - `website/dashboard/` — WebSerial dashboard and browser database
 
 ## Credits
-The UML verifier (`tools/`, `requirements.txt`), the worked `examples/`, `AGENTS.md` and the VS Code tasks in `.vscode/`
+The UML verifier (`tools/`, `requirements.txt`), the worked `examples/`, `AGENTS.md`, the VS Code tasks in `.vscode/`
+and the firmware build (`firmware/build.sh`, `firmware/codal.json`, adapted)
 are copied from [aiunderstand/ModelDrivenDesign_ex2](https://github.com/aiunderstand/ModelDrivenDesign_ex2)
 (commit `d439b1a`), the course template for assignment 2.

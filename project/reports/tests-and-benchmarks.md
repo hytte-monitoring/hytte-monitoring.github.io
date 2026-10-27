@@ -102,3 +102,21 @@ The model's logic takes nanoseconds on the PC. On the micro:bit (64 MHz
 Cortex-M4), the time from button to LED will be dominated by input
 polling and the LED refresh, not the model. That, and the firmware size,
 are measured in Phase 4.
+
+## Firmware (Phase 4, micro:bit v2)
+
+- Arm GNU toolchain 13.3.rel1, CODAL v0.3.0, codal-microbit-v2 v0.3.5,
+  `-std=c++11`.
+- The build has no warnings in our code. The only warning is CODAL's linker
+  note about an RWX segment.
+
+| Measure | Bytes | Note |
+|---------|------:|------|
+| Application code (`.text`) | 108 864 | of 512 KB flash; the SoftDevice (107 520) and bootloader (25 580) take their own space |
+| Model (`hytte::` symbols) | **4 652** | all 18 classes, 3 transition tables, the history |
+| Board code (`io::` symbols) | **4 124** | input, output and serial drivers |
+| Static RAM (`.bss`) | 7 432 | of 128 KB RAM; the heap gets the rest (112 888) |
+
+**On-board latency** (button → model → LED redraw): the board measures it
+itself with `system_timer_current_time_us()` and sends it as a `latency`
+line. **Pending:** someone must press the buttons. See plan Phase 4.

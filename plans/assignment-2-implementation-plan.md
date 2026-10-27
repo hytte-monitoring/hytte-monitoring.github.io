@@ -137,13 +137,16 @@ that they test the model, not the implementation's own guesses.
   the team converts that page or adds the rule, or the firmware wiring
   holds it, which is a deviation.
 
-- [ ] Set up the micro:bit build (CODAL, as in the course template's
-      `demos/microbit-library/firmware`).
-- [ ] Compile `project/impl` unchanged, and add `io/input_driver`,
-      `io/output_driver` and `io/serial_link` (spec §4).
-- [ ] Flash, and check each row of the spec §3 tables on the board.
-- [ ] On-board benchmark: button press to LED, and firmware size.
-- [ ] Re-verify: alignment must not drop because of firmware needs.
+- [x] Set up the micro:bit build (CODAL, as in the course template's
+      `demos/microbit-library/firmware`): `firmware/build.sh`.
+- [x] Compile `project/impl` unchanged (plus the C++11 table definitions),
+      and add `io/input_driver`, `io/output_driver` and `io/serial_link` (spec §4).
+- [x] Flash: the board starts and sends `hello` and `mode NONE`.
+- [ ] **Team:** press A, shake, A+B on the board and check the LEDs (spec §3).
+      Button B is blocked by F15.
+- [x] Firmware size: model 4.6 KB, board code 4.1 KB (`project/reports/tests-and-benchmarks.md`).
+- [ ] On-board latency: read the `latency` lines while pressing the buttons.
+- [x] Re-verify: alignment unchanged (class 76.7 %, sequence 83.3 %, states 100 %).
 
 👁 **Gate 4:** the team tries every input on the board.
 
