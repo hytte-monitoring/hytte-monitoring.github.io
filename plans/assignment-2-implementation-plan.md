@@ -104,6 +104,29 @@ that they test the model, not the implementation's own guesses.
 
 ## Phase 4 – Firmware on the micro:bit
 
+**Prerequisites (checked 2026-10-27, WORKFLOW Step 19):**
+
+| Need | Status |
+|------|--------|
+| micro:bit v2 on USB | ✅ DAPLink v0257, ID starts `9906` (V2), drive `/media/mar/MICROBIT`, serial `/dev/ttyACM0` |
+| Serial port access | ✅ the user is in the `dialout` group |
+| git, python3, cmake, make, curl | ✅ |
+| ninja | ❌ optional: CODAL falls back to make (`sudo apt install ninja-build` makes builds faster) |
+| Arm GNU toolchain (`arm-none-eabi-gcc`) | ❌ the template's `build.sh` downloads 13.3.rel1 (~130 MB) into `firmware/.build/`; no sudo needed |
+| CODAL (microbit-v2-samples v0.3.0, codal-microbit-v2 v0.3.5) | ❌ cloned and fetched from GitHub on the first build |
+| C++11 compatibility (CODAL compiles with `-std=c++11`) | ⚠️ tested with `g++ -std=c++11 -fno-exceptions -fno-rtti`: everything compiles, but linking fails on `Incident::transitions`. Fix: one out-of-class definition in `src/incident.cpp` (src only, not compared by the verifier) |
+| Chrome or Edge for WebSerial (Phase 5) | ❌ only Firefox is installed |
+
+**Model gaps that block a model-only firmware (team decision, Gate 0 and 2):**
+- The firmware must show the Incident state on the LEDs, but Incident has no
+  getter in the class diagram. Either the team adds `state()` to Incident,
+  as `examples/3-state-simple` does, or the firmware tracks the state itself
+  (as the template's demo does).
+- Button A = a door in AWAY → Warning: no class in the model combines the
+  mode with the door event (System Operation page not converted). Either
+  the team converts that page or adds the rule, or the firmware wiring
+  holds it, which is a deviation.
+
 - [ ] Set up the micro:bit build (CODAL, as in the course template's
       `demos/microbit-library/firmware`).
 - [ ] Compile `project/impl` unchanged, and add `io/input_driver`,
