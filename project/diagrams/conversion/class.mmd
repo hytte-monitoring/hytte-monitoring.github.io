@@ -24,7 +24,7 @@ classDiagram
         -bool onBatteryBackup
         -bool cellularFallback
         +evaluateEvent() void
-        +createIncident() void
+        +createIncident(Severity severity) void
         +escalateIncident() void
     }
 
@@ -87,9 +87,10 @@ classDiagram
     }
 
     class IncidentHistory {
-        +registerIncident() void
+        -size_t maxIncidents
+        +registerIncident(Severity severity) void
         +updateIncident() void
-        +viewHistory() void
+        +viewHistory() vector~Incident~
     }
 
     class EmergencyContact {

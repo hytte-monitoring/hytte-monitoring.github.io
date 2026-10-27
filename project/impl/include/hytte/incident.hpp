@@ -22,7 +22,7 @@ public:
         ownerResolved,
     };
 
-    Incident(std::string incidentId, std::string timestamp);
+    Incident(std::string incidentId, std::string timestamp, Severity severity);
 
     void upgradeToCritical();
     void resolve();

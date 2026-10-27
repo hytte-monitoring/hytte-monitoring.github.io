@@ -14,7 +14,8 @@ namespace {
 
 Incident incidentIn(State target)
 {
-    Incident incident("I-1", "2026-10-27T12:00");
+    Severity severity = target == State::Critical ? Severity::CRITICAL : Severity::WARNING;
+    Incident incident("I-1", "2026-10-27T12:00", severity);
     if (target == State::Warning)
     {
         incident.handle(Event::warningDetected);
@@ -28,7 +29,7 @@ Incident incidentIn(State target)
 
 void startsInNew()
 {
-    Incident incident("I-1", "2026-10-27T12:00");
+    Incident incident("I-1", "2026-10-27T12:00", Severity::WARNING);
     CHECK(incident.state() == State::New);
     CHECK(TestAccess::status(incident) == IncidentStatus::Active);
 }
@@ -43,9 +44,10 @@ void newToWarning()
 
 void newToCritical()
 {
-    Incident incident = incidentIn(State::New);
+    Incident incident("I-1", "2026-10-27T12:00", Severity::CRITICAL);
     incident.handle(Event::criticalDetected);
     CHECK(incident.state() == State::Critical);
+    CHECK(TestAccess::severity(incident) == Severity::CRITICAL);
 }
 
 // Team Guide §7: the SAME Incident is upgraded; no new Incident is created.

@@ -87,9 +87,10 @@ classDiagram
     }
 
     class IncidentHistory {
-        +registerIncident() void
+        -size_t maxIncidents
+        +registerIncident(Severity severity) void
         +updateIncident() void
-        +viewHistory() void
+        +viewHistory() vector~Incident~
     }
 
     class IndoorTemperatureSensor {
@@ -103,7 +104,7 @@ classDiagram
         -bool cellularFallback
         -State state
         +evaluateEvent() void
-        +createIncident() void
+        +createIncident(Severity severity) void
         +escalateIncident() void
         +handle(Event event) void
         -useBatteryBackup() void

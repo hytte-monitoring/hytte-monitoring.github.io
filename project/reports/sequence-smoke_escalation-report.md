@@ -11,17 +11,17 @@
 
 ## Overview
 
-**Alignment: 100.0 %** — 10 of the 10 elements that appear in either diagram are identical in both.
+**Alignment: 83.3 %** — 10 of the 12 elements that appear in either diagram are identical in both.
 
 | | Lifelines | Messages | **Total** |
 |---|--:|--:|--:|
 | In design | 4 | 6 | **10** |
-| In implemented design | 4 | 6 | **10** |
+| In implemented design | 5 | 7 | **12** |
 | ✅ Identical | 4 | 6 | **10** |
 | ✏️ Changed | 0 | 0 | **0** |
 | ➖ Missing | 0 | 0 | **0** |
-| ➕ Extra | 0 | 0 | **0** |
-| **Alignment** | 100.0 % | 100.0 % | **100.0 %** |
+| ➕ Extra | 1 | 1 | **2** |
+| **Alignment** | 80.0 % | 85.7 % | **83.3 %** |
 
 ### What the numbers mean
 
@@ -47,9 +47,18 @@ _None._
 
 _None._
 
-### ➕ Extra (0)
+### ➕ Extra (2)
 
-_None._
+| Element | As found in the implementation |
+|---|---|
+| lifeline `Incident` | `participant Incident` |
+| message `IncidentHistory → Incident : handle()` | `IncidentHistory ->> Incident : handle()` |
+
+### Not counted
+
+Calls a class makes to itself that the design does not draw. A sequence diagram shows the collaboration between objects; a class's private helpers are its own business unless the design draws them.
+
+- message `Incident ->> Incident : notifyOwner()`
 
 ---
 

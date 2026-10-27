@@ -8,6 +8,7 @@
 #include "hytte/incident.hpp"
 #include "hytte/incident_history.hpp"
 #include "hytte/sensor.hpp"
+#include "hytte/severity.hpp"
 
 namespace hytte {
 
@@ -25,7 +26,7 @@ public:
     MonitoringSystem& operator=(const MonitoringSystem&) = delete;
 
     void evaluateEvent();
-    void createIncident();
+    void createIncident(Severity severity);
     void escalateIncident();
     void handle(Event event);
 

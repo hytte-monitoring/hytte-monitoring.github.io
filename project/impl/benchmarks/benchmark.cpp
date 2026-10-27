@@ -34,7 +34,7 @@ int main()
 
     // One full Incident lifecycle: New -> Warning -> Critical -> Closed (3 transitions).
     double lifecycle = nanosecondsPerRun([] {
-        hytte::Incident incident("I-1", "2026-10-27T12:00");
+        hytte::Incident incident("I-1", "2026-10-27T12:00", hytte::Severity::WARNING);
         incident.handle(Event::warningDetected);
         incident.handle(Event::conditionWorsens);
         incident.handle(Event::ownerResolved);

@@ -49,7 +49,7 @@ void Cabin::reportSecurityWarning()
 {
     if (system_ != nullptr)
     {
-        system_->createIncident();
+        system_->createIncident(Severity::WARNING);
     }
 }
 

@@ -16,7 +16,7 @@ int main()
     hytte::MonitoringSystem system(cabin, history, {contact});
     system.evaluateEvent();
 
-    hytte::Incident incident("I-1", "2026-10-27T12:00");
+    hytte::Incident incident("I-1", "2026-10-27T12:00", hytte::Severity::WARNING);
     for (Event event : {Event::warningDetected, Event::conditionWorsens, Event::ownerResolved})
     {
         incident.handle(event);

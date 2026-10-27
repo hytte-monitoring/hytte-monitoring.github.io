@@ -20,11 +20,11 @@ void MonitoringSystem::evaluateEvent()
             s->monitor();
         }
     }
-    createIncident();
+    createIncident(Severity::CRITICAL);
     escalateIncident();
 }
 
-void MonitoringSystem::createIncident() { history_->registerIncident(); }
+void MonitoringSystem::createIncident(Severity severity) { history_->registerIncident(severity); }
 
 // The owner did not respond in time, so the contacts are notified (Team Guide §12).
 void MonitoringSystem::escalateIncident()

@@ -4,6 +4,8 @@
 #include "test_access.hpp"
 
 #include <memory>
+#include <string>
+#include <vector>
 
 using hytte::Cabin;
 using hytte::MonitoringMode;
@@ -87,6 +89,9 @@ void doorInAwayRegistersAnIncident()
     cabin.handle(Cabin::Event::ownerSelectsAway);
     cabin.handle(Cabin::Event::doorOpened);
     CHECK(TestAccess::incidentCount(history) == 1);
+    // F11: a door Incident is a Warning.
+    std::vector<hytte::Incident> incidents = history.viewHistory();
+    CHECK(incidents.size() == 1 && incidents[0].state() == hytte::Incident::State::Warning);
     cabin.handle(Cabin::Event::motionDetected);
     CHECK(TestAccess::incidentCount(history) == 2);
 }
@@ -99,6 +104,28 @@ void smokeRegistersAnIncident()
     MonitoringSystem system(cabin, history, {});
     system.evaluateEvent();
     CHECK(TestAccess::incidentCount(history) == 1);
+    // F11: a smoke Incident is Critical.
+    std::vector<hytte::Incident> incidents = history.viewHistory();
+    CHECK(incidents.size() == 1 && incidents[0].state() == hytte::Incident::State::Critical);
+}
+
+// F13: the board keeps at most 20 Incidents; when full, the oldest closed one goes first,
+// and ids are never reused.
+void historyKeepsTheLatestIncidents()
+{
+    hytte::IncidentHistory history;
+    for (int i = 0; i < 25; ++i)
+    {
+        history.registerIncident(hytte::Severity::WARNING);
+    }
+    std::vector<hytte::Incident> incidents = history.viewHistory();
+    CHECK(incidents.size() == 20);
+    CHECK(TestAccess::id(incidents.front()) != TestAccess::id(incidents.back()));
+    std::string firstKept = TestAccess::id(incidents.front());
+    history.registerIncident(hytte::Severity::CRITICAL);
+    CHECK(TestAccess::incidentCount(history) == 20);
+    CHECK(TestAccess::id(history.viewHistory().front()) != firstKept);
+    CHECK(history.viewHistory().back().state() == hytte::Incident::State::Critical);
 }
 
 // ADR-002: battery backup on power failure, Cellular/SIM on Internet failure,
@@ -137,6 +164,7 @@ int main()
     doorAndMotionAreOnlyHandledInAway();
     doorInAwayRegistersAnIncident();
     smokeRegistersAnIncident();
+    historyKeepsTheLatestIncidents();
     resilientMonitoringSwitchesAndRestores();
     return test::finish("test_system_operation");
 }

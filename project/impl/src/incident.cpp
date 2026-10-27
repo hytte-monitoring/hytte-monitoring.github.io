@@ -4,8 +4,8 @@
 
 namespace hytte {
 
-Incident::Incident(std::string incidentId, std::string timestamp)
-    : incidentId_(std::move(incidentId)), timestamp_(std::move(timestamp))
+Incident::Incident(std::string incidentId, std::string timestamp, Severity severity)
+    : incidentId_(std::move(incidentId)), severity_(severity), timestamp_(std::move(timestamp))
 {
 }
 

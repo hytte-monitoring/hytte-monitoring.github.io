@@ -5,10 +5,13 @@ sequenceDiagram
     participant SmokeSensor
     participant MonitoringSystem
     participant IncidentHistory
+    participant Incident
     participant EmergencyContact
     SmokeSensor->>MonitoringSystem: evaluateEvent()
     MonitoringSystem->>MonitoringSystem: createIncident()
     MonitoringSystem->>IncidentHistory: registerIncident()
+    IncidentHistory->>Incident: handle()
+    Incident->>Incident: notifyOwner()
     MonitoringSystem->>MonitoringSystem: escalateIncident()
     MonitoringSystem->>EmergencyContact: receiveNotification()
     MonitoringSystem->>IncidentHistory: updateIncident()
