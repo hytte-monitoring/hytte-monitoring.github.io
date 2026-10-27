@@ -20,6 +20,8 @@ public:
     void sendLatency(const char* input, unsigned long microseconds);
     void sendNote(const char* message);
     void sendDisplay(const char* pattern);
+    // Board sensor values for display only (io/sensor_reader); not part of the model.
+    void sendReading(int temperature, bool wet, int sound);
     // Sends one `incident` line for every Incident that is new or has changed since the
     // last call, with its id, severity and state (spec §5, F16).
     void sendIncidentChanges();

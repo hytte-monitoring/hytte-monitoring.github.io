@@ -40,6 +40,15 @@ function drawMatrix(pattern) {
     matrix.dataset.pattern = pattern;
 }
 
+// ---------------------------------------------------------------- live sensor readings
+
+function drawReading({ temperature, wet, sound }) {
+    $("temperature").textContent = `${temperature} °C`;
+    $("wet").textContent = wet ? "Wet (logo touched)" : "Dry";
+    $("wet").dataset.state = wet ? "wet" : "dry";
+    $("sound").textContent = `${sound} dB`;
+}
+
 // ---------------------------------------------------------------- drawing the stored data
 
 const time = (ms) => (ms == null ? "—" : new Date(ms).toLocaleTimeString());
@@ -102,7 +111,7 @@ async function drawAll() {
 
 // The line types our firmware sends (firmware/README.md). Any of them proves the board runs
 // Hytte, even if its "hello" was sent a moment before the browser started reading.
-const HYTTE_TYPES = new Set(["hello", "mode", "display", "event", "incident", "latency", "note"]);
+const HYTTE_TYPES = new Set(["hello", "mode", "display", "event", "incident", "latency", "note", "reading"]);
 
 board.addEventListener("message", async ({ detail: message }) => {
     $("last-line").textContent = JSON.stringify(message);
@@ -117,6 +126,10 @@ board.addEventListener("message", async ({ detail: message }) => {
     if (session == null) {
         session = await store.startSession("unknown");          // connected mid-run, no hello seen
         $("session").textContent = `#${session}`;
+    }
+    if (message.type === "reading") {
+        drawReading(message);   // display only: sensor readings are not stored
+        return;
     }
     if (message.type === "mode") $("mode").textContent = message.mode;
     if (message.type === "display") drawMatrix(message.pattern);

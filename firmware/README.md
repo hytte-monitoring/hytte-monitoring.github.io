@@ -9,6 +9,7 @@ src/main.cpp              wiring only: creates the model objects and the drivers
 src/io/input_driver.*     buttons and shake -> model events
 src/io/output_driver.*    model state -> 5x5 LED matrix
 src/io/serial_link.*      model state -> JSON lines on USB serial (115200 baud)
+src/io/sensor_reader.*    extra board sensors, display only -> a reading line every 2 s
 build.sh                  builds MICROBIT.hex with CODAL; --flash copies it to the board
 codal.json                the CODAL target, pinned to codal-microbit-v2 v0.3.5
 ```
@@ -42,6 +43,7 @@ in [aiunderstand/ModelDrivenDesign_ex2](https://github.com/aiunderstand/ModelDri
 {"type":"event","sensor":"door","mode":"AWAY"}
 {"type":"incident","id":"I-3","severity":"WARNING","state":"Warning"}   sent when an Incident is new or changed
 {"type":"latency","input":"door","us":123}          model update + LED redraw, in microseconds (door, smoke, resolve)
+{"type":"reading","temperature":30,"wet":false,"sound":35}   every 2 s, display only (see below)
 {"type":"display","pattern":"A"}                    the LED pattern changed: ?, H, A, warning, critical, tick
 {"type":"note","message":"..."}
 ```
@@ -87,3 +89,16 @@ The website has an **Install firmware** page (`website/install/`, in the menu on
 
 Once published: https://hytte-monitoring.github.io/install/ (the site is
 only published from `main`).
+
+## Extra sensors (display only)
+
+`io/sensor_reader` sends three readings from the board every 2 seconds. They
+are **only shown** on the dashboard: they do not go through the model, never
+create Incidents, and are not stored in the database. The model and the
+Incident scenario are unchanged.
+
+| Board sensor | Shown as | Note |
+|--------------|----------|------|
+| `uBit.thermometer` | Indoor temperature, °C | The processor's own thermometer, so a few degrees above the room (30 °C at about room temperature) |
+| `uBit.logo` (touch) | Water leak: dry / wet | Touch the gold logo = wet |
+| `uBit.audio.levelSPL` | Sound level, dB | The microphone; its LED next to the logo stays on |

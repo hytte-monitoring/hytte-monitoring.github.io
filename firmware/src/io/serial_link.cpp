@@ -60,6 +60,14 @@ void SerialLink::sendDisplay(const char* pattern)
     send(line);
 }
 
+void SerialLink::sendReading(int temperature, bool wet, int sound)
+{
+    char line[96];
+    snprintf(line, sizeof line, "{\"type\":\"reading\",\"temperature\":%d,\"wet\":%s,\"sound\":%d}\n",
+             temperature, wet ? "true" : "false", sound);
+    send(line);
+}
+
 void SerialLink::sendIncidentChanges()
 {
     std::map<std::string, hytte::Incident::State> now;

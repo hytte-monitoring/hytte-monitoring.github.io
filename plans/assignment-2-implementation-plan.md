@@ -175,6 +175,8 @@ that they test the model, not the implementation's own guesses.
 - [x] Landing page rewritten as a **student project page**: what the site is for, how it works,
       designed vs. built (and why), how it was built, with the FoM chart.
 - [ ] **Team:** add your names in the footer of `website/index.html` (marked `TEAM:`).
+- [x] Extra board sensors for **display only** (temperature, touch logo, sound level) in a
+      Sensors panel. No model or Incident change, not stored.
 - [ ] **Team:** merge to `main` so GitHub Pages publishes it (only `main` is deployed).
 - [x] Tested with the board in Mozilla's Firefox 159 (WebSerial since 151): it connected and worked
       (user, 2026-10-27). The IndexedDB file shows 1 session, 5 Incidents in 5 rows (updated in

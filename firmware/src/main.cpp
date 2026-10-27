@@ -10,6 +10,7 @@
 #include "hytte/monitoring_system.hpp"
 #include "io/input_driver.hpp"
 #include "io/output_driver.hpp"
+#include "io/sensor_reader.hpp"
 #include "io/serial_link.hpp"
 
 MicroBit uBit;
@@ -23,8 +24,10 @@ hytte::HytteOwner* owner;
 io::OutputDriver* output;
 io::SerialLink* serial;
 io::InputDriver* input;
+io::SensorReader* sensors;
 
 void displayLoop() { output->run(); }
+void sensorLoop() { sensors->run(); }
 
 }  // namespace
 
@@ -41,6 +44,7 @@ int main()
 
     serial = new io::SerialLink(*history);
     output = new io::OutputDriver(*cabin, *history, *serial);
+    sensors = new io::SensorReader(*serial);
     input = new io::InputDriver(*cabin, *monitoringSystem, *owner, *history, *output, *serial);
 
     serial->sendHello();
@@ -48,5 +52,6 @@ int main()
     input->start();
 
     create_fiber(displayLoop);
+    create_fiber(sensorLoop);
     release_fiber();
 }

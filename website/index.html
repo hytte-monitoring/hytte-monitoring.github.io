@@ -70,6 +70,7 @@
                         <li><kbd>A</kbd> the door opens: a <b>Warning</b> in AWAY, ignored in HOME</li>
                         <li><kbd>shake</kbd> smoke: a <b>Critical</b> Incident in any mode</li>
                         <li><kbd>B</kbd> the owner marks the newest active Incident as resolved</li>
+                        <li><kbd>logo</kbd> touch the gold logo: "water leak" on the dashboard (display only)</li>
                     </ul>
                 </div>
                 <div class="card">
@@ -120,7 +121,10 @@
                     <tbody>
                         <tr><td>Sensors</td><td>8: smoke, indoor and outdoor temperature, water leak, door, motion,
                             power, Internet</td><td><span class="tag yes">2 on the board</span> button A is the door,
-                            shaking is smoke. The other 6 exist only in the software model</td></tr>
+                            shaking is smoke. The other 6 exist only in the software model.
+                            <span class="tag part">Display only</span> the board's thermometer, touch logo and
+                            microphone are shown live as indoor temperature, water leak and sound, without
+                            creating Incidents</td></tr>
                         <tr><td>HOME / AWAY</td><td>Door and motion only matter in AWAY</td><td><span class="tag yes">Works</span>
                             buttons A+B switch mode; the door is ignored in HOME</td></tr>
                         <tr><td>Incidents</td><td>Warning or Critical; a Warning can be upgraded to Critical as the same
