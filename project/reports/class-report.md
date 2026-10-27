@@ -11,17 +11,17 @@
 
 ## Overview
 
-**Alignment: 73.6 %** — 81 of the 110 elements that appear in either diagram are identical in both.
+**Alignment: 72.3 %** — 81 of the 112 elements that appear in either diagram are identical in both.
 
 | | Classes | Attributes | Methods | Relations | **Total** |
 |---|--:|--:|--:|--:|--:|
 | In design | 18 | 31 | 23 | 17 | **89** |
-| In implemented design | 18 | 39 | 36 | 9 | **102** |
+| In implemented design | 18 | 40 | 36 | 10 | **104** |
 | ✅ Identical | 18 | 31 | 23 | 9 | **81** |
 | ✏️ Changed | 0 | 0 | 0 | 0 | **0** |
 | ➖ Missing | 0 | 0 | 0 | 8 | **8** |
-| ➕ Extra | 0 | 8 | 13 | 0 | **21** |
-| **Alignment** | 100.0 % | 79.5 % | 63.9 % | 52.9 % | **73.6 %** |
+| ➕ Extra | 0 | 9 | 13 | 1 | **23** |
+| **Alignment** | 100.0 % | 77.5 % | 63.9 % | 50.0 % | **72.3 %** |
 
 ### What the numbers mean
 
@@ -56,7 +56,7 @@ _None._
 | relation `MonitoringSystem → Incident (incidents)` | `MonitoringSystem --> Incident : incidents` |
 | relation `MonitoringSystem → Sensor (sensors)` | `MonitoringSystem --> Sensor : sensors` |
 
-### ➕ Extra (21)
+### ➕ Extra (23)
 
 | Element | As found in the implementation |
 |---|---|
@@ -66,6 +66,7 @@ _None._
 | attribute `HytteOwner.incidents` | `-vector<Incident> incidents` |
 | attribute `Incident.state` | `-State state` |
 | attribute `IncidentHistory.incidents` | `-vector<Incident> incidents` |
+| attribute `MonitoringSystem.contacts` | `-vector<EmergencyContact> contacts` |
 | attribute `MonitoringSystem.incidents` | `-vector<Incident> incidents` |
 | attribute `MonitoringSystem.sensors` | `-vector<Sensor> sensors` |
 | method `ConnectionSensor.detectCondition()` | `+detectCondition() void` |
@@ -81,6 +82,7 @@ _None._
 | method `PowerSensor.detectCondition()` | `+detectCondition() void` |
 | method `SmokeSensor.detectCondition()` | `+detectCondition() void` |
 | method `WaterLeakSensor.detectCondition()` | `+detectCondition() void` |
+| relation `MonitoringSystem → IncidentHistory (history)` | `MonitoringSystem --> IncidentHistory : history` |
 
 ---
 

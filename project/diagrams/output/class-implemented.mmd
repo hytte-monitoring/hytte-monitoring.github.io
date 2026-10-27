@@ -101,6 +101,7 @@ classDiagram
         -bool cellularFallback
         -vector~Sensor~ sensors
         -vector~Incident~ incidents
+        -vector~EmergencyContact~ contacts
         +evaluateEvent() void
         +createIncident() void
         +escalateIncident() void
@@ -140,6 +141,7 @@ classDiagram
     Sensor <|-- DoorSensor
     Sensor <|-- IndoorTemperatureSensor
     MonitoringSystem --> "1" Cabin : cabin
+    MonitoringSystem --> "1" IncidentHistory : history
     Sensor <|-- MotionSensor
     Sensor <|-- OutdoorTemperatureSensor
     Sensor <|-- PowerSensor

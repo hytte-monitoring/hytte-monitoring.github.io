@@ -29,7 +29,7 @@ Notation changes forced by the verifier are not deviations. They are listed in
 | D07 | Implementation | `Cabin.changeMode()` takes no parameter, so the target mode is not given | Switches HOME ⇄ AWAY | Team Guide §6 |
 | D08 | Implementation | What `Sensor.monitor()` does is not specified | Detects the condition only while the sensor is enabled | Team Guide §4 |
 | D09 | Implementation | The guard `contactsConfigured` needs Incident to know the owner's contacts, but the class diagram gives Incident only a dependency on EmergencyContact | The guard returns `false` | AI assumption |
-| D10 | Implementation | What `MonitoringSystem.evaluateEvent()` does is not specified | Calls `monitor()` on every sensor | AI assumption |
+| D10 | Implementation | What `MonitoringSystem.evaluateEvent()` does is not specified | Calls `monitor()` on every sensor, then `createIncident()` and `escalateIncident()` as the sequence diagram shows. Every event is treated as Critical smoke (mock-up) | AI assumption |
 | D11 | Sequence diagram | The lifelines *Communication Service* and *Emergency Service* are not classes in the class diagram | Left out of the verified scenario. They are external systems, and the delivery they do is simulated | Team Guide §16, §17 |
 | D12 | Sequence diagram | The messages are prose, not method names | Each one mapped to a class diagram method (`evaluateEvent`, `createIncident`, `registerIncident`, `escalateIncident`, `receiveNotification`, `updateIncident`) | Team Guide §7, §9, §12 |
 | D13 | Sequence diagram | *Register* and *Update Incident/Event History* are drawn as MonitoringSystem self-messages, but the class diagram puts these methods on `IncidentHistory` | `IncidentHistory` lifeline added, and the calls go to it | Team Guide §9 |

@@ -734,182 +734,207 @@
           <mxGeometry y="86" width="210.0" height="26" as="geometry" />
         </mxCell>
         <mxCell id="implemented-c76" value="MonitoringSystem" style="swimlane;fontStyle=1;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;horizontalStack=0;resizeParent=1;resizeParentMax=0;html=1;whiteSpace=wrap;startSize=26;" vertex="1" parent="implemented-1">
-          <mxGeometry x="1210.0" y="250.0" width="240.0" height="216" as="geometry" />
+          <mxGeometry x="1210.0" y="250.0" width="276" height="242" as="geometry" />
         </mxCell>
         <mxCell id="implemented-m77" value="- onBatteryBackup: bool" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;rotatable=0;whiteSpace=wrap;html=1;" vertex="1" parent="implemented-c76">
-          <mxGeometry y="26" width="240.0" height="26" as="geometry" />
+          <mxGeometry y="26" width="276" height="26" as="geometry" />
         </mxCell>
         <mxCell id="implemented-m78" value="- cellularFallback: bool" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;rotatable=0;whiteSpace=wrap;html=1;" vertex="1" parent="implemented-c76">
-          <mxGeometry y="52" width="240.0" height="26" as="geometry" />
+          <mxGeometry y="52" width="276" height="26" as="geometry" />
         </mxCell>
         <UserObject id="implemented-m79" label="- sensors: vector&amp;lt;Sensor&amp;gt;" tooltip="EXTRA&#10;In the implementation, but not in the design.">
         <mxCell style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;rotatable=0;whiteSpace=wrap;html=1;fillColor=#d5e8d4;" vertex="1" parent="implemented-c76">
-          <mxGeometry y="78" width="240.0" height="26" as="geometry" />
+          <mxGeometry y="78" width="276" height="26" as="geometry" />
         </mxCell>
         </UserObject>
         <UserObject id="implemented-m80" label="- incidents: vector&amp;lt;Incident&amp;gt;" tooltip="EXTRA&#10;In the implementation, but not in the design.">
         <mxCell style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;rotatable=0;whiteSpace=wrap;html=1;fillColor=#d5e8d4;" vertex="1" parent="implemented-c76">
-          <mxGeometry y="104" width="240.0" height="26" as="geometry" />
+          <mxGeometry y="104" width="276" height="26" as="geometry" />
         </mxCell>
         </UserObject>
-        <mxCell id="implemented-d81" value="" style="line;strokeWidth=1;fillColor=none;align=left;verticalAlign=middle;spacingTop=-1;spacingLeft=3;spacingRight=3;rotatable=0;labelPosition=right;points=[];portConstraint=eastwest;" vertex="1" parent="implemented-c76">
-          <mxGeometry y="130" width="240.0" height="8" as="geometry" />
+        <UserObject id="implemented-m81" label="- contacts: vector&amp;lt;EmergencyContact&amp;gt;" tooltip="EXTRA&#10;In the implementation, but not in the design.">
+        <mxCell style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;rotatable=0;whiteSpace=wrap;html=1;fillColor=#d5e8d4;" vertex="1" parent="implemented-c76">
+          <mxGeometry y="130" width="276" height="26" as="geometry" />
         </mxCell>
-        <mxCell id="implemented-m82" value="+ evaluateEvent(): void" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;rotatable=0;whiteSpace=wrap;html=1;" vertex="1" parent="implemented-c76">
-          <mxGeometry y="138" width="240.0" height="26" as="geometry" />
+        </UserObject>
+        <mxCell id="implemented-d82" value="" style="line;strokeWidth=1;fillColor=none;align=left;verticalAlign=middle;spacingTop=-1;spacingLeft=3;spacingRight=3;rotatable=0;labelPosition=right;points=[];portConstraint=eastwest;" vertex="1" parent="implemented-c76">
+          <mxGeometry y="156" width="276" height="8" as="geometry" />
         </mxCell>
-        <mxCell id="implemented-m83" value="+ createIncident(): void" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;rotatable=0;whiteSpace=wrap;html=1;" vertex="1" parent="implemented-c76">
-          <mxGeometry y="164" width="240.0" height="26" as="geometry" />
+        <mxCell id="implemented-m83" value="+ evaluateEvent(): void" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;rotatable=0;whiteSpace=wrap;html=1;" vertex="1" parent="implemented-c76">
+          <mxGeometry y="164" width="276" height="26" as="geometry" />
         </mxCell>
-        <mxCell id="implemented-m84" value="+ escalateIncident(): void" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;rotatable=0;whiteSpace=wrap;html=1;" vertex="1" parent="implemented-c76">
-          <mxGeometry y="190" width="240.0" height="26" as="geometry" />
+        <mxCell id="implemented-m84" value="+ createIncident(): void" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;rotatable=0;whiteSpace=wrap;html=1;" vertex="1" parent="implemented-c76">
+          <mxGeometry y="190" width="276" height="26" as="geometry" />
         </mxCell>
-        <mxCell id="implemented-c85" value="MotionSensor" style="swimlane;fontStyle=1;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;horizontalStack=0;resizeParent=1;resizeParentMax=0;html=1;whiteSpace=wrap;startSize=26;" vertex="1" parent="implemented-1">
+        <mxCell id="implemented-m85" value="+ escalateIncident(): void" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;rotatable=0;whiteSpace=wrap;html=1;" vertex="1" parent="implemented-c76">
+          <mxGeometry y="216" width="276" height="26" as="geometry" />
+        </mxCell>
+        <mxCell id="implemented-c86" value="MotionSensor" style="swimlane;fontStyle=1;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;horizontalStack=0;resizeParent=1;resizeParentMax=0;html=1;whiteSpace=wrap;startSize=26;" vertex="1" parent="implemented-1">
           <mxGeometry x="1255.0" y="820.0" width="210.0" height="112" as="geometry" />
         </mxCell>
-        <mxCell id="implemented-m86" value="- motionDetected: bool" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;rotatable=0;whiteSpace=wrap;html=1;" vertex="1" parent="implemented-c85">
+        <mxCell id="implemented-m87" value="- motionDetected: bool" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;rotatable=0;whiteSpace=wrap;html=1;" vertex="1" parent="implemented-c86">
           <mxGeometry y="26" width="210.0" height="26" as="geometry" />
         </mxCell>
-        <mxCell id="implemented-d87" value="" style="line;strokeWidth=1;fillColor=none;align=left;verticalAlign=middle;spacingTop=-1;spacingLeft=3;spacingRight=3;rotatable=0;labelPosition=right;points=[];portConstraint=eastwest;" vertex="1" parent="implemented-c85">
+        <mxCell id="implemented-d88" value="" style="line;strokeWidth=1;fillColor=none;align=left;verticalAlign=middle;spacingTop=-1;spacingLeft=3;spacingRight=3;rotatable=0;labelPosition=right;points=[];portConstraint=eastwest;" vertex="1" parent="implemented-c86">
           <mxGeometry y="52" width="210.0" height="8" as="geometry" />
         </mxCell>
-        <UserObject id="implemented-m88" label="+ detectCondition(): void" tooltip="EXTRA&#10;In the implementation, but not in the design.">
-        <mxCell style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;rotatable=0;whiteSpace=wrap;html=1;fillColor=#d5e8d4;" vertex="1" parent="implemented-c85">
+        <UserObject id="implemented-m89" label="+ detectCondition(): void" tooltip="EXTRA&#10;In the implementation, but not in the design.">
+        <mxCell style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;rotatable=0;whiteSpace=wrap;html=1;fillColor=#d5e8d4;" vertex="1" parent="implemented-c86">
           <mxGeometry y="60" width="210.0" height="26" as="geometry" />
         </mxCell>
         </UserObject>
-        <mxCell id="implemented-m89" value="+ detectMotion(): void" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;rotatable=0;whiteSpace=wrap;html=1;" vertex="1" parent="implemented-c85">
+        <mxCell id="implemented-m90" value="+ detectMotion(): void" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;rotatable=0;whiteSpace=wrap;html=1;" vertex="1" parent="implemented-c86">
           <mxGeometry y="86" width="210.0" height="26" as="geometry" />
         </mxCell>
-        <mxCell id="implemented-c90" value="OutdoorTemperatureSensor" style="swimlane;fontStyle=1;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;horizontalStack=0;resizeParent=1;resizeParentMax=0;html=1;whiteSpace=wrap;startSize=26;" vertex="1" parent="implemented-1">
+        <mxCell id="implemented-c91" value="OutdoorTemperatureSensor" style="swimlane;fontStyle=1;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;horizontalStack=0;resizeParent=1;resizeParentMax=0;html=1;whiteSpace=wrap;startSize=26;" vertex="1" parent="implemented-1">
           <mxGeometry x="565.0" y="820.0" width="210.0" height="112" as="geometry" />
         </mxCell>
-        <mxCell id="implemented-m91" value="- temperature: float" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;rotatable=0;whiteSpace=wrap;html=1;" vertex="1" parent="implemented-c90">
+        <mxCell id="implemented-m92" value="- temperature: float" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;rotatable=0;whiteSpace=wrap;html=1;" vertex="1" parent="implemented-c91">
           <mxGeometry y="26" width="210.0" height="26" as="geometry" />
         </mxCell>
-        <mxCell id="implemented-d92" value="" style="line;strokeWidth=1;fillColor=none;align=left;verticalAlign=middle;spacingTop=-1;spacingLeft=3;spacingRight=3;rotatable=0;labelPosition=right;points=[];portConstraint=eastwest;" vertex="1" parent="implemented-c90">
+        <mxCell id="implemented-d93" value="" style="line;strokeWidth=1;fillColor=none;align=left;verticalAlign=middle;spacingTop=-1;spacingLeft=3;spacingRight=3;rotatable=0;labelPosition=right;points=[];portConstraint=eastwest;" vertex="1" parent="implemented-c91">
           <mxGeometry y="52" width="210.0" height="8" as="geometry" />
         </mxCell>
-        <UserObject id="implemented-m93" label="+ detectCondition(): void" tooltip="EXTRA&#10;In the implementation, but not in the design.">
-        <mxCell style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;rotatable=0;whiteSpace=wrap;html=1;fillColor=#d5e8d4;" vertex="1" parent="implemented-c90">
+        <UserObject id="implemented-m94" label="+ detectCondition(): void" tooltip="EXTRA&#10;In the implementation, but not in the design.">
+        <mxCell style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;rotatable=0;whiteSpace=wrap;html=1;fillColor=#d5e8d4;" vertex="1" parent="implemented-c91">
           <mxGeometry y="60" width="210.0" height="26" as="geometry" />
         </mxCell>
         </UserObject>
-        <mxCell id="implemented-m94" value="+ readTemperature(): void" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;rotatable=0;whiteSpace=wrap;html=1;" vertex="1" parent="implemented-c90">
+        <mxCell id="implemented-m95" value="+ readTemperature(): void" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;rotatable=0;whiteSpace=wrap;html=1;" vertex="1" parent="implemented-c91">
           <mxGeometry y="86" width="210.0" height="26" as="geometry" />
         </mxCell>
-        <mxCell id="implemented-c95" value="PowerSensor" style="swimlane;fontStyle=1;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;horizontalStack=0;resizeParent=1;resizeParentMax=0;html=1;whiteSpace=wrap;startSize=26;" vertex="1" parent="implemented-1">
+        <mxCell id="implemented-c96" value="PowerSensor" style="swimlane;fontStyle=1;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;horizontalStack=0;resizeParent=1;resizeParentMax=0;html=1;whiteSpace=wrap;startSize=26;" vertex="1" parent="implemented-1">
           <mxGeometry x="1485.0" y="820.0" width="210.0" height="112" as="geometry" />
         </mxCell>
-        <mxCell id="implemented-m96" value="- powerAvailable: bool" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;rotatable=0;whiteSpace=wrap;html=1;" vertex="1" parent="implemented-c95">
+        <mxCell id="implemented-m97" value="- powerAvailable: bool" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;rotatable=0;whiteSpace=wrap;html=1;" vertex="1" parent="implemented-c96">
           <mxGeometry y="26" width="210.0" height="26" as="geometry" />
         </mxCell>
-        <mxCell id="implemented-d97" value="" style="line;strokeWidth=1;fillColor=none;align=left;verticalAlign=middle;spacingTop=-1;spacingLeft=3;spacingRight=3;rotatable=0;labelPosition=right;points=[];portConstraint=eastwest;" vertex="1" parent="implemented-c95">
+        <mxCell id="implemented-d98" value="" style="line;strokeWidth=1;fillColor=none;align=left;verticalAlign=middle;spacingTop=-1;spacingLeft=3;spacingRight=3;rotatable=0;labelPosition=right;points=[];portConstraint=eastwest;" vertex="1" parent="implemented-c96">
           <mxGeometry y="52" width="210.0" height="8" as="geometry" />
         </mxCell>
-        <UserObject id="implemented-m98" label="+ detectCondition(): void" tooltip="EXTRA&#10;In the implementation, but not in the design.">
-        <mxCell style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;rotatable=0;whiteSpace=wrap;html=1;fillColor=#d5e8d4;" vertex="1" parent="implemented-c95">
+        <UserObject id="implemented-m99" label="+ detectCondition(): void" tooltip="EXTRA&#10;In the implementation, but not in the design.">
+        <mxCell style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;rotatable=0;whiteSpace=wrap;html=1;fillColor=#d5e8d4;" vertex="1" parent="implemented-c96">
           <mxGeometry y="60" width="210.0" height="26" as="geometry" />
         </mxCell>
         </UserObject>
-        <mxCell id="implemented-m99" value="+ detectPowerState(): void" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;rotatable=0;whiteSpace=wrap;html=1;" vertex="1" parent="implemented-c95">
+        <mxCell id="implemented-m100" value="+ detectPowerState(): void" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;rotatable=0;whiteSpace=wrap;html=1;" vertex="1" parent="implemented-c96">
           <mxGeometry y="86" width="210.0" height="26" as="geometry" />
         </mxCell>
-        <mxCell id="implemented-c100" value="SmokeSensor" style="swimlane;fontStyle=1;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;horizontalStack=0;resizeParent=1;resizeParentMax=0;html=1;whiteSpace=wrap;startSize=26;" vertex="1" parent="implemented-1">
+        <mxCell id="implemented-c101" value="SmokeSensor" style="swimlane;fontStyle=1;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;horizontalStack=0;resizeParent=1;resizeParentMax=0;html=1;whiteSpace=wrap;startSize=26;" vertex="1" parent="implemented-1">
           <mxGeometry x="105.0" y="820.0" width="210.0" height="112" as="geometry" />
         </mxCell>
-        <mxCell id="implemented-m101" value="- smokeDetected: bool" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;rotatable=0;whiteSpace=wrap;html=1;" vertex="1" parent="implemented-c100">
+        <mxCell id="implemented-m102" value="- smokeDetected: bool" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;rotatable=0;whiteSpace=wrap;html=1;" vertex="1" parent="implemented-c101">
           <mxGeometry y="26" width="210.0" height="26" as="geometry" />
         </mxCell>
-        <mxCell id="implemented-d102" value="" style="line;strokeWidth=1;fillColor=none;align=left;verticalAlign=middle;spacingTop=-1;spacingLeft=3;spacingRight=3;rotatable=0;labelPosition=right;points=[];portConstraint=eastwest;" vertex="1" parent="implemented-c100">
+        <mxCell id="implemented-d103" value="" style="line;strokeWidth=1;fillColor=none;align=left;verticalAlign=middle;spacingTop=-1;spacingLeft=3;spacingRight=3;rotatable=0;labelPosition=right;points=[];portConstraint=eastwest;" vertex="1" parent="implemented-c101">
           <mxGeometry y="52" width="210.0" height="8" as="geometry" />
         </mxCell>
-        <UserObject id="implemented-m103" label="+ detectCondition(): void" tooltip="EXTRA&#10;In the implementation, but not in the design.">
-        <mxCell style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;rotatable=0;whiteSpace=wrap;html=1;fillColor=#d5e8d4;" vertex="1" parent="implemented-c100">
+        <UserObject id="implemented-m104" label="+ detectCondition(): void" tooltip="EXTRA&#10;In the implementation, but not in the design.">
+        <mxCell style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;rotatable=0;whiteSpace=wrap;html=1;fillColor=#d5e8d4;" vertex="1" parent="implemented-c101">
           <mxGeometry y="60" width="210.0" height="26" as="geometry" />
         </mxCell>
         </UserObject>
-        <mxCell id="implemented-m104" value="+ detectSmoke(): void" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;rotatable=0;whiteSpace=wrap;html=1;" vertex="1" parent="implemented-c100">
+        <mxCell id="implemented-m105" value="+ detectSmoke(): void" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;rotatable=0;whiteSpace=wrap;html=1;" vertex="1" parent="implemented-c101">
           <mxGeometry y="86" width="210.0" height="26" as="geometry" />
         </mxCell>
-        <mxCell id="implemented-c105" value="WaterLeakSensor" style="swimlane;fontStyle=1;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;horizontalStack=0;resizeParent=1;resizeParentMax=0;html=1;whiteSpace=wrap;startSize=26;" vertex="1" parent="implemented-1">
+        <mxCell id="implemented-c106" value="WaterLeakSensor" style="swimlane;fontStyle=1;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;horizontalStack=0;resizeParent=1;resizeParentMax=0;html=1;whiteSpace=wrap;startSize=26;" vertex="1" parent="implemented-1">
           <mxGeometry x="795.0" y="820.0" width="210.0" height="112" as="geometry" />
         </mxCell>
-        <mxCell id="implemented-m106" value="- leakDetected: bool" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;rotatable=0;whiteSpace=wrap;html=1;" vertex="1" parent="implemented-c105">
+        <mxCell id="implemented-m107" value="- leakDetected: bool" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;rotatable=0;whiteSpace=wrap;html=1;" vertex="1" parent="implemented-c106">
           <mxGeometry y="26" width="210.0" height="26" as="geometry" />
         </mxCell>
-        <mxCell id="implemented-d107" value="" style="line;strokeWidth=1;fillColor=none;align=left;verticalAlign=middle;spacingTop=-1;spacingLeft=3;spacingRight=3;rotatable=0;labelPosition=right;points=[];portConstraint=eastwest;" vertex="1" parent="implemented-c105">
+        <mxCell id="implemented-d108" value="" style="line;strokeWidth=1;fillColor=none;align=left;verticalAlign=middle;spacingTop=-1;spacingLeft=3;spacingRight=3;rotatable=0;labelPosition=right;points=[];portConstraint=eastwest;" vertex="1" parent="implemented-c106">
           <mxGeometry y="52" width="210.0" height="8" as="geometry" />
         </mxCell>
-        <UserObject id="implemented-m108" label="+ detectCondition(): void" tooltip="EXTRA&#10;In the implementation, but not in the design.">
-        <mxCell style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;rotatable=0;whiteSpace=wrap;html=1;fillColor=#d5e8d4;" vertex="1" parent="implemented-c105">
+        <UserObject id="implemented-m109" label="+ detectCondition(): void" tooltip="EXTRA&#10;In the implementation, but not in the design.">
+        <mxCell style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;rotatable=0;whiteSpace=wrap;html=1;fillColor=#d5e8d4;" vertex="1" parent="implemented-c106">
           <mxGeometry y="60" width="210.0" height="26" as="geometry" />
         </mxCell>
         </UserObject>
-        <mxCell id="implemented-m109" value="+ detectLeak(): void" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;rotatable=0;whiteSpace=wrap;html=1;" vertex="1" parent="implemented-c105">
+        <mxCell id="implemented-m110" value="+ detectLeak(): void" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;rotatable=0;whiteSpace=wrap;html=1;" vertex="1" parent="implemented-c106">
           <mxGeometry y="86" width="210.0" height="26" as="geometry" />
         </mxCell>
-        <mxCell id="implemented-e110" value="" style="endArrow=block;endSize=16;endFill=0;html=1;rounded=0;edgeStyle=orthogonalEdgeStyle;exitX=0.0714;exitY=0;entryX=1;entryY=0.8696;" edge="1" parent="implemented-1" source="implemented-c19" target="implemented-c5">
+        <mxCell id="implemented-e111" value="" style="endArrow=block;endSize=16;endFill=0;html=1;rounded=0;edgeStyle=orthogonalEdgeStyle;exitX=0.0714;exitY=0;entryX=1;entryY=0.8696;" edge="1" parent="implemented-1" source="implemented-c19" target="implemented-c5">
           <mxGeometry relative="1" as="geometry">
             <Array as="points">
               <mxPoint x="1730.0" y="640.0" />
             </Array>
           </mxGeometry>
         </mxCell>
-        <mxCell id="implemented-e111" value="" style="endArrow=block;endSize=16;endFill=0;html=1;rounded=0;edgeStyle=orthogonalEdgeStyle;exitX=0.0714;exitY=0;entryX=0.5909;entryY=1;" edge="1" parent="implemented-1" source="implemented-c24" target="implemented-c5">
+        <mxCell id="implemented-e112" value="" style="endArrow=block;endSize=16;endFill=0;html=1;rounded=0;edgeStyle=orthogonalEdgeStyle;exitX=0.0714;exitY=0;entryX=0.5909;entryY=1;" edge="1" parent="implemented-1" source="implemented-c24" target="implemented-c5">
           <mxGeometry relative="1" as="geometry">
           </mxGeometry>
         </mxCell>
-        <mxCell id="implemented-e112" value="" style="endArrow=block;endSize=16;endFill=0;html=1;rounded=0;edgeStyle=orthogonalEdgeStyle;exitX=0.9286;exitY=0;entryX=0;entryY=0.8696;" edge="1" parent="implemented-1" source="implemented-c71" target="implemented-c5">
+        <mxCell id="implemented-e113" value="" style="endArrow=block;endSize=16;endFill=0;html=1;rounded=0;edgeStyle=orthogonalEdgeStyle;exitX=0.9286;exitY=0;entryX=0;entryY=0.8696;" edge="1" parent="implemented-1" source="implemented-c71" target="implemented-c5">
           <mxGeometry relative="1" as="geometry">
             <Array as="points">
               <mxPoint x="530.0" y="640.0" />
             </Array>
           </mxGeometry>
         </mxCell>
-        <mxCell id="implemented-e113" value="" style="endArrow=open;endSize=12;html=1;rounded=0;edgeStyle=orthogonalEdgeStyle;exitX=0;exitY=0.06021;entryX=1;entryY=0.06845;" edge="1" parent="implemented-1" source="implemented-c76" target="implemented-c11">
+        <mxCell id="implemented-e114" value="" style="endArrow=open;endSize=12;html=1;rounded=0;edgeStyle=orthogonalEdgeStyle;exitX=0;exitY=0.05374;entryX=1;entryY=0.06845;" edge="1" parent="implemented-1" source="implemented-c76" target="implemented-c11">
           <mxGeometry relative="1" as="geometry">
           </mxGeometry>
         </mxCell>
-        <mxCell id="implemented-e113t0" value="cabin" style="edgeLabel;resizable=0;html=1;align=left;verticalAlign=bottom;" vertex="1" parent="implemented-e113" connectable="0">
+        <mxCell id="implemented-e114t0" value="cabin" style="edgeLabel;resizable=0;html=1;align=left;verticalAlign=bottom;" vertex="1" parent="implemented-e114" connectable="0">
           <mxGeometry x="1" relative="1" as="geometry">
             <mxPoint x="20" y="-1" as="offset" />
           </mxGeometry>
         </mxCell>
-        <mxCell id="implemented-e113t1" value="1" style="edgeLabel;resizable=0;html=1;align=left;verticalAlign=top;" vertex="1" parent="implemented-e113" connectable="0">
+        <mxCell id="implemented-e114t1" value="1" style="edgeLabel;resizable=0;html=1;align=left;verticalAlign=top;" vertex="1" parent="implemented-e114" connectable="0">
           <mxGeometry x="1" relative="1" as="geometry">
             <mxPoint x="20" y="1" as="offset" />
           </mxGeometry>
         </mxCell>
-        <mxCell id="implemented-e114" value="" style="endArrow=block;endSize=16;endFill=0;html=1;rounded=0;edgeStyle=orthogonalEdgeStyle;exitX=0.0714;exitY=0;entryX=1;entryY=0.8696;" edge="1" parent="implemented-1" source="implemented-c85" target="implemented-c5">
+        <UserObject id="implemented-e115" label="" tooltip="EXTRA&#10;In the implementation, but not in the design.">
+        <mxCell style="endArrow=open;endSize=12;html=1;rounded=0;edgeStyle=orthogonalEdgeStyle;exitX=0.942;exitY=0.0;entryX=0.0881;entryY=0.0;strokeColor=#82b366;strokeWidth=3;fontColor=#82b366;" edge="1" parent="implemented-1" source="implemented-c76" target="implemented-c65">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="1470" y="230.0" />
+              <mxPoint x="2720" y="230.0" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        </UserObject>
+        <mxCell id="implemented-e115t0" value="history" style="edgeLabel;resizable=0;html=1;align=left;verticalAlign=bottom;" vertex="1" parent="implemented-e115" connectable="0">
+          <mxGeometry x="1" relative="1" as="geometry">
+            <mxPoint x="4" y="-18" as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="implemented-e115t1" value="1" style="edgeLabel;resizable=0;html=1;align=right;verticalAlign=bottom;" vertex="1" parent="implemented-e115" connectable="0">
+          <mxGeometry x="1" relative="1" as="geometry">
+            <mxPoint x="-4" y="-18" as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="implemented-e116" value="" style="endArrow=block;endSize=16;endFill=0;html=1;rounded=0;edgeStyle=orthogonalEdgeStyle;exitX=0.0714;exitY=0;entryX=1;entryY=0.8696;" edge="1" parent="implemented-1" source="implemented-c86" target="implemented-c5">
           <mxGeometry relative="1" as="geometry">
             <Array as="points">
               <mxPoint x="1270.0" y="640.0" />
             </Array>
           </mxGeometry>
         </mxCell>
-        <mxCell id="implemented-e115" value="" style="endArrow=block;endSize=16;endFill=0;html=1;rounded=0;edgeStyle=orthogonalEdgeStyle;exitX=0.9286;exitY=0;entryX=0;entryY=0.8696;" edge="1" parent="implemented-1" source="implemented-c90" target="implemented-c5">
+        <mxCell id="implemented-e117" value="" style="endArrow=block;endSize=16;endFill=0;html=1;rounded=0;edgeStyle=orthogonalEdgeStyle;exitX=0.9286;exitY=0;entryX=0;entryY=0.8696;" edge="1" parent="implemented-1" source="implemented-c91" target="implemented-c5">
           <mxGeometry relative="1" as="geometry">
             <Array as="points">
               <mxPoint x="760.0" y="640.0" />
             </Array>
           </mxGeometry>
         </mxCell>
-        <mxCell id="implemented-e116" value="" style="endArrow=block;endSize=16;endFill=0;html=1;rounded=0;edgeStyle=orthogonalEdgeStyle;exitX=0.0714;exitY=0;entryX=1;entryY=0.8696;" edge="1" parent="implemented-1" source="implemented-c95" target="implemented-c5">
+        <mxCell id="implemented-e118" value="" style="endArrow=block;endSize=16;endFill=0;html=1;rounded=0;edgeStyle=orthogonalEdgeStyle;exitX=0.0714;exitY=0;entryX=1;entryY=0.8696;" edge="1" parent="implemented-1" source="implemented-c96" target="implemented-c5">
           <mxGeometry relative="1" as="geometry">
             <Array as="points">
               <mxPoint x="1500.0" y="640.0" />
             </Array>
           </mxGeometry>
         </mxCell>
-        <mxCell id="implemented-e117" value="" style="endArrow=block;endSize=16;endFill=0;html=1;rounded=0;edgeStyle=orthogonalEdgeStyle;exitX=0.9286;exitY=0;entryX=0;entryY=0.8696;" edge="1" parent="implemented-1" source="implemented-c100" target="implemented-c5">
+        <mxCell id="implemented-e119" value="" style="endArrow=block;endSize=16;endFill=0;html=1;rounded=0;edgeStyle=orthogonalEdgeStyle;exitX=0.9286;exitY=0;entryX=0;entryY=0.8696;" edge="1" parent="implemented-1" source="implemented-c101" target="implemented-c5">
           <mxGeometry relative="1" as="geometry">
             <Array as="points">
               <mxPoint x="300.0" y="640.0" />
             </Array>
           </mxGeometry>
         </mxCell>
-        <mxCell id="implemented-e118" value="" style="endArrow=block;endSize=16;endFill=0;html=1;rounded=0;edgeStyle=orthogonalEdgeStyle;exitX=0.7738;exitY=0;entryX=0.2159;entryY=1;" edge="1" parent="implemented-1" source="implemented-c105" target="implemented-c5">
+        <mxCell id="implemented-e120" value="" style="endArrow=block;endSize=16;endFill=0;html=1;rounded=0;edgeStyle=orthogonalEdgeStyle;exitX=0.7738;exitY=0;entryX=0.2159;entryY=1;" edge="1" parent="implemented-1" source="implemented-c106" target="implemented-c5">
           <mxGeometry relative="1" as="geometry">
           </mxGeometry>
         </mxCell>
@@ -922,7 +947,7 @@
         <mxCell id="implemented-legend-1" value="Changed (0)" style="rounded=0;whiteSpace=wrap;html=1;align=left;spacingLeft=6;fontSize=11;fillColor=#ffe6cc;strokeColor=#d79b00;" vertex="1" parent="implemented-legend">
           <mxGeometry x="8" y="72" width="284" height="22" as="geometry" />
         </mxCell>
-        <mxCell id="implemented-legend-2" value="Extra, not in the design (21)" style="rounded=0;whiteSpace=wrap;html=1;align=left;spacingLeft=6;fontSize=11;fillColor=#d5e8d4;strokeColor=#82b366;" vertex="1" parent="implemented-legend">
+        <mxCell id="implemented-legend-2" value="Extra, not in the design (23)" style="rounded=0;whiteSpace=wrap;html=1;align=left;spacingLeft=6;fontSize=11;fillColor=#d5e8d4;strokeColor=#82b366;" vertex="1" parent="implemented-legend">
           <mxGeometry x="8" y="98" width="284" height="22" as="geometry" />
         </mxCell>
       </root>
