@@ -1,0 +1,87 @@
+/* Shared by the app pages (dashboard/ and install/): colours, base, buttons, notices, cards.
+   Colours follow the landing page (style.css). */
+
+:root {
+    --ink: #1c1c1a;
+    --paper: #faf9f6;
+    --card: #ffffff;
+    --muted: #6b6b64;
+    --line: rgba(28, 28, 26, 0.12);
+    --accent: #2f5d50;
+    --warning: #b7791f;
+    --critical: #b42318;
+    --ok: #2f7a3e;
+}
+
+@media (prefers-color-scheme: dark) {
+    :root {
+        --ink: #ecebe6;
+        --paper: #151514;
+        --card: #1f1f1d;
+        --muted: #a3a29b;
+        --line: rgba(236, 235, 230, 0.14);
+        --accent: #7fbfa9;
+        --warning: #e0a84a;
+        --critical: #f07167;
+        --ok: #7cc58b;
+    }
+}
+
+* { box-sizing: border-box; }
+
+body {
+    margin: 0;
+    font-family: -apple-system, BlinkMacSystemFont, "Helvetica Neue", Arial, sans-serif;
+    color: var(--ink);
+    background: var(--paper);
+}
+
+/* Page header: the menu on top, then the title row. */
+.page-head {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 16px 16px 8px;
+}
+.page-head .site-nav { margin: 0 -12px 14px; }
+.title-row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    align-items: center;
+    justify-content: space-between;
+}
+.title-row h1 { margin: 0; font-size: 1.6rem; }
+
+button, .button {
+    font: inherit;
+    padding: 8px 14px;
+    border-radius: 8px;
+    border: 1px solid var(--line);
+    background: var(--card);
+    color: var(--ink);
+    cursor: pointer;
+    text-decoration: none;
+}
+button.primary, .button.primary { background: var(--accent); border-color: var(--accent); color: #fff; }
+button.danger { color: var(--critical); }
+button:disabled { opacity: 0.5; cursor: not-allowed; }
+
+.notice {
+    max-width: 1100px;
+    margin: 8px auto;
+    padding: 10px 16px;
+    border-left: 4px solid var(--warning);
+    background: var(--card);
+}
+.notice.warn { border-left-color: var(--critical); }
+
+.card {
+    background: var(--card);
+    border: 1px solid var(--line);
+    border-radius: 12px;
+    padding: 16px;
+    min-width: 0;
+}
+.card h2 { margin: 0 0 8px; font-size: 1.05rem; }
+.hint { color: var(--muted); font-size: 0.85rem; margin: 0 0 10px; }
+.mono { font-family: ui-monospace, SFMono-Regular, Menlo, monospace; font-size: 0.8rem; }

@@ -168,8 +168,10 @@ that they test the model, not the implementation's own guesses.
 - [x] Linked from the landing page (DASHBOARD). Pages publishes `website/`, so it will be at `/dashboard/`.
 - [x] Works without our PC: the page offers the firmware `.hex` for download, with steps for
       flashing your own micro:bit. Everything runs in the visitor's browser.
-- [x] Terminal flash commands on the dashboard for Windows, macOS and Linux, built from the page's
-      own address. The Linux command was tested (download plus flash); Windows and macOS are untested.
+- [x] Terminal flash commands for Windows, macOS and Linux, built from the page's own address.
+      The Linux command was tested (download plus flash); Windows and macOS are untested.
+- [x] Separate **Install firmware** page (`website/install/`) with 4 plain steps, and a shared
+      menu with icons (Home, Dashboard, Install firmware) on every page.
 - [ ] **Team:** merge to `main` so GitHub Pages publishes it (only `main` is deployed).
 - [x] Tested with the board in Mozilla's Firefox 159 (WebSerial since 151): it connected and worked
       (user, 2026-10-27). The IndexedDB file shows 1 session, 5 Incidents in 5 rows (updated in

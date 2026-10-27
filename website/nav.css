@@ -1,0 +1,32 @@
+/* The site menu, the same on every page: Home, Dashboard, Install firmware.
+   The current page's link has aria-current="page". On the landing page the menu sits on the
+   photo, so it uses .site-nav--light. */
+
+.site-nav {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+}
+
+.site-nav a {
+    display: inline-flex;
+    align-items: center;
+    gap: 7px;
+    padding: 7px 12px;
+    border-radius: 999px;
+    color: inherit;
+    text-decoration: none;
+    font-size: 14px;
+    opacity: 0.8;
+}
+
+.site-nav a:hover { opacity: 1; background: rgba(127, 127, 127, 0.12); }
+.site-nav a[aria-current="page"] { opacity: 1; font-weight: 600; background: rgba(127, 127, 127, 0.16); }
+.site-nav svg { width: 18px; height: 18px; flex: none; }
+
+.site-nav--light a { color: #fff; }
+.site-nav--light a:hover, .site-nav--light a[aria-current="page"] { background: rgba(255, 255, 255, 0.16); }
+
+@media (max-width: 480px) {
+    .site-nav a { padding: 7px 9px; font-size: 13px; }
+}

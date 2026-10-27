@@ -62,7 +62,7 @@ firmware/build.sh --flash
   minutes.
 - **After that:** a build takes seconds.
 - **Every build** also copies the `.hex` to
-  `website/dashboard/hytte-monitoring.hex`, the file the dashboard offers
+  `website/install/hytte-monitoring.hex`, the file the install page offers
   for download. Commit it together with the firmware change.
 - **C++11:** CODAL compiles with `-std=c++11`. The model needed one change
   for that: an out-of-class definition of each `transitions` table, used
@@ -74,18 +74,16 @@ firmware/build.sh --flash
 
 ## Flashing a teammate's micro:bit (no repo needed)
 
-On the dashboard, the **Set up your micro:bit (one time only)** box is open at the top for new
-visitors, and closes once a board running Hytte is connected. There are two ways:
+The website has an **Install firmware** page (`website/install/`, in the menu on every page):
 
-- **Download and drag:** click **Download Hytte for micro:bit** and drag the
-  file onto the MICROBIT drive, or save it straight onto that drive.
-- **The page checks the board:** if no Hytte line arrives within 5 s of
-  connecting, it says the micro:bit is not running Hytte yet and opens the
-  steps.
-- **From a terminal (under "For advanced users"):** copy the command for Windows (PowerShell), macOS or
-  Linux. It downloads the `.hex` from the page's own address and copies it
-  onto the drive. The commands are built in `website/dashboard/app.js`
-  (`drawFlashCommands`).
+- **4 plain steps:** plug in, **Download Hytte for micro:bit**, drag the file
+  onto the MICROBIT drive (or save it straight onto that drive), then open
+  the dashboard and click Connect.
+- **For advanced users:** terminal commands for Windows (PowerShell), macOS
+  and Linux, built from the page's own address (`website/install/install.js`).
+- **The dashboard checks the board:** if no Hytte line arrives within 5 s of
+  connecting, it says the micro:bit is not running Hytte yet and links to
+  the install page.
 
-Once published, the page is at https://hytte-monitoring.github.io/dashboard/
-(the site is only published from `main`).
+Once published: https://hytte-monitoring.github.io/install/ (the site is
+only published from `main`).
