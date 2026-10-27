@@ -169,8 +169,9 @@ that they test the model, not the implementation's own guesses.
 - [x] Works without our PC: the page offers the firmware `.hex` for download, with steps for
       flashing your own micro:bit. Everything runs in the visitor's browser.
 - [ ] **Team:** merge to `main` so GitHub Pages publishes it (only `main` is deployed).
-- [ ] **Team:** install Chrome or Edge, open the page and test it with the board (the AI did not run it:
-      no browser with WebSerial and no Node.js here).
+- [x] Tested with the board in Mozilla's Firefox 159 (WebSerial since 151): it connected and worked
+      (user, 2026-10-27). The IndexedDB file shows 1 session, 5 Incidents in 5 rows (updated in
+      place) and 39 events. **Gate 5 passed.**
 
 👁 **Gate 5:** the team runs the demo flow end to end: board → serial →
 database → dashboard.

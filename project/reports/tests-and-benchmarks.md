@@ -238,3 +238,24 @@ Compared with runs 1 and 2 (10–22 Incidents, 240–442 µs), this **confirms
 the performance finding**: the cost is the board code copying the whole
 history on every redraw, not the model. A door in HOME took 248 µs with
 about 10 Incidents stored, and 27 µs with none.
+
+## Dashboard test (Gate 5)
+
+- **Browser:** Mozilla's Firefox 159.0 (WebSerial since 151), in a separate
+  profile. Ubuntu's snap Firefox and VS Code's preview cannot reach the
+  serial port (WORKFLOW Steps 31, 36).
+- **Result, reported by the user:** the dashboard connected to the
+  micro:bit and worked.
+- **Stored data:** read straight from Firefox's IndexedDB SQLite file in the
+  profile (`storage/default/http+++localhost+8000/idb/`):
+
+| Table | Rows |
+|-------|-----:|
+| sessions | 1 |
+| incidents | 5 (`1/I-1` … `1/I-5`) |
+| events | 39 |
+
+- 5 Incidents are stored in 5 rows, so the resolves updated the existing
+  rows instead of adding new ones: one record per Incident (Team Guide §9).
+- The copy was taken while Firefox was running, so the very latest writes
+  may be missing from it. The result is not affected.
