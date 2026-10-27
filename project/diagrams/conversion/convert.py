@@ -2,8 +2,8 @@
 
     python3 project/diagrams/conversion/convert.py
 
-Reads class.mmd and state-incident.mmd and writes diagrams/input/class.drawio and
-diagrams/input/state-incident.drawio, drawn with the verifier's own writer so it
+Reads class.mmd, state-incident.mmd and sequence-smoke_escalation.mmd and writes the
+matching .drawio files in diagrams/input/, drawn with the verifier's own writer so it
 can read them back. Class positions follow the team's model/class-diagram layout.
 """
 import sys
@@ -15,6 +15,7 @@ sys.path.insert(0, str(REPO / "tools"))
 
 from umlverify.class_diagram import drawio_write as class_write, mermaid as class_mmd  # noqa: E402
 from umlverify.state_diagram import drawio_write as state_write, mermaid as state_mmd  # noqa: E402
+from umlverify.sequence_diagram import drawio_write as seq_write, mermaid as seq_mmd  # noqa: E402
 
 INPUT = HERE.parent / "input"
 
@@ -59,7 +60,11 @@ def main():
     (INPUT / "state-incident.drawio").write_text(
         state_write.document(machine, {"states": STATE_LAYOUT},
                              name="Hytte Monitoring - Incident state machine"))
-    print("wrote", INPUT / "class.drawio", "and", INPUT / "state-incident.drawio")
+
+    scenario = seq_mmd.parse((HERE / "sequence-smoke_escalation.mmd").read_text())
+    (INPUT / "sequence-smoke_escalation.drawio").write_text(
+        seq_write.document(scenario, name="Hytte Monitoring - smoke escalation"))
+    print("wrote class.drawio, state-incident.drawio and sequence-smoke_escalation.drawio in", INPUT)
 
 
 if __name__ == "__main__":

@@ -15,6 +15,7 @@ in `model/` are unchanged and remain the full documentation.
 |------|------|
 | `class.mmd` | The class diagram as mermaid text, the source for `../input/class.drawio` |
 | `state-incident.mmd` | The flat Incident state machine, the source for `../input/state-incident.drawio` |
+| `sequence-smoke_escalation.mmd` | One path through the sequence diagram, the source for `../input/sequence-smoke_escalation.drawio` |
 | `convert.py` | Draws both `.drawio` files using the verifier's own draw.io writer |
 
 To regenerate, run `python3 project/diagrams/conversion/convert.py`. To change
@@ -94,6 +95,40 @@ verifier needs one flat machine per class, so the converted machine is
 
 The *System Operation* page (HOME/AWAY, cold-weather protection, power
 source, communication channel) is not converted yet.
+
+## Sequence diagram: which path, and how messages were mapped
+
+The team's sequence diagram (`model/sequence-diagram/`) has 6 lifelines,
+about 45 messages written as prose, and 8 `alt` / `opt` fragments. The
+verifier does not support fragments, and it compares messages as method calls
+between classes. The converted scenario is therefore **one path**,
+`smoke_escalation`: smoke is detected, a Critical Incident is created, the
+owner does not respond, and a Family/Emergency Contact is notified (Team
+Guide §12).
+
+| # | Converted message | Original message(s) |
+|---|-------------------|---------------------|
+| 1 | `SmokeSensor → MonitoringSystem : evaluateEvent()` | *Smoke Detected*, *Evaluate event and severity* |
+| 2 | `MonitoringSystem → MonitoringSystem : createIncident()` | *Create Critical Incident* |
+| 3 | `MonitoringSystem → IncidentHistory : registerIncident()` | *Register Incident in Incident/Event History* |
+| 4 | `MonitoringSystem → MonitoringSystem : escalateIncident()` | *Wait system-determined waiting time* (no owner response), then *Send Critical Escalation* |
+| 5 | `MonitoringSystem → EmergencyContact : receiveNotification()` | *Deliver Critical Escalation* |
+| 6 | `MonitoringSystem → IncidentHistory : updateIncident()` | *Update existing Incident/Event History record* |
+
+**Left out**, because of verifier limits:
+
+- The other fragment paths: owner resolves, owner asks for Suggested Next
+  Steps, the contact responds, Emergency Service escalation, and immediate
+  danger.
+- Return messages.
+
+**Changes in meaning**, logged as deviations D11–D15 in
+[`deviations.md`](../../reports/deviations.md):
+
+- The Communication Service and Emergency Service lifelines are dropped.
+- The owner notification is dropped.
+- History messages are moved to an `IncidentHistory` lifeline.
+- Prose messages are mapped to class diagram methods.
 
 ## Known gap at baseline
 

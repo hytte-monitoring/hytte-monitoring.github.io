@@ -1,0 +1,15 @@
+%% Source for diagrams/input/sequence-smoke_escalation.drawio: one path through
+%% model/sequence-diagram/sequence-diagram.drawio. Smoke is detected, a Critical
+%% Incident is created, the owner does not respond, and a Family/Emergency Contact is
+%% notified. See README.md and project/reports/deviations.md (D11-D15).
+sequenceDiagram
+    participant SmokeSensor
+    participant MonitoringSystem
+    participant IncidentHistory
+    participant EmergencyContact
+    SmokeSensor->>MonitoringSystem: evaluateEvent()
+    MonitoringSystem->>MonitoringSystem: createIncident()
+    MonitoringSystem->>IncidentHistory: registerIncident()
+    MonitoringSystem->>MonitoringSystem: escalateIncident()
+    MonitoringSystem->>EmergencyContact: receiveNotification()
+    MonitoringSystem->>IncidentHistory: updateIncident()
