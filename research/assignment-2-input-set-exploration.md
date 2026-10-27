@@ -25,7 +25,12 @@ Next step: [specs/assignment-2-specification.md](../specs/assignment-2-specifica
 | **Fallback:** Team Guide | `model/Team_Guide.md` | Not input. Used only when the UML and ADRs are unclear |
 
 Resolution order, recorded in [CLAUDE.md](../CLAUDE.md): UML and ADRs first, then
-the Team Guide, then an AI assumption. Every use of the Team Guide or an
+the Team Guide, then an AI assumption.
+
+**Since 2026-10-27:** the official model is the verifier-format version in
+`project/diagrams/conversion/*.mmd`. It is changed by the AI only on a team
+decision, and logged. The diagrams in `model/` are frozen as the assignment 1
+version. Every use of the Team Guide or an
 assumption is a **deviation**, logged in
 [project/reports/deviations.md](../project/reports/deviations.md) and counted in
 the Figure of Merit.

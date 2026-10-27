@@ -8,8 +8,11 @@ The verifier (`tools/verify.py`) cannot read the team's original diagrams in
 - **State machine:** it uses concurrent regions and `entry` / `exit`
   actions, which the verifier does not support.
 
-This folder converts them into the format the verifier reads. The originals
-in `model/` are unchanged and remain the full documentation.
+This folder converts them into the format the verifier reads. Since
+2026-10-27, the `.mmd` files here are the **official model**. They are
+changed only on a team decision, and every change is logged in
+`project/reports/deviations.md`. The originals in `model/` are **frozen** as
+the assignment 1 version (see [CLAUDE.md](../../../CLAUDE.md#ground-truth)).
 
 | File | Role |
 |------|------|
