@@ -1,0 +1,102 @@
+/* Shared by the app pages (dashboard/ and install/): colours, base, buttons, notices, cards.
+   Colours follow the landing page (style.css). */
+
+:root {
+    --ink: #1f2a37;
+    --paper: #eef2f8;
+    --card: #ffffff;
+    --muted: #66717f;
+    --line: rgba(31, 42, 55, 0.1);
+    --accent: #0f5a9c;        /* the dashboard's sidebar blue: primary buttons */
+    --teal: #1cb59a;
+    --blue: #3b82c4;
+    --title: #12508c;         /* headings in cards */
+    --warning: #b7791f;
+    --critical: #b42318;
+    --ok: #2f7a3e;
+}
+
+@media (prefers-color-scheme: dark) {
+    :root {
+        --ink: #e6ebf1;
+        --paper: #0e1319;
+        --card: #18202a;
+        --muted: #9aa6b4;
+        --line: rgba(230, 235, 241, 0.12);
+        --accent: #3b82c4;
+        --teal: #36c9ad;
+        --blue: #5a9bd8;
+        --title: #8cc2f2;
+        --warning: #e0a84a;
+        --critical: #f07167;
+        --ok: #7cc58b;
+    }
+}
+
+* { box-sizing: border-box; }
+
+body {
+    margin: 0;
+    font-family: -apple-system, BlinkMacSystemFont, "Helvetica Neue", Arial, sans-serif;
+    color: var(--ink);
+    background: var(--paper);
+}
+
+/* Page header: a teal-to-blue bar, like the dashboard's top bar, with the menu and the title. */
+.page-head {
+    margin: 12px;
+    padding: 12px 20px 20px;
+    border-radius: 6px;
+    background: linear-gradient(90deg, var(--teal), var(--blue));
+    color: #fff;
+}
+.page-head { position: relative; }
+.page-head a { color: #fff; }
+@media (max-width: 720px) {
+    .page-head .menu-toggle { position: absolute; top: 8px; right: 8px; color: #fff; }
+    .page-head .title-row { padding-right: 44px; }
+}
+.page-head .site-nav { margin: 0 -12px 12px; }
+.page-head .site-nav a:hover, .page-head .site-nav a[aria-current="page"] { background: rgba(255, 255, 255, 0.18); }
+.title-row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    align-items: center;
+    justify-content: space-between;
+}
+.title-row h1 { margin: 0; font-size: 1.6rem; }
+
+button, .button {
+    font: inherit;
+    padding: 8px 14px;
+    border-radius: 8px;
+    border: 1px solid var(--line);
+    background: var(--card);
+    color: var(--ink);
+    cursor: pointer;
+    text-decoration: none;
+}
+button.primary, .button.primary { background: var(--accent); border-color: var(--accent); color: #fff; }
+button.danger { color: var(--critical); }
+button:disabled { opacity: 0.5; cursor: not-allowed; }
+
+.notice {
+    margin: 8px 12px;
+    padding: 10px 16px;
+    border-left: 4px solid var(--warning);
+    background: var(--card);
+}
+.notice.warn { border-left-color: var(--critical); }
+
+.card {
+    background: var(--card);
+    border: 1px solid var(--line);
+    border-radius: 6px;
+    padding: 16px;
+    min-width: 0;
+    box-shadow: 0 6px 18px rgba(18, 60, 110, 0.06);
+}
+.card h2 { margin: 0 0 8px; font-size: 1.05rem; color: var(--title); }
+.hint { color: var(--muted); font-size: 0.85rem; margin: 0 0 10px; }
+.mono { font-family: ui-monospace, SFMono-Regular, Menlo, monospace; font-size: 0.8rem; }

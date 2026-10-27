@@ -1,0 +1,9 @@
+{
+  "name": "render-drawio",
+  "private": true,
+  "description": "Render .drawio files to PNG with draw.io's own viewer in headless Chromium",
+  "bin": { "render-drawio": "render.js" },
+  "dependencies": {
+    "puppeteer": "^25.11.0"
+  }
+}

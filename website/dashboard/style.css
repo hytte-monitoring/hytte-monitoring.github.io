@@ -1,0 +1,382 @@
+/* The dashboard page. On a large landscape screen it fills exactly one screen: a blue icon
+   sidebar, a teal-to-blue top bar, and three rows of tiles. The stored data and tools are in the
+   "Data" dialog. Smaller screens scroll. Shared buttons and notices come from ../common.css;
+   this file sets the dashboard's own colours on top of them. */
+
+:root {
+    --page: #eef2f8;
+    --sidebar: #0f5a9c;
+    --teal: #1cb59a;
+    --blue: #3b82c4;
+    --card: #ffffff;
+    --paper: #f5f8fb;
+    --ink: #1f2a37;
+    --muted: #66717f;
+    --line: rgba(31, 42, 55, 0.1);
+    --title: #12508c;
+    --off: #b9c0c9;
+    --accent: #0f5a9c;        /* primary buttons */
+    --led-off: #2a2a28;
+    --led-on: #ff3b30;
+}
+
+@media (prefers-color-scheme: dark) {
+    :root {
+        --page: #0e1319;
+        --sidebar: #0b3a66;
+        --teal: #36c9ad;
+        --blue: #5a9bd8;
+        --card: #18202a;
+        --paper: #111820;
+        --ink: #e6ebf1;
+        --muted: #9aa6b4;
+        --line: rgba(230, 235, 241, 0.12);
+        --title: #8cc2f2;
+        --off: #4b5563;
+        --accent: #3b82c4;
+    }
+}
+
+body { background: var(--page); }
+
+/* ---------- frame ---------- */
+
+.app { display: grid; grid-template-columns: 96px minmax(0, 1fr) 320px; min-height: 100vh; }
+
+.sidebar { background: var(--sidebar); padding: 28px 0; }
+.side-nav { display: flex; flex-direction: column; align-items: center; gap: 34px; }
+.side-nav a { display: grid; justify-items: center; gap: 6px; padding: 8px 6px; border-radius: 10px; color: rgba(255, 255, 255, 0.75); text-decoration: none; font-size: 13px; }
+.side-nav svg { width: 32px; height: 32px; }
+.side-nav a:hover, .side-nav a[aria-current="page"] { color: #fff; background: rgba(255, 255, 255, 0.12); }
+
+.main { position: relative; display: flex; flex-direction: column; gap: 12px; padding: 12px; min-width: 0; }
+
+/* ---------- top bar ---------- */
+
+.topbar {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px 16px;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 18px;
+    border-radius: 6px;
+    background: linear-gradient(90deg, var(--teal), var(--blue));
+    color: #fff;
+}
+.topbar-time { font-size: 1.25rem; font-variant-numeric: tabular-nums; }
+.topbar-date { opacity: 0.85; font-size: 0.95rem; margin-left: 8px; }
+.topbar-actions { display: flex; align-items: center; gap: 8px; }
+.topbar .pill { border-color: rgba(255, 255, 255, 0.6); color: #fff; background: transparent; }
+.topbar .pill[data-state="on"] { background: rgba(255, 255, 255, 0.2); }
+.topbar button.primary { background: #fff; color: var(--sidebar); border-color: #fff; }
+button.ghost { background: transparent; border-color: currentColor; color: inherit; }
+.pill { padding: 4px 10px; border-radius: 999px; font-size: 0.85rem; border: 1px solid var(--line); }
+
+.toast { position: absolute; top: 70px; right: 24px; z-index: 5; max-width: 420px; margin: 0; box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15); }
+
+/* ---------- tiles ---------- */
+
+.tiles { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); grid-auto-flow: dense; gap: 12px; }
+.tile {
+    display: flex;
+    flex-direction: column;
+    background: var(--card);
+    border: 1px solid var(--line);
+    border-radius: 6px;
+    padding: 12px 16px;
+    min-width: 0;
+    min-height: 0;
+}
+.tile h2 {
+    margin: 0 0 8px;
+    text-align: center;
+    color: var(--title);
+    font-size: 0.78rem;
+    font-weight: 700;
+    letter-spacing: 0.07em;
+    text-transform: uppercase;
+}
+.temp-now { margin: 0 0 4px; text-align: center; font-size: 1.6rem; }
+.span-2 { grid-column: span 2; }
+.span-4 { grid-column: span 4; }
+.center { text-align: center; }
+.big { font-size: 1.3rem; font-weight: 600; margin: 4px 0 0; }
+.hint-small { color: var(--muted); font-size: 0.75rem; }
+
+
+.sound-bars { flex: 1; min-height: 60px; display: flex; align-items: center; justify-content: center; gap: 4px; }
+.sound-bars span { width: 4px; border-radius: 2px; background: var(--blue); transition: height 0.4s ease; }
+
+.monitors { list-style: none; margin: 0; padding: 0; flex: 1; display: flex; flex-direction: column; justify-content: space-around; }
+.monitors li { display: flex; justify-content: space-between; align-items: center; gap: 10px; font-size: 0.92rem; }
+
+/* A status toggle (read-only): teal and to the right when on. */
+.toggle { flex: none; position: relative; display: inline-block; width: 32px; height: 18px; border-radius: 999px; border: 2px solid var(--off); }
+.toggle::after {
+    content: "";
+    position: absolute;
+    top: 2px;
+    left: 2px;
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background: var(--off);
+    transition: left 0.2s;
+}
+.toggle.on { background: var(--teal); border-color: var(--teal); }
+.toggle.on::after { left: 16px; background: #fff; }
+
+.tile-icon { width: 40px; height: 40px; color: var(--teal); }
+.board-body, .mode-body { flex: 1; min-height: 0; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 8px; }
+
+.alarms { flex: 1; display: grid; grid-template-columns: repeat(3, 1fr); align-items: center; text-align: center; }
+.alarm { display: grid; justify-items: center; gap: 6px; color: var(--off); }
+.alarm-label { color: var(--muted); font-size: 0.85rem; }
+.alarm svg { width: 46px; height: 46px; }
+.alarm .bell { width: 20px; height: 20px; }
+.alarm-state { color: var(--muted); font-size: 0.75rem; }
+#alarm-door[data-state="on"] { color: var(--warning); }
+#alarm-smoke[data-state="on"], #alarm-water[data-state="on"] { color: var(--critical); }
+.alarm[data-state="on"] .bell { animation: ring 0.9s ease-in-out infinite; }
+@keyframes ring { 0%, 100% { transform: rotate(0); } 25% { transform: rotate(14deg); } 75% { transform: rotate(-14deg); } }
+@media (prefers-reduced-motion: reduce) { .alarm[data-state="on"] .bell { animation: none; } }
+
+.incident-row { flex: 1; min-height: 0; display: grid; grid-template-columns: 220px minmax(0, 1fr); gap: 16px; }
+.incident-now { display: flex; flex-direction: column; gap: 2px; min-height: 0; overflow: hidden; }
+.incident-chart { display: flex; flex-direction: column; min-height: 0; }
+.quick-label { font-size: 0.72rem; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; color: var(--muted); }
+.count { font-size: 2.4rem; font-weight: 600; line-height: 1; }
+#active-count[data-state="critical"] { color: var(--critical); }
+#active-count[data-state="warning"] { color: var(--warning); }
+/* The active list scrolls inside the tile, bottom-up like the logs: the newest stays in view. */
+.incidents {
+    list-style: none;
+    margin: 4px 0 0;
+    padding: 0;
+    font-size: 0.8rem;
+    flex: 1;
+    min-height: 0;
+    overflow-y: auto;
+    display: flex;
+    flex-direction: column-reverse;
+}
+.incidents .incident { flex: none; }
+.incident { display: flex; align-items: baseline; gap: 8px; padding: 2px 0; margin-bottom: 3px; }
+.incident .num {
+    flex: none;
+    min-width: 1.6em;
+    padding: 0 5px;
+    border-radius: 999px;
+    background: var(--paper);
+    color: var(--title);
+    font-weight: 700;
+    text-align: center;
+}
+.incident.warning { color: var(--warning); }
+.incident.critical { color: var(--critical); font-weight: 600; }
+
+/* ---------- charts (charts.js) ---------- */
+
+.chart-box { flex: 1; min-height: 120px; width: 100%; }
+.chart { width: 100%; height: 100%; display: block; overflow: visible; }
+.chart-grid { stroke: var(--line); stroke-width: 1; }
+.chart-axis { fill: var(--muted); font-size: 11px; }
+.chart-empty { fill: var(--muted); font-size: 13px; }
+.chart-line { fill: none; stroke: var(--blue); stroke-width: 2; stroke-linejoin: round; stroke-linecap: round; }
+.chart-area { fill: var(--teal); fill-opacity: 0.14; }
+.chart-dot { fill: var(--blue); stroke: var(--card); stroke-width: 2; }
+.chart-cross { stroke: var(--muted); stroke-width: 1; }
+.chart-bar.warning { fill: var(--warning); }
+.chart-bar.critical { fill: var(--critical); }
+.chart-hit { fill: transparent; cursor: crosshair; }
+.chart-tooltip {
+    position: fixed;
+    z-index: 20;
+    display: grid;
+    gap: 2px;
+    padding: 8px 10px;
+    border-radius: 6px;
+    background: var(--ink);
+    color: var(--card);
+    font-size: 0.85rem;
+    pointer-events: none;
+}
+.chart-tooltip span { opacity: 0.75; }
+.chart-tooltip[hidden] { display: none; }
+.legend { display: flex; gap: 16px; list-style: none; margin: 4px 0 0; padding: 0 0 0 40px; font-size: 0.8rem; }
+.legend li { display: flex; align-items: center; gap: 6px; }
+.swatch { width: 10px; height: 10px; border-radius: 50%; }
+.swatch.warning { background: var(--warning); }
+.swatch.critical { background: var(--critical); }
+
+/* ---------- the board's LED mirror ---------- */
+
+.matrix { display: grid; grid-template-columns: repeat(5, 10px); gap: 3px; padding: 7px; width: max-content; background: #111; border-radius: 6px; }
+.led { width: 10px; height: 10px; border-radius: 2px; background: var(--led-off); }
+.led.on { background: var(--led-on); box-shadow: 0 0 5px var(--led-on); }
+.matrix[data-pattern="warning"] .led.on, .matrix[data-pattern="critical"] .led.on { animation: blink 0.5s steps(1) infinite; }
+@keyframes blink { 50% { opacity: 0.15; } }
+
+/* ---------- the logs column: fixed frames, newest line at the bottom ---------- */
+
+.logs { display: flex; flex-direction: column; gap: 12px; padding: 12px 12px 12px 0; min-width: 0; }
+.log-box {
+    flex: 1;
+    min-height: 0;
+    overflow: hidden;           /* the box never grows; its frame scrolls */
+    display: flex;
+    flex-direction: column;
+    background: var(--card);
+    border: 1px solid var(--line);
+    border-radius: 6px;
+    padding: 12px 14px;
+}
+.log-box h2 { margin: 0 0 8px; color: var(--title); font-size: 0.78rem; font-weight: 700; letter-spacing: 0.07em; text-transform: uppercase; }
+.log-frame {
+    flex: 1;
+    min-height: 0;
+    height: 260px;              /* the frame's size; lines scroll inside it */
+    overflow-y: auto;
+    display: flex;
+    flex-direction: column-reverse;   /* bottom-up: the newest line stays in view */
+    margin: 0;
+    padding: 6px 8px;
+    list-style: none;
+    background: var(--paper);
+    border-radius: 4px;
+    font-size: 0.78rem;
+    line-height: 1.5;
+}
+.log-frame li { flex: none; padding: 2px 0; border-top: 1px solid var(--line); overflow-wrap: anywhere; }
+.log-frame li:last-child { border-top: none; }
+
+/* ---------- the "Data" dialog ---------- */
+
+.data-dialog {
+    width: min(1100px, 94vw);
+    max-height: 90vh;
+    padding: 20px;
+    border: none;
+    border-radius: 10px;
+    background: var(--page);
+    color: var(--ink);
+}
+.data-dialog::backdrop { background: rgba(10, 20, 35, 0.45); }
+.dialog-head { display: flex; justify-content: space-between; align-items: center; margin-bottom: 12px; }
+.dialog-head h2 { margin: 0; font-size: 1.3rem; }
+.data-dialog .card { margin-bottom: 12px; }
+.data-dialog h3 { margin: 0 0 6px; font-size: 1rem; color: var(--title); }
+.sub { margin-top: 14px !important; }
+.pair { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 12px; }
+.tag-display { margin-left: 6px; padding: 1px 8px; border: 1px solid var(--line); border-radius: 999px; color: var(--muted); font-size: 0.75rem; font-weight: 500; }
+.table-wrap { overflow-x: auto; }
+table { width: 100%; border-collapse: collapse; font-size: 0.88rem; }
+th, td { text-align: left; padding: 5px 8px; border-bottom: 1px solid var(--line); white-space: nowrap; }
+th { color: var(--muted); font-weight: 500; }
+.state.warning { color: var(--warning); font-weight: 600; }
+.state.critical { color: var(--critical); font-weight: 600; }
+.state.closed { color: var(--ok); }
+.empty { color: var(--muted); }
+.counts { list-style: none; margin: 0; padding: 0; }
+.counts li { display: inline-block; margin-right: 14px; }
+.buttons { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 10px; }
+
+/* ---------- one screen: large landscape screens ---------- */
+
+@media (min-width: 1100px) and (min-height: 620px) {
+    html, body { height: 100%; overflow: hidden; }
+    .app { height: 100vh; }
+    .main { height: 100vh; }
+    .tiles { flex: 1; min-height: 0; grid-template-rows: repeat(3, minmax(0, 1fr)); }
+    .logs { height: 100vh; }
+    .log-frame { height: auto; }
+    .tile { overflow: hidden; }
+    .chart-box { min-height: 0; }
+}
+
+/* ---------- smaller screens: scroll ---------- */
+
+@media (max-width: 1099px) {
+    .app { grid-template-columns: 96px minmax(0, 1fr); }
+    .logs { grid-column: 2; padding: 0 12px 12px; }
+    .sidebar { grid-row: span 2; }
+    .tiles { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+    .span-4 { grid-column: span 2; }
+    .chart-box { height: 200px; flex: none; }
+}
+
+.log-tabs { display: none; }
+
+/* ---------- phones: the whole dashboard in one screen ----------
+   Compact tiles in three short rows; the temperature chart and the monitoring list are hidden;
+   the logs fill the rest of the screen, one at a time, switched with tabs. */
+
+@media (max-width: 720px) {
+    html, body { height: 100%; overflow: hidden; }
+    .app {
+        grid-template-columns: 1fr;
+        grid-template-rows: auto auto minmax(0, 1fr);
+        height: 100dvh;
+        min-height: 0;
+    }
+    .sidebar { grid-row: auto; padding: 6px 12px; }
+    .side-nav { flex-direction: row; justify-content: space-around; gap: 12px; }
+    .side-nav a { grid-auto-flow: column; gap: 6px; font-size: 12px; }
+    .side-nav svg { width: 18px; height: 18px; }
+
+    .main { padding: 8px; gap: 8px; }
+    .topbar { flex-wrap: nowrap; padding: 6px 10px; gap: 8px; }
+    .topbar-time { font-size: 1rem; }
+    .topbar-date { display: none; }
+    .topbar-actions { gap: 6px; }
+    .topbar .pill { font-size: 0.7rem; padding: 2px 8px; }
+    .topbar button { padding: 5px 9px; font-size: 0.8rem; }
+
+    .tiles {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        grid-template-areas: "board mode" "sound alarm" "temp temp" "incidents incidents";
+        gap: 8px;
+    }
+    .tile { padding: 8px 10px; }
+    .tile h2 { margin: 0 0 4px; font-size: 0.66rem; }
+    .tiles > [aria-labelledby="t-monitoring"] { display: none; }
+    .tiles > [aria-labelledby="t-chart"] { grid-area: temp; }
+    .tiles > [aria-labelledby="t-chart"] .chart-box { display: none; }   /* phones: the numbers only */
+    .tiles > [aria-labelledby="t-board"] { grid-area: board; }
+    .tiles > [aria-labelledby="t-mode"] { grid-area: mode; }
+    .tiles > [aria-labelledby="t-sound"] { grid-area: sound; }
+    .tiles > [aria-labelledby="t-alarm"] { grid-area: alarm; }
+    .tiles > [aria-labelledby="t-incidents"] { grid-area: incidents; }
+
+    .hint-small { font-size: 0.68rem; margin: 0; }
+    .sound-bars { min-height: 40px; height: 44px; flex: none; gap: 3px; }
+    .sound-bars span { width: 3px; }
+    .big { font-size: 1rem; margin: 0; }
+    .tile-icon { display: none; }
+    .matrix { grid-template-columns: repeat(5, 6px); gap: 2px; padding: 4px; }
+    .led { width: 6px; height: 6px; }
+    .alarms { gap: 2px; }
+    .alarm { gap: 2px; }
+    .alarm svg { width: 26px; height: 26px; }
+    .alarm .bell { width: 14px; height: 14px; }
+    .alarm-label, .alarm-state { font-size: 0.65rem; }
+    .incident-row { grid-template-columns: 1fr; }
+    .incident-chart { display: none; }
+    .incident-now { flex-direction: row; align-items: baseline; flex-wrap: wrap; gap: 6px 10px; max-height: 64px; }
+    .count { font-size: 1.5rem; }
+    .incidents { display: flex; flex-direction: row; flex-wrap: wrap; gap: 4px 10px; margin: 0; }   /* newest first */
+
+    .logs { grid-column: auto; padding: 0 8px 8px; gap: 6px; min-height: 0; }
+    .log-tabs { display: flex; gap: 6px; }
+    .log-tabs button { flex: 1; padding: 5px; font-size: 0.8rem; }
+    .log-tabs button[aria-selected="true"] { background: var(--sidebar); border-color: var(--sidebar); color: #fff; }
+    .logs[data-show="events"] .log-box[data-log="sensors"],
+    .logs[data-show="sensors"] .log-box[data-log="events"] { display: none; }
+    .log-box { padding: 8px 10px; }
+    .log-box h2 { display: none; }
+    .log-frame { height: auto; }
+
+    .toast { top: 90px; left: 8px; right: 8px; max-width: none; font-size: 0.85rem; }
+    .pair { grid-template-columns: 1fr; }   /* the Data panel's cards, stacked */
+}

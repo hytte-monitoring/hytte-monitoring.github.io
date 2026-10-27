@@ -1,223 +1,76 @@
-/* ==================== Base (shared by all screens) ==================== */
+/* The project page (index.html). The menu is in nav.css. */
 
 :root {
-    --ink: #1c1c1a;
-    --paper: #faf9f6;
-    --muted: #6b6b64;
-    --line: rgba(28, 28, 26, 0.12);
+    --ink: #1f2a37;
+    --paper: #eef2f8;
+    --card: #ffffff;
+    --muted: #66717f;
+    --line: rgba(31, 42, 55, 0.1);
+    --accent: #0f5a9c;        /* the dashboard's sidebar blue */
+    --teal: #1cb59a;
+    --blue: #3b82c4;
+    --title: #12508c;
+    --yes: #1a8f78;
+    --part: #b7791f;
+    --no: #b42318;
 }
 
-* {
-    box-sizing: border-box;
+@media (prefers-color-scheme: dark) {
+    :root {
+        --ink: #e6ebf1;
+        --paper: #0e1319;
+        --card: #18202a;
+        --muted: #9aa6b4;
+        --line: rgba(230, 235, 241, 0.12);
+        --accent: #3b82c4;
+        --teal: #36c9ad;
+        --blue: #5a9bd8;
+        --title: #8cc2f2;
+        --yes: #36c9ad;
+        --part: #e0a84a;
+        --no: #f07167;
+    }
 }
 
-html, body {
-    margin: 0;
-    padding: 0;
-}
+* { box-sizing: border-box; }
+
+html, body { margin: 0; padding: 0; }
 
 body {
     font-family: -apple-system, BlinkMacSystemFont, "Helvetica Neue", Arial, sans-serif;
     color: var(--ink);
     background: var(--paper);
     -webkit-font-smoothing: antialiased;
-}
-
-a {
-    color: inherit;
-}
-
-.filter-defs {
-    position: absolute;
-}
-
-header {
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    padding: 28px 6vw;
-    z-index: 2;
-}
-
-.brand {
-    font-size: 15px;
-    font-weight: 600;
-    letter-spacing: 0.04em;
-    color: #fff;
-    text-transform: uppercase;
-}
-
-nav a {
-    color: #fff;
-    text-decoration: none;
-    font-size: 14px;
-    opacity: 0.85;
-}
-
-nav a:hover {
-    opacity: 1;
-}
-
-.hero {
-    position: relative;
-    height: 100vh;
-    min-height: 560px;
-    display: flex;
-    align-items: flex-end;
-    background: #10120f;
-}
-
-.hero img {
-    position: absolute;
-    inset: 0;
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    filter: url(#sharpen) contrast(1.06) saturate(1.05);
-}
-
-.hero::after {
-    content: "";
-    position: absolute;
-    inset: 0;
-    background: linear-gradient(to top, rgba(10, 10, 8, 0.78) 0%, rgba(10, 10, 8, 0.25) 45%, rgba(10, 10, 8, 0.15) 100%);
-}
-
-.hero-content {
-    position: relative;
-    z-index: 1;
-    color: #fff;
-    padding: 0 6vw 9vh;
-    max-width: 900px;
-}
-
-.hero-content h1 {
-    margin: 0 0 18px;
-    font-size: clamp(2rem, 6vw, 5.6rem);
-    line-height: 1.1;
-    font-weight: 500;
-    letter-spacing: -0.01em;
-}
-
-.hero-content p {
-    margin: 0;
-    font-size: clamp(1.05rem, 1.6vw, 1.35rem);
-    line-height: 1.6;
-    color: rgba(255, 255, 255, 0.82);
-    max-width: 560px;
-}
-
-section.info {
-    max-width: 900px;
-    margin: 0 auto;
-    padding: 90px 6vw 100px;
-}
-
-.info-grid {
-    display: grid;
-    gap: 48px;
-}
-
-.info-grid img {
-    width: 144px;
-    height: 144px;
-    object-fit: cover;
-    border-radius: 14px;
-    background: #fff;
-    border: 1px solid var(--line);
-    padding: 16px;
-    margin-bottom: 20px;
-}
-
-.info-grid div h2 {
-    font-size: 1rem;
-    font-weight: 600;
-    margin: 0 0 8px;
-}
-
-.info-grid div p {
-    font-size: 0.92rem;
     line-height: 1.55;
-    color: var(--muted);
-    margin: 0;
 }
+
+a { color: inherit; }
+
+/* ---------- plain text ---------- */
+
+.prose {
+    padding: 40px 4vw 56px;
+    display: grid;
+    gap: 8px 6vw;
+}
+.prose section { max-width: 720px; }
+.prose h2 { margin: 28px 0 10px; font-size: 1.25rem; font-weight: 600; color: var(--title); }
+.prose p { margin: 0 0 12px; }
+.prose ul { margin: 0 0 12px; padding-left: 20px; }
+.prose li { margin: 3px 0; }
+.prose a { color: var(--accent); }
+.chart { margin: 14px 0 0; }
+.chart img { width: 100%; height: auto; border-radius: 4px; }
 
 footer {
     border-top: 1px solid var(--line);
-    padding: 24px 6vw;
-    font-size: 0.82rem;
+    padding: 22px 4vw;
+    font-size: 0.85rem;
     color: var(--muted);
-    text-align: center;
 }
 
-/* ==================== Desktop browser (721px and up) ==================== */
-
-@media (min-width: 721px) {
-    .info-grid {
-        grid-template-columns: repeat(3, 1fr);
-    }
-
-    .info-grid > div:nth-child(1) {
-        transform: translateX(-24px);
-    }
-
-    .info-grid > div:nth-child(3) {
-        transform: translateX(24px);
-    }
+/* Wide screens: the text in two columns, so it fills the width without boxes. */
+@media (min-width: 1000px) {
+    .prose { grid-template-columns: repeat(2, minmax(0, 1fr)); }
 }
 
-/* ==================== Mobile browser (720px and down) ==================== */
-
-@media (max-width: 720px) {
-    header {
-        padding: 20px 6vw;
-    }
-
-    .brand {
-        font-size: 13px;
-    }
-
-    nav a {
-        font-size: 13px;
-    }
-
-    .hero-content {
-        padding-bottom: 12vh;
-        max-width: 100%;
-    }
-
-    .hero-content p {
-        font-size: 0.95rem;
-        max-width: 100%;
-    }
-
-    section.info {
-        padding: 64px 6vw 72px;
-    }
-
-    .info-grid {
-        grid-template-columns: repeat(3, 1fr);
-        gap: 12px;
-        text-align: center;
-    }
-
-    .info-grid img {
-        width: 64px;
-        height: 64px;
-        padding: 8px;
-        margin: 0 auto 10px;
-    }
-
-    .info-grid div h2 {
-        font-size: 0.82rem;
-    }
-
-    .info-grid div p {
-        font-size: 0.72rem;
-        line-height: 1.4;
-    }
-}

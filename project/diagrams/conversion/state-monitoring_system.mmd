@@ -1,0 +1,19 @@
+%% Source for diagrams/input/state-monitoring_system.drawio: the POWER SOURCE and
+%% COMMUNICATION CHANNEL regions of the "1 - System Operation" page of
+%% model/statemachine-diagram/statemachine-diagram.drawio, flattened into one machine
+%% (2 power states x 2 channel states). See README.md.
+stateDiagram-v2
+    direction LR
+    ElectricityAndInternet
+    BatteryAndInternet
+    ElectricityAndCellular
+    BatteryAndCellular
+    [*] --> ElectricityAndInternet
+    ElectricityAndInternet --> BatteryAndInternet : powerLost / useBatteryBackup
+    BatteryAndInternet --> ElectricityAndInternet : powerRestored / useCabinElectricity
+    ElectricityAndCellular --> BatteryAndCellular : powerLost / useBatteryBackup
+    BatteryAndCellular --> ElectricityAndCellular : powerRestored / useCabinElectricity
+    ElectricityAndInternet --> ElectricityAndCellular : internetLost / useCellular
+    ElectricityAndCellular --> ElectricityAndInternet : internetRestored / useInternet
+    BatteryAndInternet --> BatteryAndCellular : internetLost / useCellular
+    BatteryAndCellular --> BatteryAndInternet : internetRestored / useInternet

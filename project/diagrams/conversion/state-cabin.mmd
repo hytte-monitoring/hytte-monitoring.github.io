@@ -1,0 +1,31 @@
+%% Source for diagrams/input/state-cabin.drawio: the MONITORING MODE and COLD-WEATHER
+%% PROTECTION regions of the "1 - System Operation" page of
+%% model/statemachine-diagram/statemachine-diagram.drawio, flattened into one machine
+%% (3 mode states x 2 protection states). See README.md and deviations D16-D17.
+stateDiagram-v2
+    direction LR
+    Awaiting
+    Home
+    Away
+    AwaitingCold
+    HomeCold
+    AwayCold
+    [*] --> Awaiting
+    Awaiting --> Home : ownerSelectsHome
+    Awaiting --> Away : ownerSelectsAway / changeMode
+    Home --> Away : ownerSelectsAway / changeMode
+    Away --> Home : ownerSelectsHome / changeMode
+    AwaitingCold --> HomeCold : ownerSelectsHome
+    AwaitingCold --> AwayCold : ownerSelectsAway / changeMode
+    HomeCold --> AwayCold : ownerSelectsAway / changeMode
+    AwayCold --> HomeCold : ownerSelectsHome / changeMode
+    Awaiting --> AwaitingCold : coldRequired / activateColdProtection
+    Home --> HomeCold : coldRequired / activateColdProtection
+    Away --> AwayCold : coldRequired / activateColdProtection
+    AwaitingCold --> Awaiting : coldGone / deactivateColdProtection
+    HomeCold --> Home : coldGone / deactivateColdProtection
+    AwayCold --> Away : coldGone / deactivateColdProtection
+    Away --> Away : doorOpened / reportSecurityWarning
+    Away --> Away : motionDetected / reportSecurityWarning
+    AwayCold --> AwayCold : doorOpened / reportSecurityWarning
+    AwayCold --> AwayCold : motionDetected / reportSecurityWarning
