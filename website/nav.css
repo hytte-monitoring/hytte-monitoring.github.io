@@ -27,6 +27,39 @@
 .site-nav--light a { color: #fff; }
 .site-nav--light a:hover, .site-nav--light a[aria-current="page"] { background: rgba(255, 255, 255, 0.16); }
 
-@media (max-width: 480px) {
-    .site-nav a { padding: 7px 9px; font-size: 13px; }
+/* The ☰ button: only on phones (see below). */
+.menu-toggle {
+    display: none;
+    width: 40px;
+    height: 40px;
+    padding: 8px;
+    border: none;
+    border-radius: 8px;
+    background: transparent;
+    color: inherit;
+    cursor: pointer;
+}
+.menu-toggle svg { width: 24px; height: 24px; }
+.menu-toggle[aria-expanded="true"] { background: rgba(255, 255, 255, 0.18); }
+
+/* Phones: the menu folds into the ☰ button and opens as a small drop-down. */
+@media (max-width: 720px) {
+    .menu-toggle { display: inline-grid; place-items: center; }
+    .site-nav {
+        display: none;
+        position: absolute;
+        z-index: 30;
+        right: 12px;
+        top: 56px;
+        min-width: 210px;
+        flex-direction: column;
+        gap: 2px;
+        padding: 6px;
+        border-radius: 10px;
+        background: #0f5a9c;
+        box-shadow: 0 12px 30px rgba(0, 0, 0, 0.25);
+    }
+    .site-nav.open { display: flex; }
+    .site-nav a { color: #fff; opacity: 1; padding: 10px 12px; font-size: 15px; }
+    .site-nav a:hover, .site-nav a[aria-current="page"] { background: rgba(255, 255, 255, 0.16); }
 }

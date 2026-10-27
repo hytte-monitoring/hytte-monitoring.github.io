@@ -1,12 +1,11 @@
 /* The install page. Shared colours and buttons are in ../common.css. */
 
-.lead { color: var(--muted); max-width: 640px; margin: 10px 0 0; line-height: 1.5; }
+.hero-content a { color: #fff; }
 
-.install {
-    max-width: 760px;
-    margin: 0 auto;
-    padding: 8px 16px 40px;
-}
+/* The micro:bit photo has a white background: centre the board and box. */
+.hero img { object-position: 50% 50%; }
+
+.install { padding: 16px 12px 32px; }
 
 .steps {
     list-style: none;
@@ -30,13 +29,18 @@
     width: 32px;
     height: 32px;
     border-radius: 50%;
-    background: var(--accent);
+    background: var(--teal);
     color: #fff;
     font-weight: 700;
     display: grid;
     place-items: center;
 }
 .steps p { margin: 0; }
+
+/* Wide screens: the four steps side by side. */
+@media (min-width: 1000px) {
+    .steps { grid-template-columns: repeat(4, minmax(0, 1fr)); }
+}
 
 .button.big { display: inline-block; margin: 4px 0 6px; padding: 12px 20px; font-weight: 600; font-size: 1.05rem; }
 .tip { color: var(--muted); font-size: 0.88rem; margin-top: 6px !important; }

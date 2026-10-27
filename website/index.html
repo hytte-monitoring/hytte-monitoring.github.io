@@ -3,193 +3,108 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Hytte Monitoring – student project</title>
-    <meta name="description" content="A student project: a cabin monitoring system designed with UML and built as a mock-up on a BBC micro:bit, with a WebSerial dashboard.">
+    <title>Mock-up: Hytte Monitoring with micro:bit</title>
+    <meta name="description" content="A mock-up of a cabin monitoring system for a school course, designed in UML and partly built on a BBC micro:bit, with a web dashboard.">
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="hero.css">
     <link rel="stylesheet" href="nav.css">
+    <script src="nav.js" defer></script>
 </head>
 
 <body>
     <div class="hero">
-        <img src="img/hytt3.jpg" alt="Cabin by a lake in Norway">
+        <picture>
+            <!-- Portrait screens (phones, upright tablets) get the tall photo -->
+            <source media="(orientation: portrait)" srcset="img/hero-mobile.jpg">
+            <img src="img/hero-desktop.jpg" alt="Two red-brown wooden cabins on a heather slope above a still mountain lake, with snowy hills behind">
+        </picture>
         <header>
             <span class="brand">Hytte Monitoring</span>
-            <nav class="site-nav site-nav--light" aria-label="Site"><a href="./" aria-current="page"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 11l9-7 9 7"/><path d="M5 10v10h14V10"/><path d="M10 20v-6h4v6"/></svg><span>Home</span></a><a href="dashboard/"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="3"/><path d="M8 16v-4M12 16V8M16 16v-6"/></svg><span>Dashboard</span></a><a href="install/"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3v11"/><path d="M7 10l5 5 5-5"/><rect x="4" y="17" width="16" height="4" rx="1"/></svg><span>Install firmware</span></a></nav>
+            <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="site-menu" aria-label="Menu"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16"/></svg></button>
+            <nav id="site-menu" class="site-nav site-nav--light" aria-label="Site"><a href="./" aria-current="page"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 11l9-7 9 7"/><path d="M5 10v10h14V10"/><path d="M10 20v-6h4v6"/></svg><span>Home</span></a><a href="dashboard/"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="3"/><path d="M8 16v-4M12 16V8M16 16v-6"/></svg><span>Dashboard</span></a><a href="install/"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3v11"/><path d="M7 10l5 5 5-5"/><rect x="4" y="17" width="16" height="4" rx="1"/></svg><span>Install firmware</span></a></nav>
         </header>
         <div class="hero-content">
-            <p class="badge">Student project · model-driven AI design · 2026</p>
-            <h1>Hytte Monitoring</h1>
-            <p>A cabin monitoring system that we designed with UML, then built as a working mock-up on a
-                BBC micro:bit with a live web dashboard. It is a course project, not a real product.</p>
-            <div class="hero-actions">
-                <a class="cta primary" href="dashboard/">Open the dashboard</a>
-                <a class="cta" href="install/">Install on a micro:bit</a>
-            </div>
+            <p class="kicker">A student project</p>
+            <h1>Mock-up: Hytte Monitoring with micro:bit</h1>
         </div>
     </div>
 
-    <main>
-        <section class="block">
-            <h2>What this website is for</h2>
-            <div class="cards three">
-                <a class="card link" href="dashboard/">
-                    <h3>Dashboard</h3>
-                    <p>Connect a micro:bit and watch the cabin live: the mode, active Incidents, the full
-                        Incident/Event History, and how fast the board reacts.</p>
-                </a>
-                <a class="card link" href="install/">
-                    <h3>Install firmware</h3>
-                    <p>Put our program on your own micro:bit in four steps. You only do it once.</p>
-                </a>
-                <div class="card">
-                    <h3>This page</h3>
-                    <p>Explains what the system was designed to do, what the micro:bit version really does,
-                        and how we built and checked it.</p>
-                </div>
-            </div>
+    <main class="prose">
+        <section>
+            <h2>1. About this project</h2>
+            <p>This is a mock-up of a cabin monitoring system, made for a school course on model-driven design.
+                We first drew the system as UML diagrams. Then we built a small part of it on a BBC micro:bit.</p>
+            <p>It is a mock-up for learning, not a working product. Most of the system exists only in our design
+                and code.</p>
         </section>
 
-        <section class="block">
-            <h2>How it works</h2>
-            <ol class="flow" aria-label="From the micro:bit to the dashboard">
-                <li><b>micro:bit</b><span>Buttons and shaking are the "sensors"; the LED screen shows the state.
-                    Our cabin model runs on the board.</span></li>
-                <li><b>USB cable</b><span>The board sends one short text line for every change.</span></li>
-                <li><b>Your browser</b><span>The dashboard reads the lines through WebSerial (Chrome, Edge or
-                    Firefox 151+).</span></li>
-                <li><b>Browser database</b><span>Every Incident is stored in your browser and updated as it
-                    changes.</span></li>
-            </ol>
-            <p class="note">There is no server. GitHub Pages only sends the page files; everything else happens on
-                your own computer, so each person's history stays in their own browser.</p>
-            <div class="cards two">
-                <div class="card">
-                    <h3>Try it on the board</h3>
-                    <ul class="keys">
-                        <li><kbd>A</kbd> + <kbd>B</kbd> switch between HOME and AWAY</li>
-                        <li><kbd>A</kbd> the door opens: a <b>Warning</b> in AWAY, ignored in HOME</li>
-                        <li><kbd>shake</kbd> smoke: a <b>Critical</b> Incident in any mode</li>
-                        <li><kbd>B</kbd> the owner marks the newest active Incident as resolved</li>
-                        <li><kbd>logo</kbd> touch the gold logo: "water leak" on the dashboard (display only)</li>
-                    </ul>
-                </div>
-                <div class="card">
-                    <h3>What the LEDs show</h3>
-                    <ul class="keys">
-                        <li><b>?</b> no mode chosen yet · <b>H</b> HOME · <b>A</b> AWAY</li>
-                        <li>blinking <b>!</b> a Warning is active</li>
-                        <li>whole screen flashing: a Critical Incident is active (it always wins over a Warning)</li>
-                        <li>a tick: an Incident was just resolved</li>
-                    </ul>
-                </div>
-            </div>
+        <section>
+            <h2>2. What the website has</h2>
+            <p><a href="dashboard/">Dashboard</a>: shows what the micro:bit reports, such as the mode, alarms and a
+                simple history.</p>
+            <p><a href="install/">Install firmware</a>: how to put our program on a micro:bit.</p>
         </section>
 
-        <section class="block">
-            <h2>What it was designed to do</h2>
-            <p class="intro">In the first assignment we designed a full monitoring system for a Norwegian cabin
-                (hytte), with five UML diagrams, two architecture decisions and a team guide.</p>
-            <div class="cards three">
-                <div class="card">
-                    <h3>Temperature and water</h3>
-                    <p>Indoor and outdoor temperature and water leaks. When it gets cold outside, frost
-                        protection switches itself on and indoor temperature and power monitoring become
-                        mandatory.</p>
-                </div>
-                <div class="card">
-                    <h3>Power and connection</h3>
-                    <p>Power cuts and lost Internet, with battery backup and a mobile (SIM) connection as
-                        fallback, so monitoring never stops.</p>
-                </div>
-                <div class="card">
-                    <h3>Safety and security</h3>
-                    <p>Smoke, doors and motion, with HOME and AWAY modes. Incidents are Warnings or Critical, and
-                        go from the owner to family contacts to the emergency services if nobody responds.</p>
-                </div>
-            </div>
+        <section>
+            <h2>3. How it works</h2>
+            <p>The micro:bit is connected to a computer with a USB cable. When something happens, it sends a short
+                message. The dashboard reads these messages and saves them in the browser. There is no server.</p>
+            <p>On the board:</p>
+            <ul>
+                <li>A and B together: switch between HOME and AWAY</li>
+                <li>A: the door opens (a warning in AWAY)</li>
+                <li>Shake: smoke (a critical alarm)</li>
+                <li>B: mark the newest alarm as resolved</li>
+                <li>Touch the logo: shown as "water leak"</li>
+            </ul>
         </section>
 
-        <section class="block">
-            <h2>Designed vs. built</h2>
-            <p class="intro">For the second assignment the design had to run on a microcontroller. A micro:bit has
-                two buttons, a motion sensor, a 5×5 LED screen and a USB cable, and no smoke detector, thermometer
-                probe, battery backup or SIM card. So we kept the whole design in the software model and
-                connected only what the board can do.</p>
-            <div class="table-wrap">
-                <table>
-                    <thead><tr><th>Part of the design</th><th>Designed (full system)</th><th>Built (micro:bit)</th></tr></thead>
-                    <tbody>
-                        <tr><td>Sensors</td><td>8: smoke, indoor and outdoor temperature, water leak, door, motion,
-                            power, Internet</td><td><span class="tag yes">2 on the board</span> button A is the door,
-                            shaking is smoke. The other 6 exist only in the software model.
-                            <span class="tag part">Display only</span> the board's thermometer, touch logo and
-                            microphone are shown live as indoor temperature, water leak and sound, without
-                            creating Incidents</td></tr>
-                        <tr><td>HOME / AWAY</td><td>Door and motion only matter in AWAY</td><td><span class="tag yes">Works</span>
-                            buttons A+B switch mode; the door is ignored in HOME</td></tr>
-                        <tr><td>Incidents</td><td>Warning or Critical; a Warning can be upgraded to Critical as the same
-                            Incident</td><td><span class="tag yes">Works</span> door gives a Warning, smoke a Critical.
-                            The upgrade is in the model and the tests, but no button triggers it</td></tr>
-                        <tr><td>Owner response</td><td>Resolved / Not resolved, with suggested next steps</td><td><span class="tag part">Partly</span>
-                            button B resolves the newest active Incident; no next-step guidance</td></tr>
-                        <tr><td>Escalation</td><td>Owner, then family contacts, then emergency services, with waiting
-                            times</td><td><span class="tag part">Simulated</span> the model "notifies" a contact, but no
-                            SMS, calls or timers</td></tr>
-                        <tr><td>Frost protection</td><td>Outdoor temperature switches it on</td><td><span class="tag model">Model only</span>
-                            in the software and the tests; no thermometer is connected</td></tr>
-                        <tr><td>Battery and SIM fallback</td><td>Keeps monitoring through power and Internet cuts</td><td><span class="tag model">Model only</span>
-                            in the software and the tests; no battery or SIM</td></tr>
-                        <tr><td>History</td><td>Every Incident stored and updated in one record</td><td><span class="tag yes">Works</span>
-                            the board keeps the latest 20; the browser database keeps everything</td></tr>
-                        <tr><td>Notifications</td><td>Phone notifications to the owner and contacts</td><td><span class="tag no">Not built</span>
-                            the LED screen and the dashboard show it instead</td></tr>
-                    </tbody>
-                </table>
-            </div>
+        <section>
+            <h2>4. What we planned and what we built</h2>
+            <p>Our plan had eight sensors, alerts to family and emergency services, frost protection, and battery
+                and SIM backup. A micro:bit has only two buttons and a few simple sensors, so we built much less:</p>
+            <ul>
+                <li>The door and smoke alarms work, with HOME and AWAY.</li>
+                <li>Temperature, sound and "water" are only shown, not used for alarms.</li>
+                <li>Escalation, frost protection and backup exist only in our code, not on the board.</li>
+                <li>There are no phone messages.</li>
+            </ul>
         </section>
 
-        <section class="block">
-            <h2>How we built it</h2>
-            <div class="cards three">
-                <div class="card">
-                    <h3>1. Design first</h3>
-                    <p>We drew the system as UML diagrams (class, state machine, sequence) and wrote down the rules.
-                        The design is the ground truth.</p>
-                </div>
-                <div class="card">
-                    <h3>2. AI writes the code</h3>
-                    <p>An AI coding assistant turned the diagrams into C++ following strict mapping rules. The same
-                        code runs on the PC (for tests) and on the micro:bit.</p>
-                </div>
-                <div class="card">
-                    <h3>3. A tool checks it</h3>
-                    <p>A verifier reads the design back out of the code and compares it with our diagrams, every
-                        time. Gaps and our decisions about them are logged.</p>
-                </div>
-            </div>
+        <section>
+            <h2>5. How we worked</h2>
+            <p>We drew the design first, let an AI write the code from it, and used a tool to compare the code with
+                the diagrams. The chart shows how that comparison changed over nine steps. The code and our notes are
+                on <a href="https://github.com/hytte-monitoring/hytte-monitoring.github.io">GitHub</a>.</p>
+            <p>The checking tool is not ours. It comes from our course's template,
+                <a href="https://github.com/aiunderstand/ModelDrivenDesign_ex2">ModelDrivenDesign_ex2</a>, and we
+                copied these parts into our repository:</p>
+            <ul>
+                <li><code>tools/</code>: the verifier, which reads our diagrams and the C++ code and compares them.
+                    It gives the same result every time, so the check is deterministic.</li>
+                <li><code>examples/</code>: worked examples, which we used to learn how the tool works.</li>
+                <li><code>AGENTS.md</code>: the rules the AI follows when it turns diagrams into C++.</li>
+                <li>The VS Code tasks, and the micro:bit build script, which we adapted.</li>
+            </ul>
+            <p>To run it, we installed Python with the libclang library, and clang. Building for the micro:bit also
+                downloads the Arm compiler and the micro:bit's own libraries (CODAL).</p>
+            <p>Where our diagrams were unclear, we checked our team guide. Where that did not settle it either, the AI
+                made an assumption. Those assumptions were not final: our team went through all 13 of them, kept 10 and changed 3.</p>
             <figure class="chart">
-                <img src="img/fom.png" alt="Line charts over 9 iterations: class diagram alignment from 73.6 to 77.4 percent, sequence diagram from 100 to 83.3 percent, state machines at 100 percent; open deviations from 10 to 25; unit-test checks from 27 to 67.">
-                <figcaption>Our progress over 9 iterations: how closely the code matches the design, how many unclear
-                    points we had to resolve, and how many test checks pass.</figcaption>
+                <img src="img/fom.png" alt="Line charts over 10 steps: class diagram match from 73.6 to 80.0 percent, sequence diagram from 100 to 83.3 percent, state machines at 100 percent; unclear points settled by the team guide from 4 to 12, AI assumptions open for the team from 6 to 13, then 0 after the team review; test checks from 27 to 70.">
             </figure>
-            <p class="note">Everything, including the design, the code, the reports and a step-by-step log, is in
-                our <a href="https://github.com/hytte-monitoring/hytte-monitoring.github.io">GitHub repository</a>.</p>
         </section>
 
-        <section class="block try">
-            <h2>Try it yourself</h2>
-            <p>You need a BBC micro:bit v2, a USB cable and Chrome, Edge or Firefox 151+ on a computer.</p>
-            <div class="hero-actions">
-                <a class="cta primary" href="install/">1. Install on a micro:bit</a>
-                <a class="cta" href="dashboard/">2. Open the dashboard</a>
-            </div>
+        <section>
+            <h2>6. Trying it</h2>
+            <p>You need a micro:bit v2, a USB cable and Chrome, Edge or Firefox 151 or newer. Start with
+                <a href="install/">Install firmware</a>, then open the <a href="dashboard/">Dashboard</a>.</p>
         </section>
     </main>
 
     <footer>
         <!-- TEAM: add your names here, for example: Team: Name One, Name Two, Name Three -->
-        Hytte Monitoring is a student project for a course in model-driven AI design, 2026.
-        It is not a real product and does not monitor any real cabin.
+        A student project, 2026. Not a real product.
     </footer>
 </body>
 </html>

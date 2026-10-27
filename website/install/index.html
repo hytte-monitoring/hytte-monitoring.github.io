@@ -7,18 +7,30 @@
     <meta name="description" content="Put the Hytte Monitoring program on your own micro:bit, once, in four steps.">
     <link rel="stylesheet" href="../common.css">
     <link rel="stylesheet" href="../nav.css">
+    <script src="../nav.js" defer></script>
+    <link rel="stylesheet" href="../hero.css">
     <link rel="stylesheet" href="style.css">
     <script type="module" src="install.js"></script>
 </head>
 <body>
-    <header class="page-head">
-        <nav class="site-nav" aria-label="Site"><a href="../"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 11l9-7 9 7"/><path d="M5 10v10h14V10"/><path d="M10 20v-6h4v6"/></svg><span>Home</span></a><a href="../dashboard/"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="3"/><path d="M8 16v-4M12 16V8M16 16v-6"/></svg><span>Dashboard</span></a><a href="../install/" aria-current="page"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3v11"/><path d="M7 10l5 5 5-5"/><rect x="4" y="17" width="16" height="4" rx="1"/></svg><span>Install firmware</span></a></nav>
-        <div class="title-row">
+    <div class="hero">
+        <picture>
+            <!-- Portrait screens (phones, upright tablets) get the tall picture -->
+            <source media="(orientation: portrait)" srcset="../img/install-mobile.jpg">
+            <img src="../img/install-desktop.jpg" alt="A BBC micro:bit v2 board in front of its cardboard box">
+        </picture>
+        <header>
+            <span class="brand">Hytte Monitoring</span>
+            <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="site-menu" aria-label="Menu"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16"/></svg></button>
+            <nav id="site-menu" class="site-nav site-nav--light" aria-label="Site"><a href="../"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 11l9-7 9 7"/><path d="M5 10v10h14V10"/><path d="M10 20v-6h4v6"/></svg><span>Home</span></a><a href="../dashboard/"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="3"/><path d="M8 16v-4M12 16V8M16 16v-6"/></svg><span>Dashboard</span></a><a href="../install/" aria-current="page"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3v11"/><path d="M7 10l5 5 5-5"/><rect x="4" y="17" width="16" height="4" rx="1"/></svg><span>Install firmware</span></a></nav>
+        </header>
+        <div class="hero-content">
+            <p class="kicker">Install firmware</p>
             <h1>Install Hytte on your micro:bit</h1>
+            <p>Do this once. The program stays on the micro:bit, so next time you only plug it in and open the
+                <a href="../dashboard/">dashboard</a>.</p>
         </div>
-        <p class="lead">Do this once. The program stays on the micro:bit, so next time you only plug it in
-            and open the <a href="../dashboard/">dashboard</a>.</p>
-    </header>
+    </div>
 
     <main class="install">
         <ol class="steps">
@@ -48,7 +60,7 @@
         </ol>
 
         <details class="card advanced">
-            <summary>For advanced users: install from a terminal</summary>
+            <summary>Using a terminal (optional)</summary>
             <p class="hint">Paste the command for your system into a terminal (for example VS Code's). It downloads
                 the program from this page and copies it onto the MICROBIT drive (steps 2 and 3 in one).</p>
             <div class="commands">
