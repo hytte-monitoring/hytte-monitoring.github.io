@@ -1,0 +1,10 @@
+build/
+build-trace/
+__pycache__/
+*.pyc
+compile_commands.json
+.venv/
+.cache/
+node_modules/
+_site/
+.DS_Store
