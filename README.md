@@ -7,3 +7,10 @@ Remote cabin monitoring mock-up developed using UML-based, specification-driven 
 - `research/` — background notes and findings
 - `specs/` — written specifications
 - `plans/` — implementation plans
+- `project/` — assignment 2 verification project
+  - `diagrams/input/` — draw.io diagrams the verifier reads (class, state, sequence)
+  - `diagrams/output/` — generated comparison diagrams
+  - `impl/` — C++ implementation of the model (`include/`, `src/`, `scenarios/`)
+  - `reports/` — verifier reports and Figure of Merit data
+- `firmware/` — micro:bit code (domain classes plus input/output/serial drivers)
+- `website/dashboard/` — WebSerial dashboard and browser database
