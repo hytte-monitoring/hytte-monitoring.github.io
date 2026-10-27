@@ -1,0 +1,19 @@
+%% Source for diagrams/input/state-incident.drawio: a flat version of the
+%% "2 - Incident Lifecycle" page of model/statemachine-diagram/statemachine-diagram.drawio.
+%% See README.md for how the concurrent regions were flattened.
+stateDiagram-v2
+    direction LR
+    New
+    Warning
+    Critical
+    Closed
+    [*] --> New
+    New --> Warning : warningDetected / notifyOwner
+    New --> Critical : criticalDetected / notifyOwner
+    Warning --> Critical : conditionWorsens / upgradeToCritical
+    Warning --> Warning : ownerWaitingTimeout [contactsConfigured] / notifyContacts
+    Critical --> Critical : ownerWaitingTimeout [contactsConfigured] / notifyContacts
+    Critical --> Critical : contactWaitingTimeout / contactEmergencyService
+    Critical --> Critical : safetyOverride / contactEmergencyService
+    Warning --> Closed : ownerResolved / resolve
+    Critical --> Closed : ownerResolved / resolve

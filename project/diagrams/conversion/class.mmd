@@ -1,0 +1,134 @@
+%% Source for diagrams/input/class.drawio, converted from model/class-diagram/class-diagram.drawio.
+%% Same classes, attributes and methods as the team's diagram; see README.md for every change.
+classDiagram
+    direction TB
+
+    class HytteOwner {
+        -string userID
+        -string name
+        +configureMonitoring() void
+        +changeMode() void
+        +resolveIncident() void
+    }
+
+    class Cabin {
+        -string cabinId
+        -string name
+        -MonitoringMode mode
+        -bool coldProtectionActive
+        +changeMode() void
+    }
+
+    class MonitoringSystem {
+        -bool onBatteryBackup
+        -bool cellularFallback
+        +evaluateEvent() void
+        +createIncident() void
+        +escalateIncident() void
+    }
+
+    class Sensor {
+        <<abstract>>
+        #string sensorID
+        #bool enabled
+        +monitor() void
+        +detectCondition() void*
+    }
+
+    class SmokeSensor {
+        -bool smokeDetected
+        +detectSmoke() void
+    }
+
+    class IndoorTemperatureSensor {
+        -float temperature
+        +readTemperature() void
+    }
+
+    class OutdoorTemperatureSensor {
+        -float temperature
+        +readTemperature() void
+    }
+
+    class WaterLeakSensor {
+        -bool leakDetected
+        +detectLeak() void
+    }
+
+    class DoorSensor {
+        -bool open
+        +detectDoorState() void
+    }
+
+    class MotionSensor {
+        -bool motionDetected
+        +detectMotion() void
+    }
+
+    class PowerSensor {
+        -bool powerAvailable
+        +detectPowerState() void
+    }
+
+    class ConnectionSensor {
+        -bool connected
+        +detectConnection() void
+    }
+
+    class Incident {
+        -string incidentId
+        -Severity severity
+        -IncidentStatus status
+        -string timestamp
+        +upgradeToCritical() void
+        +resolve() void
+    }
+
+    class IncidentHistory {
+        +registerIncident() void
+        +updateIncident() void
+        +viewHistory() void
+    }
+
+    class EmergencyContact {
+        -string contactID
+        -string name
+        -string contactInfo
+        +receiveNotification() void
+    }
+
+    class MonitoringMode {
+        <<enumeration>>
+        HOME
+        AWAY
+    }
+
+    class Severity {
+        <<enumeration>>
+        WARNING
+        CRITICAL
+    }
+
+    class IncidentStatus {
+        <<enumeration>>
+        Active
+        Closed
+    }
+
+    Sensor <|-- SmokeSensor
+    Sensor <|-- IndoorTemperatureSensor
+    Sensor <|-- OutdoorTemperatureSensor
+    Sensor <|-- WaterLeakSensor
+    Sensor <|-- DoorSensor
+    Sensor <|-- MotionSensor
+    Sensor <|-- PowerSensor
+    Sensor <|-- ConnectionSensor
+    HytteOwner --> "*" Cabin : cabins
+    HytteOwner --> "*" EmergencyContact : contacts
+    HytteOwner --> "*" Incident : incidents
+    Cabin --> "*" Sensor : sensors
+    MonitoringSystem --> "1" Cabin : cabin
+    MonitoringSystem --> "*" Sensor : sensors
+    MonitoringSystem --> "*" Incident : incidents
+    IncidentHistory --> "*" Incident : incidents
+    Incident ..> EmergencyContact
