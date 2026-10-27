@@ -83,9 +83,11 @@ to run on the board, that is a deviation, and the team decides.
 ## 6. Database
 
 - IndexedDB through Dexie.js, in the browser, as in the course template.
-- Table `events`: append only.
+- Table `sessions`: one row per board start (`hello`).
+- Table `events`: every line from the board, append only.
 - Table `incidents`: **one row per Incident, updated in place**. This is
-  the Incident/Event History (Team Guide §9).
+  the Incident/Event History (Team Guide §9). The key is `session/id`,
+  because the board restarts its ids at `I-1` after a reset.
 - Export and import as JSON, plus clear.
 - The board keeps only the latest 20 Incidents (F13). The database is where
   the full history lives.

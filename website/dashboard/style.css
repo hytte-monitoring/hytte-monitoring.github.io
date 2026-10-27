@@ -1,0 +1,142 @@
+/* Hytte Monitoring dashboard. Colours follow the landing page (../style.css). */
+
+:root {
+    --ink: #1c1c1a;
+    --paper: #faf9f6;
+    --card: #ffffff;
+    --muted: #6b6b64;
+    --line: rgba(28, 28, 26, 0.12);
+    --accent: #2f5d50;
+    --warning: #b7791f;
+    --critical: #b42318;
+    --ok: #2f7a3e;
+    --led-off: #2a2a28;
+    --led-on: #ff3b30;
+}
+
+@media (prefers-color-scheme: dark) {
+    :root {
+        --ink: #ecebe6;
+        --paper: #151514;
+        --card: #1f1f1d;
+        --muted: #a3a29b;
+        --line: rgba(236, 235, 230, 0.14);
+        --accent: #7fbfa9;
+        --warning: #e0a84a;
+        --critical: #f07167;
+        --ok: #7cc58b;
+    }
+}
+
+* { box-sizing: border-box; }
+
+body {
+    margin: 0;
+    font-family: -apple-system, BlinkMacSystemFont, "Helvetica Neue", Arial, sans-serif;
+    color: var(--ink);
+    background: var(--paper);
+}
+
+.top {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    align-items: flex-end;
+    justify-content: space-between;
+    padding: 24px 16px 8px;
+    max-width: 1100px;
+    margin: 0 auto;
+}
+
+.top h1 { margin: 4px 0 0; font-size: 1.6rem; }
+.back { color: var(--muted); text-decoration: none; font-size: 0.9rem; }
+.actions { display: flex; gap: 8px; align-items: center; }
+
+.pill {
+    padding: 4px 10px;
+    border-radius: 999px;
+    font-size: 0.85rem;
+    border: 1px solid var(--line);
+    color: var(--muted);
+}
+.pill[data-state="on"] { color: var(--ok); border-color: var(--ok); }
+
+button, .button {
+    font: inherit;
+    padding: 8px 14px;
+    border-radius: 8px;
+    border: 1px solid var(--line);
+    background: var(--card);
+    color: var(--ink);
+    cursor: pointer;
+}
+button.primary { background: var(--accent); border-color: var(--accent); color: #fff; }
+button.danger { color: var(--critical); }
+button:disabled { opacity: 0.5; cursor: not-allowed; }
+
+.notice {
+    max-width: 1100px;
+    margin: 8px auto;
+    padding: 10px 16px;
+    border-left: 4px solid var(--warning);
+    background: var(--card);
+}
+
+.grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 16px;
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 16px;
+}
+.card {
+    background: var(--card);
+    border: 1px solid var(--line);
+    border-radius: 12px;
+    padding: 16px;
+    min-width: 0;
+}
+.card.wide { grid-column: 1 / -1; }
+.card h2 { margin: 0 0 8px; font-size: 1.05rem; }
+.hint { color: var(--muted); font-size: 0.85rem; margin: 0 0 10px; }
+.mono { font-family: ui-monospace, SFMono-Regular, Menlo, monospace; font-size: 0.8rem; }
+
+.board-row { display: flex; gap: 20px; align-items: center; flex-wrap: wrap; }
+.matrix {
+    display: grid;
+    grid-template-columns: repeat(5, 18px);
+    gap: 6px;
+    padding: 12px;
+    background: #111;
+    border-radius: 10px;
+}
+.led { width: 18px; height: 18px; border-radius: 3px; background: var(--led-off); }
+.led.on { background: var(--led-on); box-shadow: 0 0 8px var(--led-on); }
+.matrix[data-pattern="warning"] .led.on, .matrix[data-pattern="critical"] .led.on { animation: blink 0.5s steps(1) infinite; }
+@keyframes blink { 50% { opacity: 0.15; } }
+
+.facts { display: grid; grid-template-columns: auto 1fr; gap: 4px 12px; margin: 0; min-width: 0; }
+.facts dt { color: var(--muted); }
+.facts dd { margin: 0; overflow-wrap: anywhere; }
+
+.incidents, .counts, .events { list-style: none; margin: 0; padding: 0; }
+.incident { padding: 8px 10px; border-radius: 8px; margin-bottom: 6px; border-left: 4px solid; }
+.incident.warning { border-color: var(--warning); }
+.incident.critical { border-color: var(--critical); font-weight: 600; }
+.empty { color: var(--muted); }
+.counts li { display: inline-block; margin-right: 14px; }
+.buttons { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 10px; }
+.events li { padding: 3px 0; border-bottom: 1px solid var(--line); overflow-wrap: anywhere; }
+
+.table-wrap { overflow-x: auto; }
+table { width: 100%; border-collapse: collapse; font-size: 0.9rem; }
+th, td { text-align: left; padding: 6px 8px; border-bottom: 1px solid var(--line); white-space: nowrap; }
+th { color: var(--muted); font-weight: 500; }
+.state.warning { color: var(--warning); font-weight: 600; }
+.state.critical { color: var(--critical); font-weight: 600; }
+.state.closed { color: var(--ok); }
+
+@media (max-width: 720px) {
+    .grid { grid-template-columns: 1fr; }
+}

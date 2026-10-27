@@ -64,3 +64,7 @@ firmware/build.sh --flash
 - **C++11:** CODAL compiles with `-std=c++11`. The model needed one change
   for that: an out-of-class definition of each `transitions` table, used
   only before C++17.
+
+## Dashboard
+
+`website/dashboard/` reads these lines over WebSerial and stores them (Phase 5).

@@ -1,0 +1,85 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Hytte Monitoring Dashboard</title>
+    <meta name="description" content="Live view of the Hytte Monitoring micro:bit over WebSerial, with the Incident/Event History stored in the browser.">
+    <link rel="stylesheet" href="style.css">
+    <script type="module" src="app.js"></script>
+</head>
+<body>
+    <header class="top">
+        <div>
+            <a class="back" href="../">← Hytte</a>
+            <h1>Monitoring dashboard</h1>
+        </div>
+        <div class="actions">
+            <span id="status" class="pill" data-state="off">Not connected</span>
+            <button id="connect" class="primary" type="button">Connect micro:bit</button>
+        </div>
+    </header>
+    <p id="unsupported" class="notice" hidden>
+        This browser has no WebSerial. Open the page in Chrome or Edge on a computer to connect the
+        micro:bit. The stored history below works in every browser.
+    </p>
+
+    <main class="grid">
+        <section class="card board" aria-labelledby="board-title">
+            <h2 id="board-title">On the board</h2>
+            <div class="board-row">
+                <div id="matrix" class="matrix" role="img" aria-label="The board's LED matrix"></div>
+                <dl class="facts">
+                    <dt>Mode</dt><dd id="mode">—</dd>
+                    <dt>Session</dt><dd id="session">—</dd>
+                    <dt>Last line</dt><dd id="last-line" class="mono">—</dd>
+                </dl>
+            </div>
+            <p class="hint">A = door, shake = smoke, B = resolve, A+B = HOME / AWAY.</p>
+        </section>
+
+        <section class="card" aria-labelledby="active-title">
+            <h2 id="active-title">Active Incidents</h2>
+            <ul id="active" class="incidents"></ul>
+        </section>
+
+        <section class="card wide" aria-labelledby="history-title">
+            <h2 id="history-title">Incident/Event History</h2>
+            <p class="hint">One row per Incident, updated in place as it changes (Team Guide §9).</p>
+            <div class="table-wrap">
+                <table>
+                    <thead><tr><th>Session</th><th>Id</th><th>Severity</th><th>State</th><th>First seen</th><th>Updated</th><th>Closed</th></tr></thead>
+                    <tbody id="history"></tbody>
+                </table>
+            </div>
+        </section>
+
+        <section class="card" aria-labelledby="latency-title">
+            <h2 id="latency-title">On-board latency</h2>
+            <p class="hint">Model update and LED redraw, measured by the board.</p>
+            <table>
+                <thead><tr><th>Input</th><th>Count</th><th>Median</th><th>Range</th></tr></thead>
+                <tbody id="latency"></tbody>
+            </table>
+        </section>
+
+        <section class="card" aria-labelledby="db-title">
+            <h2 id="db-title">Database</h2>
+            <p class="hint">IndexedDB <code>hytte-monitoring</code> in this browser.</p>
+            <ul id="counts" class="counts"></ul>
+            <div class="buttons">
+                <button id="export" type="button">Export JSON</button>
+                <label class="button">Import JSON<input id="import" type="file" accept="application/json" hidden></label>
+                <button id="sample" type="button">Add sample data</button>
+                <button id="clear" class="danger" type="button">Clear</button>
+            </div>
+        </section>
+
+        <section class="card wide" aria-labelledby="events-title">
+            <h2 id="events-title">Event log</h2>
+            <p class="hint">The latest 50 lines from the board, newest first.</p>
+            <ol id="events" class="events mono"></ol>
+        </section>
+    </main>
+</body>
+</html>

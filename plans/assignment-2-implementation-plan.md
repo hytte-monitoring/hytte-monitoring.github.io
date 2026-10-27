@@ -160,12 +160,14 @@ that they test the model, not the implementation's own guesses.
 
 ## Phase 5 – Database and dashboard
 
-- [ ] WebSerial connect (Chrome or Edge), and line parsing (spec §5).
-- [ ] Dexie database with `events` and `incidents` (updated in place) (spec §6).
-- [ ] Panels: live board state, event log, Incident/Event History, and
-      export, import and clear.
-- [ ] Link from the landing page; check it is served by GitHub Pages
-      (`.github/workflows/static.yml`).
+- [x] WebSerial connect (Chrome or Edge), and line parsing (spec §5): `website/dashboard/serial.js`.
+- [x] Dexie database with `sessions`, `incidents` (updated in place, key `session/id`, because
+      ids restart after a board reset) and `events` (spec §6): `db.js`.
+- [x] Panels: LED mirror and mode, active Incidents, Incident/Event History, on-board
+      latency, event log, database (export, import, sample data, clear): `index.html`, `app.js`.
+- [x] Linked from the landing page (DASHBOARD). Pages publishes `website/`, so it will be at `/dashboard/`.
+- [ ] **Team:** install Chrome or Edge, open the page and test it with the board (the AI did not run it:
+      no browser with WebSerial and no Node.js here).
 
 👁 **Gate 5:** the team runs the demo flow end to end: board → serial →
 database → dashboard.
@@ -178,6 +180,7 @@ database → dashboard.
       use case and an activity diagram **from the code**, and the team
       compares them by eye with `model/use-case-diagram` and
       `model/activity-diagram`. These two cannot be verified automatically.
+- [ ] Optional: the board shows every Incident still on it; the dashboard keeps all of them.
 - [ ] Plot `fom.csv` (alignment per diagram and deviations over time) to
       `project/reports/fom.png`.
 
