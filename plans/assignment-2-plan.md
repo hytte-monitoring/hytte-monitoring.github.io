@@ -7,20 +7,20 @@ Related: `research/assignment-2-requirements.md`, `specs/assignment-2-iot-spec.m
 - [ ] Agree on the board, the input mapping and the FoM (spec §1–2,
       research "Open questions").
 - [ ] Borrow a micro:bit v2 and check that it flashes and talks over serial.
-- [ ] Bring in the verifier from the example repo (`tools/`, `requirements.txt`,
+- [x] Bring in the verifier from the example repo (`tools/`, `requirements.txt`,
       `AGENTS.md`), with credit to the source.
-- [ ] Create the structure:
+- [x] Create the structure:
       `project/diagrams/input/`, `project/impl/`, `project/reports/`,
       `firmware/`, `website/dashboard/`.
 
 ## Phase 1 – Baseline (do this first, it is FoM data point 1)
 
-- [ ] Adapt the class diagram, the Incident state machine and one sequence
+- [x] Adapt the class diagram, the Incident state machine and one sequence
       diagram to the verifier's draw.io conventions, and put them in
       `project/diagrams/input/`.
-- [ ] Generate a first C++ implementation with AI from those inputs only.
-- [ ] Run `verify.py` and commit the report. **This is the baseline score.**
-- [ ] Start `reports/fom.csv` with columns `date, commit, class%, state%, sequence%, tests_passed`.
+- [x] Generate a first C++ implementation with AI from those inputs only.
+- [x] Run `verify.py` and commit the report. **This is the baseline score.**
+- [x] Start `reports/fom.csv` with columns `date, commit, class%, state%, sequence%, tests_passed`.
 
 ## Phase 2 – Close the gap (FoM data points 2, 3, ...)
 
