@@ -86,13 +86,18 @@ D01–D10. **Open.**
 👁 **Gate 2:** every remaining difference is explained by a deviation the
 team accepted.
 
-## Phase 3 – Unit tests and benchmarks
+## Phase 3 – Unit tests and benchmarks ✅ (Gate 3 open)
 
-- [ ] `project/impl/tests/` with CTest. Tests for spec §7.2: ADR-001,
-      the same-Incident upgrade, every state transition, HOME/AWAY door rule.
-- [ ] Host benchmarks for spec §7.3, with the results in
-      `project/reports/benchmarks.md`.
-- [ ] Add a `tests_passed` value to the next `fom.csv` row.
+- [x] `project/impl/tests/` with CTest: 2 suites, 27/27 checks pass. They
+      cover every Incident transition, the same-Incident upgrade, resolve,
+      Warning not escalating to the Emergency Service, and Cabin mode
+      switching.
+- [x] Host benchmarks in `project/impl/benchmarks/`. Results and untestable
+      rules in `project/reports/test-and-benchmark-report.md`.
+- [x] `tests_passed` recorded in `fom.csv` (point 4).
+- [ ] ADR-001, the HOME/AWAY door rule and ADR-002 are **not testable**
+      with the current model. The team decides what to add to the model
+      (see the report).
 
 👁 **Gate 3:** the team runs the tests themselves (`ctest`) and checks
 that they test the model, not the implementation's own guesses.

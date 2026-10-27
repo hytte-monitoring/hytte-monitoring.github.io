@@ -2,3 +2,4 @@ point,date,commit,label,class_pct,state_incident_pct,class_identical,class_chang
 1,2026-10-27,dbd4675,baseline: first AI implementation,73.6,100.0,81,0,8,21,,10,
 2,2026-10-27,4e3a0d4,sequence diagram added (smoke_escalation),72.3,100.0,81,0,8,23,,15,100.0
 3,2026-10-27,844d418,associations as vector<weak_ptr<T>>,83.8,100.0,88,0,1,16,,15,100.0
+4,2026-10-27,4eca5e0,unit tests and host benchmark added,83.8,100.0,88,0,1,16,27/27,15,100.0
