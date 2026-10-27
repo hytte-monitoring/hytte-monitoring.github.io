@@ -30,8 +30,8 @@ in [aiunderstand/ModelDrivenDesign_ex2](https://github.com/aiunderstand/ModelDri
 |------------|------|
 | `?` | No mode chosen yet (`Awaiting`) |
 | `H` / `A` | HOME / AWAY, no active Incident |
-| blinking `!` | The newest active Incident is a Warning |
-| flashing full matrix | The newest active Incident is Critical |
+| flashing full matrix | At least one Incident is Critical. Critical always wins, so it is never hidden behind a Warning (ADR-001) |
+| blinking `!` | At least one Incident is a Warning, and none is Critical |
 | tick (0.8 s) | The owner just resolved an Incident |
 
 ## Serial lines (board → dashboard)
@@ -42,6 +42,7 @@ in [aiunderstand/ModelDrivenDesign_ex2](https://github.com/aiunderstand/ModelDri
 {"type":"event","sensor":"door","mode":"AWAY"}
 {"type":"incident","id":"I-3","severity":"WARNING","state":"Warning"}   sent when an Incident is new or changed
 {"type":"latency","input":"door","us":123}          model update + LED redraw, in microseconds (door, smoke, resolve)
+{"type":"display","pattern":"A"}                    the LED pattern changed: ?, H, A, warning, critical, tick
 {"type":"note","message":"..."}
 ```
 

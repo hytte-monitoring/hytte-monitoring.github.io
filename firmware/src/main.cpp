@@ -39,8 +39,8 @@ int main()
     monitoringSystem = new hytte::MonitoringSystem(*cabin, *history, {contact});
     owner = new hytte::HytteOwner("u1", "Owner", *history);
 
-    output = new io::OutputDriver(*cabin, *history);
     serial = new io::SerialLink(*history);
+    output = new io::OutputDriver(*cabin, *history, *serial);
     input = new io::InputDriver(*cabin, *monitoringSystem, *owner, *history, *output, *serial);
 
     serial->sendHello();

@@ -53,6 +53,13 @@ void SerialLink::sendNote(const char* message)
     send(line);
 }
 
+void SerialLink::sendDisplay(const char* pattern)
+{
+    char line[64];
+    snprintf(line, sizeof line, "{\"type\":\"display\",\"pattern\":\"%s\"}\n", pattern);
+    send(line);
+}
+
 void SerialLink::sendIncidentChanges()
 {
     std::map<std::string, hytte::Incident::State> now;

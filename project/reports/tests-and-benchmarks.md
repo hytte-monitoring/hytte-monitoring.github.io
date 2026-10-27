@@ -182,3 +182,59 @@ log does not show the display. Not testable on the board: Warning →
 Critical on the same Incident, because no input maps to `conditionWorsens`
 (it is covered by the unit tests).
 
+
+## Board test (Gate 4, run 3, after the LED fix)
+
+**What the user saw:** during run 2 the board showed `!` and never `A`.
+
+**Cause, in the board code:**
+- The LEDs showed the *newest* active Incident.
+- The old Critical `I-10` stayed active behind each newer Warning, so a
+  Critical was **hidden** behind a Warning.
+- There was almost always some Incident active, so `A` (no active Incident)
+  rarely had a chance to appear.
+
+**Fix (firmware only, no model change):**
+- The LEDs show the **most serious** active Incident: Critical before
+  Warning.
+- The board sends a `display` line whenever the LED pattern changes, so the
+  log proves what the LEDs showed.
+- The line is sent by the redraw loop, not by the input handler, so it does
+  not add to the measured latency.
+
+**Run 3** ([log](board-logs/2026-10-27-gate4-run3.jsonl), 91 lines). The
+user's test sequence appears twice, and both times it is correct:
+
+| Step | Log | Result |
+|------|-----|--------|
+| A+B, twice | `mode HOME`, display `H`, then `mode AWAY`, display `A` | ✅ from `?` the first press goes HOME (the rule: from HOME go AWAY, otherwise HOME) |
+| A | Warning `I-1`, display `warning` | ✅ |
+| Shake | Critical `I-2`, display `critical` | ✅ the Critical wins over the Warning |
+| B | `I-2` Closed, `tick`, `warning` | ✅ the Warning is still active |
+| B | `I-1` Closed, `tick`, `A` | ✅ `A` stays |
+
+- The board restarted 3 times during the capture (3 `hello` lines, and the
+  ids start again at `I-1`). This is to be confirmed by the user, probably
+  the reset button.
+- B with nothing active sends `no active Incident to resolve`.
+- **The user confirmed that the LEDs matched at every step.** The only
+  difference from the AI's instruction table was A+B: from `?` the board
+  shows `H` first, then `A`. The board was right and the table was wrong
+  (it left out the HOME step). Starting in HOME is a design choice, because
+  Team Guide §6 only says the owner chooses at startup.
+
+**Latency in run 3** (0–3 Incidents on the board):
+
+| Input | Measurements |
+|-------|--------------|
+| Door | 27–146 µs |
+| Smoke | 66–112 µs |
+| Resolve | 28–133 µs |
+
+The first resolve after a restart (133, 122 µs) includes building the tick
+image once.
+
+Compared with runs 1 and 2 (10–22 Incidents, 240–442 µs), this **confirms
+the performance finding**: the cost is the board code copying the whole
+history on every redraw, not the model. A door in HOME took 248 µs with
+about 10 Incidents stored, and 27 µs with none.

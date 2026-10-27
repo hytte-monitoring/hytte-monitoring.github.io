@@ -19,6 +19,7 @@ public:
     void sendMode(const hytte::Cabin& cabin);
     void sendLatency(const char* input, unsigned long microseconds);
     void sendNote(const char* message);
+    void sendDisplay(const char* pattern);
     // Sends one `incident` line for every Incident that is new or has changed since the
     // last call, with its id, severity and state (spec §5, F16).
     void sendIncidentChanges();

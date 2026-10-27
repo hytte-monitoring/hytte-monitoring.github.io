@@ -144,8 +144,10 @@ that they test the model, not the implementation's own guesses.
 - [x] Flash: the board starts and sends `hello` and `mode NONE`.
 - [x] Button B: the owner resolves the newest active Incident (F15). Serial sends
       `incident` lines with id, severity and state (F16). Point 9.
-- [x] Board test, 2 runs: every input matches the model (`tests-and-benchmarks.md`,
-      `board-logs/`). **Team:** confirm the LED patterns.
+- [x] Board test, 3 runs: every input matches the model (`tests-and-benchmarks.md`,
+      `board-logs/`). The LEDs now show the most serious Incident, and every LED
+      change is logged as a `display` line, so the patterns are checked too.
+      **Gate 4 passed:** the user confirmed the LEDs (2026-10-27).
 - [ ] Optional: a less sensitive smoke gesture (the shake also fires while the
       board is handled).
 - [x] Firmware size: model 4.6 KB, board code 4.1 KB (`project/reports/tests-and-benchmarks.md`).
