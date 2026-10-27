@@ -14,9 +14,9 @@ Notation changes forced by the verifier are not deviations. They are listed in
 
 | Source | Count |
 |--------|------:|
-| Team Guide | 11 |
-| AI assumption, open for the team | 10 |
-| **Total** | **21** |
+| Team Guide | 12 |
+| AI assumption, open for the team | 11 |
+| **Total** | **23** |
 
 | ID | Where | Unclear in the UML or ADR | Resolution | Source |
 |----|-------|---------------------------|------------|--------|
@@ -40,7 +40,9 @@ Notation changes forced by the verifier are not deviations. They are listed in
 | D18 | Class diagram (F03 decision) | The decided line Cabin → MonitoringSystem has no role name or multiplicity | Role `system`, multiplicity `1`: one cabin, one monitoring system (matches D04) | AI assumption |
 | D19 | Implementation (F03 decision) | Which MonitoringSystem method a security Warning should call is not drawn | `reportSecurityWarning()` calls `createIncident()`: the system creates the Incident | Team Guide §7 |
 | D20 | Implementation (F10 decision) | `registerIncident()` has no parameters, so it is not clear what it registers | It creates the new Incident and keeps it: an Incident is registered in the history when it is created | Team Guide §9 |
-| D21 | Implementation (F10 decision) | A new Incident needs an id and a timestamp, but nothing supplies them | Id `I-1`, `I-2`, … in order; timestamp empty (the micro:bit has no clock, see D05) | AI assumption |
+| D21 | Implementation (F10 decision) | A new Incident needs an id and a timestamp, but nothing supplies them | Id `I-1`, `I-2`, … in order, counted by a function-local counter (the class diagram has no attribute for it), so ids are never reused after old Incidents are dropped; timestamp empty (the micro:bit has no clock, see D05) | AI assumption |
+| D22 | Class diagram (F13 decision) | The decided history limit has no size and no rule for what is dropped | `maxIncidents = 20`. When full, the oldest *closed* Incident is dropped, or else the oldest. The dashboard database keeps all of them | AI assumption |
+| D23 | Implementation (F11 decision) | Which severity each event creates is not drawn | Smoke (`evaluateEvent()`, the `smoke_escalation` path) creates a CRITICAL Incident; a door or motion event in AWAY creates a WARNING | Team Guide §6, §7, §12 |
 
 ## Findings and team decisions
 
@@ -61,6 +63,7 @@ change by hand in `model/`**, so the ground truth stays the source.
 | F08 | The sensor subclasses must override `detectCondition()` (D06), which they do not show: 8 Extra | Open | Open |
 | F09 | ADR-001 is not testable: the class diagram has no way to disable a sensor and no thresholds | Open | Open |
 | F10 | No class owns `Incident` objects: every line to Incident is a plain association (MonitoringSystem, IncidentHistory, HytteOwner). So `createIncident()` has nowhere to keep a new Incident | `IncidentHistory *-- "*" Incident : incidents`, a composition (decided by the user, 2026-10-27). Details D20, D21 | Done in the conversion (the relation is identical). **Team: change the line to a filled diamond in `model/class-diagram`** |
-| F11 | The new Incident's severity cannot be set: `createIncident()` and `registerIncident()` have no parameters, so nothing in the model can say Warning (door) or Critical (smoke). The Incident stays in `New`, and nothing fires `warningDetected` or `criticalDetected` | Open. Options: parameters such as `createIncident(severity: Severity)`, or separate methods | **Open, needed for Phase 4** |
-| F12 | The firmware and the dashboard cannot read the Incidents: `viewHistory()` returns nothing, and the history has no getter | Open. Options: `viewHistory()` returns the Incidents, or a getter for the latest active Incident | **Open, needed for Phase 4** |
-| F13 | The history grows without limit (Team Guide §9: all Incidents are stored). Each Incident is about 80 bytes plus allocation overhead on the PC. The micro:bit has 128 KB of RAM | Open. Options: the board keeps only the latest N Incidents and the dashboard database keeps all of them, or a rule in the model | Open, before Phase 4 |
+| F11 | The new Incident's severity cannot be set: `createIncident()` and `registerIncident()` have no parameters, so nothing in the model can say Warning (door) or Critical (smoke) | `createIncident(severity: Severity)` and `registerIncident(severity: Severity)` (decided by the user, 2026-10-27). The history starts the Incident with `warningDetected` or `criticalDetected` (D23) | Done in the conversion. **Team: add the parameters in `model/class-diagram`** |
+| F12 | The firmware and the dashboard cannot read the Incidents: `viewHistory()` returns nothing, and the history has no getter | `viewHistory(): vector<Incident>` returns a copy of every Incident on the board, oldest first (decided by the user, 2026-10-27) | Done in the conversion. **Team: add the return type in `model/class-diagram`** |
+| F13 | The history grows without limit (Team Guide §9: all Incidents are stored). Each Incident is about 80 bytes plus allocation overhead on the PC. The micro:bit has 128 KB of RAM | Limit the history (decided by the user, 2026-10-27): attribute `-maxIncidents: size_t` on IncidentHistory (D22). The board keeps the latest 20; the dashboard database keeps everything. The user may move long-term storage to DoltHub later | Done in the conversion. **Team: add the attribute in `model/class-diagram`** |
+| F14 | Sequence vs implementation: the new Incident must be told its severity (`IncidentHistory → Incident : handle()`, F11), but the team's sequence diagram (*Create Critical Incident*) does not draw that call. `smoke_escalation` dropped from 100 % to 83.3 % (1 extra message, 1 extra lifeline) | Open. Options: the team adds the message and the Incident lifeline to the sequence diagram, or the severity is set in the Incident's constructor (constructors are never messages) | Open |

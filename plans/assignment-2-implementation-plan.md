@@ -80,8 +80,10 @@ D01–D10. **Open.**
 - [x] Add the association Cabin → MonitoringSystem (F03). Class 76.5 %. Point 6.
 - [x] IncidentHistory owns the Incidents, a composition (F10). Class 76.5 %, tests
       55/55. Point 7.
-- [ ] **Before Phase 4:** decide F11 (severity of a new Incident), F12 (how the
-      firmware reads Incidents) and F13 (history limit on the board).
+- [x] Decided and done: F11 (severity parameter), F12 (`viewHistory()` returns
+      the Incidents), F13 (history limit 20). Class 76.7 %, sequence 83.3 %
+      (F14), tests 63/63. Point 8.
+- [ ] F14: the team decides how the sequence diagram shows the severity call.
 - [ ] **Team decisions on the models** (see the research §3.2), then
       re-convert and re-verify:
   - add the Incident state machine members to the class diagram;

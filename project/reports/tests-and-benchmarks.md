@@ -16,7 +16,7 @@ cmake -S . -B build-release -DCMAKE_BUILD_TYPE=Release && cmake --build build-re
   MonitoringSystem each declare `friend struct TestAccess;` for this. The
   verifier ignores friend declarations.
 
-**Result: 3/3 suites, 55/55 checks passed** (FoM point 7; point 4 had 27 checks and points 5–6 had 51).
+**Result: 3/3 suites, 63/63 checks passed** (FoM point 8; earlier points had 27, 51 and 55).
 
 | Suite | What it checks | Model source | Checks |
 |-------|----------------|--------------|-------:|
@@ -35,7 +35,10 @@ cmake -S . -B build-release -DCMAKE_BUILD_TYPE=Release && cmake --build build-re
 | | Door and motion are ignored in HOME and handled in AWAY | `state-cabin`, Team Guide §6 (D17) | 2 |
 | | ADR-002: battery on power loss, Cellular/SIM on Internet loss, both at once, and back | `state-monitoring_system`, ADR-002 | 8 |
 | | A door or motion event in AWAY registers an Incident in the history; in HOME it does not | `state-cabin`, F03, F10, Team Guide §6 and §9 | 3 |
-| | The `smoke_escalation` path registers one Incident | Sequence `smoke_escalation`, F10 | 1 |
+| | The `smoke_escalation` path registers one Incident, and it is Critical | Sequence `smoke_escalation`, F10, F11 | 2 |
+| | A door Incident in AWAY is a Warning, read through `viewHistory()` | F11, F12 | 1 |
+| | The history keeps at most 20 Incidents, drops the oldest first, and never reuses ids | F13, D21, D22 | 4 |
+| `test_incident` | `New → Critical` sets severity CRITICAL | State machine, F11 | 1 |
 
 ### What cannot be tested yet (findings for the team)
 
@@ -47,7 +50,6 @@ behaviour, which the deviation rule does not allow.
 |------|-------------------------|
 | ADR-001: smoke and Internet/Connection monitoring cannot be disabled | The class diagram has no way to disable a sensor: `configureMonitoring()` has no parameters, and `enabled` has no setter |
 | ADR-001: Critical thresholds are system-controlled | No class or attribute in the class diagram holds a threshold |
-| Team Guide §6: a door in AWAY creates a **Warning** Incident | Partly: since FoM point 7 an Incident is created and registered (tested), but its severity cannot be set, so it stays in `New` instead of `Warning` (F11) |
 | The `contactsConfigured` guard | It always returns `false` (D09), so the guarded transitions cannot fire |
 | Notifications (owner, contact, Emergency Service) | The methods are mock-ups with no effect to observe (Team Guide §17) |
 
@@ -80,6 +82,21 @@ It now really creates an Incident and allocates it on the heap (with
 `unique_ptr`, inside a growing `vector`). That is a real cost of the F10
 decision. In the benchmark, 1 000 000 calls also create 1 000 000
 Incidents, which shows that the history is unbounded (F13).
+
+### Re-run after F11–F13 (FoM point 8)
+
+- The PC was in a fast power state again (the lifecycle is back near the
+  first session's value).
+- Median of 5 runs.
+
+| Measurement | Median | Ratio to the lifecycle |
+|-------------|-------:|-----------------------:|
+| Incident lifecycle | **22.9 ns** | 1 |
+| `evaluateEvent()` | **68.2 ns** | 3.0 (was 3.4 at point 7) |
+
+Since the history is limited to 20 Incidents, `evaluateEvent()` no longer
+grows a vector of a million Incidents. It now pays for one allocation, and
+for dropping the oldest Incident when the history is full.
 
 The model's logic takes nanoseconds on the PC. On the micro:bit (64 MHz
 Cortex-M4), the time from button to LED will be dominated by input

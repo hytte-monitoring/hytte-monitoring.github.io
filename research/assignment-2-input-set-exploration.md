@@ -99,6 +99,7 @@ in the *Findings and team decisions* table of `deviations.md`.
 | Q4 | How do the C++ model classes run on the micro:bit? | The firmware compiles `project/impl/` unchanged and adds a thin I/O layer |
 | Q5 | Which Figure of Merit? | Verifier alignment % per diagram, plus the deviation count |
 | Q6 | Should the guidance steps (Suggested Next Steps) appear on the board? | No. Dashboard only (UI) |
+| Q7 | Where is the full Incident/Event History kept long term? | Phase 5: the browser database (IndexedDB). Later, possibly DoltHub, a versioned SQL database hosted like GitHub. The tables are designed so they map 1:1 to SQL tables. Writing to DoltHub from a public GitHub Pages site needs a way to keep the API token secret |
 
 ## 4. Quality considerations
 

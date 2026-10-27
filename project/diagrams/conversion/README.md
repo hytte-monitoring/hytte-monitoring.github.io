@@ -149,6 +149,11 @@ product of their states).
 - F10: `IncidentHistory --> "*" Incident` became the composition
   `IncidentHistory *-- "*" Incident`: the history owns every Incident (D20,
   D21).
+- F11: `createIncident(Severity severity)` and
+  `registerIncident(Severity severity)` (D23).
+- F12: `viewHistory()` returns `vector<Incident>`.
+- F13: the attribute `-size_t maxIncidents` on IncidentHistory (D22). It is
+  not `static`, because the verifier does not read static data members.
 
 ## Sequence diagram: which path, and how messages were mapped
 

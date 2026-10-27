@@ -87,6 +87,11 @@ to run on the board, that is a deviation, and the team decides.
 - Table `incidents`: **one row per Incident, updated in place**. This is
   the Incident/Event History (Team Guide §9).
 - Export and import as JSON, plus clear.
+- The board keeps only the latest 20 Incidents (F13). The database is where
+  the full history lives.
+- **Later option:** DoltHub as the long-term backend (research Q7). Keep the
+  `events` and `incidents` tables flat, with plain columns, so they can be
+  imported into SQL tables without changes.
 
 ## 7. Verification (required before any phase is called done)
 
