@@ -15,6 +15,7 @@ in `model/` are unchanged and remain the full documentation.
 |------|------|
 | `class.mmd` | The class diagram as mermaid text, the source for `../input/class.drawio` |
 | `state-incident.mmd` | The flat Incident state machine, the source for `../input/state-incident.drawio` |
+| `state-cabin.mmd`, `state-monitoring_system.mmd` | The System Operation page, flattened per owning class, the sources for `../input/state-cabin.drawio` and `../input/state-monitoring_system.drawio` |
 | `sequence-smoke_escalation.mmd` | One path through the sequence diagram, the source for `../input/sequence-smoke_escalation.drawio` |
 | `convert.py` | Draws both `.drawio` files using the verifier's own draw.io writer |
 
@@ -93,8 +94,55 @@ verifier needs one flat machine per class, so the converted machine is
 - Entry actions that update the History record. The verifier does not
   support `entry` actions.
 
-The *System Operation* page (HOME/AWAY, cold-weather protection, power
-source, communication channel) is not converted yet.
+The *System Operation* page is converted separately; see the next section.
+
+## System Operation page: split by owning class (team decision F02)
+
+The page has one composite state, *Operating*, with four concurrent regions.
+Each region was given to the class that owns its attribute in the class
+diagram, and each class's regions were flattened into one machine (the
+product of their states).
+
+| Region | Owner (attribute) | Machine |
+|--------|-------------------|---------|
+| MONITORING MODE: Awaiting mode selection, HOME, AWAY | `Cabin` (`mode`) | `state-cabin`: 3 × 2 = 6 states |
+| COLD-WEATHER PROTECTION: inactive, active | `Cabin` (`coldProtectionActive`) | |
+| POWER SOURCE: Cabin electricity, Battery backup | `MonitoringSystem` (`onBatteryBackup`) | `state-monitoring_system`: 2 × 2 = 4 states |
+| COMMUNICATION CHANNEL: Normal Internet, Cellular/SIM | `MonitoringSystem` (`cellularFallback`) | |
+
+**state-cabin** (6 states, 18 transitions). States `Awaiting`, `Home` and
+`Away`, each with a `…Cold` twin while protection is active.
+
+| Transition | From the original |
+|------------|-------------------|
+| `ownerSelectsHome`, `ownerSelectsAway` (8 arrows, in both protection states) | *owner selects HOME / AWAY*. The `/ changeMode` action keeps the `mode` attribute in step (deviation D16) |
+| `coldRequired / activateColdProtection` (3 arrows) | `when(coldRequired)`, and the entry action of *Protection active*: save the choices, make them mandatory |
+| `coldGone / deactivateColdProtection` (3 arrows) | `when(not coldRequired)`, and the exit action: restore the saved choices |
+| `doorOpened`, `motionDetected / reportSecurityWarning`, in `Away` and `AwayCold` (4 self-arrows) | The note on AWAY: *Enabled Door/Motion monitoring can create security Warnings*. HOME has no such arrow, so door and motion are ignored there (deviation D17) |
+
+**state-monitoring_system** (4 states, 8 transitions). Each `powerLost`,
+`powerRestored`, `internetLost` and `internetRestored` arrow comes from a
+`when(...)` arrow. Its action (`useBatteryBackup`, `useCabinElectricity`,
+`useCellular`, `useInternet`) comes from the target state's `entry /` line.
+
+**Notation changes (verifier limits):**
+- `entry` / `exit` actions became transition actions.
+- `when(...)` change events became named events.
+- The choice pseudo-states at the start of the cold, power and internet
+  regions (`[coldRequired]`, `[powerOK]`, `[internetOK]`) became plain
+  initial states (`Awaiting`, `ElectricityAndInternet`). A cabin that starts
+  in the cold, or on battery, gets the event right after start.
+
+**Left out:**
+- The entry note of *Awaiting mode selection* (ask the owner).
+- The *Operating* composite's internal transitions (*condition requires
+  attention / create Incident*, *Warning worsens / upgrade*). These are
+  covered by the Incident state machine and the sequence diagram.
+- The *Enabled* condition on door and motion (see D17).
+
+**Class diagram change (team decisions F01, F04):** `+state() State` was
+added to `Incident` and `Cabin`. The firmware needs it to show the state on
+the LEDs.
 
 ## Sequence diagram: which path, and how messages were mapped
 

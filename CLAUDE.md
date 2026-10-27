@@ -40,7 +40,9 @@ and had to be resolved by the Team Guide or by an assumption.
 After every change to `project/`, run `.venv/bin/python tools/verify.py project`,
 read every report in `project/reports/`, and add a row to `fom.csv` for each
 iteration (one commit per fix). Never edit generated files in
-`project/diagrams/output/` or `project/reports/*-report.md`.
+`project/diagrams/output/` or `project/reports/*-report.md`. The verifier
+deletes every `reports/*-report.md` on each run, so never give a hand-written
+file a name ending in `-report.md`.
 
 ## Workflow
 

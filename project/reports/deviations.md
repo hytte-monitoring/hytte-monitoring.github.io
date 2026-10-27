@@ -14,9 +14,9 @@ Notation changes forced by the verifier are not deviations. They are listed in
 
 | Source | Count |
 |--------|------:|
-| Team Guide | 7 |
+| Team Guide | 9 |
 | AI assumption, open for the team | 8 |
-| **Total** | **15** |
+| **Total** | **17** |
 
 | ID | Where | Unclear in the UML or ADR | Resolution | Source |
 |----|-------|---------------------------|------------|--------|
@@ -35,3 +35,24 @@ Notation changes forced by the verifier are not deviations. They are listed in
 | D13 | Sequence diagram | *Register* and *Update Incident/Event History* are drawn as MonitoringSystem self-messages, but the class diagram puts these methods on `IncidentHistory` | `IncidentHistory` lifeline added, and the calls go to it | Team Guide §9 |
 | D14 | Sequence and class diagram | The sequence has MonitoringSystem call IncidentHistory and EmergencyContact, but the class diagram has no relation from MonitoringSystem to either class | The implementation adds the two associations it needs (`history`, `contacts`). They show as Extra in the class report until the team decides | AI assumption |
 | D15 | Sequence and class diagram | *Send / Deliver Critical Notification* to the owner, but `HytteOwner` has no method to receive a notification | Message left out of the scenario | AI assumption |
+| D16 | State machine, System Operation page | The mode arrows (*owner selects HOME / AWAY*) have no action, so it is not clear how the class diagram's `Cabin.mode` attribute follows the state | Each arrow that changes the mode has the action `/ changeMode` (which switches HOME ⇄ AWAY, D07). `Awaiting → Home` has none, because `mode` starts as HOME | Team Guide §6 |
+| D17 | State machine, System Operation page | The door and motion rule is only a note on the AWAY state (*Enabled Door/Motion monitoring can create security Warnings*), not a transition | Self-transitions `doorOpened` and `motionDetected / reportSecurityWarning` on `Away` and `AwayCold`; none on HOME, where they are ignored. The *Enabled* condition is not modelled, because no class holds per-sensor enabling for the owner | Team Guide §6 |
+
+## Findings and team decisions
+
+Findings are gaps or contradictions in the input set that need a **team
+decision** rather than a deviation. Decisions made here change the verifier
+input in `project/diagrams/conversion/`. **The team must make the same
+change by hand in `model/`**, so the ground truth stays the source.
+
+| ID | Finding | Decision | Status |
+|----|---------|----------|--------|
+| F01 | The firmware must show the Incident state on the LEDs, but the class diagram has no way to read it | Add `+state() State` to `Incident` (decided by the user, 2026-10-27) | Done in the conversion. **Team: add it to `model/class-diagram`** |
+| F02 | The rule "a door in AWAY creates a Warning" is only on the *System Operation* state machine page, which was not converted | Convert the page (decided by the user, 2026-10-27): `state-cabin`, `state-monitoring_system` | Done. **Team: review the split and D16, D17** |
+| F03 | In `state-cabin`, the Cabin reports a security Warning, but the class diagram gives Cabin no link to `MonitoringSystem` or `Incident`, so no Incident can be created from it | Open. Options: an association `Cabin → MonitoringSystem`, or MonitoringSystem reads `Cabin.state()` when it evaluates a door event | **Open, blocks the button A demo** |
+| F04 | The LEDs must also show HOME / AWAY, and `Cabin` has the same gap as F01 | `+state() State` added to `Cabin` together with F02, following the same decision as F01 | Done in the conversion. **User to confirm; team: add it to `model/class-diagram`** |
+| F05 | The class diagram does not show the state machine members of Incident, Cabin and MonitoringSystem (`state`, `handle()`, guards, actions): 17 Extra in the class report | Open: add them to the class diagram, as the template's examples do | Open |
+| F06 | Sequence vs class diagram: MonitoringSystem calls IncidentHistory and EmergencyContact without a relation (D14): 2 Extra | Open | Open |
+| F07 | `Incident ..> EmergencyContact` is drawn, but no Incident method uses EmergencyContact: 1 Missing | Open | Open |
+| F08 | The sensor subclasses must override `detectCondition()` (D06), which they do not show: 8 Extra | Open | Open |
+| F09 | ADR-001 is not testable: the class diagram has no way to disable a sensor and no thresholds | Open | Open |

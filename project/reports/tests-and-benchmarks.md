@@ -11,12 +11,12 @@ cmake -S . -B build-release -DCMAKE_BUILD_TYPE=Release && cmake --build build-re
 
 - No test framework is needed. `tests/check.hpp` provides a `CHECK` macro,
   and CTest runs each suite.
-- The class diagram has no getters, so the tests read private state through
-  `tests/test_access.hpp`. Incident and Cabin each declare
-  `friend struct TestAccess;` for this. The verifier ignores friend
-  declarations, so the alignment did not change (83.8 % / 100 % / 100 %).
+- Incident and Cabin have a `state()` getter (F01, F04). Everything else
+  is read through `tests/test_access.hpp`: Incident, Cabin and
+  MonitoringSystem each declare `friend struct TestAccess;` for this. The
+  verifier ignores friend declarations.
 
-**Result: 2/2 suites, 27/27 checks passed.**
+**Result: 3/3 suites, 51/51 checks passed** (since FoM point 5; point 4 had 2 suites and 27 checks).
 
 | Suite | What it checks | Model source | Checks |
 |-------|----------------|--------------|-------:|
@@ -29,6 +29,11 @@ cmake -S . -B build-release -DCMAKE_BUILD_TYPE=Release && cmake --build build-re
 | | Events with no arrow are ignored, including every event after `Closed` | State machine | 3 |
 | `test_cabin_and_sensor` | Cabin starts HOME; `changeMode()` switches HOME ⇄ AWAY | Class diagram, Team Guide §6 (D07) | 3 |
 | | `monitor()` asks an enabled sensor to detect its condition | Class diagram, Team Guide §4 (D08) | 1 |
+| `test_system_operation` | Cabin starts in `Awaiting`; owner chooses AWAY, then HOME, and `mode` follows | `state-cabin`, Team Guide §6 (D16) | 5 |
+| | Cold weather activates protection and keeps the mode; `coldGone` deactivates it | `state-cabin`, Team Guide §4 | 6 |
+| | Mode changes still work while protection is active | `state-cabin` | 3 |
+| | Door and motion are ignored in HOME and handled in AWAY | `state-cabin`, Team Guide §6 (D17) | 2 |
+| | ADR-002: battery on power loss, Cellular/SIM on Internet loss, both at once, and back | `state-monitoring_system`, ADR-002 | 8 |
 
 ### What cannot be tested yet (findings for the team)
 
@@ -40,8 +45,7 @@ behaviour, which the deviation rule does not allow.
 |------|-------------------------|
 | ADR-001: smoke and Internet/Connection monitoring cannot be disabled | The class diagram has no way to disable a sensor: `configureMonitoring()` has no parameters, and `enabled` has no setter |
 | ADR-001: Critical thresholds are system-controlled | No class or attribute in the class diagram holds a threshold |
-| Team Guide §6: a door in AWAY creates a Warning, in HOME it does not | This is on the *System Operation* state machine page, which is not converted yet. No class combines the mode and the door event |
-| ADR-002: battery and cellular fallback | `onBatteryBackup` and `cellularFallback` exist, but no method changes them |
+| Team Guide §6: a door in AWAY creates a **Warning Incident** | Partly testable since FoM point 5: the Cabin handles the door only in AWAY, but no Incident can be created from it (F03) |
 | The `contactsConfigured` guard | It always returns `false` (D09), so the guarded transitions cannot fire |
 | Notifications (owner, contact, Emergency Service) | The methods are mock-ups with no effect to observe (Team Guide §17) |
 

@@ -74,6 +74,9 @@ D01–D10. **Open.**
       scenario. Sequence 100 %; class regressed to 72.3 % (D14). Point 2.
 - [x] Implement to-many associations as `vector<weak_ptr<T>>`. Class
       83.8 %. Point 3.
+- [x] Convert the System Operation page (`state-cabin`,
+      `state-monitoring_system`, both 100 %) and add `state()` getters to
+      Incident and Cabin (F01, F02, F04). Class 76.3 %, tests 51/51. Point 5.
 - [ ] **Team decisions on the models** (see the research §3.2), then
       re-convert and re-verify:
   - add the Incident state machine members to the class diagram;
@@ -93,7 +96,7 @@ team accepted.
       Warning not escalating to the Emergency Service, and Cabin mode
       switching.
 - [x] Host benchmarks in `project/impl/benchmarks/`. Results and untestable
-      rules in `project/reports/test-and-benchmark-report.md`.
+      rules in `project/reports/tests-and-benchmarks.md`.
 - [x] `tests_passed` recorded in `fom.csv` (point 4).
 - [ ] ADR-001, the HOME/AWAY door rule and ADR-002 are **not testable**
       with the current model. The team decides what to add to the model
@@ -151,7 +154,7 @@ database → dashboard.
 
 ## Phase 6 – Quality report and final verification
 
-- [ ] `project/reports/quality-report.md` (spec §8).
+- [ ] `project/reports/quality-review.md` (spec §8).
 - [ ] Final verifier run, and the final `fom.csv` row.
 - [ ] Plot `fom.csv` (alignment per diagram and deviations over time) to
       `project/reports/fom.png`.

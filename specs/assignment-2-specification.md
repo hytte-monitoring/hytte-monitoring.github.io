@@ -30,7 +30,7 @@ Status: hardware choices in §3 are a **proposal awaiting team approval**
 | Model implementation (C++20, host) | `project/impl/` | The verifier inputs in `project/diagrams/input/` (generated from `project/diagrams/conversion/`) |
 | micro:bit firmware | `firmware/` | `project/impl/include` and `src` **unchanged**, plus an I/O layer |
 | Dashboard and database | `website/dashboard/` | Serial protocol §5, database §6 |
-| Reports | `project/reports/` | Verifier reports, `fom.csv`, `deviations.md`, `test-and-benchmark-report.md`, `quality-report.md` |
+| Reports | `project/reports/` | Verifier reports, `fom.csv`, `deviations.md`, `tests-and-benchmarks.md`, `quality-review.md` |
 
 ## 3. Hardware (proposal)
 
@@ -110,7 +110,7 @@ to run on the board, that is a deviation, and the team decides.
 
 ## 8. Quality report (after implementation)
 
-When the implementation is done, the AI writes `project/reports/quality-report.md`:
+When the implementation is done, the AI writes `project/reports/quality-review.md`:
 
 - Readability, judged for a junior software engineer.
 - Documentation coverage.

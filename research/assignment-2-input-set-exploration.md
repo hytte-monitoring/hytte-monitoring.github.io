@@ -78,6 +78,9 @@ All of these are logged with their resolution in `deviations.md`:
 4. **Class diagram:** the sensor subclasses do not show the
    `detectCondition()` they must override (side effect of D06).
 
+All open findings, and the team decisions made so far (F01–F09), are tracked
+in the *Findings and team decisions* table of `deviations.md`.
+
 ### 3.3 Limits of the verifier (not deviations, recorded in the conversion README)
 
 - It does not read plain rectangles with HTML text as classes, so the
