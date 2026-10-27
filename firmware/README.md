@@ -74,11 +74,15 @@ firmware/build.sh --flash
 
 ## Flashing a teammate's micro:bit (no repo needed)
 
-On the dashboard, open **Use your own micro:bit**. There are two ways:
+On the dashboard, the **Set up your micro:bit (one time only)** box is open at the top for new
+visitors, and closes once a board running Hytte is connected. There are two ways:
 
-- **Download and drag:** click **Firmware .hex** and drag the file onto the
-  MICROBIT drive.
-- **From a terminal:** copy the command for Windows (PowerShell), macOS or
+- **Download and drag:** click **Download Hytte for micro:bit** and drag the
+  file onto the MICROBIT drive, or save it straight onto that drive.
+- **The page checks the board:** if no Hytte line arrives within 5 s of
+  connecting, it says the micro:bit is not running Hytte yet and opens the
+  steps.
+- **From a terminal (under "For advanced users"):** copy the command for Windows (PowerShell), macOS or
   Linux. It downloads the `.hex` from the page's own address and copies it
   onto the drive. The commands are built in `website/dashboard/app.js`
   (`drawFlashCommands`).

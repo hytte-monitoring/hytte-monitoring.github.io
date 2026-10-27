@@ -16,7 +16,6 @@
         </div>
         <div class="actions">
             <span id="status" class="pill" data-state="off">Not connected</span>
-            <a class="button" href="hytte-monitoring.hex" download>Firmware .hex</a>
             <button id="connect" class="primary" type="button">Connect micro:bit</button>
         </div>
     </header>
@@ -25,38 +24,57 @@
         computer to connect the micro:bit. The stored history below works in every browser.
     </p>
 
-    <details class="notice howto">
-        <summary>Use your own micro:bit</summary>
-        <ol>
-            <li>Download the <a href="hytte-monitoring.hex" download>firmware (.hex)</a>.</li>
-            <li>Plug in a micro:bit v2 with USB. It appears as a drive called <b>MICROBIT</b>.
-                Drag the .hex file onto it, and wait until the yellow light stops blinking.</li>
-            <li>Open this page in <b>Chrome</b>, <b>Edge</b> or <b>Firefox 151+</b> on a computer.</li>
-            <li>Click <b>Connect micro:bit</b> and choose the micro:bit's port. Firefox first asks
-                you to allow serial access for the site.</li>
+    <details id="setup" class="setup" open>
+        <summary>Set up your micro:bit (one time only)</summary>
+        <ol class="steps">
+            <li>
+                <b>Plug your micro:bit into this computer</b> with a USB cable. A new drive called
+                <b>MICROBIT</b> appears, like a USB stick.
+            </li>
+            <li>
+                <b>Download the Hytte program:</b>
+                <a class="button primary big" href="hytte-monitoring.hex" download>Download Hytte for micro:bit</a>
+                <span class="tip">Tip: if your browser asks where to save, choose the <b>MICROBIT</b> drive
+                    and you can skip step 3.</span>
+            </li>
+            <li>
+                <b>Open your Downloads folder and drag</b> <code>hytte-monitoring.hex</code> onto the
+                <b>MICROBIT</b> drive. The yellow light on the back of the micro:bit blinks. Wait until it stops.
+            </li>
+            <li>
+                <b>Click Connect micro:bit</b> at the top of this page and choose the micro:bit. The board
+                shows <b>?</b> and this page shows "Connected".
+            </li>
         </ol>
-        <p>Everything runs in your own browser, and the history is stored in your browser only.
-            Use Export and Import to move it.</p>
+        <p class="tip">The program stays on the micro:bit, so you do this only once. Next time, just plug it
+            in and click Connect. Use Chrome, Edge or Firefox (version 151 or newer) on a computer.</p>
 
-        <h3>Or flash it from a terminal</h3>
-        <p>Plug in the micro:bit, then paste the command for your system into a terminal (for
-            example VS Code's). It downloads the firmware from this page and copies it onto the
-            MICROBIT drive, which is the same as step 2.</p>
-        <div class="commands">
-            <div class="command">
-                <div class="command-head"><b>Windows</b> (PowerShell)<button type="button" data-copy="cmd-windows">Copy</button></div>
-                <pre id="cmd-windows" class="mono"></pre>
+        <details class="advanced">
+            <summary>For advanced users: flash it from a terminal</summary>
+            <p>Paste the command for your system into a terminal (for example VS Code's). It downloads the
+                program from this page and copies it onto the MICROBIT drive (steps 2 and 3 in one).</p>
+            <div class="commands">
+                <div class="command">
+                    <div class="command-head"><b>Windows</b> (PowerShell)<button type="button" data-copy="cmd-windows">Copy</button></div>
+                    <pre id="cmd-windows" class="mono"></pre>
+                </div>
+                <div class="command">
+                    <div class="command-head"><b>macOS</b> (Terminal)<button type="button" data-copy="cmd-mac">Copy</button></div>
+                    <pre id="cmd-mac" class="mono"></pre>
+                </div>
+                <div class="command">
+                    <div class="command-head"><b>Linux</b> (bash)<button type="button" data-copy="cmd-linux">Copy</button></div>
+                    <pre id="cmd-linux" class="mono"></pre>
+                </div>
             </div>
-            <div class="command">
-                <div class="command-head"><b>macOS</b> (Terminal)<button type="button" data-copy="cmd-mac">Copy</button></div>
-                <pre id="cmd-mac" class="mono"></pre>
-            </div>
-            <div class="command">
-                <div class="command-head"><b>Linux</b> (bash)<button type="button" data-copy="cmd-linux">Copy</button></div>
-                <pre id="cmd-linux" class="mono"></pre>
-            </div>
-        </div>
+        </details>
     </details>
+
+    <p id="not-hytte" class="notice warn" hidden>
+        <b>This micro:bit is not running the Hytte program yet.</b> Follow steps 2 and 3 in
+        "Set up your micro:bit" above, then click Connect again. Already set up? Press the small
+        reset button on the back of the micro:bit; the page notices the restart.
+    </p>
 
     <main class="grid">
         <section class="card board" aria-labelledby="board-title">

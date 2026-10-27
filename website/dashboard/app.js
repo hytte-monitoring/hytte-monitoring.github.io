@@ -5,6 +5,18 @@ import * as store from "./db.js";
 const $ = (id) => document.getElementById(id);
 const board = new Board();
 let session = null;
+let helloTimer = null;   // shows the "not running Hytte" notice if no hello arrives
+
+// After connecting, the board restarts and greets with "hello". No greeting means the
+// micro:bit runs some other program: point the user to the setup steps.
+function expectHello() {
+    clearTimeout(helloTimer);
+    $("not-hytte").hidden = true;
+    helloTimer = setTimeout(() => {
+        $("not-hytte").hidden = false;
+        $("setup").open = true;
+    }, 5000);
+}
 
 // ---------------------------------------------------------------- the LED matrix mirror
 
@@ -89,8 +101,17 @@ async function drawAll() {
 
 // ---------------------------------------------------------------- the board's lines
 
+// The line types our firmware sends (firmware/README.md). Any of them proves the board runs
+// Hytte, even if its "hello" was sent a moment before the browser started reading.
+const HYTTE_TYPES = new Set(["hello", "mode", "display", "event", "incident", "latency", "note"]);
+
 board.addEventListener("message", async ({ detail: message }) => {
     $("last-line").textContent = JSON.stringify(message);
+    if (HYTTE_TYPES.has(message.type)) {
+        clearTimeout(helloTimer);                              // it runs Hytte: all good
+        $("not-hytte").hidden = true;
+        $("setup").open = false;
+    }
     if (message.type === "hello") {
         session = await store.startSession(message.firmware);   // the board (re)started
         $("session").textContent = `#${session}`;
@@ -105,8 +126,12 @@ board.addEventListener("message", async ({ detail: message }) => {
     await drawAll();
 });
 
-board.addEventListener("connected", () => setStatus("on", "Connected"));
+board.addEventListener("connected", () => {
+    setStatus("on", "Connected");
+    expectHello();
+});
 board.addEventListener("disconnected", () => {
+    clearTimeout(helloTimer);
     setStatus("off", "Not connected");
     session = null;
 });
