@@ -50,8 +50,12 @@ and had to be resolved by the Team Guide or by an assumption.
 - Notation changes forced by the verifier (supported shapes, C++ type names,
   `1..*` → `*`) are not deviations; they are listed in
   `project/diagrams/conversion/README.md`.
-- The number of open deviations is recorded in the `deviations` column of
-  `project/reports/fom.csv` at every data point.
+- The number of deviations is recorded in `project/reports/fom.csv` at every data
+  point: `deviations` (all), `deviations_team_guide` (settled by the Team Guide) and
+  `deviations_ai_open` (AI assumptions not yet decided by the team).
+- An AI assumption is **not** a resolution. When the team decides one (see
+  `project/reports/ai-assumptions-review.md`), change its source to
+  `Team decision (date)` in `deviations.md`, and update the review file and the counts.
 - Report new deviations to the user before declaring a task done. Do not
   close an `AI assumption` deviation yourself; the team decides.
 
@@ -66,11 +70,14 @@ file a name ending in `-report.md`.
 
 ## Workflow
 
-- Document every step in `WORKFLOW.md`: what, why, commands, sources fetched,
+- Document every step in the workflow log: what, why, commands, sources fetched,
   programs installed, results, commits. Add the user's prompt for the step to
-  its **Prompt log**.
+  its **Prompt log**. The log is local only, outside the repo:
+  `~/Documents/Hytte-Monitoring-WORKFLOW.md` (moved there by the user's
+  decision, 2026-10-28). Never add it back to the repo.
 - Commit locally in normal-sized commits: one per logical change, grouping related
   edits (a fix with its reports, FoM row and log entry). Not one per small detail.
   Short imperative message. Never push.
-- `Assignment_1_Guide.md` and `Assignment_2_Guide.md` are local only (listed in
-  `.git/info/exclude`). Never commit them.
+- The assignment guides are local only, outside the repo:
+  `~/Documents/Assignment_1_Guide.md` and `~/Documents/Assignment_2_Guide.md`
+  (moved there by the user's decision, 2026-10-28). Never add them to the repo.

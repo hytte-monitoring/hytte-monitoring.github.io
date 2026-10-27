@@ -111,7 +111,7 @@ in the *Findings and team decisions* table of `deviations.md`.
 | Quality | What it means here | How it is checked |
 |---------|--------------------|-------------------|
 | Maintainable | The model is the source; code is regenerated or fixed against it | The verifier on every change |
-| Documented | Every class file, deviation, decision and step is written down | `deviations.md`, `WORKFLOW.md`, conversion README |
+| Documented | Every class file, deviation, decision and step is written down | `deviations.md`, the team's workflow log, conversion README |
 | Tested | ADR-001 rules, the Warning → Critical upgrade on the same Incident, resolve | Unit tests (spec §6) |
 | Structured | One class per file; domain separate from I/O; folders by responsibility | Spec §4, `AGENTS.md` |
 | Performant | Event to LED reaction is fast enough to feel instant; the firmware fits the board | Benchmarks (spec §6) |

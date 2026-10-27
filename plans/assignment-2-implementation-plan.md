@@ -23,7 +23,7 @@ which is based on
   names, a comment where the model or a deviation explains why.
 - **Commits.** Commit locally in normal-sized commits, one per logical
   change. Only the team pushes.
-- **Documentation.** `WORKFLOW.md` gets a step and the prompt for every
+- **Documentation.** the workflow log gets a step and the prompt for every
   piece of work.
 - **Agents.** One agent works at a time on this repo. If parallel agents
   are used, they must tell each other before building, running the
@@ -114,7 +114,7 @@ that they test the model, not the implementation's own guesses.
 
 ## Phase 4 – Firmware on the micro:bit
 
-**Prerequisites (checked 2026-10-27, WORKFLOW Step 19):**
+**Prerequisites (checked 2026-10-27):**
 
 | Need | Status |
 |------|--------|
@@ -209,7 +209,7 @@ commits.
      deviations, tests.
   4. One feature with a code snippet, for example the Warning → Critical
      upgrade of the same Incident (the transition table).
-  5. Conclusion and lessons learned (`WORKFLOW.md` has the full story).
+  5. Conclusion and lessons learned (the workflow log has the full story).
 - [ ] 30-second video: AWAY → button A → Warning → shake → Critical →
       button B → resolved → dashboard history.
 - [ ] Rehearse the demo within 10 minutes.
