@@ -77,6 +77,7 @@ D01–D10. **Open.**
 - [x] Convert the System Operation page (`state-cabin`,
       `state-monitoring_system`, both 100 %) and add `state()` getters to
       Incident and Cabin (F01, F02, F04). Class 76.3 %, tests 51/51. Point 5.
+- [x] Add the association Cabin → MonitoringSystem (F03). Class 76.5 %. Point 6.
 - [ ] **Team decisions on the models** (see the research §3.2), then
       re-convert and re-verify:
   - add the Incident state machine members to the class diagram;
@@ -156,6 +157,10 @@ database → dashboard.
 
 - [ ] `project/reports/quality-review.md` (spec §8).
 - [ ] Final verifier run, and the final `fom.csv` row.
+- [ ] Two-level verification (assignment 1, step 4): the AI generates a
+      use case and an activity diagram **from the code**, and the team
+      compares them by eye with `model/use-case-diagram` and
+      `model/activity-diagram`. These two cannot be verified automatically.
 - [ ] Plot `fom.csv` (alignment per diagram and deviations over time) to
       `project/reports/fom.png`.
 

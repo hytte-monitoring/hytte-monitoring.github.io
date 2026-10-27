@@ -14,9 +14,9 @@ Notation changes forced by the verifier are not deviations. They are listed in
 
 | Source | Count |
 |--------|------:|
-| Team Guide | 9 |
-| AI assumption, open for the team | 8 |
-| **Total** | **17** |
+| Team Guide | 10 |
+| AI assumption, open for the team | 9 |
+| **Total** | **19** |
 
 | ID | Where | Unclear in the UML or ADR | Resolution | Source |
 |----|-------|---------------------------|------------|--------|
@@ -37,6 +37,8 @@ Notation changes forced by the verifier are not deviations. They are listed in
 | D15 | Sequence and class diagram | *Send / Deliver Critical Notification* to the owner, but `HytteOwner` has no method to receive a notification | Message left out of the scenario | AI assumption |
 | D16 | State machine, System Operation page | The mode arrows (*owner selects HOME / AWAY*) have no action, so it is not clear how the class diagram's `Cabin.mode` attribute follows the state | Each arrow that changes the mode has the action `/ changeMode` (which switches HOME ⇄ AWAY, D07). `Awaiting → Home` has none, because `mode` starts as HOME | Team Guide §6 |
 | D17 | State machine, System Operation page | The door and motion rule is only a note on the AWAY state (*Enabled Door/Motion monitoring can create security Warnings*), not a transition | Self-transitions `doorOpened` and `motionDetected / reportSecurityWarning` on `Away` and `AwayCold`; none on HOME, where they are ignored. The *Enabled* condition is not modelled, because no class holds per-sensor enabling for the owner | Team Guide §6 |
+| D18 | Class diagram (F03 decision) | The decided line Cabin → MonitoringSystem has no role name or multiplicity | Role `system`, multiplicity `1`: one cabin, one monitoring system (matches D04) | AI assumption |
+| D19 | Implementation (F03 decision) | Which MonitoringSystem method a security Warning should call is not drawn | `reportSecurityWarning()` calls `createIncident()`: the system creates the Incident | Team Guide §7 |
 
 ## Findings and team decisions
 
@@ -49,10 +51,11 @@ change by hand in `model/`**, so the ground truth stays the source.
 |----|---------|----------|--------|
 | F01 | The firmware must show the Incident state on the LEDs, but the class diagram has no way to read it | Add `+state() State` to `Incident` (decided by the user, 2026-10-27) | Done in the conversion. **Team: add it to `model/class-diagram`** |
 | F02 | The rule "a door in AWAY creates a Warning" is only on the *System Operation* state machine page, which was not converted | Convert the page (decided by the user, 2026-10-27): `state-cabin`, `state-monitoring_system` | Done. **Team: review the split and D16, D17** |
-| F03 | In `state-cabin`, the Cabin reports a security Warning, but the class diagram gives Cabin no link to `MonitoringSystem` or `Incident`, so no Incident can be created from it | Open. Options: an association `Cabin → MonitoringSystem`, or MonitoringSystem reads `Cabin.state()` when it evaluates a door event | **Open, blocks the button A demo** |
-| F04 | The LEDs must also show HOME / AWAY, and `Cabin` has the same gap as F01 | `+state() State` added to `Cabin` together with F02, following the same decision as F01 | Done in the conversion. **User to confirm; team: add it to `model/class-diagram`** |
+| F03 | In `state-cabin`, the Cabin reports a security Warning, but the class diagram gives Cabin no link to `MonitoringSystem` or `Incident`, so no Incident can be created from it | Add the association `Cabin --> "1" MonitoringSystem : system` (decided by the user, 2026-10-27). Details D18, D19 | Done in the conversion (class 76.5 %, the new relation is identical). **Team: add it to `model/class-diagram`** |
+| F04 | The LEDs must also show HOME / AWAY, and `Cabin` has the same gap as F01 | `+state() State` added to `Cabin` together with F02, following the same decision as F01 | Confirmed by the user, 2026-10-27. **Team: add it to `model/class-diagram`** |
 | F05 | The class diagram does not show the state machine members of Incident, Cabin and MonitoringSystem (`state`, `handle()`, guards, actions): 17 Extra in the class report | Open: add them to the class diagram, as the template's examples do | Open |
 | F06 | Sequence vs class diagram: MonitoringSystem calls IncidentHistory and EmergencyContact without a relation (D14): 2 Extra | Open | Open |
 | F07 | `Incident ..> EmergencyContact` is drawn, but no Incident method uses EmergencyContact: 1 Missing | Open | Open |
 | F08 | The sensor subclasses must override `detectCondition()` (D06), which they do not show: 8 Extra | Open | Open |
 | F09 | ADR-001 is not testable: the class diagram has no way to disable a sensor and no thresholds | Open | Open |
+| F10 | No class owns `Incident` objects: every line to Incident is a plain association (MonitoringSystem, IncidentHistory, HytteOwner). So `createIncident()` has nowhere to keep a new Incident, and the firmware must create and keep the Incident itself | Open. Options: make one association a composition (for example `IncidentHistory *-- "*" Incident`, matching Team Guide §9), or accept that the firmware's set-up code owns the Incidents | **Open, needed for Phase 4** |

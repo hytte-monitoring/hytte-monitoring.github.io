@@ -45,7 +45,7 @@ behaviour, which the deviation rule does not allow.
 |------|-------------------------|
 | ADR-001: smoke and Internet/Connection monitoring cannot be disabled | The class diagram has no way to disable a sensor: `configureMonitoring()` has no parameters, and `enabled` has no setter |
 | ADR-001: Critical thresholds are system-controlled | No class or attribute in the class diagram holds a threshold |
-| Team Guide §6: a door in AWAY creates a **Warning Incident** | Partly testable since FoM point 5: the Cabin handles the door only in AWAY, but no Incident can be created from it (F03) |
+| Team Guide §6: a door in AWAY creates a **Warning Incident** | Partly testable: the Cabin handles the door only in AWAY and calls `createIncident()` (F03, FoM point 6). But `createIncident()` only calls the mock-up `registerIncident()`, and no class owns Incidents (F10), so there is nothing to observe |
 | The `contactsConfigured` guard | It always returns `false` (D09), so the guarded transitions cannot fire |
 | Notifications (owner, contact, Emergency Service) | The methods are mock-ups with no effect to observe (Team Guide §17) |
 

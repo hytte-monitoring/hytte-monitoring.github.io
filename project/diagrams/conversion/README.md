@@ -140,9 +140,12 @@ product of their states).
   covered by the Incident state machine and the sequence diagram.
 - The *Enabled* condition on door and motion (see D17).
 
-**Class diagram change (team decisions F01, F04):** `+state() State` was
-added to `Incident` and `Cabin`. The firmware needs it to show the state on
-the LEDs.
+**Class diagram changes (team decisions):**
+- F01, F04: `+state() State` was added to `Incident` and `Cabin`. The
+  firmware needs it to show the state on the LEDs.
+- F03: the association `Cabin --> "1" MonitoringSystem : system` was
+  added, so a door or motion Warning in AWAY can reach `createIncident()`
+  (D18, D19).
 
 ## Sequence diagram: which path, and how messages were mapped
 
