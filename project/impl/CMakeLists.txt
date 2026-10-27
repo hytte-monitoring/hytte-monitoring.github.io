@@ -31,3 +31,6 @@ endif()
 
 add_executable(demo src/demo.cpp)
 target_link_libraries(demo PRIVATE hytte)
+
+add_executable(scenario_smoke_escalation scenarios/smoke_escalation.cpp)
+target_link_libraries(scenario_smoke_escalation PRIVATE hytte)
