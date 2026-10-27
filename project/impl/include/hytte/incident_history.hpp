@@ -15,7 +15,10 @@ public:
     void viewHistory();
 
 private:
-    std::vector<std::weak_ptr<Incident>> incidents_;
+    friend struct TestAccess;   // lets the unit tests read private state; not a UML element
+
+    // IncidentHistory *-- "*" Incident: the history owns every Incident (finding F10).
+    std::vector<std::unique_ptr<Incident>> incidents_;
 };
 
 }  // namespace hytte

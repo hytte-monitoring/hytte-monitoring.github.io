@@ -149,7 +149,7 @@ classDiagram
     HytteOwner --> "*" Cabin : cabins
     HytteOwner --> "*" EmergencyContact : contacts
     HytteOwner --> "*" Incident : incidents
-    IncidentHistory --> "*" Incident : incidents
+    IncidentHistory *-- "*" Incident : incidents
     Sensor <|-- IndoorTemperatureSensor
     MonitoringSystem --> "1" Cabin : cabin
     MonitoringSystem --> "*" Sensor : sensors

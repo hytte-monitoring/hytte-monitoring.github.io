@@ -133,5 +133,5 @@ classDiagram
     MonitoringSystem --> "1" Cabin : cabin
     MonitoringSystem --> "*" Sensor : sensors
     MonitoringSystem --> "*" Incident : incidents
-    IncidentHistory --> "*" Incident : incidents
+    IncidentHistory *-- "*" Incident : incidents
     Incident ..> EmergencyContact

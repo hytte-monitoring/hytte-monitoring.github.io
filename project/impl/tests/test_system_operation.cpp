@@ -72,6 +72,35 @@ void doorAndMotionAreOnlyHandledInAway()
     CHECK(away.state() == Cabin::State::Away);
 }
 
+// Team Guide §6 and §9: a door or motion event in AWAY creates and registers an Incident
+// in the history (F03, F10); in HOME it does not.
+void doorInAwayRegistersAnIncident()
+{
+    Cabin cabin("c1", "Hytte");
+    hytte::IncidentHistory history;
+    MonitoringSystem system(cabin, history, {});
+
+    cabin.handle(Cabin::Event::ownerSelectsHome);
+    cabin.handle(Cabin::Event::doorOpened);
+    CHECK(TestAccess::incidentCount(history) == 0);
+
+    cabin.handle(Cabin::Event::ownerSelectsAway);
+    cabin.handle(Cabin::Event::doorOpened);
+    CHECK(TestAccess::incidentCount(history) == 1);
+    cabin.handle(Cabin::Event::motionDetected);
+    CHECK(TestAccess::incidentCount(history) == 2);
+}
+
+// The smoke_escalation scenario registers one Incident.
+void smokeRegistersAnIncident()
+{
+    Cabin cabin("c1", "Hytte");
+    hytte::IncidentHistory history;
+    MonitoringSystem system(cabin, history, {});
+    system.evaluateEvent();
+    CHECK(TestAccess::incidentCount(history) == 1);
+}
+
 // ADR-002: battery backup on power failure, Cellular/SIM on Internet failure,
 // both at once, and back to normal when they return.
 void resilientMonitoringSwitchesAndRestores()
@@ -106,6 +135,8 @@ int main()
     coldWeatherActivatesAndDeactivatesProtection();
     modeChangesDuringColdProtection();
     doorAndMotionAreOnlyHandledInAway();
+    doorInAwayRegistersAnIncident();
+    smokeRegistersAnIncident();
     resilientMonitoringSwitchesAndRestores();
     return test::finish("test_system_operation");
 }
