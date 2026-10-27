@@ -25,7 +25,7 @@ Notation changes forced by the verifier are not deviations. They are listed in
 | D03 | Class diagram | HytteOwner–EmergencyContact and HytteOwner–Incident have no multiplicity | `*` for both: the owner configures contacts (plural) and views and resolves Incidents | Team Guide §2, §8, §13 |
 | D04 | Class diagram | MonitoringSystem–Cabin has no multiplicity | `1`: one monitoring system per cabin | AI assumption |
 | D05 | Class diagram | `Incident.timestamp` has type `DateTime`, which is not defined anywhere | `string` | AI assumption |
-| D06 | Class diagram | `Sensor` is `<<abstract>>` but has no abstract method, which C++ requires | `detectCondition()` made abstract: each subclass has its own detection | AI assumption |
+| D06 | Class diagram | `Sensor` is `<<abstract>>` but has no abstract method, which C++ requires | `detectCondition()` made abstract: each subclass has its own detection. Side effect: every subclass must override it, which shows as 8 Extra methods in the class report | AI assumption |
 | D07 | Implementation | `Cabin.changeMode()` takes no parameter, so the target mode is not given | Switches HOME ⇄ AWAY | Team Guide §6 |
 | D08 | Implementation | What `Sensor.monitor()` does is not specified | Detects the condition only while the sensor is enabled | Team Guide §4 |
 | D09 | Implementation | The guard `contactsConfigured` needs Incident to know the owner's contacts, but the class diagram gives Incident only a dependency on EmergencyContact | The guard returns `false` | AI assumption |

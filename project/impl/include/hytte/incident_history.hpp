@@ -1,5 +1,6 @@
 #pragma once
 
+#include <memory>
 #include <vector>
 
 #include "hytte/incident.hpp"
@@ -14,7 +15,7 @@ public:
     void viewHistory();
 
 private:
-    std::vector<Incident*> incidents_;
+    std::vector<std::weak_ptr<Incident>> incidents_;
 };
 
 }  // namespace hytte

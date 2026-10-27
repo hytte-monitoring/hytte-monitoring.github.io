@@ -10,9 +10,12 @@ void HytteOwner::configureMonitoring() {}
 
 void HytteOwner::changeMode()
 {
-    for (Cabin* cabin : cabins_)
+    for (const std::weak_ptr<Cabin>& cabin : cabins_)
     {
-        cabin->changeMode();
+        if (auto c = cabin.lock())
+        {
+            c->changeMode();
+        }
     }
 }
 

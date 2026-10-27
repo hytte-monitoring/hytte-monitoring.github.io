@@ -22,7 +22,6 @@ classDiagram
         -string name
         -MonitoringMode mode
         -bool coldProtectionActive
-        -vector~Sensor~ sensors
         +changeMode() void
     }
 
@@ -75,16 +74,12 @@ classDiagram
     class HytteOwner {
         -string userID
         -string name
-        -vector~Cabin~ cabins
-        -vector~EmergencyContact~ contacts
-        -vector~Incident~ incidents
         +configureMonitoring() void
         +changeMode() void
         +resolveIncident() void
     }
 
     class IncidentHistory {
-        -vector~Incident~ incidents
         +registerIncident() void
         +updateIncident() void
         +viewHistory() void
@@ -99,9 +94,6 @@ classDiagram
     class MonitoringSystem {
         -bool onBatteryBackup
         -bool cellularFallback
-        -vector~Sensor~ sensors
-        -vector~Incident~ incidents
-        -vector~EmergencyContact~ contacts
         +evaluateEvent() void
         +createIncident() void
         +escalateIncident() void
@@ -137,11 +129,19 @@ classDiagram
         +detectLeak() void
     }
 
+    Cabin --> "*" Sensor : sensors
     Sensor <|-- ConnectionSensor
     Sensor <|-- DoorSensor
+    HytteOwner --> "*" Cabin : cabins
+    HytteOwner --> "*" EmergencyContact : contacts
+    HytteOwner --> "*" Incident : incidents
+    IncidentHistory --> "*" Incident : incidents
     Sensor <|-- IndoorTemperatureSensor
     MonitoringSystem --> "1" Cabin : cabin
+    MonitoringSystem --> "*" Sensor : sensors
+    MonitoringSystem --> "*" Incident : incidents
     MonitoringSystem --> "1" IncidentHistory : history
+    MonitoringSystem --> "*" EmergencyContact : contacts
     Sensor <|-- MotionSensor
     Sensor <|-- OutdoorTemperatureSensor
     Sensor <|-- PowerSensor

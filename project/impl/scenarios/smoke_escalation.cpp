@@ -2,6 +2,8 @@
 //
 // main() sets the objects up; scenario() makes the calls the diagram shows, and only those
 // are recorded. The verifier runs this program in a traced build.
+#include <memory>
+
 #include "hytte/cabin.hpp"
 #include "hytte/emergency_contact.hpp"
 #include "hytte/incident_history.hpp"
@@ -20,8 +22,8 @@ int main()
 {
     hytte::Cabin cabin("c1", "Hytte");
     hytte::IncidentHistory history;
-    hytte::EmergencyContact contact("e1", "Family member", "+47 000 00 000");
-    hytte::MonitoringSystem system(cabin, history, {&contact});
+    auto contact = std::make_shared<hytte::EmergencyContact>("e1", "Family member", "+47 000 00 000");
+    hytte::MonitoringSystem system(cabin, history, {contact});
     scenario(system);
     return 0;
 }

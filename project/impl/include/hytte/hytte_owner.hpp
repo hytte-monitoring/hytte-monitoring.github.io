@@ -1,6 +1,7 @@
 #pragma once
 
 #include <string>
+#include <memory>
 #include <vector>
 
 #include "hytte/cabin.hpp"
@@ -21,9 +22,9 @@ public:
 private:
     std::string userID_;
     std::string name_;
-    std::vector<Cabin*> cabins_;
-    std::vector<EmergencyContact*> contacts_;
-    std::vector<Incident*> incidents_;
+    std::vector<std::weak_ptr<Cabin>> cabins_;
+    std::vector<std::weak_ptr<EmergencyContact>> contacts_;
+    std::vector<std::weak_ptr<Incident>> incidents_;
 };
 
 }  // namespace hytte

@@ -1,6 +1,7 @@
 #pragma once
 
 #include <string>
+#include <memory>
 #include <vector>
 
 #include "hytte/monitoring_mode.hpp"
@@ -20,7 +21,7 @@ private:
     std::string name_;
     MonitoringMode mode_ = MonitoringMode::HOME;
     bool coldProtectionActive_ = false;
-    std::vector<Sensor*> sensors_;
+    std::vector<std::weak_ptr<Sensor>> sensors_;
 };
 
 }  // namespace hytte

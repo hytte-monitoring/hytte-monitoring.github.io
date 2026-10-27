@@ -11,17 +11,17 @@
 
 ## Overview
 
-**Alignment: 72.3 %** — 81 of the 112 elements that appear in either diagram are identical in both.
+**Alignment: 83.8 %** — 88 of the 105 elements that appear in either diagram are identical in both.
 
 | | Classes | Attributes | Methods | Relations | **Total** |
 |---|--:|--:|--:|--:|--:|
 | In design | 18 | 31 | 23 | 17 | **89** |
-| In implemented design | 18 | 40 | 36 | 10 | **104** |
-| ✅ Identical | 18 | 31 | 23 | 9 | **81** |
+| In implemented design | 18 | 32 | 36 | 18 | **104** |
+| ✅ Identical | 18 | 31 | 23 | 16 | **88** |
 | ✏️ Changed | 0 | 0 | 0 | 0 | **0** |
-| ➖ Missing | 0 | 0 | 0 | 8 | **8** |
-| ➕ Extra | 0 | 9 | 13 | 1 | **23** |
-| **Alignment** | 100.0 % | 77.5 % | 63.9 % | 50.0 % | **72.3 %** |
+| ➖ Missing | 0 | 0 | 0 | 1 | **1** |
+| ➕ Extra | 0 | 1 | 13 | 2 | **16** |
+| **Alignment** | 100.0 % | 96.9 % | 63.9 % | 84.2 % | **83.8 %** |
 
 ### What the numbers mean
 
@@ -43,32 +43,17 @@ An *element* is one class, one attribute (or enum value), one method, or one rel
 
 _None._
 
-### ➖ Missing (8)
+### ➖ Missing (1)
 
 | Element | As drawn in the design |
 |---|---|
-| relation `Cabin → Sensor (sensors)` | `Cabin --> Sensor : sensors` |
-| relation `HytteOwner → Cabin (cabins)` | `HytteOwner --> Cabin : cabins` |
-| relation `HytteOwner → EmergencyContact (contacts)` | `HytteOwner --> EmergencyContact : contacts` |
-| relation `HytteOwner → Incident (incidents)` | `HytteOwner --> Incident : incidents` |
 | relation `Incident → EmergencyContact` | `Incident ..> EmergencyContact` |
-| relation `IncidentHistory → Incident (incidents)` | `IncidentHistory --> Incident : incidents` |
-| relation `MonitoringSystem → Incident (incidents)` | `MonitoringSystem --> Incident : incidents` |
-| relation `MonitoringSystem → Sensor (sensors)` | `MonitoringSystem --> Sensor : sensors` |
 
-### ➕ Extra (23)
+### ➕ Extra (16)
 
 | Element | As found in the implementation |
 |---|---|
-| attribute `Cabin.sensors` | `-vector<Sensor> sensors` |
-| attribute `HytteOwner.cabins` | `-vector<Cabin> cabins` |
-| attribute `HytteOwner.contacts` | `-vector<EmergencyContact> contacts` |
-| attribute `HytteOwner.incidents` | `-vector<Incident> incidents` |
 | attribute `Incident.state` | `-State state` |
-| attribute `IncidentHistory.incidents` | `-vector<Incident> incidents` |
-| attribute `MonitoringSystem.contacts` | `-vector<EmergencyContact> contacts` |
-| attribute `MonitoringSystem.incidents` | `-vector<Incident> incidents` |
-| attribute `MonitoringSystem.sensors` | `-vector<Sensor> sensors` |
 | method `ConnectionSensor.detectCondition()` | `+detectCondition() void` |
 | method `DoorSensor.detectCondition()` | `+detectCondition() void` |
 | method `Incident.contactEmergencyService()` | `-contactEmergencyService() void` |
@@ -82,6 +67,7 @@ _None._
 | method `PowerSensor.detectCondition()` | `+detectCondition() void` |
 | method `SmokeSensor.detectCondition()` | `+detectCondition() void` |
 | method `WaterLeakSensor.detectCondition()` | `+detectCondition() void` |
+| relation `MonitoringSystem → EmergencyContact (contacts)` | `MonitoringSystem --> EmergencyContact : contacts` |
 | relation `MonitoringSystem → IncidentHistory (history)` | `MonitoringSystem --> IncidentHistory : history` |
 
 ---
