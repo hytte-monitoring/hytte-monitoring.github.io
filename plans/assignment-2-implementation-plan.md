@@ -142,8 +142,9 @@ that they test the model, not the implementation's own guesses.
 - [x] Compile `project/impl` unchanged (plus the C++11 table definitions),
       and add `io/input_driver`, `io/output_driver` and `io/serial_link` (spec §4).
 - [x] Flash: the board starts and sends `hello` and `mode NONE`.
-- [ ] **Team:** press A, shake, A+B on the board and check the LEDs (spec §3).
-      Button B is blocked by F15.
+- [x] Button B: the owner resolves the newest active Incident (F15). Serial sends
+      `incident` lines with id, severity and state (F16). Point 9.
+- [ ] **Team:** press A+B, A, shake and B on the board and check the LEDs (spec §3).
 - [x] Firmware size: model 4.6 KB, board code 4.1 KB (`project/reports/tests-and-benchmarks.md`).
 - [ ] On-board latency: read the `latency` lines while pressing the buttons.
 - [x] Re-verify: alignment unchanged (class 76.7 %, sequence 83.3 %, states 100 %).
