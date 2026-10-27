@@ -15,9 +15,9 @@ Related: `research/assignment-2-requirements.md`, `specs/assignment-2-iot-spec.m
 
 ## Phase 1 – Baseline (do this first, it is FoM data point 1)
 
-- [x] Adapt the class diagram, the Incident state machine and one sequence
-      diagram to the verifier's draw.io conventions, and put them in
-      `project/diagrams/input/`.
+- [x] Adapt the class diagram and the Incident state machine to the
+      verifier's draw.io conventions, and put them in `project/diagrams/input/`.
+- [ ] Adapt one sequence diagram the same way (not done for the baseline).
 - [x] Generate a first C++ implementation with AI from those inputs only.
 - [x] Run `verify.py` and commit the report. **This is the baseline score.**
 - [x] Start `reports/fom.csv` with columns `date, commit, class%, state%, sequence%, tests_passed`.
