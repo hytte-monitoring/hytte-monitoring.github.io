@@ -5,6 +5,7 @@
 #include <memory>
 #include <vector>
 
+#include "hytte/emergency_contact.hpp"
 #include "hytte/incident.hpp"
 #include "hytte/severity.hpp"
 
@@ -13,7 +14,7 @@ namespace hytte {
 class IncidentHistory
 {
 public:
-    void registerIncident(Severity severity);
+    void registerIncident(Severity severity, const std::vector<std::weak_ptr<EmergencyContact>>& contacts);
     void updateIncident();
     std::vector<Incident> viewHistory() const;
     Incident* findIncident(const std::string& incidentId);

@@ -35,4 +35,8 @@ void HytteOwner::resolveIncident(const std::string& incidentId)
     history_->updateIncident();
 }
 
+// Mock-up: the notification is shown on the board and the dashboard, no real
+// message is sent (Team Guide §7, team decision on D15).
+void HytteOwner::receiveNotification() {}
+
 }  // namespace hytte

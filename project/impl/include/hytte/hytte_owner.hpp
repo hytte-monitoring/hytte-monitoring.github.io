@@ -19,6 +19,7 @@ public:
     void configureMonitoring();
     void changeMode();
     void resolveIncident(const std::string& incidentId);
+    void receiveNotification();
 
 private:
     std::string userID_;

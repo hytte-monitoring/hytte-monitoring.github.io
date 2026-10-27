@@ -1,7 +1,10 @@
 #pragma once
 
+#include <memory>
 #include <string>
+#include <vector>
 
+#include "hytte/emergency_contact.hpp"
 #include "hytte/incident_status.hpp"
 #include "hytte/severity.hpp"
 
@@ -22,7 +25,8 @@ public:
         ownerResolved,
     };
 
-    Incident(std::string incidentId, std::string timestamp, Severity severity);
+    Incident(std::string incidentId, std::string timestamp, Severity severity,
+             std::vector<std::weak_ptr<EmergencyContact>> contacts = {});
 
     void upgradeToCritical();
     void resolve();
@@ -40,6 +44,8 @@ private:
     IncidentStatus status_ = IncidentStatus::Active;
     std::string timestamp_;
     State state_ = State::New;   // the initial state
+    // Incident --> "*" EmergencyContact: the contacts to escalate to (team decision on D09).
+    std::vector<std::weak_ptr<EmergencyContact>> contacts_;
 
     bool contactsConfigured() const;
     void notifyOwner();

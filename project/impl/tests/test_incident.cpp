@@ -96,6 +96,20 @@ void warningIgnoresEmergencyEscalation()
     }
 }
 
+// Team Guide §10 (team decision on D09): the guard is true only while a contact exists.
+void contactsConfiguredFollowsTheContacts()
+{
+    Incident none("I-1", "", Severity::CRITICAL);
+    CHECK(!TestAccess::contactsConfigured(none));
+
+    auto contact = std::make_shared<hytte::EmergencyContact>("C-1", "Family", "+47 000 00 000");
+    Incident withContact("I-2", "", Severity::CRITICAL, {contact});
+    CHECK(TestAccess::contactsConfigured(withContact));
+
+    contact.reset();
+    CHECK(!TestAccess::contactsConfigured(withContact));
+}
+
 // Events without an arrow in the diagram are ignored.
 void eventsWithoutTransitionAreIgnored()
 {
@@ -126,5 +140,6 @@ int main()
     escalationKeepsCritical();
     warningIgnoresEmergencyEscalation();
     eventsWithoutTransitionAreIgnored();
+    contactsConfiguredFollowsTheContacts();
     return test::finish("test_incident");
 }

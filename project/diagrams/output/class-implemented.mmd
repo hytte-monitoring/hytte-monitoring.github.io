@@ -82,7 +82,7 @@ classDiagram
 
     class IncidentHistory {
         -size_t maxIncidents
-        +registerIncident(Severity severity) void
+        +registerIncident(Severity severity, vector~EmergencyContact~ contacts) void
         +updateIncident() void
         +viewHistory() vector~Incident~
         +findIncident(string incidentId) Incident
@@ -94,6 +94,7 @@ classDiagram
         +configureMonitoring() void
         +changeMode() void
         +resolveIncident(string incidentId) void
+        +receiveNotification() void
     }
 
     class IndoorTemperatureSensor {
@@ -150,6 +151,7 @@ classDiagram
     Cabin --> "1" MonitoringSystem : system
     Sensor <|-- ConnectionSensor
     Sensor <|-- DoorSensor
+    Incident --> "*" EmergencyContact : contacts
     IncidentHistory *-- "*" Incident : incidents
     HytteOwner --> "*" Cabin : cabins
     HytteOwner --> "*" EmergencyContact : contacts

@@ -118,13 +118,13 @@ void historyKeepsTheLatestIncidents()
     hytte::IncidentHistory history;
     for (int i = 0; i < 25; ++i)
     {
-        history.registerIncident(hytte::Severity::WARNING);
+        history.registerIncident(hytte::Severity::WARNING, {});
     }
     std::vector<hytte::Incident> incidents = history.viewHistory();
     CHECK(incidents.size() == 20);
     CHECK(incidents.front().getId() != incidents.back().getId());
     std::string firstKept = incidents.front().getId();
-    history.registerIncident(hytte::Severity::CRITICAL);
+    history.registerIncident(hytte::Severity::CRITICAL, {});
     CHECK(TestAccess::incidentCount(history) == 20);
     CHECK(history.viewHistory().front().getId() != firstKept);
     CHECK(history.viewHistory().back().state() == hytte::Incident::State::Critical);
@@ -136,8 +136,8 @@ void ownerResolvesAnIncidentById()
 {
     hytte::IncidentHistory history;
     hytte::HytteOwner owner("u1", "Owner", history);
-    history.registerIncident(hytte::Severity::WARNING);
-    history.registerIncident(hytte::Severity::CRITICAL);
+    history.registerIncident(hytte::Severity::WARNING, {});
+    history.registerIncident(hytte::Severity::CRITICAL, {});
     std::vector<hytte::Incident> before = history.viewHistory();
 
     owner.resolveIncident(before[1].getId());

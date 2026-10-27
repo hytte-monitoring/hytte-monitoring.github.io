@@ -17,6 +17,7 @@ namespace hytte {
 struct TestAccess
 {
     static IncidentStatus status(const Incident& incident) { return incident.status_; }
+    static bool contactsConfigured(const Incident& incident) { return incident.contactsConfigured(); }
     static MonitoringMode mode(const Cabin& cabin) { return cabin.mode_; }
     static bool coldProtectionActive(const Cabin& cabin) { return cabin.coldProtectionActive_; }
     static MonitoringSystem::State state(const MonitoringSystem& system) { return system.state_; }

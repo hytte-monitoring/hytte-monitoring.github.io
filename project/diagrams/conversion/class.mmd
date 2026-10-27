@@ -9,6 +9,7 @@ classDiagram
         +configureMonitoring() void
         +changeMode() void
         +resolveIncident(string incidentId) void
+        +receiveNotification() void
     }
 
     class Cabin {
@@ -90,7 +91,7 @@ classDiagram
 
     class IncidentHistory {
         -size_t maxIncidents
-        +registerIncident(Severity severity) void
+        +registerIncident(Severity severity, vector~EmergencyContact~ contacts) void
         +updateIncident() void
         +viewHistory() vector~Incident~
         +findIncident(string incidentId) Incident
@@ -138,5 +139,7 @@ classDiagram
     MonitoringSystem --> "1" Cabin : cabin
     MonitoringSystem --> "*" Sensor : sensors
     MonitoringSystem --> "*" Incident : incidents
+    MonitoringSystem --> "1" IncidentHistory : history
+    MonitoringSystem --> "*" EmergencyContact : contacts
     IncidentHistory *-- "*" Incident : incidents
-    Incident ..> EmergencyContact
+    Incident --> "*" EmergencyContact : contacts

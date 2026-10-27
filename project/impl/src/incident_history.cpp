@@ -5,8 +5,8 @@
 namespace hytte {
 
 // An Incident is registered in the history when it is created (Team Guide §9, D20),
-// and starts as a Warning or a Critical Incident (F11).
-void IncidentHistory::registerIncident(Severity severity)
+// starts as a Warning or a Critical Incident (F11), and knows the contacts to escalate to (D09).
+void IncidentHistory::registerIncident(Severity severity, const std::vector<std::weak_ptr<EmergencyContact>>& contacts)
 {
     // Full: make room by dropping the oldest closed Incident, or else the oldest (F13).
     if (incidents_.size() >= maxIncidents_)
@@ -27,7 +27,7 @@ void IncidentHistory::registerIncident(Severity severity)
     // A function-local counter, because the class diagram has no attribute for it (D21).
     static int nextId = 1;
     std::string id = "I-" + std::to_string(nextId++);
-    std::unique_ptr<Incident> incident(new Incident(id, "", severity));
+    std::unique_ptr<Incident> incident(new Incident(id, "", severity, contacts));
     incident->handle(severity == Severity::CRITICAL ? Incident::Event::criticalDetected
                                                     : Incident::Event::warningDetected);
     incidents_.push_back(std::move(incident));

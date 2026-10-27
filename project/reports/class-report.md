@@ -11,17 +11,17 @@
 
 ## Overview
 
-**Alignment: 77.4 %** — 96 of the 124 elements that appear in either diagram are identical in both.
+**Alignment: 80.0 %** — 100 of the 125 elements that appear in either diagram are identical in both.
 
 | | Classes | Attributes | Methods | Relations | **Total** |
 |---|--:|--:|--:|--:|--:|
-| In design | 18 | 32 | 28 | 19 | **97** |
-| In implemented design | 18 | 35 | 50 | 20 | **123** |
-| ✅ Identical | 18 | 32 | 28 | 18 | **96** |
+| In design | 18 | 32 | 29 | 21 | **100** |
+| In implemented design | 18 | 35 | 51 | 21 | **125** |
+| ✅ Identical | 18 | 32 | 29 | 21 | **100** |
 | ✏️ Changed | 0 | 0 | 0 | 0 | **0** |
-| ➖ Missing | 0 | 0 | 0 | 1 | **1** |
-| ➕ Extra | 0 | 3 | 22 | 2 | **27** |
-| **Alignment** | 100.0 % | 91.4 % | 56.0 % | 85.7 % | **77.4 %** |
+| ➖ Missing | 0 | 0 | 0 | 0 | **0** |
+| ➕ Extra | 0 | 3 | 22 | 0 | **25** |
+| **Alignment** | 100.0 % | 91.4 % | 56.9 % | 100.0 % | **80.0 %** |
 
 ### What the numbers mean
 
@@ -43,13 +43,11 @@ An *element* is one class, one attribute (or enum value), one method, or one rel
 
 _None._
 
-### ➖ Missing (1)
+### ➖ Missing (0)
 
-| Element | As drawn in the design |
-|---|---|
-| relation `Incident → EmergencyContact` | `Incident ..> EmergencyContact` |
+_None._
 
-### ➕ Extra (27)
+### ➕ Extra (25)
 
 | Element | As found in the implementation |
 |---|---|
@@ -78,8 +76,6 @@ _None._
 | method `PowerSensor.detectCondition()` | `+detectCondition() void` |
 | method `SmokeSensor.detectCondition()` | `+detectCondition() void` |
 | method `WaterLeakSensor.detectCondition()` | `+detectCondition() void` |
-| relation `MonitoringSystem → EmergencyContact (contacts)` | `MonitoringSystem --> EmergencyContact : contacts` |
-| relation `MonitoringSystem → IncidentHistory (history)` | `MonitoringSystem --> IncidentHistory : history` |
 
 ---
 

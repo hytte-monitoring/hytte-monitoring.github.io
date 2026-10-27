@@ -38,7 +38,7 @@ private:
     Cabin* cabin_;
     std::vector<std::weak_ptr<Sensor>> sensors_;
     std::vector<std::weak_ptr<Incident>> incidents_;
-    // Not in the class diagram: needed by sequence-smoke_escalation (deviation D14).
+    // MonitoringSystem --> "1" IncidentHistory and --> "*" EmergencyContact (team decision on D14).
     IncidentHistory* history_;
     std::vector<std::weak_ptr<EmergencyContact>> contacts_;
     State state_ = State::ElectricityAndInternet;   // the initial state
