@@ -1,6 +1,9 @@
 // The dashboard page: connects the board (serial.js) to the database (db.js) and draws them.
-import { Board } from "./serial.js";
-import * as store from "./db.js";
+// The ?v= numbers make browsers load new versions instead of old cached copies.
+// Raise them together with the one in index.html after changing these files.
+import { Board } from "./serial.js?v=2";
+import * as store from "./db.js?v=2";
+import { drawBarChart, drawLineChart } from "./charts.js?v=2";
 
 const $ = (id) => document.getElementById(id);
 const board = new Board();
@@ -42,24 +45,43 @@ function drawMatrix(pattern) {
 
 // ---------------------------------------------------------------- live sensor readings
 
-// The last readings, in this page's memory only: not stored, gone after a reload.
+// The latest readings, newest first, in this page's memory only: not stored, gone after a
+// reload. The chart shows all of them (3 minutes at one reading per 2 s), the log the newest 20.
+const CHART_SIZE = 90;
 const SENSOR_LOG_SIZE = 20;
-const sensorLog = [];
+const readings = [];
+
+// The latest temperature reading, as a plain number.
+function drawTemperatureFigures() {
+    $("temp-now").textContent = readings.length ? `${readings[0].temperature} °C` : "—";
+}
+
+// The waveform's bar heights follow the sound level: 30 dB (quiet) is flat, 80 dB is full.
+const WAVE = [0.3, 0.5, 0.4, 0.7, 0.5, 0.9, 0.6, 1, 0.7, 0.85, 0.55, 0.95, 0.6, 0.8, 0.45, 0.7, 0.4, 0.55, 0.3];
+
+function drawSoundBars(sound) {
+    const level = Math.max(0.08, Math.min(1, (sound - 30) / 50));
+    $("sound-bars").replaceChildren(...WAVE.map((shape) => {
+        const bar = document.createElement("span");
+        bar.style.height = `${Math.round(8 + 64 * shape * level)}px`;
+        return bar;
+    }));
+}
 
 function drawReading({ temperature, wet, sound }) {
-    $("temperature").textContent = `${temperature} °C`;
-    $("wet").textContent = wet ? "Wet (logo touched)" : "Dry";
-    $("wet").dataset.state = wet ? "wet" : "dry";
+    $("wet").textContent = wet ? "Wet" : "Dry";
+    $("alarm-water").dataset.state = wet ? "on" : "off";
     $("sound").textContent = `${sound} dB`;
+    drawSoundBars(sound);
 
-    sensorLog.unshift({ at: Date.now(), temperature, wet, sound });
-    sensorLog.length = Math.min(sensorLog.length, SENSOR_LOG_SIZE);
-    $("sensor-log").replaceChildren(...sensorLog.map((reading) => {
-        const tr = document.createElement("tr");
-        tr.append(cell(new Date(reading.at).toLocaleTimeString()), cell(`${reading.temperature} °C`),
-            cell(reading.wet ? "Wet" : "Dry", reading.wet ? "wet" : ""), cell(`${reading.sound} dB`));
-        return tr;
-    }));
+    readings.unshift({ at: Date.now(), temperature, wet, sound });
+    readings.length = Math.min(readings.length, CHART_SIZE);
+    drawLineChart($("temp-chart"), readings.map((r) => ({ at: r.at, value: r.temperature })).reverse(),
+        { label: "Temperature", unit: "°C" });
+    drawTemperatureFigures();
+    const lines = readings.slice(0, SENSOR_LOG_SIZE).reverse().map((reading) =>
+        `${time(reading.at)}  ${reading.temperature} °C · ${reading.wet ? "Wet" : "Dry"} · ${reading.sound} dB`);
+    fillLog($("sensor-log"), lines);
 }
 
 // ---------------------------------------------------------------- drawing the stored data
@@ -74,13 +96,24 @@ function cell(text, className) {
 }
 
 async function drawIncidents() {
-    const active = await store.activeIncidents();
-    $("active").replaceChildren(...(active.length ? active.map((incident) => {
+    // Oldest first by start time; added newest first, because the list is a bottom-up frame
+    // like the logs: the newest Incident stays in view at the bottom.
+    const active = (await store.activeIncidents()).sort((a, b) => a.firstSeen - b.firstSeen);
+    // Numbered 1 (oldest) to n (newest), so they are easy to tell apart.
+    const items = active.map((incident, i) => {
         const li = document.createElement("li");
         li.className = `incident ${incident.state.toLowerCase()}`;
-        li.textContent = `${incident.id} · ${incident.severity} · since ${time(incident.firstSeen)}`;
+        const number = Object.assign(document.createElement("span"), { className: "num", textContent: `${i + 1}` });
+        li.append(number, `${incident.id} · ${incident.severity} · since ${time(incident.firstSeen)}`);
         return li;
-    }) : [Object.assign(document.createElement("li"), { className: "empty", textContent: "No active Incidents." })]));
+    });
+    $("active").replaceChildren(...items.reverse());
+    $("active-count").textContent = active.length;
+    const warning = active.some((i) => i.state === "Warning");
+    const critical = active.some((i) => i.state === "Critical");
+    setAlarm("alarm-door", warning, "Warning active");
+    setAlarm("alarm-smoke", critical, "Critical active");
+    $("active-count").dataset.state = active.some((i) => i.state === "Critical") ? "critical" : active.length ? "warning" : "none";
 
     const rows = (await store.allIncidents()).map((incident) => {
         const tr = document.createElement("tr");
@@ -92,6 +125,11 @@ async function drawIncidents() {
     $("history").replaceChildren(...rows);
 }
 
+function setAlarm(id, on, text) {
+    $(id).dataset.state = on ? "on" : "off";
+    $(id).querySelector(".alarm-state").textContent = on ? text : "Quiet";
+}
+
 async function drawLatency() {
     const rows = (await store.latencySummary()).map(({ input, count, median, min, max }) => {
         const tr = document.createElement("tr");
@@ -101,13 +139,50 @@ async function drawLatency() {
     $("latency").replaceChildren(...rows);
 }
 
+// A log frame shows the newest line at the bottom; older lines move up and out of view and
+// stay reachable by scrolling up inside the frame. The frame is laid out bottom-up
+// (CSS column-reverse), so the browser keeps it anchored at the newest line by itself.
+// `lines` come oldest first; they are added newest first to match that layout.
+function fillLog(frame, lines) {
+    frame.replaceChildren(...[...lines].reverse().map((text) => Object.assign(document.createElement("li"), { textContent: text })));
+}
+
+// One board line as a short sentence for the event log.
+function describe(event) {
+    switch (event.type) {
+        case "hello": return "Board started";
+        case "mode": return `Mode: ${event.mode === "NONE" ? "not chosen" : event.mode}`;
+        case "event": return `${event.sensor === "smoke" ? "Smoke detected" : "Door opened"} (${event.mode})`;
+        case "incident": return `${event.incidentId} ${event.severity.toLowerCase()}: ${event.state}`;
+        case "display": return `Screen: ${event.pattern}`;
+        case "latency": return `Reaction time, ${event.input}: ${event.us} µs`;
+        case "note": return event.message;
+        default: return event.type;
+    }
+}
+
 async function drawEvents() {
-    const events = await store.recentEvents(50);
-    $("events").replaceChildren(...events.map(({ id, at, session: s, ...fields }) => {
-        const li = document.createElement("li");
-        li.textContent = `${time(at)}  #${s}  ${JSON.stringify(fields)}`;
-        return li;
-    }));
+    const events = (await store.recentEvents(50)).reverse();
+    if (!events.length) return;
+    fillLog($("events"), events.map((event) => `${time(event.at)}  ${describe(event)}`));
+}
+
+// Incidents per session, Warning vs Critical, for the last 6 sessions that have Incidents.
+const SEVERITIES = [
+    { key: "WARNING", label: "Warning", className: "warning" },
+    { key: "CRITICAL", label: "Critical", className: "critical" },
+];
+
+async function drawIncidentChart() {
+    const bySession = new Map();
+    for (const incident of await store.allIncidents()) {
+        const counts = bySession.get(incident.session) ?? { WARNING: 0, CRITICAL: 0 };
+        counts[incident.severity] = (counts[incident.severity] ?? 0) + 1;
+        bySession.set(incident.session, counts);
+    }
+    const groups = [...bySession.entries()].sort((a, b) => a[0] - b[0]).slice(-6)
+        .map(([s, values]) => ({ label: `#${s}`, values }));
+    drawBarChart($("incident-chart"), groups, SEVERITIES, { label: "Incidents per session" });
 }
 
 async function drawCounts() {
@@ -117,7 +192,7 @@ async function drawCounts() {
 }
 
 async function drawAll() {
-    await Promise.all([drawIncidents(), drawLatency(), drawEvents(), drawCounts()]);
+    await Promise.all([drawIncidents(), drawIncidentChart(), drawLatency(), drawEvents(), drawCounts()]);
 }
 
 // ---------------------------------------------------------------- the board's lines
@@ -144,7 +219,7 @@ board.addEventListener("message", async ({ detail: message }) => {
         drawReading(message);   // display only: sensor readings are not stored
         return;
     }
-    if (message.type === "mode") $("mode").textContent = message.mode;
+    if (message.type === "mode") drawMode(message.mode);
     if (message.type === "display") drawMatrix(message.pattern);
     await store.recordLine(session, message);
     await drawAll();
@@ -159,6 +234,12 @@ board.addEventListener("disconnected", () => {
     setStatus("off", "Not connected");
     session = null;
 });
+
+// Door monitoring only matters in AWAY (Team Guide §6), so its toggle follows the mode.
+function drawMode(mode) {
+    $("mode").textContent = mode === "NONE" ? "Not chosen" : mode;
+    for (const id of ["toggle-away", "toggle-door"]) $(id).classList.toggle("on", mode === "AWAY");
+}
 
 function setStatus(state, text) {
     $("status").dataset.state = state;
@@ -175,6 +256,23 @@ $("connect").addEventListener("click", async () => {
     } catch (error) {
         if (error.name !== "NotFoundError") alert(`Could not connect: ${error.message}`);   // NotFound: picker cancelled
     }
+});
+
+// Phones show one log at a time: the tabs switch between the event log and the sensor log.
+document.querySelectorAll(".log-tabs button").forEach((tab) => {
+    tab.addEventListener("click", () => {
+        $("logs").dataset.show = tab.dataset.log;
+        document.querySelectorAll(".log-tabs button").forEach((t) => t.setAttribute("aria-selected", String(t === tab)));
+        const frame = document.querySelector(`.log-box[data-log="${tab.dataset.log}"] .log-frame`);
+        frame.scrollTop = 0;   // bottom-up frame: 0 is the newest line
+    });
+});
+
+// The "Data" panel: the stored data and tools, over the one-screen dashboard.
+$("data-open").addEventListener("click", () => $("data-dialog").showModal());
+$("data-close").addEventListener("click", () => $("data-dialog").close());
+$("data-dialog").addEventListener("click", (event) => {
+    if (event.target === $("data-dialog")) $("data-dialog").close();   // a click on the backdrop
 });
 
 $("export").addEventListener("click", async () => {
@@ -215,5 +313,16 @@ if (!Board.supported) {
     $("unsupported").hidden = false;
     $("connect").disabled = true;
 }
+function drawClock() {
+    const now = new Date();
+    $("clock").textContent = now.toLocaleTimeString();
+    $("date").textContent = now.toLocaleDateString([], { weekday: "short", day: "numeric", month: "short", year: "numeric" });
+}
+
 drawMatrix("?");
+drawLineChart($("temp-chart"), [], { label: "Temperature", unit: "°C" });
+drawTemperatureFigures();
+drawSoundBars(30);
+drawClock();
+setInterval(drawClock, 1000);
 drawAll();
