@@ -21,8 +21,8 @@
         </div>
     </header>
     <p id="unsupported" class="notice" hidden>
-        This browser has no WebSerial. Open the page in Chrome or Edge on a computer to connect the
-        micro:bit. The stored history below works in every browser.
+        This browser has no WebSerial. Open the page in Chrome, Edge or Firefox 151 or newer on a
+        computer to connect the micro:bit. The stored history below works in every browser.
     </p>
 
     <details class="notice howto">
@@ -31,8 +31,9 @@
             <li>Download the <a href="hytte-monitoring.hex" download>firmware (.hex)</a>.</li>
             <li>Plug in a micro:bit v2 with USB. It appears as a drive called <b>MICROBIT</b>.
                 Drag the .hex file onto it, and wait until the yellow light stops blinking.</li>
-            <li>Open this page in <b>Chrome</b> or <b>Edge</b> on a computer.</li>
-            <li>Click <b>Connect micro:bit</b> and choose the micro:bit's port.</li>
+            <li>Open this page in <b>Chrome</b>, <b>Edge</b> or <b>Firefox 151+</b> on a computer.</li>
+            <li>Click <b>Connect micro:bit</b> and choose the micro:bit's port. Firefox first asks
+                you to allow serial access for the site.</li>
         </ol>
         <p>Everything runs in your own browser, and the history is stored in your browser only.
             Use Export and Import to move it.</p>
@@ -50,9 +51,10 @@
                 </dl>
             </div>
             <p class="hint">A = door, shake = smoke, B = resolve, A+B = HOME / AWAY.</p>
-            <p class="hint">No port in the list? Use Chrome or Edge installed normally. Browsers
-                installed as a snap or Flatpak (such as Ubuntu's Firefox) cannot reach the USB port.
-                On Linux, your user must also be in the <code>dialout</code> group.</p>
+            <p class="hint">No port in the list? On Linux, browsers installed as a snap or Flatpak
+                (such as Ubuntu's default Firefox) cannot reach the USB port. Use Mozilla's own Firefox
+                (from mozilla.org), Chrome or Edge, and make sure your user is in the
+                <code>dialout</code> group.</p>
         </section>
 
         <section class="card" aria-labelledby="active-title">
