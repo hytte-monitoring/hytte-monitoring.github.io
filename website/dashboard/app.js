@@ -42,11 +42,24 @@ function drawMatrix(pattern) {
 
 // ---------------------------------------------------------------- live sensor readings
 
+// The last readings, in this page's memory only: not stored, gone after a reload.
+const SENSOR_LOG_SIZE = 20;
+const sensorLog = [];
+
 function drawReading({ temperature, wet, sound }) {
     $("temperature").textContent = `${temperature} °C`;
     $("wet").textContent = wet ? "Wet (logo touched)" : "Dry";
     $("wet").dataset.state = wet ? "wet" : "dry";
     $("sound").textContent = `${sound} dB`;
+
+    sensorLog.unshift({ at: Date.now(), temperature, wet, sound });
+    sensorLog.length = Math.min(sensorLog.length, SENSOR_LOG_SIZE);
+    $("sensor-log").replaceChildren(...sensorLog.map((reading) => {
+        const tr = document.createElement("tr");
+        tr.append(cell(new Date(reading.at).toLocaleTimeString()), cell(`${reading.temperature} °C`),
+            cell(reading.wet ? "Wet" : "Dry", reading.wet ? "wet" : ""), cell(`${reading.sound} dB`));
+        return tr;
+    }));
 }
 
 // ---------------------------------------------------------------- drawing the stored data

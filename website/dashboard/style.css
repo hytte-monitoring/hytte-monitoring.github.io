@@ -21,6 +21,10 @@
 .sensors dt { color: var(--muted); }
 .sensors dd { margin: 0; font-weight: 600; }
 .sensors dd[data-state="wet"] { color: var(--critical); }
+.sub { margin: 14px 0 6px; font-size: 0.95rem; }
+.hint-inline { color: var(--muted); font-weight: 400; font-size: 0.8rem; }
+.sensor-log { max-height: 220px; overflow-y: auto; }
+.sensor-log td.wet { color: var(--critical); font-weight: 600; }
 .first-time { margin: 10px 0 0; }
 
 .pill {

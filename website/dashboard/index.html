@@ -62,6 +62,13 @@
             </dl>
             <p class="hint">Temperature: the processor's own thermometer, a little warmer than the room.
                 Water leak: touch the gold logo on the front. Sound: the microphone.</p>
+            <h3 class="sub">Sensor log <span class="hint-inline">last 20 readings, newest first, kept only while this page is open</span></h3>
+            <div class="table-wrap sensor-log">
+                <table>
+                    <thead><tr><th>Time</th><th>Temperature</th><th>Water leak</th><th>Sound</th></tr></thead>
+                    <tbody id="sensor-log"><tr><td colspan="4" class="empty">Connect the micro:bit to see readings.</td></tr></tbody>
+                </table>
+            </div>
         </section>
 
         <section class="card" aria-labelledby="active-title">
