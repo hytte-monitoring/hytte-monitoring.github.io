@@ -1,0 +1,97 @@
+<mxfile host="app.diagrams.net" agent="umlverify" version="24.7.17">
+  <diagram name="Hytte Monitoring - Incident state machine" id="page">
+    <mxGraphModel dx="1400" dy="900" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1654" pageHeight="1169" math="0" shadow="0">
+      <root>
+        <mxCell id="page-0" />
+        <mxCell id="page-1" parent="page-0" />
+        <mxCell id="page-s2" value="New" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="page-1">
+          <mxGeometry x="120" y="220" width="120" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="page-s3" value="Warning" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="page-1">
+          <mxGeometry x="420" y="80" width="140" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="page-s4" value="Critical" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="page-1">
+          <mxGeometry x="420" y="360" width="140" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="page-s5" value="Closed" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="page-1">
+          <mxGeometry x="820" y="220" width="120" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="page-i6" value="" style="ellipse;html=1;shape=startState;fillColor=#000000;strokeColor=#000000;" vertex="1" parent="page-1">
+          <mxGeometry x="50" y="230" width="30" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="page-e7" value="" style="html=1;rounded=0;edgeStyle=orthogonalEdgeStyle;endArrow=open;endSize=12;exitX=1;exitY=0.5000;entryX=0;entryY=0.5000;" edge="1" parent="page-1" source="page-i6" target="page-s2">
+          <mxGeometry relative="1" as="geometry">
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="page-e8" value="warningDetected / notifyOwner" style="html=1;rounded=0;edgeStyle=orthogonalEdgeStyle;endArrow=open;endSize=12;exitX=0.8333;exitY=0.0;entryX=0.0;entryY=0.6;" edge="1" parent="page-1" source="page-s2" target="page-s3">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="220" y="110" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="page-e9" value="criticalDetected / notifyOwner" style="html=1;rounded=0;edgeStyle=orthogonalEdgeStyle;endArrow=open;endSize=12;exitX=0.8333;exitY=1.0;entryX=0.0;entryY=0.4;" edge="1" parent="page-1" source="page-s2" target="page-s4">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="220" y="380" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="page-e10" value="conditionWorsens / upgradeToCritical" style="html=1;rounded=0;edgeStyle=orthogonalEdgeStyle;endArrow=open;endSize=12;exitX=0.5000;exitY=1;entryX=0.5000;entryY=0;" edge="1" parent="page-1" source="page-s3" target="page-s4">
+          <mxGeometry relative="1" as="geometry">
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="page-e11" value="ownerWaitingTimeout [contactsConfigured] / notifyContacts" style="html=1;rounded=0;edgeStyle=orthogonalEdgeStyle;endArrow=open;endSize=12;exitX=0.75;exitY=0;entryX=1;entryY=0.25;" edge="1" parent="page-1" source="page-s3" target="page-s3">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="525" y="50" />
+              <mxPoint x="590" y="50" />
+              <mxPoint x="590" y="92.5" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="page-e12" value="ownerWaitingTimeout [contactsConfigured] / notifyContacts" style="html=1;rounded=0;edgeStyle=orthogonalEdgeStyle;endArrow=open;endSize=12;exitX=0.75;exitY=0;entryX=1;entryY=0.25;" edge="1" parent="page-1" source="page-s4" target="page-s4">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="525" y="330" />
+              <mxPoint x="590" y="330" />
+              <mxPoint x="590" y="372.5" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="page-e13" value="contactWaitingTimeout / contactEmergencyService" style="html=1;rounded=0;edgeStyle=orthogonalEdgeStyle;endArrow=open;endSize=12;exitX=0.75;exitY=0;entryX=1;entryY=0.25;" edge="1" parent="page-1" source="page-s4" target="page-s4">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="525" y="330" />
+              <mxPoint x="590" y="330" />
+              <mxPoint x="590" y="372.5" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="page-e14" value="safetyOverride / contactEmergencyService" style="html=1;rounded=0;edgeStyle=orthogonalEdgeStyle;endArrow=open;endSize=12;exitX=0.75;exitY=0;entryX=1;entryY=0.25;" edge="1" parent="page-1" source="page-s4" target="page-s4">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="525" y="330" />
+              <mxPoint x="590" y="330" />
+              <mxPoint x="590" y="372.5" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="page-e15" value="ownerResolved / resolve" style="html=1;rounded=0;edgeStyle=orthogonalEdgeStyle;endArrow=open;endSize=12;exitX=0.8571;exitY=1.0;entryX=0.0;entryY=0.4;" edge="1" parent="page-1" source="page-s3" target="page-s5">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="540" y="240" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="page-e16" value="ownerResolved / resolve" style="html=1;rounded=0;edgeStyle=orthogonalEdgeStyle;endArrow=open;endSize=12;exitX=0.8571;exitY=0.0;entryX=0.0;entryY=0.6;" edge="1" parent="page-1" source="page-s4" target="page-s5">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="540" y="250" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
