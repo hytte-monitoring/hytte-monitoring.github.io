@@ -144,9 +144,14 @@ that they test the model, not the implementation's own guesses.
 - [x] Flash: the board starts and sends `hello` and `mode NONE`.
 - [x] Button B: the owner resolves the newest active Incident (F15). Serial sends
       `incident` lines with id, severity and state (F16). Point 9.
-- [ ] **Team:** press A+B, A, shake and B on the board and check the LEDs (spec §3).
+- [x] Board test, 2 runs: every input matches the model (`tests-and-benchmarks.md`,
+      `board-logs/`). **Team:** confirm the LED patterns.
+- [ ] Optional: a less sensitive smoke gesture (the shake also fires while the
+      board is handled).
 - [x] Firmware size: model 4.6 KB, board code 4.1 KB (`project/reports/tests-and-benchmarks.md`).
-- [ ] On-board latency: read the `latency` lines while pressing the buttons.
+- [x] On-board latency: door 248 µs (HOME) / 407 µs (AWAY), smoke 331 µs, resolve 59 µs.
+- [ ] Optional: the latency grows with the history, because every redraw copies all
+      Incidents. Read only the newest active one.
 - [x] Re-verify: alignment unchanged (class 76.7 %, sequence 83.3 %, states 100 %).
 
 👁 **Gate 4:** the team tries every input on the board.

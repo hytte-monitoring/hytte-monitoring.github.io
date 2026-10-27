@@ -120,14 +120,27 @@ are measured in Phase 4.
 
 **On-board latency** (model update and LED redraw). The board measures it
 itself with `system_timer_current_time_us()` and sends it as a `latency`
-line. Recorded during the Gate 4 test, with the raw log in
-[`board-logs/2026-10-27-gate4-run1.jsonl`](board-logs/2026-10-27-gate4-run1.jsonl):
+line. Recorded during the Gate 4 tests, with the raw logs in
+[`board-logs/`](board-logs/):
 
 | Input | Measurements | Median |
 |-------|--------------|-------:|
-| Door, button A (in HOME: no Incident) | 255, 240 µs | ~248 µs |
-| Smoke, shake (a Critical Incident is created, the contact notified) | 303, 295, 331, 352 µs | ~317 µs |
-| Resolve, button B | 53, 51 µs | ~52 µs |
+| Door, button A, in HOME (no Incident) | 255, 240 µs | ~248 µs |
+| Door, button A, in AWAY (a Warning Incident is created) | 319, 326, 442, 407, 415 µs (and 91 µs, see below) | 407 µs |
+| Smoke, shake (a Critical Incident is created, the contact notified) | 303, 295, 331, 352, 322, 396, 413 µs | 331 µs |
+| Resolve, button B | 53, 51, 56, 48, 59, 62, 65, 68, 45, 71, 70 µs | 59 µs |
+
+**The latency grows as the history fills.**
+- Door in AWAY went 319 → 415 µs, and smoke 303 → 413 µs, while the
+  history grew from about 10 to 20 Incidents.
+- Cause, in the board code: every LED redraw (4 times a second, and on
+  every event) calls `viewHistory()`, which **copies every Incident**,
+  strings included, to find the newest active one.
+- **Improvement for later:** ask the history only for the newest active
+  Incident instead of copying all of them.
+- The one outlier, **91 µs**, came when the door was pressed while the
+  previous resolve's tick was still on screen. The redraw was skipped, so
+  most of every measurement is the LED redraw, not the model.
 
 All are well under 1 ms. The button debounce and the 250 ms blink cycle,
 not the model, decide how fast it feels.
@@ -146,4 +159,26 @@ not the model, decide how fast it feels.
 Ids started at `I-10`, because 9 Incidents were made before the capture:
 ids are never reused (D21). **Not covered in run 1:** a door in AWAY → a
 Warning (the blinking `!`).
+
+## Board test (Gate 4, run 2)
+
+| Step | Board output | Result |
+|------|--------------|--------|
+| (unintended) | smoke → Critical `I-14` | ⚠️ the shake gesture fired while the board was handled to press B. A weakness of the hardware mapping (spec §3), not the model |
+| B ×2 | `I-14` Closed, `I-11` Closed | ✅ newest active first |
+| A in AWAY | Warning `I-15` | ✅ **the Warning path**, Team Guide §6 |
+| B | `I-15` Closed | ✅ same id, severity WARNING kept |
+| A in AWAY | Warning `I-16` | ✅ |
+| B, then A, B, shake, B, B | `I-16` Closed, Warning `I-17` and Closed, Critical `I-18` and Closed, then `I-10` Closed | ✅ every old Incident resolved, newest first |
+| A, B, A, B, A, shake | Warnings `I-19`, `I-20` (both closed), Warning `I-21`, Critical `I-22` | ✅ |
+
+**History limit used on the board:** 22 Incidents were created in total, so
+the limit of 20 (F13) dropped old ones, with no errors.
+
+**Gate 4 result:** every input gives exactly what the model describes, in
+both modes. Still active at the end: `I-21` (Warning) and `I-22`
+(Critical). The LED patterns are confirmed by the team, because the serial
+log does not show the display. Not testable on the board: Warning →
+Critical on the same Incident, because no input maps to `conditionWorsens`
+(it is covered by the unit tests).
 
