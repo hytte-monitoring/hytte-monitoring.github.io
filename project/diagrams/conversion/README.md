@@ -146,6 +146,9 @@ product of their states).
 - F03: the association `Cabin --> "1" MonitoringSystem : system` was
   added, so a door or motion Warning in AWAY can reach `createIncident()`
   (D18, D19).
+- F10: `IncidentHistory --> "*" Incident` became the composition
+  `IncidentHistory *-- "*" Incident`: the history owns every Incident (D20,
+  D21).
 
 ## Sequence diagram: which path, and how messages were mapped
 

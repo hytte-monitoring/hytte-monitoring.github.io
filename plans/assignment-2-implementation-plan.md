@@ -78,6 +78,10 @@ D01–D10. **Open.**
       `state-monitoring_system`, both 100 %) and add `state()` getters to
       Incident and Cabin (F01, F02, F04). Class 76.3 %, tests 51/51. Point 5.
 - [x] Add the association Cabin → MonitoringSystem (F03). Class 76.5 %. Point 6.
+- [x] IncidentHistory owns the Incidents, a composition (F10). Class 76.5 %, tests
+      55/55. Point 7.
+- [ ] **Before Phase 4:** decide F11 (severity of a new Incident), F12 (how the
+      firmware reads Incidents) and F13 (history limit on the board).
 - [ ] **Team decisions on the models** (see the research §3.2), then
       re-convert and re-verify:
   - add the Incident state machine members to the class diagram;

@@ -14,9 +14,9 @@ Notation changes forced by the verifier are not deviations. They are listed in
 
 | Source | Count |
 |--------|------:|
-| Team Guide | 10 |
-| AI assumption, open for the team | 9 |
-| **Total** | **19** |
+| Team Guide | 11 |
+| AI assumption, open for the team | 10 |
+| **Total** | **21** |
 
 | ID | Where | Unclear in the UML or ADR | Resolution | Source |
 |----|-------|---------------------------|------------|--------|
@@ -39,6 +39,8 @@ Notation changes forced by the verifier are not deviations. They are listed in
 | D17 | State machine, System Operation page | The door and motion rule is only a note on the AWAY state (*Enabled Door/Motion monitoring can create security Warnings*), not a transition | Self-transitions `doorOpened` and `motionDetected / reportSecurityWarning` on `Away` and `AwayCold`; none on HOME, where they are ignored. The *Enabled* condition is not modelled, because no class holds per-sensor enabling for the owner | Team Guide §6 |
 | D18 | Class diagram (F03 decision) | The decided line Cabin → MonitoringSystem has no role name or multiplicity | Role `system`, multiplicity `1`: one cabin, one monitoring system (matches D04) | AI assumption |
 | D19 | Implementation (F03 decision) | Which MonitoringSystem method a security Warning should call is not drawn | `reportSecurityWarning()` calls `createIncident()`: the system creates the Incident | Team Guide §7 |
+| D20 | Implementation (F10 decision) | `registerIncident()` has no parameters, so it is not clear what it registers | It creates the new Incident and keeps it: an Incident is registered in the history when it is created | Team Guide §9 |
+| D21 | Implementation (F10 decision) | A new Incident needs an id and a timestamp, but nothing supplies them | Id `I-1`, `I-2`, … in order; timestamp empty (the micro:bit has no clock, see D05) | AI assumption |
 
 ## Findings and team decisions
 
@@ -58,4 +60,7 @@ change by hand in `model/`**, so the ground truth stays the source.
 | F07 | `Incident ..> EmergencyContact` is drawn, but no Incident method uses EmergencyContact: 1 Missing | Open | Open |
 | F08 | The sensor subclasses must override `detectCondition()` (D06), which they do not show: 8 Extra | Open | Open |
 | F09 | ADR-001 is not testable: the class diagram has no way to disable a sensor and no thresholds | Open | Open |
-| F10 | No class owns `Incident` objects: every line to Incident is a plain association (MonitoringSystem, IncidentHistory, HytteOwner). So `createIncident()` has nowhere to keep a new Incident, and the firmware must create and keep the Incident itself | Open. Options: make one association a composition (for example `IncidentHistory *-- "*" Incident`, matching Team Guide §9), or accept that the firmware's set-up code owns the Incidents | **Open, needed for Phase 4** |
+| F10 | No class owns `Incident` objects: every line to Incident is a plain association (MonitoringSystem, IncidentHistory, HytteOwner). So `createIncident()` has nowhere to keep a new Incident | `IncidentHistory *-- "*" Incident : incidents`, a composition (decided by the user, 2026-10-27). Details D20, D21 | Done in the conversion (the relation is identical). **Team: change the line to a filled diamond in `model/class-diagram`** |
+| F11 | The new Incident's severity cannot be set: `createIncident()` and `registerIncident()` have no parameters, so nothing in the model can say Warning (door) or Critical (smoke). The Incident stays in `New`, and nothing fires `warningDetected` or `criticalDetected` | Open. Options: parameters such as `createIncident(severity: Severity)`, or separate methods | **Open, needed for Phase 4** |
+| F12 | The firmware and the dashboard cannot read the Incidents: `viewHistory()` returns nothing, and the history has no getter | Open. Options: `viewHistory()` returns the Incidents, or a getter for the latest active Incident | **Open, needed for Phase 4** |
+| F13 | The history grows without limit (Team Guide §9: all Incidents are stored). Each Incident is about 80 bytes plus allocation overhead on the PC. The micro:bit has 128 KB of RAM | Open. Options: the board keeps only the latest N Incidents and the dashboard database keeps all of them, or a rule in the model | Open, before Phase 4 |
