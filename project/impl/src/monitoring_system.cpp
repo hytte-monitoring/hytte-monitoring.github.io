@@ -4,6 +4,12 @@
 
 namespace hytte {
 
+#if __cplusplus < 201703L
+// Before C++17 a static constexpr array that is used needs one definition outside the
+// class. The micro:bit's CODAL build compiles with -std=c++11 (Phase 4).
+constexpr MonitoringSystem::Transition MonitoringSystem::transitions[];
+#endif
+
 MonitoringSystem::MonitoringSystem(Cabin& cabin, IncidentHistory& history, std::vector<std::weak_ptr<EmergencyContact>> contacts)
     : cabin_(&cabin), history_(&history), contacts_(std::move(contacts))
 {
