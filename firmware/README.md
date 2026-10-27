@@ -71,3 +71,17 @@ firmware/build.sh --flash
 ## Dashboard
 
 `website/dashboard/` reads these lines over WebSerial and stores them (Phase 5).
+
+## Flashing a teammate's micro:bit (no repo needed)
+
+On the dashboard, open **Use your own micro:bit**. There are two ways:
+
+- **Download and drag:** click **Firmware .hex** and drag the file onto the
+  MICROBIT drive.
+- **From a terminal:** copy the command for Windows (PowerShell), macOS or
+  Linux. It downloads the `.hex` from the page's own address and copies it
+  onto the drive. The commands are built in `website/dashboard/app.js`
+  (`drawFlashCommands`).
+
+Once published, the page is at https://hytte-monitoring.github.io/dashboard/
+(the site is only published from `main`).

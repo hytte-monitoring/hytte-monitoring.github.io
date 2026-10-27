@@ -86,6 +86,12 @@ button:disabled { opacity: 0.5; cursor: not-allowed; }
 .howto ol { margin: 8px 0; padding-left: 20px; }
 .howto p { margin: 0; color: var(--muted); font-size: 0.9rem; }
 .actions .button { text-decoration: none; }
+.howto h3 { margin: 14px 0 4px; font-size: 0.95rem; }
+.commands { display: grid; gap: 8px; margin-top: 8px; }
+.command { border: 1px solid var(--line); border-radius: 8px; overflow: hidden; }
+.command-head { display: flex; justify-content: space-between; align-items: center; gap: 8px; padding: 6px 10px; background: var(--paper); }
+.command-head button { padding: 3px 10px; font-size: 0.8rem; }
+.command pre { margin: 0; padding: 8px 10px; white-space: pre-wrap; overflow-wrap: anywhere; }
 
 .grid {
     display: grid;
@@ -147,6 +153,12 @@ th { color: var(--muted); font-weight: 500; }
 .howto ol { margin: 8px 0; padding-left: 20px; }
 .howto p { margin: 0; color: var(--muted); font-size: 0.9rem; }
 .actions .button { text-decoration: none; }
+.howto h3 { margin: 14px 0 4px; font-size: 0.95rem; }
+.commands { display: grid; gap: 8px; margin-top: 8px; }
+.command { border: 1px solid var(--line); border-radius: 8px; overflow: hidden; }
+.command-head { display: flex; justify-content: space-between; align-items: center; gap: 8px; padding: 6px 10px; background: var(--paper); }
+.command-head button { padding: 3px 10px; font-size: 0.8rem; }
+.command pre { margin: 0; padding: 8px 10px; white-space: pre-wrap; overflow-wrap: anywhere; }
 
 .grid { grid-template-columns: 1fr; }
 }
