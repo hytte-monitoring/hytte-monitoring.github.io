@@ -30,6 +30,8 @@ public:
     void handle(Event event);
 
 private:
+    friend struct TestAccess;   // lets the unit tests read private state; not a UML element
+
     std::string incidentId_;
     Severity severity_ = Severity::WARNING;
     IncidentStatus status_ = IncidentStatus::Active;

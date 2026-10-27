@@ -34,3 +34,15 @@ target_link_libraries(demo PRIVATE hytte)
 
 add_executable(scenario_smoke_escalation scenarios/smoke_escalation.cpp)
 target_link_libraries(scenario_smoke_escalation PRIVATE hytte)
+
+# Unit tests (Phase 3). Run: ctest --test-dir build
+enable_testing()
+foreach(name test_incident test_cabin_and_sensor)
+    add_executable(${name} tests/${name}.cpp)
+    target_link_libraries(${name} PRIVATE hytte)
+    add_test(NAME ${name} COMMAND ${name})
+endforeach()
+
+# Host benchmark (Phase 3). Build with -DCMAKE_BUILD_TYPE=Release for real numbers.
+add_executable(benchmark benchmarks/benchmark.cpp)
+target_link_libraries(benchmark PRIVATE hytte)

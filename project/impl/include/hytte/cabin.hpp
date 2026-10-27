@@ -17,6 +17,8 @@ public:
     void changeMode();
 
 private:
+    friend struct TestAccess;   // lets the unit tests read private state; not a UML element
+
     std::string cabinId_;
     std::string name_;
     MonitoringMode mode_ = MonitoringMode::HOME;
