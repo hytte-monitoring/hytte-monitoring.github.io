@@ -185,8 +185,8 @@ database → dashboard.
       compares them by eye with `model/use-case-diagram` and
       `model/activity-diagram`. These two cannot be verified automatically.
 - [ ] Optional: the board shows every Incident still on it; the dashboard keeps all of them.
-- [ ] Plot `fom.csv` (alignment per diagram and deviations over time) to
-      `project/reports/fom.png`.
+- [x] Plot `fom.csv` to `project/reports/fom.png` with `project/reports/plot_fom.py`: alignment
+      per diagram, open deviations and unit-test checks, 9 points (slide 2).
 
 👁 **Gate 6:** the team reads the quality report and checks it against the
 commits.
