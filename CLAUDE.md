@@ -47,6 +47,8 @@ iteration (one commit per fix). Never edit generated files in
 - Document every step in `WORKFLOW.md`: what, why, commands, sources fetched,
   programs installed, results, commits. Add the user's prompt for the step to
   its **Prompt log**.
-- Commit locally after each change, with a short imperative message. Never push.
+- Commit locally in normal-sized commits: one per logical change, grouping related
+  edits (a fix with its reports, FoM row and log entry). Not one per small detail.
+  Short imperative message. Never push.
 - `Assignment_1_Guide.md` and `Assignment_2_Guide.md` are local only (listed in
   `.git/info/exclude`). Never commit them.
