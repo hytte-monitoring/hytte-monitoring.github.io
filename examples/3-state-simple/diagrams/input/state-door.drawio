@@ -1,0 +1,42 @@
+<mxfile host="app.diagrams.net" agent="umlverify" version="24.7.17">
+  <diagram name="Door" id="page">
+    <mxGraphModel dx="1400" dy="900" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1654" pageHeight="1169" math="0" shadow="0">
+      <root>
+        <mxCell id="page-0" />
+        <mxCell id="page-1" parent="page-0" />
+        <mxCell id="page-s2" value="Closed" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="page-1">
+          <mxGeometry x="160" y="80" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="page-s3" value="Open" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="page-1">
+          <mxGeometry x="440" y="80" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="page-s4" value="Locked" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="page-1">
+          <mxGeometry x="160" y="260" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="page-i5" value="" style="ellipse;html=1;shape=startState;fillColor=#000000;strokeColor=#000000;" vertex="1" parent="page-1">
+          <mxGeometry x="60" y="95" width="30" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="page-e6" value="" style="html=1;rounded=0;edgeStyle=orthogonalEdgeStyle;endArrow=open;endSize=12;exitX=1;exitY=0.5000;entryX=0;entryY=0.5000;" edge="1" parent="page-1" source="page-i5" target="page-s2">
+          <mxGeometry relative="1" as="geometry">
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="page-e7" value="open" style="html=1;rounded=0;edgeStyle=orthogonalEdgeStyle;endArrow=open;endSize=12;exitX=1;exitY=0.5000;entryX=0;entryY=0.5000;" edge="1" parent="page-1" source="page-s2" target="page-s3">
+          <mxGeometry relative="1" as="geometry">
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="page-e8" value="close" style="html=1;rounded=0;edgeStyle=orthogonalEdgeStyle;endArrow=open;endSize=12;exitX=0;exitY=0.8000;entryX=1;entryY=0.8000;" edge="1" parent="page-1" source="page-s3" target="page-s2">
+          <mxGeometry relative="1" x="-0.5" as="geometry">
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="page-e9" value="lock" style="html=1;rounded=0;edgeStyle=orthogonalEdgeStyle;endArrow=open;endSize=12;exitX=0.5000;exitY=1;entryX=0.5000;entryY=0;" edge="1" parent="page-1" source="page-s2" target="page-s4">
+          <mxGeometry relative="1" as="geometry">
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="page-e10" value="unlock" style="html=1;rounded=0;edgeStyle=orthogonalEdgeStyle;endArrow=open;endSize=12;exitX=0.7000;exitY=0;entryX=0.7000;entryY=1;" edge="1" parent="page-1" source="page-s4" target="page-s2">
+          <mxGeometry relative="1" x="-0.5" as="geometry">
+          </mxGeometry>
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>

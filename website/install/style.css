@@ -1,0 +1,55 @@
+/* The install page. Shared colours and buttons are in ../common.css. */
+
+.hero-content a { color: #fff; }
+
+/* The micro:bit photo has a white background: centre the board and box. */
+.hero img { object-position: 50% 50%; }
+
+.install { padding: 16px 12px 32px; }
+
+.steps {
+    list-style: none;
+    counter-reset: step;
+    margin: 0;
+    padding: 0;
+    display: grid;
+    gap: 12px;
+}
+.steps li {
+    counter-increment: step;
+    position: relative;
+    padding-left: 64px;
+    line-height: 1.5;
+}
+.steps li::before {
+    content: counter(step);
+    position: absolute;
+    left: 16px;
+    top: 16px;
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    background: var(--teal);
+    color: #fff;
+    font-weight: 700;
+    display: grid;
+    place-items: center;
+}
+.steps p { margin: 0; }
+
+/* Wide screens: the four steps side by side. */
+@media (min-width: 1000px) {
+    .steps { grid-template-columns: repeat(4, minmax(0, 1fr)); }
+}
+
+.button.big { display: inline-block; margin: 4px 0 6px; padding: 12px 20px; font-weight: 600; font-size: 1.05rem; }
+.tip { color: var(--muted); font-size: 0.88rem; margin-top: 6px !important; }
+
+.advanced { margin-top: 20px; }
+.advanced > summary { cursor: pointer; color: var(--muted); }
+.advanced[open] > summary { margin-bottom: 10px; }
+.commands { display: grid; gap: 8px; margin-top: 8px; }
+.command { border: 1px solid var(--line); border-radius: 8px; overflow: hidden; }
+.command-head { display: flex; justify-content: space-between; align-items: center; gap: 8px; padding: 6px 10px; background: var(--paper); }
+.command-head button { padding: 3px 10px; font-size: 0.8rem; }
+.command pre { margin: 0; padding: 8px 10px; white-space: pre-wrap; overflow-wrap: anywhere; }

@@ -1,0 +1,11 @@
+point,date,commit,label,class_pct,state_incident_pct,class_identical,class_changed,class_missing,class_extra,tests_passed,deviations,sequence_smoke_escalation_pct,state_cabin_pct,state_monitoring_system_pct,deviations_team_guide,deviations_ai_open
+1,2026-10-27,5976c27,baseline: first AI implementation,73.6,100.0,81,0,8,21,,10,,,,4,6
+2,2026-10-27,2788eaa,sequence diagram added (smoke_escalation),72.3,100.0,81,0,8,23,,15,100.0,,,7,8
+3,2026-10-27,2d48917,associations as vector<weak_ptr<T>>,83.8,100.0,88,0,1,16,,15,100.0,,,7,8
+4,2026-10-27,2b192a1,unit tests and host benchmark added,83.8,100.0,88,0,1,16,27/27,15,100.0,,,7,8
+5,2026-10-27,e5aa458,System Operation page converted (state-cabin; state-monitoring_system); state() getters,76.3,100.0,90,0,1,27,51/51,17,100.0,100.0,100.0,9,8
+6,2026-10-27,db01b91,association Cabin -> MonitoringSystem (F03),76.5,100.0,91,0,1,27,51/51,19,100.0,100.0,100.0,10,9
+7,2026-10-27,e7fb99f,IncidentHistory owns Incidents (F10),76.5,100.0,91,0,1,27,55/55,21,100.0,100.0,100.0,11,10
+8,2026-10-27,aaa15d9,severity parameter; viewHistory returns Incidents; history limit (F11-F13),76.7,100.0,92,0,1,27,63/63,23,83.3,100.0,100.0,12,11
+9,2026-10-27,a512678,Incident getters; owner resolves via history (F15; F16),77.4,100.0,96,0,1,27,67/67,25,83.3,100.0,100.0,12,13
+10,2026-10-27,623b478,Team review of the 13 AI assumptions: keep 10; change D09; D14; D15,80.0,100.0,100,0,0,25,70/70,25,83.3,100.0,100.0,12,0

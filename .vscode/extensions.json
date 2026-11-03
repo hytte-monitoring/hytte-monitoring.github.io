@@ -1,0 +1,7 @@
+{
+    // VS Code offers to install these when the repository is opened.
+    "recommendations": [
+        "hediet.vscode-drawio",
+        "ms-vscode.cpptools"
+    ]
+}

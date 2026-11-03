@@ -1,0 +1,36 @@
+{
+    // Ctrl+Shift+B (Cmd+Shift+B on macOS) runs "Verify design": it asks which
+    // project to verify (project/ or an example), empties its diagrams/output/,
+    // and regenerates it and reports/ from diagrams/input/*.drawio and impl/.
+    "version": "2.0.0",
+    "tasks": [
+        {
+            "label": "Verify design",
+            "detail": "Pick a project; regenerate its diagrams/output/ and reports/",
+            "type": "process",
+            "command": "python3",
+            "windows": {
+                "command": "python"
+            },
+            "args": ["${workspaceFolder}/tools/verify.py"],
+            "group": { "kind": "build", "isDefault": true },
+            "problemMatcher": {
+                "base": "$gcc",
+                "fileLocation": ["autoDetect", "${workspaceFolder}"]
+            },
+            "presentation": { "reveal": "always", "focus": true, "panel": "dedicated", "clear": true }
+        },
+        {
+            "label": "Set up Python environment",
+            "detail": "Create .venv with the libclang bindings (does nothing if it already works)",
+            "type": "shell",
+            "command": ".venv/bin/python -c 'import clang.cindex' 2>/dev/null || { python3 -m venv .venv && .venv/bin/pip install --quiet -r requirements.txt; }",
+            "windows": {
+                "command": "if (Test-Path .venv\\Scripts\\python.exe) { .\\.venv\\Scripts\\python.exe -c 'import clang.cindex'; if ($LASTEXITCODE -eq 0) { exit 0 } }; python -m venv .venv; if ($LASTEXITCODE -ne 0) { exit $LASTEXITCODE }; .\\.venv\\Scripts\\python.exe -m pip install -r requirements.txt"
+            },
+            "options": { "cwd": "${workspaceFolder}" },
+            "problemMatcher": [],
+            "presentation": { "reveal": "silent", "panel": "dedicated" }
+        }
+    ]
+}

@@ -1,0 +1,56 @@
+<mxfile host="app.diagrams.net" agent="umlverify" version="24.7.17">
+  <diagram name="Hytte Monitoring - smoke escalation" id="page">
+    <mxGraphModel dx="1400" dy="900" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1654" pageHeight="1169" math="0" shadow="0">
+      <root>
+        <mxCell id="page-0" />
+        <mxCell id="page-1" parent="page-0" />
+        <mxCell id="page-l0" value="SmokeSensor" style="shape=umlLifeline;perimeter=lifelinePerimeter;whiteSpace=wrap;html=1;container=1;dropTarget=0;collapsible=0;recursiveResize=0;outlineConnect=0;portConstraint=eastwest;size=40;" vertex="1" parent="page-1">
+          <mxGeometry x="40" y="40" width="106" height="422" as="geometry" />
+        </mxCell>
+        <mxCell id="page-l1" value="MonitoringSystem" style="shape=umlLifeline;perimeter=lifelinePerimeter;whiteSpace=wrap;html=1;container=1;dropTarget=0;collapsible=0;recursiveResize=0;outlineConnect=0;portConstraint=eastwest;size=40;" vertex="1" parent="page-1">
+          <mxGeometry x="206" y="40" width="144" height="422" as="geometry" />
+        </mxCell>
+        <mxCell id="page-l2" value="IncidentHistory" style="shape=umlLifeline;perimeter=lifelinePerimeter;whiteSpace=wrap;html=1;container=1;dropTarget=0;collapsible=0;recursiveResize=0;outlineConnect=0;portConstraint=eastwest;size=40;" vertex="1" parent="page-1">
+          <mxGeometry x="410" y="40" width="136" height="422" as="geometry" />
+        </mxCell>
+        <mxCell id="page-l3" value="EmergencyContact" style="shape=umlLifeline;perimeter=lifelinePerimeter;whiteSpace=wrap;html=1;container=1;dropTarget=0;collapsible=0;recursiveResize=0;outlineConnect=0;portConstraint=eastwest;size=40;" vertex="1" parent="page-1">
+          <mxGeometry x="606" y="40" width="144" height="422" as="geometry" />
+        </mxCell>
+        <mxCell id="page-m0" value="evaluateEvent()" style="html=1;verticalAlign=bottom;labelBackgroundColor=none;endArrow=block;endFill=1;curved=0;rounded=0;exitX=0.5;exitY=0.2607;exitPerimeter=0;entryX=0.5;entryY=0.2607;entryPerimeter=0;" edge="1" parent="page-1" source="page-l0" target="page-l1">
+          <mxGeometry relative="1" as="geometry">
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="page-m1" value="createIncident()" style="html=1;verticalAlign=bottom;labelBackgroundColor=none;endArrow=block;endFill=1;curved=0;rounded=0;exitX=0.5;exitY=0.3555;exitPerimeter=0;entryX=0.5;entryY=0.4123;entryPerimeter=0;align=left;verticalAlign=middle;" edge="1" parent="page-1" source="page-l1" target="page-l1">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="318" y="190" />
+              <mxPoint x="318" y="214" />
+            </Array>
+            <mxPoint x="8" y="0" as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="page-m2" value="registerIncident()" style="html=1;verticalAlign=bottom;labelBackgroundColor=none;endArrow=block;endFill=1;curved=0;rounded=0;exitX=0.5;exitY=0.5071;exitPerimeter=0;entryX=0.5;entryY=0.5071;entryPerimeter=0;" edge="1" parent="page-1" source="page-l1" target="page-l2">
+          <mxGeometry relative="1" as="geometry">
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="page-m3" value="escalateIncident()" style="html=1;verticalAlign=bottom;labelBackgroundColor=none;endArrow=block;endFill=1;curved=0;rounded=0;exitX=0.5;exitY=0.6019;exitPerimeter=0;entryX=0.5;entryY=0.6588;entryPerimeter=0;align=left;verticalAlign=middle;" edge="1" parent="page-1" source="page-l1" target="page-l1">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="318" y="294" />
+              <mxPoint x="318" y="318" />
+            </Array>
+            <mxPoint x="8" y="0" as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="page-m4" value="receiveNotification()" style="html=1;verticalAlign=bottom;labelBackgroundColor=none;endArrow=block;endFill=1;curved=0;rounded=0;exitX=0.5;exitY=0.7536;exitPerimeter=0;entryX=0.5;entryY=0.7536;entryPerimeter=0;" edge="1" parent="page-1" source="page-l1" target="page-l3">
+          <mxGeometry relative="1" as="geometry">
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="page-m5" value="updateIncident()" style="html=1;verticalAlign=bottom;labelBackgroundColor=none;endArrow=block;endFill=1;curved=0;rounded=0;exitX=0.5;exitY=0.8483;exitPerimeter=0;entryX=0.5;entryY=0.8483;entryPerimeter=0;" edge="1" parent="page-1" source="page-l1" target="page-l2">
+          <mxGeometry relative="1" as="geometry">
+          </mxGeometry>
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>

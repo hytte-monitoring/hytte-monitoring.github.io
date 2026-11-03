@@ -1,0 +1,83 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Install Hytte on a micro:bit</title>
+    <meta name="description" content="Put the Hytte Monitoring program on your own micro:bit, once, in four steps.">
+    <link rel="stylesheet" href="../common.css">
+    <link rel="stylesheet" href="../nav.css">
+    <script src="../nav.js" defer></script>
+    <link rel="stylesheet" href="../hero.css">
+    <link rel="stylesheet" href="style.css">
+    <script type="module" src="install.js"></script>
+</head>
+<body>
+    <div class="hero">
+        <picture>
+            <!-- Portrait screens (phones, upright tablets) get the tall picture -->
+            <source media="(orientation: portrait)" srcset="../img/install-mobile.jpg">
+            <img src="../img/install-desktop.jpg" alt="A BBC micro:bit v2 board in front of its cardboard box">
+        </picture>
+        <header>
+            <span class="brand">Hytte Monitoring</span>
+            <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="site-menu" aria-label="Menu"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16"/></svg></button>
+            <nav id="site-menu" class="site-nav site-nav--light" aria-label="Site"><a href="../"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 11l9-7 9 7"/><path d="M5 10v10h14V10"/><path d="M10 20v-6h4v6"/></svg><span>Home</span></a><a href="../dashboard/"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="3"/><path d="M8 16v-4M12 16V8M16 16v-6"/></svg><span>Dashboard</span></a><a href="../install/" aria-current="page"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3v11"/><path d="M7 10l5 5 5-5"/><rect x="4" y="17" width="16" height="4" rx="1"/></svg><span>Install firmware</span></a></nav>
+        </header>
+        <div class="hero-content">
+            <p class="kicker">Install firmware</p>
+            <h1>Install Hytte on your micro:bit</h1>
+            <p>Do this once. The program stays on the micro:bit, so next time you only plug it in and open the
+                <a href="../dashboard/">dashboard</a>.</p>
+        </div>
+    </div>
+
+    <main class="install">
+        <ol class="steps">
+            <li class="card">
+                <h2>Plug in your micro:bit</h2>
+                <p>Connect it to this computer with a USB cable. A new drive called <b>MICROBIT</b> appears,
+                    like a USB stick.</p>
+            </li>
+            <li class="card">
+                <h2>Download the Hytte program</h2>
+                <a class="button primary big" href="hytte-monitoring.hex" download>Download Hytte for micro:bit</a>
+                <p class="tip">Tip: if your browser asks where to save the file, choose the <b>MICROBIT</b> drive.
+                    Then you can skip step 3.</p>
+            </li>
+            <li class="card">
+                <h2>Copy it onto the micro:bit</h2>
+                <p>Open your <b>Downloads</b> folder and drag <code>hytte-monitoring.hex</code> onto the
+                    <b>MICROBIT</b> drive. The yellow light on the back of the micro:bit blinks. Wait until it stops.</p>
+            </li>
+            <li class="card">
+                <h2>Open the dashboard</h2>
+                <p>Go to the <a href="../dashboard/">dashboard</a> and click <b>Connect micro:bit</b>. The board
+                    shows <b>?</b> and the page says "Connected".</p>
+                <p class="tip">Use Chrome, Edge or Firefox (version 151 or newer) on a computer. On Linux, a
+                    browser installed as a snap or Flatpak cannot reach the micro:bit.</p>
+            </li>
+        </ol>
+
+        <details class="card advanced">
+            <summary>Using a terminal (optional)</summary>
+            <p class="hint">Paste the command for your system into a terminal (for example VS Code's). It downloads
+                the program from this page and copies it onto the MICROBIT drive (steps 2 and 3 in one).</p>
+            <div class="commands">
+                <div class="command">
+                    <div class="command-head"><b>Windows</b> (PowerShell)<button type="button" data-copy="cmd-windows">Copy</button></div>
+                    <pre id="cmd-windows" class="mono"></pre>
+                </div>
+                <div class="command">
+                    <div class="command-head"><b>macOS</b> (Terminal)<button type="button" data-copy="cmd-mac">Copy</button></div>
+                    <pre id="cmd-mac" class="mono"></pre>
+                </div>
+                <div class="command">
+                    <div class="command-head"><b>Linux</b> (bash)<button type="button" data-copy="cmd-linux">Copy</button></div>
+                    <pre id="cmd-linux" class="mono"></pre>
+                </div>
+            </div>
+        </details>
+    </main>
+</body>
+</html>

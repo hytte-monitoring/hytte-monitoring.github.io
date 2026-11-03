@@ -1,0 +1,30 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>UML design verification</title>
+  <meta name="description" content="A person draws a UML design, an AI implements it in C++, and a deterministic verifier shows where the code differs from the drawing. Each example, told as an interactive story.">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect x='3' y='5' width='26' height='22' rx='4' fill='%232563eb'/><path d='M3 12h26' stroke='white' stroke-width='2'/><path d='M10 19l3 3 6-7' stroke='white' stroke-width='2.5' fill='none' stroke-linecap='round' stroke-linejoin='round'/></svg>">
+  <link rel="stylesheet" href="story.css">
+</head>
+<body>
+  <header class="topbar">
+    <div class="topbar-inner">
+      <a class="brand" href="./">UML design <span aria-hidden="true">→</span> C++ <span class="brand-check">verified</span></a>
+      <label class="picker">
+        <span>Example</span>
+        <select id="picker"></select>
+      </label>
+      <a class="repo" id="repo" href="#" target="_blank" rel="noopener">GitHub</a>
+    </div>
+  </header>
+  <main id="story" class="story">
+    <p class="canvas-note">Loading…</p>
+  </main>
+  <footer id="footer" class="footer"></footer>
+  <script id="site" type="application/json">{{SITE}}</script>
+  <script src="https://cdn.jsdelivr.net/npm/marked@15.0.12/marked.min.js"></script>
+  <script src="story.js"></script>
+</body>
+</html>

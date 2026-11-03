@@ -1,0 +1,61 @@
+<mxfile host="app.diagrams.net" agent="umlverify" version="24.7.17">
+  <diagram name="Shipment" id="page">
+    <mxGraphModel dx="1400" dy="900" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1654" pageHeight="1169" math="0" shadow="0">
+      <root>
+        <mxCell id="page-0" />
+        <mxCell id="page-1" parent="page-0" />
+        <mxCell id="page-s2" value="In transit" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="page-1">
+          <mxGeometry x="440" y="140" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="page-s3" value="Pending" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="page-1">
+          <mxGeometry x="160" y="140" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="page-s4" value="Delivered" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="page-1">
+          <mxGeometry x="740" y="140" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="page-s5" value="Returned" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="page-1">
+          <mxGeometry x="440" y="340" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="page-i6" value="" style="ellipse;html=1;shape=startState;fillColor=#000000;strokeColor=#000000;" vertex="1" parent="page-1">
+          <mxGeometry x="60" y="155" width="30" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="page-e7" value="" style="html=1;rounded=0;edgeStyle=orthogonalEdgeStyle;endArrow=open;endSize=12;exitX=1;exitY=0.5000;entryX=0;entryY=0.5000;" edge="1" parent="page-1" source="page-i6" target="page-s3">
+          <mxGeometry relative="1" as="geometry">
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="page-e8" value="send / notify" style="html=1;rounded=0;edgeStyle=orthogonalEdgeStyle;endArrow=open;endSize=12;exitX=1;exitY=0.5000;entryX=0;entryY=0.5000;" edge="1" parent="page-1" source="page-s3" target="page-s2">
+          <mxGeometry relative="1" as="geometry">
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="page-e9" value="deliver [signed]" style="html=1;rounded=0;edgeStyle=orthogonalEdgeStyle;endArrow=open;endSize=12;exitX=1;exitY=0.5000;entryX=0;entryY=0.5000;" edge="1" parent="page-1" source="page-s2" target="page-s4">
+          <mxGeometry relative="1" as="geometry">
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="page-e10" value="deliver [refused]" style="html=1;rounded=0;edgeStyle=orthogonalEdgeStyle;endArrow=open;endSize=12;exitX=0.5000;exitY=1;entryX=0.5000;entryY=0;" edge="1" parent="page-1" source="page-s2" target="page-s5">
+          <mxGeometry relative="1" as="geometry">
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="page-e11" value="scan / log" style="html=1;rounded=0;edgeStyle=orthogonalEdgeStyle;endArrow=open;endSize=12;exitX=0.75;exitY=0;entryX=1;entryY=0.25;" edge="1" parent="page-1" source="page-s2" target="page-s2">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="530" y="110" />
+              <mxPoint x="590" y="110" />
+              <mxPoint x="590" y="155" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="page-e12" value="send / notify" style="html=1;rounded=0;edgeStyle=orthogonalEdgeStyle;endArrow=open;endSize=12;exitX=0.7000;exitY=0;entryX=0.7000;entryY=1;" edge="1" parent="page-1" source="page-s5" target="page-s2">
+          <mxGeometry relative="1" x="-0.5" as="geometry">
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="page-f13" value="" style="ellipse;html=1;shape=endState;fillColor=#000000;strokeColor=#000000;" vertex="1" parent="page-1">
+          <mxGeometry x="900" y="155" width="30" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="page-e14" value="" style="html=1;rounded=0;edgeStyle=orthogonalEdgeStyle;endArrow=open;endSize=12;exitX=1;exitY=0.5000;entryX=0;entryY=0.5000;" edge="1" parent="page-1" source="page-s4" target="page-f13">
+          <mxGeometry relative="1" as="geometry">
+          </mxGeometry>
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>

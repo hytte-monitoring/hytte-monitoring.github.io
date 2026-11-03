@@ -1,0 +1,38 @@
+<mxfile host="app.diagrams.net" agent="umlverify" version="24.7.17">
+  <diagram name="set_target" id="page">
+    <mxGraphModel dx="1400" dy="900" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1654" pageHeight="1169" math="0" shadow="0">
+      <root>
+        <mxCell id="page-0" />
+        <mxCell id="page-1" parent="page-0" />
+        <mxCell id="page-l0" value="User" style="shape=umlLifeline;participant=umlActor;perimeter=lifelinePerimeter;whiteSpace=wrap;html=1;container=1;dropTarget=0;collapsible=0;recursiveResize=0;verticalAlign=top;spacingTop=36;outlineConnect=0;portConstraint=eastwest;size=40;" vertex="1" parent="page-1">
+          <mxGeometry x="40" y="40" width="30" height="294" as="geometry" />
+        </mxCell>
+        <mxCell id="page-l1" value="Thermostat" style="shape=umlLifeline;perimeter=lifelinePerimeter;whiteSpace=wrap;html=1;container=1;dropTarget=0;collapsible=0;recursiveResize=0;outlineConnect=0;portConstraint=eastwest;size=40;" vertex="1" parent="page-1">
+          <mxGeometry x="200" y="40" width="100" height="294" as="geometry" />
+        </mxCell>
+        <mxCell id="page-l2" value="Sensor" style="shape=umlLifeline;perimeter=lifelinePerimeter;whiteSpace=wrap;html=1;container=1;dropTarget=0;collapsible=0;recursiveResize=0;outlineConnect=0;portConstraint=eastwest;size=40;" vertex="1" parent="page-1">
+          <mxGeometry x="440" y="40" width="100" height="294" as="geometry" />
+        </mxCell>
+        <mxCell id="page-l3" value="Heater" style="shape=umlLifeline;perimeter=lifelinePerimeter;whiteSpace=wrap;html=1;container=1;dropTarget=0;collapsible=0;recursiveResize=0;outlineConnect=0;portConstraint=eastwest;size=40;" vertex="1" parent="page-1">
+          <mxGeometry x="680" y="40" width="100" height="294" as="geometry" />
+        </mxCell>
+        <mxCell id="page-m0" value="setTarget(21)" style="html=1;verticalAlign=bottom;labelBackgroundColor=none;endArrow=block;endFill=1;curved=0;rounded=0;exitX=0.5;exitY=0.3741;exitPerimeter=0;entryX=0.5;entryY=0.3741;entryPerimeter=0;" edge="1" parent="page-1" source="page-l0" target="page-l1">
+          <mxGeometry relative="1" as="geometry">
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="page-m1" value="read()" style="html=1;verticalAlign=bottom;labelBackgroundColor=none;endArrow=block;endFill=1;curved=0;rounded=0;exitX=0.5;exitY=0.5102;exitPerimeter=0;entryX=0.5;entryY=0.5102;entryPerimeter=0;" edge="1" parent="page-1" source="page-l1" target="page-l2">
+          <mxGeometry relative="1" as="geometry">
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="page-m2" value="18.5" style="html=1;verticalAlign=bottom;labelBackgroundColor=none;endArrow=open;endFill=0;endSize=8;dashed=1;curved=0;rounded=0;exitX=0.5;exitY=0.6463;exitPerimeter=0;entryX=0.5;entryY=0.6463;entryPerimeter=0;" edge="1" parent="page-1" source="page-l2" target="page-l1">
+          <mxGeometry relative="1" as="geometry">
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="page-m3" value="turnOn()" style="html=1;verticalAlign=bottom;labelBackgroundColor=none;endArrow=block;endFill=1;curved=0;rounded=0;exitX=0.5;exitY=0.7823;exitPerimeter=0;entryX=0.5;entryY=0.7823;entryPerimeter=0;" edge="1" parent="page-1" source="page-l1" target="page-l3">
+          <mxGeometry relative="1" as="geometry">
+          </mxGeometry>
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
